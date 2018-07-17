@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-md-12">
+            <form (ngSubmit)="questionForm()">
+                <input type="hidden" [(ngModel)]="questionid" name="approverid">
+                <!-- Default input name -->
+                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Question">
+                <br>
+                <div class="form-row">
+                    <div class="col">
+                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
+                            <option value="" disabled>--Select Scale--</option>
+                            <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
+                        </select>
+                        <a (click)="showModal('s')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="col">
+                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
+                            <option value="" disabled>--Select Assessment--</option>
+                            <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
+                        </select>
+                        <a (click)="showModal('a')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="col">
+                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
+                            <option value="" disabled>--Select Header--</option>
+                            <option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
+                        </select>
+                        <a (click)="showModal('h')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary waves-light m-0" mdbWavesEffect>Submit</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+<div class="row justify-content-md-center mb-5">
+    <div class="col-md-12 mt-5">
+        <!--Table-->
+        <table class="table">
+
+        <!--Table head-->
+        <thead class="mdb-color darken-3">
+            <tr class="text-white">
+                <th>#</th>
+                <th>Question</th>
+                <th>Scale</th>
+                <th>Assessment</th>
+                <th>Header</th>
+                <th>Assign</th>
+            </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+            <tr *ngFor="let a of approverList; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+
+            </tr>
+        </tbody>
+        <!--Table body-->
+        </table>
+        <!--Table-->
+    </div>
+</div>
+
+<div *ngIf="isModalShownScale" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('s')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+  <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <p class="heading lead">Scale</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('s')">
+                  <span aria-hidden="true" class="white-text">×</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="">
+                  <app-scale (getScale)="getScaleList()"></app-scale>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShownAssess" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+  <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <p class="heading lead">Assessment Type</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('a')">
+                  <span aria-hidden="true" class="white-text">×</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="">
+                  <app-assessment-type (getAssessmentType)="getAssessmenttypeList()"></app-assessment-type>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShownHeader" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('h')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+  <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <p class="heading lead">Header</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('h')">
+                  <span aria-hidden="true" class="white-text">×</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="">
+                  <app-header (getHeader)="getHeaderList()"></app-header>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

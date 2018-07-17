@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-md-12 mt-5">
+      <!-- Card -->
+      <div class="card">
+
+          <!-- Card body -->
+          <div class="card-body">
+
+              <!-- Default form subscription -->
+              <form (ngSubmit)="jdForm()">
+                  <p class="h4 text-center py-4">Enter JD</p>
+                  <input type="hidden" [(ngModel)]="jdid" name="jdid" />
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">JD Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
+                  <br>
+                  <input type="file" class="btn blue-gradient btn-rounded waves-light" name="file" ng2FileSelect [uploader]="uploader" />
+                  <button type="button" class="btn btn-secondary waves-light" mdbWavesEffect
+                    (click)="uploader.uploadAll()"
+                    [disabled]="!uploader.getNotUploadedItems().length" >
+                    <i class="fa fa-cloud-upload mr-1"></i> Upload JD
+                  </button>
+                  <br><br>
+                  <label for="defaultFormCardJD" class="grey-text font-weight-light">Description</label>
+                  <ckeditor [(ngModel)]="description" name="ckeditorContent"></ckeditor>
+                  <br>
+                  <button type="submit" class="btn btn-primary waves-light" mdbWavesEffect>Submit</button>
+              </form>
+              <!-- Default form subscription -->
+
+          </div>
+          <!-- Card body -->
+
+      </div>
+      <!-- Card -->
+    </div>
+</div>
+
+<div class="row justify-content-md-center mb-5">
+  <div class="col-md-10 mt-5">
+    <!--Table-->
+    <table class="table">
+
+      <!--Table head-->
+      <thead class="mdb-color darken-3">
+          <tr class="text-white">
+              <th>#</th>
+              <th>Name</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+          <tr *ngFor="let j of jdList; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ j.name }}</td>
+              <td>
+                <button type="button" mdbTooltip="Edit" placement="top" (click)="editJD(j)" class="btn btn-primary waves-light" mdbWavesEffect>
+                  <i class="fa fa-edit" aria-hidden="true"></i></button>
+                <button type="button" mdbTooltip="Delete" placement="top" (click)="deleteJD(j._id)" class="btn btn-danger waves-light" mdbWavesEffect>
+                  <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button type="button" mdbTooltip="Assign Question" placement="top" (click)="showModal()" class="btn btn-success waves-light" mdbWavesEffect>
+                  <i class="fa fa-tasks" aria-hidden="true"></i>
+                </button>
+                </td>
+          </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>
+
+<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-primary modal-fluid" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="heading lead">Assign Questions</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <app-question-assign></app-question-assign>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+            <input type="hidden" [(ngModel)]="scaleid" name="scaleid">
+            <form [formGroup]="scaleForm" (ngSubmit)="scaleFormSubmit()">
+                <!-- Default input name -->
+                <br>
+                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Number of Options</label>
+                <select class="browser-default form-control" id="defaultFormCardDesiEx" formControlName="noofoption" name="noofoption" (change)="optionFields($event.target.value)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <br>
+                <div formArrayName="options">
+                    <div *ngFor="let itemrow of scaleForm.controls.options.controls; let i=index"  [formGroupName]="i">
+                        <div class="form-group">
+                            <input formControlName="itemname" placeholder="Option {{ i + 1 }}" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+</div>
+
+<div class="row justify-content-md-center mb-5">
+  <div class="col-md-10 mt-5">
+    <!--Table-->
+    <table class="table">
+
+      <!--Table head-->
+      <thead class="mdb-color darken-3">
+          <tr class="text-white">
+              <th>#</th>
+              <th>Scale</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+          <tr *ngFor="let s of scaleList; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ s.options | arrayToString:',' }}</td>
+              <td>
+                <button type="button" (click)="editScale(s)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
+                <button type="button" (click)="deleteScale(s._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </td>
+          </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>

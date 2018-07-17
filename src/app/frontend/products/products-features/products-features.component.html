@@ -1,0 +1,53 @@
+<section id="our_prd_fet" class="our_pf product_f">
+
+  <div class="container">
+     <div class="container">
+         <p>Awesome placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora</p>
+         <h3>Our Product Features</h3>
+         <p class="feaie_dtl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora</p>
+     </div>
+ </div>
+
+</section>
+
+<section id="accordian_pf" class="our_pf_accor">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 our_prd_fet product_fet product_feature hover1" *ngFor="let p of productList">
+        <div class="col-sm-12 page2 head">
+            <h5>{{p.name}}</h5>
+         </div>
+         <div class="col-sm-12 rates">
+            <p>₹ <span>{{p.amount}}/</span>{{p.type}}</p>
+            <p>(up to {{p.numberofemployee}} EMPOLYEE)</p>
+            <span> + </span>
+           <p>₹ <span>{{p.amountperemployee}}/</span>{{p.type}}</p>
+            <p class="per_ad">PER ADDITIONAL EMPLOYEE</p>
+           </div>
+             <div class="col-sm-12 fold_pge_pf">
+
+            <h5 class="sub_head1">All Foundation Features</h5>
+            <ul>
+              <li *ngFor="let f of p.additionfeatures">{{f.itemname}}</li>
+            </ul>
+
+            <div class="bye_nw">
+                 <a href="#" class="buy1">Buy Now</a>
+             </div>
+            </div>
+        </div>
+    </div>
+    <div  class="col-sm-12 note">
+        <p>*Minimum Commitment of 3 months required </p>
+    </div>
+</div>
+
+</section>
+
+<section id="product_tour">
+<div class="container">
+    <div class="col-sm-12 orange_btn">
+        <a [routerLink]="['/product-tour']">Product Tour</a>
+    </div>
+</div>
+</section>

@@ -1,0 +1,14 @@
+#banner_title {
+    top: 50%;
+}
+.esep_nr img{
+    margin: 0px auto;
+    float: none;
+    display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+    .esep_nr img{
+        width: 100%;
+    }
+}

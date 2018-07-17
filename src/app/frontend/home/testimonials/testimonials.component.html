@@ -1,0 +1,24 @@
+<section id="testimoials">
+    <div class="container-fluid">
+    <div class="col-sm-12 our_testimoials">
+        <div class="our_testi2" >
+            <h3>Testimonials</h3>
+
+            <div class="col-sm-12 carousel" >
+              <!--Carousel Wrapper-->
+              <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+                  <!--First slide-->
+                  <mdb-slide *ngFor="let t of testimonialList; let i = index">
+                    <p [innerHtml]="t.description | newline"></p>
+                  </mdb-slide>
+                  <!--/First slide-->
+              </mdb-carousel>
+              <!--/.Carousel Wrapper-->
+            </div>
+
+
+        </div>
+       </div>
+    </div>
+
+</section>

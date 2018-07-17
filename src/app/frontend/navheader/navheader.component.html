@@ -1,0 +1,30 @@
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light bg-faded nav_bd_poll_voted">
+    <logo>
+        <a class="navbar-brand" [routerLink]="['']">
+            <img src="../../assets/img/epes-logo.png" />
+        </a>
+    </logo>
+    <links>
+    	<ul class="navbar-nav mr-auto">
+    		<li class="nav-item">
+                <a [routerLink]="['/products']" class="nav-link waves-light" mdbWavesEffect>Products<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['']" class="nav-link waves-light" mdbWavesEffect>Company</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['']" class="nav-link waves-light" mdbWavesEffect>Customer Experience</a>
+            </li>
+        	<li class="nav-item">
+                <a [routerLink]="['']" class="nav-link waves-light" mdbWavesEffect>Support & Services</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['']" class="nav-link waves-light" mdbWavesEffect>Resources</a>
+            </li>
+            <li class="nav-item login_all_poll" >
+                <a [routerLink]="['']" class="nav-link" href="#">Register/<span>Login</span></a>
+            </li>
+    	</ul>
+    </links>
+</mdb-navbar>

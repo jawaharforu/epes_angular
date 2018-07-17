@@ -1,0 +1,101 @@
+
+section#blog-disc {
+    margin:20px 0px 60px 0px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 60px;
+}
+h3.catrg-title {
+    font-weight: 500;
+    color: #666;
+}
+
+ .image:before {
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 92%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
+.image:before {
+    background: #666;
+}
+.image:hover:before{
+    opacity:0;
+    left: 0px;
+    width: 100%;
+    -webkit-transition: left 1s ease-out;
+    -moz-transition: left 1s ease-out;
+    -o-transition: left 1s ease-out;
+    transition: left 1s ease-out;
+    -webkit-transition: width 1s ease-out;
+    -moz-transition: width 1s ease-out;
+    -o-transition: width 1s ease-out;
+    transition: width 1s ease-out;
+    
+}
+.middle {
+    opacity: 1;
+    color: #ffffff;
+    z-index: 1;
+    width: auto;
+}
+.image:hover + .middle{
+    color: #000;
+    -webkit-transition: background 1s ease-in;
+    -moz-transition: background 1s ease-in;
+    -o-transition: background 1s ease-in;
+    transition: background 1s ease-in;
+}
+.blog_title{
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.post_date {
+    font-size: 12px;
+}
+.blog-dic {
+    width: 80%;
+    margin: 0px auto;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
+    display: none;
+}
+.image:hover ~ .middle .blog-dic{
+    display: block;
+}
+.image_1:before {
+     background-color: #f2849e;
+}
+.image_2:before {
+    background-color: #7ecaf6;
+}
+.image_3:before {
+    background-color: #7bd0c1;
+}
+.image_4:before {
+    background-color: #c75b9b;
+}
+.image_5:before {
+    background-color: #ae85ca;
+}
+.image_6:before {
+    background-color: #8499e7;
+}

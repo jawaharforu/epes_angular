@@ -1,0 +1,111 @@
+ul.nav.nav-pills.nav-stacked {
+    float: left;
+    display: block;
+}
+.tab-content.col-md-10 {
+    float: right;
+}
+
+ul.nav.nav-pills.nav-stacked.sidebar_menu{
+    float: right;
+}
+.Features-sidebar{
+    text-align: right;
+    margin-bottom: 30px;
+}
+h2.sidebar_title {
+    font-size: 22px;
+    color: #2b9bb8;
+    font-weight: bold;
+}
+h4.sidebar_dic {
+    font-size: 17px;
+    font-weight: 400;
+    color: gray;
+}
+buttom.video-btn {
+    background: #00adef;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 25px;
+    cursor: pointer;
+}
+.sidebar_menu_title {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+}
+ul.sidebar_menu li {
+    line-height: 30px;
+    font-size: 14px;
+}
+ul.sidebar_menu li a {
+    color: grey;
+    font-weight: 400;
+}
+ul.sidebar_menu li a.active.show{
+    color: #fdb828;
+}
+.tabcontent_title{
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+}
+.tab_content{
+    border-left: 1px solid #ccc;
+}
+h3.title-bottom {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: grey;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.width-50 p{
+    font-size: 14px;
+}
+.Features-container{
+    padding: 25px 0px;
+}
+.col-sm-6.sub_titels.Features-title{
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.col-sm-6.sub_titels.Features-title .col-sm-10{
+    margin-bottom: 0px;
+}
+.img-responsive.img-center {
+    margin: 0 auto;
+  }
+  @media  screen and (max-width: 767px) {
+    .Features-container{
+        padding: 0px 15px 0px 15px;
+    }
+    .Features-sidebar{
+        text-align: left;
+    }
+    ul.nav.nav-pills.nav-stacked.sidebar_menu{
+        float: left;
+    }
+    i.fa.fa-bars.visible-xs{
+        background: none;
+    }
+    .navbar-toggler{
+        float: right;
+        border: 2px solid #666;
+    }
+}
+
+@media  screen and (min-width: 767px) {
+    .collapse:not(.show) {
+        display: block;
+    } 
+    i.fa.fa-bars.visible-xs{
+        display:none;
+    }
+}

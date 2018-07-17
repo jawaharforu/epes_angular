@@ -1,0 +1,27 @@
+<app-features-banner></app-features-banner>
+<div class="container Features-container">
+    <div class="row ">
+      <div class="col-xs-12 col-md-3  order-md-1 Features-sidebar">
+        <h2 class="sidebar_title">EPES 360</h2>
+        <h4 class="sidebar_dic">Accusantium doloremque</h4>
+        <button class="video-btn">Watch video</button>
+        <div class="sidebar_menu_title">Features
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <i class="fa fa-bars visible-xs"></i>
+        </button>
+         </div>
+         <div class="collapse navbar-collapse navbar-left" id="navbar-collapse-1">
+          <ul class="nav nav-pills nav-stacked sidebar_menu">
+            <li *ngFor="let f of featureList; let i=index"><a (click)="showFeature(i)">{{f.name}}</a></li>
+          </ul>
+       </div>
+      </div>
+      <div class="col-xs-12 col-md-9  order-md-2 tab_content">
+        <div class="tab-content">
+          <div class="tab-pane active" *ngFor="let f of featureList; let i=index">
+            <div *ngIf="featuresData[i]" [innerHtml]="f.description"></div>
+          </div>
+        </div><!-- tab content -->
+    </div>
+  </div>
+  </div>

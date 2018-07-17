@@ -1,0 +1,34 @@
+<section id="side_bar_faq">
+  <div class="container">
+    <div class="col-sm-12 side_list">
+      <div class="col-sm-4">
+        <ul class="caterory_sub">
+          <li class="list_head">
+            <a href="#">Categories
+            </a>
+          </li>
+          <li class="collapsed active">
+            <a *ngFor="let f of faqcategoryList; let i=index" (click)="getFaqByCategory(f._id)"><i class="fas fa-arrow-circle-right"></i> {{f.name}} <span class="arrow"></span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8 sub_acc">
+      <div class="col-sm-12">
+          <h4>Frequently Asked Questions</h4>
+          <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus?</p>
+      </div>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <!--Accordion wrapper-->
+        <mdb-squeezebox [multiple]="false" aria-multiselectable="true">
+          <mdb-item  [collapsed]="false" *ngFor="let item of faqList">
+              <mdb-item-head> {{ item.question }} </mdb-item-head>
+              <mdb-item-body> {{ item.answer }} </mdb-item-body>
+          </mdb-item>
+        </mdb-squeezebox>
+<!--/.Accordion wrapper-->
+    </div><!-- panel-group -->
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<section id="our_features" class="our_pf">
+  <div class="container">
+      <!--<p>{{header_pre_title}}</p>-->
+      <h3>Our Features</h3>
+      <p class="feaie_dtl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora</p>
+  </div>
+</section>
+<section id="featr_pic1">
+<div class="container">
+  <div class="row feature_imgs">
+      <div class="col-sm-4 mb-4" *ngFor="let f of featureList | slice:0:6; let i=index">
+         <img src="{{imageArray[i]}}" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+              <div class="text">{{f.name | uppercase}}</div>
+          </div>
+      </div>
+  </div>
+  <!--
+  <div class="col-sm-12 feature_imgs2">
+      <div class="col-sm-4">
+         <img src="{{ourfeature_image4}}" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+              <div class="text">{{ourfeature_text4}}</div>
+          </div>
+      </div>
+
+      <div class="col-sm-4">
+         <img src="{{ourfeature_image5}}" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+              <div class="text">{{ourfeature_text5}}</div>
+          </div>
+      </div>
+
+      <div class="col-sm-4">
+         <img src="{{ourfeature_image6}}" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+              <div class="text">{{ourfeature_text6}}</div>
+          </div>
+      </div>
+    </div>
+  -->
+</div>
+</section>
+<section id="see_all_feature">
+    <div class="col-sm-12">
+        <a [routerLink]="['/features']">See All Features</a>
+    </div>
+</section>

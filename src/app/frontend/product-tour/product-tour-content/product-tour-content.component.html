@@ -1,0 +1,105 @@
+<section id="customer">
+  <div class="container">
+      <!-- Content here -->
+      <div class="row">
+        <div class="col-sm-8 main_head">
+          <h3><span>EPES360</span> - Enterprise Edition</h3>
+          <h3>Experience what over 2 Million customer</h3>
+          <h3>choose <span>EPES360</span></h3>
+          <img src="{{content_image}}" class="img-responsive" > 
+
+          <div class="row">
+              <div class="col-sm-6 sub_titels" *ngFor="let content1 of registration_content1">
+                <div class="col-sm-2 {{classmyclass}}">
+                  <i class="far {{ content1.fa_name }}"></i>
+                </div>
+                <div class="col-sm-10">
+                    <h3>{{content1.title}}</h3>
+                    <p>{{content1.description}}</p>
+                </div>
+              </div>
+              <!--<div class="col-sm-6 sub_titels">
+                <div class="col-sm-2">
+                  <i class="far fa-globe"></i>
+                </div>
+                <div class="col-sm-10">
+                        <h3>Accusantinum dloremqu</h3>
+                        <p>When you next make a booking, we guarantee that you will always receive the best possible rates providing you book directly through the hotel  </p>
+                </div>
+              </div>-->
+          </div>
+          <div class="row">
+            <div class="col-sm-6 sub_titels" *ngFor="let content2 of registration_content2">
+              <div class="col-sm-2 {{classmyclass}}">
+                      <i class="far {{content2.fa_name}}"></i>
+              </div>
+              <div class="col-sm-10">
+                      <h3>{{content2.title}}</h3>
+                      <p>{{content2.description}}</p>
+              </div>
+            </div>
+            <!--<div class="col-sm-6 sub_titels">
+              <div class="col-sm-2">
+                <i class="far fa-calculator"></i>
+              </div>
+              <div class="col-sm-10">
+                <h3>Accusantinum dloremqu</h3>
+                <p>When you next make a booking, we guarantee that you will always receive the best possible rates providing you book directly through the hotel website the We cannot </p>
+              </div>
+            </div>-->
+          </div>
+          <div class="callus col-sm-12">
+            <p>Providing you book directly through the hotel?</p>
+            <p>Call Us at {{contact_us}}</p>
+          </div>
+        </div>
+        <div class="col-sm-4 form_detail">
+          <h3>Start your</h3>
+          <h3>Product Tour</h3>
+          <p>Please fill out all fields</p>
+          <form class="reg_form">
+            <input type="text" id="first_name" class="form-control" placeholder="First Name">
+            <input type="text" id="last_name" class="form-control" placeholder="Last Name">
+            <!-- <input type="text" id="job_title" class="form-control" placeholder="Job title"> -->
+            <select class="mdb-select" >
+              <!-- <option value="" disabled selected>Job title</option> -->
+              <option *ngFor="let job of select_list_job" [value]="job.id">{{job.label}}</option>
+              <!--<option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>-->
+            </select>
+            <input type="email" id="email" class="form-control" placeholder="Email">
+            <input type="text" id="Phone" class="form-control" placeholder="Phone"> 
+            <input type="text" id="Company" class="form-control" placeholder="Company">
+            <!--  <input type="text" id="Employees" class="form-control" placeholder="Employees"> -->
+            <select class="">
+              <option *ngFor="let employee of select_list_employee" [value]="employee.id">{{employee.label}}</option>
+              <!--<option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>-->
+            </select>
+          
+            <!--   <input type="text" id="Country" class="form-control" placeholder="Country"> -->
+            <select class="">
+              <option *ngFor="let country of select_list_country" [value]="country.id">{{country.label}}</option>
+              <!--<option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>-->
+            </select>
+            <div class="clearfix"></div>
+            <input type="checkbox" id="checkbox" class="form-control"><span class="Agreement_text">I agree to the <a href="#">master subscription Agreement</a></span>
+            <div class="text-center mt-4 sub_btn">
+                <button class="btn btn-unique" type="submit">Start Product Tour</button>
+            </div>
+          </form>
+<!-- Default form register -->
+        </div>
+      </div>
+    </div>
+</section>

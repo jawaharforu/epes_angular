@@ -1,0 +1,142 @@
+<!--Double navigation-->
+<header class="light-blue-skin">
+
+  <!-- Sidebar navigation -->
+  <mdb-sidenav #sidenav class="sn-bg-1 fixed" [fixed]="true">
+
+  <logo>
+      <!-- Logo -->
+      <li>
+          <div class="logo-wrapper waves-light">
+              <a href="#"><img src="http://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+          </div>
+      </li>
+      <!--/. Logo -->
+  </logo>
+
+  <links>
+      <!-- Side navigation links -->
+      <li>
+          <ul class="collapsible collapsible-accordion">
+              <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+
+                  <!-- Collapsible link -->
+                  <mdb-item>
+                      <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> Product</mdb-item-head>
+                      <mdb-item-body>
+                          <ul>
+                              <li><a [routerLink]="['/admin/product']" class="waves-effect" mdbWavesEffect>Product Add</a></li>
+                              <li><a [routerLink]="['/admin/product/list']" class="waves-effect" mdbWavesEffect>Product List</a></li>
+                          </ul>
+                      </mdb-item-body>
+                  </mdb-item>
+
+                  <mdb-item>
+                    <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> Features</mdb-item-head>
+                    <mdb-item-body>
+                        <ul>
+                            <li><a [routerLink]="['/admin/feature']" class="waves-effect" mdbWavesEffect>Features Add</a></li>
+                            <li><a [routerLink]="['/admin/feature/list']" class="waves-effect" mdbWavesEffect>Features List</a></li>
+                        </ul>
+                    </mdb-item-body>
+                  </mdb-item>
+
+                  <mdb-item>
+                    <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> Testimonial</mdb-item-head>
+                    <mdb-item-body>
+                        <ul>
+                            <li><a [routerLink]="['/admin/testimonial']" class="waves-effect" mdbWavesEffect>Testimonial Add</a></li>
+                            <li><a [routerLink]="['/admin/testimonial/list']" class="waves-effect" mdbWavesEffect>Testimonial List</a></li>
+                        </ul>
+                    </mdb-item-body>
+                  </mdb-item>
+
+                  <mdb-item>
+                    <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> FAQ</mdb-item-head>
+                    <mdb-item-body>
+                        <ul>
+                            <li><a [routerLink]="['/admin/faq/category']" class="waves-effect" mdbWavesEffect>FAQ Category</a></li>
+                            <li><a [routerLink]="['/admin/faq']" class="waves-effect" mdbWavesEffect>FAQ Add</a></li>
+                            <li><a [routerLink]="['/admin/faq/list']" class="waves-effect" mdbWavesEffect>FAQ List</a></li>
+                        </ul>
+                    </mdb-item-body>
+                  </mdb-item>
+
+              </mdb-squeezebox>
+          </ul>
+      </li>
+
+      <li>
+        <ul class="collapsible collapsible-accordion">
+            <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+                <!-- Collapsible link -->
+                <mdb-item>
+                    <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> Approver</mdb-item-head>
+                    <mdb-item-body>
+                        <ul>
+                            <li><a [routerLink]="['/admin/approver']" class="waves-effect" mdbWavesEffect>Approver</a></li>
+                        </ul>
+                    </mdb-item-body>
+                </mdb-item>
+
+                <mdb-item>
+                  <mdb-item-head mdbWavesEffect><i class="fa fa-chevron-right"></i> JD</mdb-item-head>
+                  <mdb-item-body>
+                      <ul>
+                          <li><a [routerLink]="['/admin/jd']" class="waves-effect" mdbWavesEffect>JD</a></li>
+                      </ul>
+                  </mdb-item-body>
+              </mdb-item>
+
+            </mdb-squeezebox>
+        </ul>
+    </li>
+      <!--/. Side navigation links -->
+      </links>
+      <div class="sidenav-bg mask-strong"></div>
+  </mdb-sidenav>
+  <!--/. Sidebar navigation -->
+
+      <!-- Navbar -->
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" [containerInside]="false">
+
+  <navlinks class="navbar-container">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+          <a (click)="sidenav.show()" class="button-collapse"><i class="fa fa-bars"></i></a>
+      </div>
+      <!--/. SideNav slide-out button -->
+  </navlinks>
+
+  <logo>
+      <!-- Breadcrumb-->
+      <div class="breadcrumbs breadcrumb-dn mr-auto">
+          <p>Material Design for Bootstrap</p>
+      </div>
+      <!--/. Breadcrumb-->
+  </logo>
+
+  <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+          <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
+      </li>
+      <li class="nav-item dropdown btn-group" dropdown>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><i class="fa fa-user" aria-hidden="true"></i></a>
+        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <a class="dropdown-item" >Sign Out</a>
+        </div>
+      </li>
+      </ul>
+  </navlinks>
+  </mdb-navbar>
+      <!--/. Navbar -->
+
+</header>
+<!--/.Double navigation-->

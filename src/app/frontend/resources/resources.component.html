@@ -1,0 +1,204 @@
+<mdb-tabset [buttonClass]="'classic-tabs tabs-new '" [contentClass]="'card'" class="classic-tabs">
+    <!--Panel 1-->
+    <mdb-tab heading="<i class='resources-icon blog-icon'></i></i>Blog">
+        <div class="container tab_container">
+        <div class="row">
+
+                <section id="featr_pic1">
+                        <div class="container">
+                          <div class="feature_imgs">
+                              <div class="col-sm-4">
+                                <div class="image image_1">
+                                 <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img1.png" alt="Avatar" class="image" style="width:100%">
+                                </div>
+                                <div class="middle">
+                                    <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                    <div class="post_date">20-July-2018</div>
+                                    <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                            Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                            Lorem ipsum dolor sit amet nullam dolore.
+                                        </div>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-4">
+                                  <div class="image image_2">
+                                   <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img2.png" alt="Avatar" class="image" style="width:100%">
+                                  </div>
+                                   <div class="middle">
+                                        <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                        <div class="post_date">20-July-2018</div>
+                                        <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                                Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                               Lorem ipsum dolor sit amet nullam dolore.
+                                         </div>
+                                    </div>
+                                </div>
+
+
+                              <div class="col-sm-4">
+                                <div class="image image_3">
+                                 <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img8.png" alt="Avatar" class="image" style="width:100%">
+                                </div>
+                                 <div class="middle">
+                                      <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                      <div class="post_date">20-July-2018</div>
+                                      <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                            Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                           Lorem ipsum dolor sit amet nullam dolore.
+                                     </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                          <div class="feature_imgs">
+                              <div class="col-sm-4">
+                                  <div class="image image_4">
+                                   <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img9.png" alt="Avatar" class="image" style="width:100%">
+                                  </div>
+                                   <div class="middle">
+                                        <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                        <div class="post_date">20-July-2018</div>
+                                        <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                                Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                               Lorem ipsum dolor sit amet nullam dolore.
+                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="image image_5">
+                                     <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img6.png" alt="Avatar" class="image" style="width:100%">
+                                    </div>
+                                     <div class="middle">
+                                          <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                          <div class="post_date">20-July-2018</div>
+                                          <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                                Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                               Lorem ipsum dolor sit amet nullam dolore.
+                                         </div>
+                                      </div>
+                                  </div>
+
+                              <div class="col-sm-4">
+                                <div class="image image_6">
+                                 <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img3.png" alt="Avatar" class="image" style="width:100%">
+                                </div>
+                                 <div class="middle">
+                                      <div class="blog_title">Lorem Ipsum is simply dummy</div>
+                                      <div class="post_date">20-July-2018</div>
+                                      <div class="blog-dic">Etiam quis viverra lorem, in semper lorem.
+                                           Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum ros aliquam.
+                                          Lorem ipsum dolor sit amet nullam dolore.
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                        </section>
+
+
+
+            </div>
+        </div>
+    </mdb-tab>
+    <!--Panel 2-->
+    <mdb-tab heading="<i class='resources-icon roadmap-icon'></i> Product Roadmap">
+        <div class="container tab_container roadmap_container">
+        <div class="row">
+
+                <!--Accordion wrapper-->
+                <mdb-squeezebox [multiple]="false" aria-multiselectable="true">
+                    <mdb-item  [collapsed]="false" *ngFor="let item of itemsList">
+                        <mdb-item-head> {{ item.title }} </mdb-item-head>
+                        <mdb-item-body> {{ item.description }} </mdb-item-body>
+                    </mdb-item>
+                </mdb-squeezebox>
+                <!--/.Accordion wrapper-->
+        </div>
+        </div>
+    </mdb-tab>
+    <!--Panel 3-->
+    <mdb-tab heading="<i class='resources-icon whitepaper-icon'></i> White Paper">
+        <div class="container tab_container">
+        <div class="row">
+            <div class="col-6 col-md-6 col-sm-12">
+
+                <form class="whitepaper-form">
+                    <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name"  id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="Email"  id="Email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" class="form-control" name="company"  id="company" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                    <label>Website</label>
+                    <input type="text" class="form-control" name="website"  id="website" placeholder="Website">
+                    </div>
+
+                    <input type="submit" value="Download" class="submit" id="sendWhitepaper">
+                    </form>
+
+            </div>
+            <div class="col-6 col-md-6 col-sm-12">
+                    <h4 class="white-paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+                    <div class="resources-text">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                        wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                          farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                          labore sustainable VHS.
+                          <ul class="resources_list">
+                            <li>Lorem Ipsum is simply dummy text of the printing  </li>
+                            <li>Lorem Ipsum is simply dummy text of the printing </li>
+                            <li>Lorem Ipsum is simply dummy text of the printing </li>
+                            <li>Lorem Ipsum is simply dummy text of the printing </li>
+                            <li>Lorem Ipsum is simply dummy text of the printing </li>
+                            <li>Lorem Ipsum is simply dummy text of the printing </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </mdb-tab>
+    <mdb-tab heading="<i class='resources-icon pressrelease-icon'></i>Press Release">
+        <div class="container tab_container">
+            <div class="row">
+                <div class="col-md-4 single-new">
+                    <div class="news-image">
+                            <img class="img-responsive" src="../../assets/img/new1.jpg">
+                    </div>
+                    <div class="news-title">Lorem Ipsum is simply dummy</div>
+                    <div class="news-date">25-June-2018</div>
+                    <div class="news-content">wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur</div>
+                </div>
+                <div class="col-md-4 single-new">
+                        <div class="news-image">
+                                <img class="img-responsive" src="../../assets/img/news2.jpg">
+                        </div>
+                        <div class="news-title">Lorem Ipsum is simply dummy</div>
+                        <div class="news-date">25-June-2018</div>
+                        <div class="news-content">wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                        wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur</div>
+                </div>
+                <div class="col-md-4 single-new">
+                            <div class="news-image">
+                                    <img class="img-responsive" src="../../assets/img/news3.jpg">
+                            </div>
+                            <div class="news-title">Lorem Ipsum is simply dummy</div>
+                            <div class="news-date">25-June-2018</div>
+                            <div class="news-content">wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur</div>
+                </div>
+            </div>
+        </div>
+    </mdb-tab>
+</mdb-tabset>

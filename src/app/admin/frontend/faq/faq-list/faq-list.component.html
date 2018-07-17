@@ -1,0 +1,36 @@
+<div class="card mt-5 mb-5">
+  <div class="card-body">
+    <p class="h4 text-center py-4">FAQ List</p>
+    <a [routerLink]="['/admin/faq']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>
+      <!--Table-->
+      <table *ngIf="faqList" datatable class="table table-hover table-responsive-md table-fixed">
+
+          <!--Table head-->
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Category</th>
+                  <th>Question</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <!--Table head-->
+
+          <!--Table body-->
+          <tbody>
+              <tr *ngFor="let c of faqList; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{c.faqcategoryid.name}}</td>
+                  <td>{{c.question}}</td>
+                  <td>
+                      <button type="button" (click)="editFaq(c)" class="btn btn-primary waves-light" mdbRippleRadius>Edit <i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
+                      &nbsp;
+                      <button type="button" (click)="deleteFaq(c._id)" class="btn btn-danger waves-light" mdbRippleRadius>Delete <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+              </tr>
+          </tbody>
+          <!--Table body-->
+
+      </table>
+      <!--Table-->
+  </div>
+</div>

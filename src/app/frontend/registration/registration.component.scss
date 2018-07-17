@@ -1,0 +1,70 @@
+.signupbg{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../../assets//img/signup_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+input.form-control{
+    height: 35px;
+    font-size: 13px;
+}
+select{
+    display: block !important;
+    height: 35px !important;
+    font-size: 13px;
+}
+.signupcontainer{
+    background: #fff;
+    padding: 0px 20px;
+    border-radius: 10px;
+
+}
+.reg-tom-title {
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 25px;
+    color: black;
+}
+form#reg_form {
+    max-width: 850px;
+    margin: 0px auto;
+}
+label.reg-tom-label {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    top: 8px;
+    left: 25px;
+}
+input:focus +  label.reg-tom-label, select:focus + label.reg-tom-label,
+.input-clicked +  label.reg-tom-label{
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+    top: -8px;
+    left: 25px;
+    background-color: #FFF;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+button.btn.btn-default.btn-pay {
+    padding: 5px 35px;
+    box-shadow: none;
+    background: #0daa0d !important;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+h5.section_title {
+    width: 100%;
+    clear: both;
+    padding-left: 15px;
+    font-size: 15px;
+    color: #12509c;
+}

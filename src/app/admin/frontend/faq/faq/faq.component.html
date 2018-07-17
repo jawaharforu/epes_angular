@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12 mt-5">
+    <!-- Card -->
+    <div class="card">
+
+        <!-- Card body -->
+        <div class="card-body">
+
+            <!-- Default form subscription -->
+            <form (ngSubmit)="faqForm()">
+                <p class="h4 text-center py-4">FAQ</p>
+                <input type="hidden" [(ngModel)]="faqid" name="faqid" />
+                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Designation</label>
+                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="designation">
+                  <option value="" disabled>--Select Category--</option>
+                  <option *ngFor="let s of faqcategoryList" [value]="s._id">{{ s.name }}</option>
+                </select>
+                <br>
+                <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Question</label>
+                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question">
+                <br>
+                <div class="md-form">
+                  <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="answer" name="answer"></textarea>
+                  <label for="defaultFormCarddescEx">Answer</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary waves-light" mdbWavesEffect>Submit</button>
+            </form>
+            <!-- Default form subscription -->
+
+        </div>
+        <!-- Card body -->
+
+    </div>
+    <!-- Card -->
+  </div>
+</div>

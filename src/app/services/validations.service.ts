@@ -1,0 +1,46 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ValidationsService {
+
+  constructor() { }
+
+  isEmpty(input: any) {
+    if (input === undefined ||
+      input === null ||
+      (typeof input === 'object' && Object.keys(input).length === 0) ||
+      (typeof input === 'string' && input.trim().length === 0)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isEmail(email: any) {
+    // tslint:disable-next-line:max-line-length
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  isMobile(mobile: any) {
+    const mob = /[0-9]+/;
+    if (!mob.test(mobile)) {
+      return 'Mobile field shoud have only number';
+    } else if (mobile.length !== 10) {
+      return 'Mobile field shoud contain only 10 numbers';
+    } else {
+      return true;
+    }
+  }
+
+  isNumber(input: any) {
+    if (typeof Number(input) === 'number') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+}

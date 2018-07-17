@@ -1,0 +1,151 @@
+.container{
+    max-width: 1024px;
+}
+.nav-link {
+    color: #000 !important;
+    transition: 0.35s;
+}
+h2.title_payment {
+    font-weight: normal;
+    padding-top: 30px;
+    color: gray;
+    font-size: 35px;
+}
+p.paymt-disc {
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+}
+.pull-right{
+    float:right !important;
+}
+.form_wrapper {
+    padding: 30px;
+    background: lightgray;
+    margin-bottom: 100px;
+    max-width: 400px;
+    position: relative;
+}
+.form_wrapper::before{
+    z-index: 1;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 230px solid #4db859;
+    border-right: 280px solid transparent;
+    left: 0px;
+    top: 0;
+    position: absolute;
+}
+.form_wrapper::after{
+    z-index: 1;
+    content: '';
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid #4db859;
+    border-left: 150px solid transparent;
+    right:0px;
+    bottom: 0px;
+    position: absolute;
+}
+h2.form_title, .payment-form {
+    position: relative;
+    z-index: 9;
+}
+h2.form_title {
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+h2.form_title span {
+    font-weight: 600;
+    display: block;
+}
+.payment-form .form-control {
+    background: #fff;
+    border-radius: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+    height: 37px;
+    font-weight: 400;
+    opacity: .9;
+}
+.summery-sec{
+    -webkit-box-shadow: -5px 0px 4px 0px rgba(219,208,219,1);
+    -moz-box-shadow: -5px 0px 4px 0px rgba(219,208,219,1);
+    box-shadow: -5px 0px 4px 0px rgba(219,208,219,1);
+    padding: 30px;
+    margin-bottom: 15px;
+    max-height: 420px;
+}
+p.summery-dic {
+    font-size: 15px;
+}
+h4.summury-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: gray;
+}
+.col-md-6.col-xs-6.label-text {
+    font-size: 14px;
+}
+.col-md-6.col-xs-6.dymanic-value {
+    font-weight: 500;
+    font-size: 15px;
+}
+.summery-sec .row {
+    margin-bottom: 10px;
+}
+.summery-footer{
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.title_totleamount{
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    float: left;
+    margin-right: 15px;
+}
+.totleamount {
+    margin-left: 5px;
+    font-size: 20px;
+    float: left;
+    color: #fdb828;
+    font-weight: 600;
+    margin-top: -5px;
+}
+.summery-footer p{
+    clear: both;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    h2.title_payment{
+        margin-top: 70px;
+    }
+}
+@media only screen and (max-width: 767px){
+    h2.title_payment{
+        font-size:25px;
+    }
+    p.paymt-disc, p.summery-dic{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 320px){
+    .summery-sec{
+        max-height: 460px;
+    }
+}
+
+ul.nav.nav-pills.nav-stacked {
+    float: left;
+    display: block;
+}
+.tab-content.col-md-10 {
+    float: right;
+}
