@@ -10,10 +10,18 @@
     flex: none;
     color:#fff;
     min-height: 150px;
-    background: #0079a8;
+   /* background: #0079a8;
     background: -webkit-gradient(left top, left bottom, color-stop(0%, #2b8dd6), color-stop(100%, #0079a8));
     background: linear-gradient(to bottom, #2b8dd6 0%, #0079a8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b8dd6', endColorstr='#0079a8', GradientType=0 );
+    */
+    background: #43b64a; /* Old browsers */
+    background: -moz-linear-gradient(top, #43b64a 0%, #159923 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #43b64a 0%,#159923 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #43b64a 0%,#159923 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43b64a', endColorstr='#159923',GradientType=0 ); /* IE6-9 */
+    background-image: linear-gradient(to bottom, #43b64a, #3aaf41, #2fa737, #24a02d, #159923);
+
 }
 .customer_experience_main_heading {
     font-family: "Roboto", sans-serif;
@@ -99,8 +107,27 @@ h5.free-trail-label {
     cursor: pointer;
     color: gray;
 }
+.ustomer_experience_body h6.customer_experience_sub_heading::after {
+    content: "";
+    width: 150px;
+    height: 5px;
+    background: #fdb827;
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+@media only screen and (max-width: 768px){
+    .container-fluid.customer_experience_header{
+    margin: 0px;
+    margin-top: 64px;
+    }
+    
+}
 @media only screen and (max-width: 767px){
     .container-fluid.customer_experience_header{
     margin: 0px;
+    margin-top: 50px;
     }
+    
 }

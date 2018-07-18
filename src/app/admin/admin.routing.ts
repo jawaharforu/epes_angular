@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: './question/question.module#QuestionModule',
       },
       {
+        path: 'organogram',
+        loadChildren: './organogram/organogram.module#OrganogramModule',
+      },
+      {
         path: 'testimonial',
         loadChildren: './frontend/testimonial/testimonial.module#TestimonialModule',
       },

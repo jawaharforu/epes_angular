@@ -14,7 +14,11 @@ const routes: Routes = [
       { path: 'features', loadChildren: './features/features.module#FeaturesModule' },
       { path: 'blog', loadChildren: './blog/blog.module#BlogModule' },
       { path: 'resources', loadChildren: './resources/resources.module#ResourcesModule' },
-      { path: 'registration', loadChildren: './registration/registration.module#RegistrationModule' }
+      { path: 'registration', loadChildren: './registration/registration.module#RegistrationModule' },
+      { path: 'customer-experience', loadChildren: './customer-experience/customer-experience.module#CustomerExperienceModule' },
+      { path: 'careers', loadChildren: './careers/careers.module#CareersModule' },
+      { path: 'support', loadChildren: './support/support.module#SupportModule' },
+      { path: 'partner-with-us', loadChildren: './partner-with-us/partner-with-us.module#PartnerWithUsModule' },
     ]
    }
 ];
