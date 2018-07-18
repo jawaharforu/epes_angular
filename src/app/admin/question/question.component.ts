@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { ModalDirective } from '../../../../../../ng-uikit-pro-standard';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from '../../../../ng-uikit-pro-standard';
 
-import { CommonService } from '../../../../services/common.service';
-import { ValidationsService } from '../../../../services/validations.service';
-import { QuestionService } from '../services/question.service';
-import { HeaderService } from '../../header/services/header.service';
-import { ScaleService } from '../../scale/services/scale.service';
-import { AssessmentTypeService } from '../../assessment-type/assessment-type.service';
+import { CommonService } from '../../services/common.service';
+import { ValidationsService } from '../../services/validations.service';
+import { QuestionService } from '../JD/question/services/question.service';
+import { HeaderService } from '../JD/header/services/header.service';
+import { ScaleService } from '../JD/scale/services/scale.service';
+import { AssessmentTypeService } from '../JD/assessment-type/assessment-type.service';
 
 @Component({
-  selector: 'app-question-assign',
-  templateUrl: './question-assign.component.html',
-  styleUrls: ['./question-assign.component.scss']
+  selector: 'app-question',
+  templateUrl: './question.component.html',
+  styleUrls: ['./question.component.scss']
 })
-export class QuestionAssignComponent implements OnInit {
+export class QuestionComponent implements OnInit {
 
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShownScale: Boolean = false;
@@ -28,8 +28,6 @@ export class QuestionAssignComponent implements OnInit {
   public scaleList: any;
   public headerList: any;
   public assessmentTypeList: any;
-  @Input() getjdid: String;
-  public jdquestionList: any[] = [];
 
   constructor(
     private _validationsService: ValidationsService,
@@ -41,24 +39,14 @@ export class QuestionAssignComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getQuestionToJDList();
     this.getScaleList();
     this.getHeaderList();
     this.getAssessmenttypeList();
     this.getQuestionList();
   }
 
-  getQuestionToJDList() {
-    this.questionService.getQuestionToJDList(this.getjdid)
-    .subscribe(res => {
-      for (const prop of res.data) {
-        this.jdquestionList.push(prop.questionid);
-      }
-    });
-  }
-
   getQuestionList() {
-    this.questionService.getQuestionList()
+    this.questionService.getQuestion()
     .subscribe(res => {
       this.questionList = res.data;
     });
@@ -83,10 +71,6 @@ export class QuestionAssignComponent implements OnInit {
     .subscribe(res => {
       this.headerList = res.data;
     });
-  }
-
-  checkQuestion(questionid: any) {
-    return this.jdquestionList.includes(questionid);
   }
 
   public showModal(modal: any): void {
@@ -159,7 +143,6 @@ export class QuestionAssignComponent implements OnInit {
         this.scale = '';
         this.assessmenttype = '';
         this.header = '';
-        this.getQuestionToJDList();
         this.getQuestionList();
       } else {
         this._commonService.showMessage('error', res.msg);
@@ -181,7 +164,6 @@ export class QuestionAssignComponent implements OnInit {
     .subscribe(res => {
       if (res.success) {
         this._commonService.showMessage('success', res.msg);
-        this.getQuestionToJDList();
         this.getQuestionList();
       } else {
         this._commonService.showMessage('error', res.msg);
@@ -189,31 +171,4 @@ export class QuestionAssignComponent implements OnInit {
     });
   }
 
-  updateStatus(event: boolean, q: any) {
-    if (event === true) {
-      const qjd = {
-        jdid: this.getjdid,
-        questionid: q._id
-      };
-      this.questionService.setQuestionsToJD(qjd)
-      .subscribe(res => {
-        if (res.success) {
-          this._commonService.showMessage('success', res.msg);
-          // this.getQuestionToJDList();
-        } else {
-          this._commonService.showMessage('error', res.msg);
-        }
-      });
-    } else {
-      this.questionService.deleteQuestion(q.question.id)
-      .subscribe(res => {
-        if (res.success) {
-          this._commonService.showMessage('success', res.msg);
-          // this.getQuestionToJDList();
-        } else {
-          this._commonService.showMessage('error', res.msg);
-        }
-      });
-    }
-  }
 }

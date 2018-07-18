@@ -18,6 +18,18 @@ const routes: Routes = [
         loadChildren: './JD/jd.module#JdModule',
       },
       {
+        path: 'scale',
+        loadChildren: './scale/scale.module#ScaleModule',
+      },
+      {
+        path: 'header',
+        loadChildren: './header/header.module#HeaderModule',
+      },
+      {
+        path: 'question',
+        loadChildren: './question/question.module#QuestionModule',
+      },
+      {
         path: 'testimonial',
         loadChildren: './frontend/testimonial/testimonial.module#TestimonialModule',
       },

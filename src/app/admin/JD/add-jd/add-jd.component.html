@@ -60,7 +60,7 @@
                   <i class="fa fa-edit" aria-hidden="true"></i></button>
                 <button type="button" mdbTooltip="Delete" placement="top" (click)="deleteJD(j._id)" class="btn btn-danger waves-light" mdbWavesEffect>
                   <i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                <button type="button" mdbTooltip="Assign Question" placement="top" (click)="showModal()" class="btn btn-success waves-light" mdbWavesEffect>
+                <button type="button" mdbTooltip="Assign Question" placement="top" (click)="showModal(j._id)" class="btn btn-success waves-light" mdbWavesEffect>
                   <i class="fa fa-tasks" aria-hidden="true"></i>
                 </button>
                 </td>
@@ -83,7 +83,7 @@
             </div>
             <div class="modal-body">
                 <div class="">
-                    <app-question-assign></app-question-assign>
+                    <app-question-assign [getjdid]='passjdid'></app-question-assign>
                 </div>
             </div>
         </div>

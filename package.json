@@ -34,6 +34,7 @@
     "jarallax": "^1.10.3",
     "jquery": "^3.3.1",
     "ng-html-util": "1.0.x",
+    "ng-org-chart": "^1.2.0",
     "ng2-ckeditor": "^1.2.0",
     "ng2-file-upload": "^1.3.0",
     "ng4-loading-spinner": "^1.1.3",

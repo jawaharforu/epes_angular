@@ -1,7 +1,15 @@
 <div class="row">
-    <div class="col-md-12">
+  <div class="col-md-6 offset-md-3 mt-5">
+    <!-- Card -->
+    <div class="card mx-xl-5">
+
+        <!-- Card body -->
+        <div class="card-body">
+
+            <!-- Default form subscription -->
             <input type="hidden" [(ngModel)]="scaleid" name="scaleid">
             <form [formGroup]="scaleForm" (ngSubmit)="scaleFormSubmit()">
+                <p class="h4 text-center py-4">Scale</p>
                 <!-- Default input name -->
                 <br>
                 <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Number of Options</label>
@@ -24,13 +32,20 @@
                 <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <!-- Default form subscription -->
+
+        </div>
+        <!-- Card body -->
+
     </div>
+    <!-- Card -->
+  </div>
 </div>
 
 <div class="row justify-content-md-center mb-5">
   <div class="col-md-10 mt-5">
     <!--Table-->
-    <table class="table">
+    <table *ngIf="scaleList" datatable class="table table-hover table-responsive-md table-fixed">
 
       <!--Table head-->
       <thead class="mdb-color darken-3">

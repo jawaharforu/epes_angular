@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
             <form (ngSubmit)="questionForm()">
-                <input type="hidden" [(ngModel)]="questionid" name="approverid">
+                <input type="hidden" [(ngModel)]="questionid" name="questionid">
                 <!-- Default input name -->
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Question">
+                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
                 <br>
                 <div class="form-row">
                     <div class="col">
@@ -40,7 +40,7 @@
 <div class="row justify-content-md-center mb-5">
     <div class="col-md-12 mt-5">
         <!--Table-->
-        <table class="table">
+        <table *ngIf="questionList" class="table table-hover table-responsive-md table-fixed" datatable>
 
         <!--Table head-->
         <thead class="mdb-color darken-3">
@@ -57,9 +57,16 @@
 
         <!--Table body-->
         <tbody>
-            <tr *ngFor="let a of approverList; let i = index">
+            <tr *ngFor="let q of questionList; let i = index">
                 <th scope="row">{{ i + 1 }}</th>
-
+                <td>{{ q.question }}</td>
+                <td>{{ q.scaleid.options | arrayToString:',' }}</td>
+                <td>{{ q.assessmenttypeid.name }}</td>
+                <td>{{ q.headerid.headername }}</td>
+                <td><div class="form-group">
+                  <input type="checkbox" class="filled-in" id="checkbox{{q._id}}" [checked]="checkQuestion(q._id)" (change)="updateStatus($event.target.checked,q)">
+                  <label for="checkbox{{q._id}}"></label>
+              </div></td>
             </tr>
         </tbody>
         <!--Table body-->

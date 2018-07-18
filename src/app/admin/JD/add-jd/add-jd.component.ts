@@ -19,6 +19,7 @@ export class AddJdComponent implements OnInit {
   public name: String;
   public filename: String = '';
   public jdid: String = '';
+  public passjdid: String = '';
   public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
   public jdList: any;
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
@@ -112,7 +113,8 @@ export class AddJdComponent implements OnInit {
     });
   }
 
-  public showModal(): void {
+  public showModal(jdid: any): void {
+    this.passjdid = jdid;
     this.isModalShown = true;
   }
 
