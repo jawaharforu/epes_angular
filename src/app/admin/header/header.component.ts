@@ -37,11 +37,11 @@ export class HeaderComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.description)) {
-      this._commonService.showMessage('error', 'Email field should not be empty!');
+      this._commonService.showMessage('error', 'Description field should not be empty!');
       return false;
     }
     let field;
-    if (!this._validationsService.isEmail(this.headerid)) {
+    if (!this._validationsService.isEmpty(this.headerid)) {
       field = {
         headername: this.headername,
         description: this.description,

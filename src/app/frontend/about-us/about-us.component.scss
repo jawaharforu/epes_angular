@@ -1,0 +1,259 @@
+.knowledge-img img  {
+  width: 100%;
+  max-height: 360px;
+}
+
+.about-us-banner{
+  background-image: url('../../../assets/img/banner_ab.jpg');
+  height: 412px;
+  background-size: cover;
+}
+
+.banner-heading {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  left: 0;
+  bottom: 90px;
+}
+
+.banner-heading p {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.data-sec h3 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+}
+
+.data-sec p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.data-sec {
+  padding: 40px 0px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.data-sec p:after {
+  content: "";
+  width: 200px;
+  height: 4px;
+  background-color: #FFA500;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  right: 0;
+  margin: 0 auto;
+}
+
+.sub-data-sec p {
+  font-size: 15px;
+  text-align: center;
+}
+
+.our-principles h3, .Customer-say h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 15px 0px;
+}
+
+.sub-principles h4 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 70px;
+}
+
+.sub-principles p {
+  font-size: 12px;
+  line-height: 24px;
+  padding: 0px 10px;
+}
+
+.sub-principles {
+  text-align: center;
+  max-width: 22%;
+  margin: 0px 12px;
+  box-shadow: 0px 0px 5px #ccc;
+  background-color: #ffff;
+}
+
+.sub-principles h4:after {
+  content: "\f058";
+  font-family: fontawesome;
+  font-size: 36px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  color: #43B64A;
+}
+
+.our-principles {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.our-bg {
+  background-color:#cccccc40;
+  padding-bottom: 40px;
+}
+
+.knowledge-img {
+  padding: 0;
+}
+
+.knowledge-dec h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.knowledge-dec> p {
+  font-size: 16px;
+}
+.passage p {
+  font-size: 12px;
+  text-indent: 50px;
+  line-height: 20px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.knowledge-dec {
+  padding-left: 60px;
+  padding-top: 60px;
+}
+
+.Customer-say p {
+  font-size: 15px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Customer-say h3 {
+  padding-bottom: 8px !important;
+  margin-bottom: 0;
+}
+
+.Customer-say {
+  padding: 20px 0px;
+}
+
+.Product-Tour-btn button {
+  padding: 8px 50px;
+  background-color: #FFA500 !important;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+
+.video-block iframe {
+  position: relative;
+  top: 10px;
+  margin-top: 0;
+  box-shadow: 3px 5px 6px #666;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 300px;
+}
+
+.video-block-sub {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width:767px){
+
+  .banner-heading h3 {
+      font-size: 20px;
+  }
+
+  .data-sec[_ngcontent-c2] {
+      padding: 15px 0px;
+      position: relative;
+  }
+
+  .banner-heading[_ngcontent-c2] p[_ngcontent-c2] {
+      width: 100%;
+  }
+
+  .data-sec[_ngcontent-c2] p[_ngcontent-c2] {
+      font-size: 15px;
+ }
+
+ .data-sec[_ngcontent-c2] h3[_ngcontent-c2] {
+  font-size: 18px;
+ }
+
+ .sub-data-sec {
+  padding: 0;
+ }
+
+ .sub-data-sec[_ngcontent-c2] p[_ngcontent-c2] {
+  font-size: 12px;
+  text-align: justify;
+}
+
+.sub-principles[_ngcontent-c2] {
+  max-width: initial;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.knowledge-dec[_ngcontent-c2] h3[_ngcontent-c2] {
+  font-size: 18px;
+}
+
+.knowledge-dec[_ngcontent-c2] {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.passage[_ngcontent-c2] p[_ngcontent-c2] {
+  font-size: 12px;
+  text-indent: unset;
+  text-align: justify;
+}
+
+.our-principles[_ngcontent-c2] h3[_ngcontent-c2], .Customer-say[_ngcontent-c2] h3[_ngcontent-c2] {
+  font-size: 18px;
+  padding: 0px 0px;
+}
+
+.Customer-say[_ngcontent-c2] p[_ngcontent-c2] {
+  font-size: 12px;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.video-block-sub[_ngcontent-c2] {
+  width: 100%;
+  margin: 0;
+}
+
+.video-block {
+  padding: 0;
+}
+
+
+
+}
+
+@media only screen and (min-width:767px) and (max-width:1024px){
+  .sub-principles[_ngcontent-c2] {
+      max-width: 23%;
+      margin: 0px 5px;
+      padding: 0;
+  }
+}

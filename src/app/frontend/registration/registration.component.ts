@@ -36,9 +36,12 @@ export class RegistrationComponent implements OnInit {
   ];
 
   no_of_employees: any[] = [
-    {id:1, employeesCount: 10},
-    {id:2, employeesCount: 20},
-    {id:3, employeesCount: 30}
+    {id:1, employeesCount: '10-50'},
+    {id:2, employeesCount: '50-100'},
+    {id:3, employeesCount: '100-500'},
+    {id:3, employeesCount: '500-1000'},
+    {id:3, employeesCount: '1000-5000'},
+    {id:3, employeesCount: '5000 above'}
   ];
 
   country_list: any[] = [
@@ -60,7 +63,8 @@ export class RegistrationComponent implements OnInit {
     {id:3, cityName: 'Mysore'},
     {id:4, cityName: 'Raichur'},
   ];
-  
+
+
   constructor() { }
 
   ngOnInit() {

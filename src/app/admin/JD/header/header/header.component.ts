@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
       return false;
     }
     let field;
-    if (!this._validationsService.isEmail(this.headerid)) {
+    if (!this._validationsService.isEmpty(this.headerid)) {
       field = {
         headername: this.headername,
         description: this.description,

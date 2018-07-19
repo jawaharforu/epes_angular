@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
-  
+
 .nav_bd_poll_voted img {
     width: 160px;
     margin: 0 auto;
@@ -17,9 +17,10 @@ div#app {
 }
 
 .login_all_poll {
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     border-radius: 50px;
     padding: 0px 10px;
+    background: #fdb827;
 }
 
 li.nav-item {
@@ -27,7 +28,7 @@ li.nav-item {
     margin: 0px 10px;
 }
 
-.navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link, 
+.navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link,
 .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
     color: #fff ;
     font-size: 14px;
@@ -330,7 +331,7 @@ p.per_ad {
     position: absolute;
     left: 28px;
     font-family: fontawesome;
-}   
+}
 
 .product_bg1 {
     background-image: url('assets/img/price-1.jpg');
@@ -517,14 +518,14 @@ p.per_ad {
 
 .footer_log img{
     width: 140px;
-   
+
 }
 
 .footer-head {
     display: flex;
     padding-top: 25px;
     border-bottom: 1px solid #fff;
-    
+
     padding-bottom: 20px;
 }
 
@@ -566,7 +567,7 @@ p.per_ad {
 }
 .contact-info{
     display: flex;
-    
+
 }
 
 .contact.detail ul {
@@ -697,48 +698,49 @@ p.per_ad {
         width: 100px;
         margin: 0;
     }
-    
+
     .navbar.navbar-light .navbar-toggler {
         background-color: #ffffffd9;
     }
-    
+
     div#app {
         border-bottom: 1px solid #fff;
         padding: 0;
     }
-    
+
     div#navbarNavDropdown {
         padding: 12px 0px;
         margin: 4px 0px;
         margin-bottom: 5px;
     }
-    
+
     li.nav-item {
         font-size: 13px;
         margin: 0px 10px;
         border-bottom: 1px solid #fff;
     }
-    
+
     .login_all_poll {
         border: 1px solid #ccc;
         border-radius: 50px;
         padding: 0px 10px;
         margin-top: 5px !important;
     }
-    
+
     nav.navbar.navbar-expand-lg.navbar-light.bg-faded.nav_bd_poll_voted.container {
-        box-shadow: none;
+       box-shadow: none;
         background-color: #0F1336;
         z-index: 1;
+
     }
-    
-    
-    
+
+
+
     #video {
         margin-top: 0;
         display: none;
     }
-    
+
     #ep_banner {
         background-image: url('../src/assets/img/banner5.jpg');
         height: 180px;
@@ -748,7 +750,7 @@ p.per_ad {
         position: relative;
         z-index: -1;
     }
-    
+
     #hed1 {
         position: absolute;
         top: 16%;
@@ -756,21 +758,21 @@ p.per_ad {
         right: 0px;
         bottom: 0;
     }
-    
+
     #hed1 h2 {
         color: #000;
         font-weight: 400;
         font-size: 13px;
         margin-bottom: 0;
     }
-    
+
     #hed1 h3 {
         font-size: 15px;
         font-weight: 600;
         color: orange;
         margin-bottom: 0;
     }
-    
+
     #hed1 p {
         color: #fff;
         margin-top: 0;
@@ -778,7 +780,7 @@ p.per_ad {
         font-weight: 400;
         margin-bottom: 0;
     }
-    
+
     #hed1 a {
         background-color: #249AB8;
         color: #fff;
@@ -788,7 +790,7 @@ p.per_ad {
         border-radius: 5px;
         box-shadow: 3px 0px 5px #555;
     }
-    
+
     .our_pf h3:after {
         content: "";
         position: absolute;
@@ -801,7 +803,7 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
     .feaie_dtl {
         margin-top: 15px;
         font-size: 13px;
@@ -810,17 +812,17 @@ p.per_ad {
         padding: 0px 10px;
         text-align: justify !important;
     }
-    
+
     .feature_imgs, .feature_imgs2 {
         display: block;
         margin-bottom: 0;
     }
-    
+
     #see_all_feature {
         text-align: center;
         margin: 25px 0px;
     }
-    
+
     #see_all_feature a {
         background-color: #249AB8;
         color: #fff;
@@ -830,11 +832,11 @@ p.per_ad {
         font-weight: 400;
         box-shadow: 3px 0px 5px #555;
     }
-    
+
     #see_all_feature a:before, #see_all_feature a:after {
        display: none;
     }
-    
+
     .our_pf p:nth-child(1) {
         color: #000;
         font-size: 12px;
@@ -842,13 +844,13 @@ p.per_ad {
         font-weight: 400;
         margin-top: 0px;
     }
-    
+
     .our_pf h3 {
         color: #000;
         font-size: 20px;
         font-weight: 400;
     }
-    
+
     #our_prd_fet .our_pf h3:after {
         content: "";
         position: absolute;
@@ -862,21 +864,21 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
     #accordian {
         position: relative;
     }
-    
+
     .our_pf_accor .row {
         width: 100%;
         margin: 0;
     }
-    
+
     #accordian .row {
         position: inherit;
         max-width: 100%;
     }
-    
+
     #voluptatem {
         background-image: url('../src/assets/img/product-features.jpg');
         height: 157px;
@@ -884,7 +886,7 @@ p.per_ad {
         background-size: cover;
         margin-top: 10px;
     }
-    
+
     .vp_adjust {
         position: absolute;
         top: 0;
@@ -892,14 +894,14 @@ p.per_ad {
         left: 0;
         right: 0;
     }
-    
+
     .icons {
         display: flex;
         text-align: left;
         width: 100%;
         margin: 0;
     }
-    
+
     .img1, .img2, .img3 {
         float: left;
         border: 1px solid #fff;
@@ -907,19 +909,19 @@ p.per_ad {
         padding: 10px;
         margin-top: 10px;
     }
-    
+
     .img1 img, .img2 img, .img3 img {
         width: 35px;
         height: 35px;
     }
-    
+
     .our_pf1 h3 {
         color: #fff;
         font-size: 15px;
         font-weight: 400;
         margin-bottom: 0;
     }
-    
+
     .our_pf1 h3:after {
         content: "";
         position: absolute;
@@ -932,14 +934,14 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
     .icons span {
         color: #fff;
         font-size: 14px;
         font-weight: 600;
         margin-left: 13px;
     }
-    
+
     .our_pf1 p:nth-child(1) {
         color: #fff;
         font-size: 14px;
@@ -947,7 +949,7 @@ p.per_ad {
         font-weight: 400;
         margin-top: 0px;
     }
-    
+
     .icons p {
         color: #fff;
         margin-top: 0px;
@@ -957,32 +959,32 @@ p.per_ad {
         text-align: left;
         transform: translate(0);
     }
-    
+
     .our_testi {
         padding: 0px;
     }
-    
+
     .our_testimoials {
         display: block;
         padding-right: 15px;
     }
-    
+
     .our_testi2 {
        margin-top: 0px;
         padding: 0;
         margin-bottom: 10px;
         height: 370px;
-       
+
     }
-    
+
     .our_testi2 .carousel {
         padding: 0;
     }
-    
+
     .crl-content p {
         font-size: 12px;
     }
-    
+
     .our_testi h3:after {
         content: "";
         position: absolute;
@@ -994,23 +996,23 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
     .our_testi p {
         font-size: 12px;
     }
-    
+
     .our_testi h3 {
         color: #000;
         font-size: 21px;
         font-weight: 400;
         margin-top: 15px;
     }
-    
+
     .our_testi2 h3 {
         margin-top: 0;
-       
+
     }
-    
+
     .our_testi2 h3:after {
         content: "";
         position: absolute;
@@ -1023,25 +1025,25 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
     .footer_log img {
         width: 60px;
     }
-    
+
     .footer-head h5 {
         color: #fff;
         font-size: 10px;
         font-weight: 600;
         margin-top: 0px;
     }
-    
+
     .footer-head {
         display: flex;
         padding-top: 16px;
         border-bottom: 1px solid #fff;
         padding-bottom: 10px;
     }
-    
+
     .details {
         color: #FEFEFE;
         font-size: 12px;
@@ -1050,37 +1052,37 @@ p.per_ad {
         margin-top: 12px;
         font-weight: 400;
     }
-    
+
     .detail ul {
         list-style: none;
         padding: 0;
     }
-    
+
     .contact-info {
         display: flex;
         padding: 0;
     }
-    
+
     .cpy_ryt {
         display: block;
         font-size: 15px;
         font-weight: 600;
         padding: 0;
     }
-    
+
     .cpy_ryt p {
         margin-top: 5px;
         color: #fff;
         padding-top: 10px;
         margin-bottom: 0;
     }
-    
+
     .cpy-ryt-hlf {
         text-align: left;
         padding: 0;
         padding-bottom: 10px;
     }
-    
+
     /*--------------------PRODUCT FEATURE RESPONSIVE-----------*/
     .product_features #ep_banner {
         //background-image: url('../src/assets/img/crop1.png');
@@ -1091,65 +1093,65 @@ p.per_ad {
         position: relative;
         z-index: -1;
     }
-    
+
     #banner_title {
         position: absolute;
         top: 82px !important;
         left: 0;
         right: 0;
     }
-    
+
     .bnr_ttl h3 {
         color: #fff;
         font-size: 25px !important;
         font-weight: 600;
     }
-    
+
     .bnr_ttl p {
         color: #fff;
         font-weight: 600;
         margin-bottom: 0;
         margin-top: -5px;
     }
-    
+
     .product_features .our_pf h3:after{
         display: none;
     }
-    
+
     .product_f .feaie_dtl {
-        
+
         padding: 0px 0px !important;
     }
-    
+
     #accordian_pf .row {
         margin: 0 auto;
         max-width: 80% !important;
     }
-    
+
     .product_feature {
          margin-bottom: 10px !important;
     }
-    
-    
+
+
     }
-    
+
     /*--------------------------------PRODUCT-FEATURES PAGE2-----------*/
-    
+
     .product_features #footer {
         margin-top: 10px;
     }
-    
+
     .page2 {
         background-color: #323a45;
         padding: 20px;
     }
-    
+
     .product_feature {
         padding-top: 0;
         max-width: 234px;
         height: 600px;
     }
-    
+
     .page2 h5 {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -1157,16 +1159,16 @@ p.per_ad {
         font-size: 20px;
         font-weight: 300;
     }
-    
+
     .product_feature p, .product_feature span {
         color: #777;
     }
-    
+
     .rates {
         background-color: #F0F0F0;
         padding: 10px 0px;
     }
-    
+
     .fold_pge_pf ul {
         text-align: left;
         font-size: 14px;
@@ -1175,14 +1177,14 @@ p.per_ad {
         color: #555;
         min-height: 200px;
     }
-    
+
     .fold_pge_pf ul li:before {
         content: "\f138";
         position: absolute;
         left: 28px;
         font-family: fontawesome;
     }
-    
+
     .fold_pge_pf h5 {
         font-size: 16px;
         font-weight: 400;
@@ -1191,7 +1193,7 @@ p.per_ad {
         border-bottom: none;
         margin-top: 15px;
     }
-    
+
     .bye_nw a {
         color: #fff;
         background-color: #323a45;
@@ -1199,7 +1201,7 @@ p.per_ad {
         padding: 10px 30px;
         border-radius: 5px;
     }
-    
+
     .orange_btn a {
         background-color: #F38E00;
         color: #fff;
@@ -1208,19 +1210,19 @@ p.per_ad {
         padding: 10px 70px;
         border-radius: 5px;
     }
-    
+
     .orange_btn {
         text-align: center;
         margin: 30px 0px;
     }
-    
+
     #accordian_pf .row {
         margin: 0 auto;
         max-width: 75%;
     }
-    
-    
-    
+
+
+
     .note {
         width: 75%;
         margin: 0 auto;
@@ -1228,7 +1230,7 @@ p.per_ad {
         font-size: 13px;
         color: #777;
     }
-    
+
     .product_f p:nth-child(1) {
         color: #777;
         font-size: 14px;
@@ -1236,7 +1238,7 @@ p.per_ad {
         font-weight: 400;
         margin-top: 35px;
     }
-    
+
     .product_f .feaie_dtl {
         margin-top: 25px;
         font-size: 15px;
@@ -1244,7 +1246,7 @@ p.per_ad {
         color: #777;
         padding: 0px 50px;
     }
-    
+
     .product_features #ep_banner {
         background-image: url('../src/assets/img/crop1.png');
         height: 449px;
@@ -1254,53 +1256,54 @@ p.per_ad {
         position: relative;
         z-index: -1;
     }
-    
+
     #banner_title {
         position: absolute;
         top: 35%;
         left: 0;
         right: 0;
     }
-    
+
     .bnr_ttl h3 {
         color: #fff;
         font-size: 40px;
         font-weight: 600;
     }
-    
+
     .bnr_ttl p {
         color: #fff;
         font-weight: 600;
         margin-bottom: 0;
         margin-top: -5px;
     }
-    
+
     .feature_imgs img:hover, .feature_imgs2 img:hover {
         transform: scale(1.09);
     }
-    
+
     .login_all_poll:hover {
-        background-color: #249ab8;
+
+      background: #fdb827;
         transition: all ease 0.5s;
     }
-    
+
     @media only screen and (max-width: 1024px) and (min-width: 768px)  {
-    
+
     .nav_bd_poll_voted img {
         width: 140px;
         margin: 0;
     }
-    
+
     .navbar.navbar-light .navbar-toggler {
         background-color: #ffffffd9;
     }
-    
+
     nav.navbar.navbar-expand-lg.navbar-light.bg-faded.nav_bd_poll_voted.container {
         box-shadow: none;
         background-color: #0F1336;
         z-index: 1;
     }
-    
+
     .product_features #ep_banner {
         background-image: url('../src/assets/img/crop1.png');
         height: 256px;
@@ -1310,24 +1313,24 @@ p.per_ad {
         position: relative;
         z-index: -1;
     }
-    
+
     #banner_title {
         position: absolute;
         left: 0;
         right: 0;
     }
-    
+
     .product_feature {
         padding-top: 0;
         max-width: 189px;
         height: 600px;
     }
-    
+
     #accordian_pf .row {
         margin: 0;
         max-width: 100%;
     }
-    
+
     .our_pf h3:after {
         content: "";
         position: absolute;
@@ -1341,23 +1344,23 @@ p.per_ad {
         margin: 0 auto;
         border-radius: 5px;
     }
-    
+
    /* #ep_banner {
         margin-top: 0px !important;
-        
+
     }*/
-    
+
     #hed1 {
         position: absolute;
         top: 10%;
         left: 0px;
         right: 0px;
     }
-    
+
     #video {
         margin-top: -420px;
     }
-    
+
     #accordian .row {
         position: absolute;
         top: 0;
@@ -1365,7 +1368,7 @@ p.per_ad {
         left: 3%;
         right: 0;
     }
-    
+
     .product_fet {
         max-width: 222px;
         border: 1px solid #ccc;
@@ -1378,12 +1381,12 @@ p.per_ad {
         height: 252px;
         overflow: hidden;
     }
-    
+
     .our_pf_accor .row {
         margin: 0;
         max-width: 100%;
     }
-    
+
     .vp_adjust {
         position: absolute;
         top: 5%;
@@ -1391,11 +1394,11 @@ p.per_ad {
         left: 0;
         right: 0;
     }
-    
+
     #voluptatem {
         height: 345px;
     }
-    
+
     .vc_column-inner .bs-button-layout-bears_button--popup-video {
         position: absolute;
         top: 34%;
@@ -1409,9 +1412,9 @@ p.per_ad {
         z-index: 9;
         font-size: 80px;
     }
-    
-    
-    
+
+
+
     }
 
     /*-----------------------FAQ-------------------*/
@@ -1457,7 +1460,7 @@ p.per_ad {
 .sed_unde input::placeholder {
     color: #777;
     font-size: 13px;
-    
+
 }
 .sed_unde .fa-search {
     color: #555;
@@ -1754,7 +1757,7 @@ margin-top: 30px;
 }
 
 .fa-map-marker:before, .fa-phone:before, .fa-envelope:before {
-   
+
     padding-right: 10px;
 }
 .navbar{
@@ -1763,7 +1766,7 @@ margin-top: 30px;
 @media only screen and (max-width: 1024px) and (min-width: 768px){
     #hed1 {
         top: 25%;
-    } 
+    }
     .regtitle{
         top: 10% !important;
     }
@@ -1850,7 +1853,7 @@ margin-top: 30px;
         width: 100%;
     }
     .our_testi2 {
-         margin-top: 0px; 
+         margin-top: 0px;
         height: 335px;
         margin: 0px;
         margin-left: -15px;
@@ -1974,7 +1977,7 @@ margin-top: 30px;
     .form_detail form select, .form_detail form input{
         width: 100%;
         margin: 0px auto;
-        margin-top:10px; 
+        margin-top:10px;
         float: none;
         height: 40px;
     }
@@ -2000,7 +2003,7 @@ margin-top: 30px;
     }
     #hed1 {
         position: absolute;
-         top: 35%; 
+         top: 35%;
         left: 0px;
         right: 0px;
         bottom: 0;
@@ -2070,8 +2073,12 @@ margin-top: 30px;
 }
 
 nav.navbar {
-    box-shadow: none;
+   /* box-shadow: none;
     border-bottom: 1px solid #ccc;
+    */
+    border-bottom: 1px solid #ccc;
+    background: #ffffffab;
+    box-shadow: 0px 2px 3px #1b1b1b;
 }
 #hed1 h2, #hed1 h3, #hed1 p{
     padding-left: 15px;
@@ -2166,7 +2173,7 @@ button.video-btn {
     .our_pf_accor .row{
         width:100%;
     }
-    .navbar.navbar-light .breadcrumb .nav-item .nav-link, 
+    .navbar.navbar-light .breadcrumb .nav-item .nav-link,
     .navbar.navbar-light .navbar-nav .nav-item .nav-link,
      .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
         color: #fff;
@@ -2239,7 +2246,7 @@ ul.nav.classic-tabs.tabs-new {
     top: 11px;
     position: relative;
 }
-.classic-tabs.tabs-new li a:active { 
+.classic-tabs.tabs-new li a:active {
     background: none;
 }
 .tabs-new .accordion .card .card-header {
@@ -2274,19 +2281,19 @@ ul.nav.classic-tabs.tabs-new {
 }
 .blog-icon::before{
 
-    background-image : url("src/assets/img/blog.png");
+    background-image : url("./assets/img/blog.png");
 }
 .roadmap-icon::before{
 
-    background-image : url("src/assets/img/road-map.png");
+    background-image : url("./assets/img/road-map.png");
 }
 .whitepaper-icon::before{
 
-    background-image : url("src/assets/img/white-paper.png");
+    background-image : url("./assets/img/white-paper.png");
 }
 .pressrelease-icon::before{
 
-    background-image : url("src/assets/img/press.png");
+    background-image : url("./assets/img/press.png");
 }
 a.nav-link.waves-light.active:after {
     width: 10px;
