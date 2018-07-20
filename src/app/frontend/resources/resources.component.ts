@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../../admin/frontend/blog/services/blog.service';
+import { ProductroadmapService } from '../../admin/frontend/productroadmap/services/productroadmap.service';
+import { PressreleaseService } from '../../admin/frontend/pressrelease/pressrelease.service';
 
 @Component({
   selector: 'app-resources',
@@ -6,36 +9,71 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resources.component.scss']
 })
 export class ResourcesComponent implements OnInit {
-  public itemsList:Object[] = [
-    {
-        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting  – June 2018 ',
-        description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
-    },
-     {
-        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting – April 2018 ',
-        description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
-    },
-     {
-        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting – March 2018 ',
-        description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
-    },
-    {
-       title: 'Lorem Ipsum is simply dummy text of the printing and typesetting – February 2018 ',
-       description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
-   },
-   {
-      title: 'Lorem Ipsum is simply dummy text of the printing and typesetting – November 2017 ',
-      description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
-  },
-  {
-     title: 'Lorem Ipsum is simply dummy text of the printing and typesetting – September 2017 ',
-     description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
- }
-];
-  constructor() { }
+ 
+    public blogList: any;
+    public productroadmapList: any;
+    public pressreleaseList: any;
 
-  ngOnInit() {
-  }
+    constructor(
+        private blogService: BlogService,
+        private productroadmapService: ProductroadmapService,
+        private pressreleaseService: PressreleaseService
+    ) { }
+
+    ngOnInit() {
+        this.getBlog();
+        this.getProductroadmap();
+        this.getPressrelease();
+    }
+
+    getBlog(){
+    this.blogService.getBlogByStatus()
+    .subscribe(res => {
+        this.blogList = res.data;
+        console.log(res.data);
+        /*let j = 0;
+        for (const prop of res.data) {
+        if ( j === 0 ) {
+            this.getFaqByCategory(prop._id);
+        }
+        j++;
+        }*/ 
+    });
+    }
+
+    getPressrelease(){
+        this.pressreleaseService.getPressReleaseByStatus()
+        .subscribe(res => {
+        this.pressreleaseList = res.data;
+        console.log(res.data);
+        /*let j = 0;
+        for (const prop of res.data) {
+            if ( j === 0 ) {
+            this.getFaqByCategory(prop._id);
+            }
+            j++;
+        }*/ 
+        });
+    }
+
+    getProductroadmap(){
+        this.productroadmapService.getProductroadmapByStatus()
+        .subscribe(res => {
+        this.productroadmapList = res.data;
+        console.log(res.data);
+        /*let j = 0;
+        for (const prop of res.data) {
+            if ( j === 0 ) {
+            this.getFaqByCategory(prop._id);
+            }
+            j++;
+        }*/ 
+        });
+    }
+
+    whitepaperForm(){
+
+    }
 
 }
 

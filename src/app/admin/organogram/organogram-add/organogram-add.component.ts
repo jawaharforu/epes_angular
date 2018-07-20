@@ -108,7 +108,7 @@ export class OrganogramAddComponent implements OnInit {
         this.name = '';
         this.department = '';
         this.designation = '';
-        this.parentid = undefined;
+        this.parentid = (this.parentid !== '') ? this.parentid : undefined;
         this.organogramid = '';
         this.getOrganogramList(this.parent);
       } else {

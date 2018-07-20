@@ -48,6 +48,18 @@ const routes: Routes = [
       {
         path: 'faq',
         loadChildren: './frontend/faq/faq.module#FaqModule',
+      },
+      {
+        path: 'blog',
+        loadChildren: './frontend/blog/blog.module#BlogModule',
+      },
+      {
+        path: 'roadmap',
+        loadChildren: './frontend/productroadmap/productroadmap.module#ProductroadmapModule',
+      },
+      {
+        path: 'press-release',
+        loadChildren: './frontend/pressrelease/pressrelease.module#PressreleaseModule',
       }
     ]
    }

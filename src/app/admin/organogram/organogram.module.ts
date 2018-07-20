@@ -7,11 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { OrganogramComponent } from './organogram.component';
 import { OrganogramAddComponent } from './organogram-add/organogram-add.component';
+import { OrgChartModule } from 'ng-org-chart';
 
 const router: Routes = [
   { path : '', component : OrganogramAddComponent  },
   { path : ':organogramid', component : OrganogramAddComponent  },
-  { path : 'view', component : OrganogramComponent  },
+  { path : 'structure/view', component : OrganogramComponent  },
   { path : 'edit/:organogramid/:edit', component : OrganogramAddComponent  },
 ];
 
@@ -22,7 +23,8 @@ const router: Routes = [
     RouterModule.forChild(router),
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    OrgChartModule
   ],
   declarations: [OrganogramComponent, OrganogramAddComponent]
 })

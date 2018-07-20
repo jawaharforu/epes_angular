@@ -121,10 +121,10 @@ ul.product_roadmap {
     width: 100%;
 }
 .white-paper-title{
-    color: #2196f3;
-    font-size: 21px;
+    color: #000;
+    font-size: 15px;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 600;
 }
 .resources-text{
     font-size: 14px;
@@ -144,11 +144,8 @@ ul.resources_list {
 }
 .whitepaper-form label, .whitepaper-form input::placeholder{
     font-size: 12px;
-    color: #333;
-    font-weight: #666;
-}
-.whitepaper-form input::placeholder{
     color: #999;
+    font-weight: #666;
 }
 input.form-control {
     height: 35px;
@@ -156,15 +153,7 @@ input.form-control {
     max-width: 380px;
 }
 .news-image {
-    margin-bottom: 10px;
-    background: #000;
-}
-.single-new{
-    margin-bottom: 40px;
-}
-.single-new:hover img {
-  opacity: 0.7;
-  cursor: pointer;
+    margin-bottom: 25px;
 }
 .news-title {
     color: #000;
@@ -188,45 +177,13 @@ input.form-control {
 .single-new:hover ~ .news-title{
     color: #03c5ff;
 }
-.white-paperimg{
-    float: right;
-    max-width: 300px;
-}
-#sendWhitepaper{
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 15px;
-    line-height: 2.9;
-    padding: 0 1.3em;
-    border-radius: 5px;
-    letter-spacing: 0px;
-    background: #fdb827;
-    color: #fff;
-    border: none;
-}
 @media only screen and (max-width: 1023px){
     .image:before{
         width: 87%;
     }
 }
-@media only screen and (max-width: 768px){
-    .white-paper-title{
-        font-size: 17px;
-    }
-    .white-paperimg {
-        float: right;
-        max-width: 100%;
-    }
-}
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 1023px){
     .image:before{
         width: 91%;
-    }
-    .feature_imgs .col-sm-4 {
-        margin: 15px;
-        margin-left: 0;
-    }
-    .col-md-6.col-sm-12{
-        margin-bottom: 20px;
     }
 }

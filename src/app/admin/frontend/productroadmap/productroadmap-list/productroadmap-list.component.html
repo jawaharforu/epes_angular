@@ -1,0 +1,36 @@
+<div class="card mt-5 mb-5">
+  <div class="card-body">
+    <p class="h4 text-center py-4">Product Roadmap List</p>
+    <a [routerLink]="['/admin/roadmap']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>
+      <!--Table-->
+      <table *ngIf="roadmapList" datatable class="table table-hover table-responsive-md table-fixed">
+          <!--Table head-->
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Action</th> 
+              </tr>
+          </thead>
+          <!--Table head-->
+          <!--Table body-->
+          <tbody>
+              <tr *ngFor="let c of roadmapList; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{c.name}}</td>
+                  <td><div class="form-group">
+                      <input type="checkbox" class="filled-in" id="checkbox{{c._id}}" [checked]="c.status" (change)="updateStatus($event.target.checked,c)">
+                      <label for="checkbox{{c._id}}"></label>
+                  </div></td>
+                  <td>
+                      <button type="button" (click)="editProductroadmap(c)" class="btn btn-primary waves-light" mdbRippleRadius>Edit <i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
+                      &nbsp;
+                      <button type="button" (click)="deleteProductroadmap(c._id)" class="btn btn-danger waves-light" mdbRippleRadius>Delete <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+              </tr>
+          </tbody>
+          <!--Table body-->
+      </table>
+      <!--Table-->
+  </div>
+</div>

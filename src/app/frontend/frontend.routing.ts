@@ -22,7 +22,8 @@ const routes: Routes = [
       { path: 'partner-with-us', loadChildren: './partner-with-us/partner-with-us.module#PartnerWithUsModule' },
       { path: 'about-us', loadChildren: './about-us/about-us.module#AboutUsModule' },
       { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' },
-      { path: 'mdmodel', component: MdmodelComponent}
+      { path: 'login', loadChildren: './login/login.module#LoginModule' },
+      { path: 'mdmodel', component: MdmodelComponent }
     ]
    }
 ];
