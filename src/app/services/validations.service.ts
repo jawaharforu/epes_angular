@@ -25,11 +25,36 @@ export class ValidationsService {
   }
 
   isMobile(mobile: any) {
-    const mob = /[0-9]+/;
+    const mob = /[0-9]+/;/[^0-9]/g
     if (!mob.test(mobile)) {
       return 'Mobile field shoud have only number';
     } else if (mobile.length !== 10) {
-      return 'Mobile field shoud contain only 10 numbers';
+      return 'Mobile field should contain only 10 numbers';
+    } else {
+      return true;
+    }
+  }
+
+  isDigit(digit: any) {
+    const dig = /[^0-9]/g;
+    if (!dig.test(digit)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  isMinimum(mobile: any) {
+    if (mobile.length >= 10) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  isMaximum(mobile: any) {
+    if (mobile.length <= 13) {
+      return false;
     } else {
       return true;
     }
