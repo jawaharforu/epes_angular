@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
   public blogid: String;
   public name: String;
   public description: String;
-
+ 
   constructor(
     private activatedRoute: ActivatedRoute,
     private _commonService: CommonService,

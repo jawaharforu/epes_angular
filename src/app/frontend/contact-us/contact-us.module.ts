@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { ContactUsComponent } from './contact-us.component';
+import { FormsModule } from '../../../../node_modules/@angular/forms';
 
 const router: Routes = [
   { path : '', component : ContactUsComponent  }
@@ -13,7 +14,8 @@ const router: Routes = [
   imports: [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
-    RouterModule.forChild(router)
+    RouterModule.forChild(router),
+    FormsModule
   ],
   declarations: [ContactUsComponent]
 })

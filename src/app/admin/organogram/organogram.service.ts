@@ -57,11 +57,19 @@ export class OrganogramService {
     .pipe(map(res => res.json()));
   }
 
-  getOrganogramChild(organogramid: any) {
+  getOrganogramChild(uniqueid: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/organograms/getchild/${organogramid}`, {headers: headers})
+    return this.http.get(`${this.link}/organograms/getchild/${uniqueid}`, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
+
+  getOrganogramStructure() {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/organograms/getfull/list`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

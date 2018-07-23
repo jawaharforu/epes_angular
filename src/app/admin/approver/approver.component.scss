@@ -1,0 +1,145 @@
+p.h4.text-center.py-4.admin-title {
+    margin: 0px;
+    color: #54afc6;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px !important;
+    background: #f9f6f6;
+    padding-left: 15px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.add-approver label{
+    font-size: 13px;
+    color: #000 !important;
+}
+.btn-submit{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    float: right;
+    border:none !important;
+}
+.btn-skip{
+    background-color: #54afc6 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    float: left;
+    border:none !important;
+}
+label{
+    font-size: 13px;
+    color: #000 !important;
+}
+table.table th, table.table td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.col-no{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 51px;
+    border: 1px solid #ccc;
+}
+.col-name{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 51px;
+    border: 1px solid #ccc;
+}
+.col-email{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 51px;
+    border: 1px solid #ccc;
+
+}
+.col-designation{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 51px;
+    border: 1px solid #ccc;
+
+}
+.col-action {
+    border: 1px solid #ccc;
+}
+.label-name, .label-no, .label-status, .label-action, .label-email, .label-designation  {
+    font-size: 13px;
+    color: #666;
+    font-weight: 300;
+    border: 1px solid #ccc;
+    padding-top: 1.1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.mdb-color.darken-3 {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+}
+
+
+button.btn.btn-primary.waves-light.btn-edit {
+    background-color: #5bbc6d !important;
+    font-size: 13px;
+    padding: 5px 15px;
+    color: #fff !important;
+}
+button.btn.btn-danger.waves-light.btn-delete {
+    background-color: #b51717 !important;
+    font-size: 13px;
+    padding: 5px 15px;
+    color: #fff !important;
+}
+table.dataTable thead th{
+    border-bottom: 1px solid #dbe2e4;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #666;
+    font-size: 13px !important;
+}
+select#defaultFormCardDesiEx, input#defaultFormCardEmailEx,
+input#defaultFormCardNameEx {
+    font-size: 13px;
+}
+@media only screen and (max-width: 768px){
+    button.btn.btn-danger.waves-light.btn-delete,    
+    button.btn.btn-primary.waves-light.btn-edit{
+        padding: 6px 12px;
+        margin-top: 15px;
+
+    }
+}
+@media only screen and (max-width: 767px){
+    .btn-edit .fa , .btn-delete .fa {
+        display: none
+    }
+    button.btn.btn-danger.waves-light.btn-delete,
+     button.btn.btn-primary.waves-light.btn-edit {
+        padding: 6px 12px;
+        margin-top: 0px;
+    }
+    .col-name{
+        line-height: normal;
+        width: 60%;
+    }
+    table.table th, table.table td {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+        
+}

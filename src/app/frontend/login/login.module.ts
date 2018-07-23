@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { LoginComponent } from './login.component';
+import { FormsModule } from '../../../../node_modules/@angular/forms';
 
 const router: Routes = [
   { path : '', component : LoginComponent  }
@@ -13,7 +14,8 @@ const router: Routes = [
   imports: [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
-    RouterModule.forChild(router)
+    RouterModule.forChild(router),
+    FormsModule
   ],
   declarations: [LoginComponent]
 })

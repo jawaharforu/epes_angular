@@ -1,30 +1,33 @@
 <div class="row">
-  <div class="col-md-12 mt-5">
-    <!-- Card -->
-    <div class="card">
+  <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12">
+<!-- Card -->
+<div class="card">
 
         <!-- Card body -->
         <div class="card-body">
 
             <!-- Default form subscription -->
-            <form (ngSubmit)="faqForm()">
-                <p class="h4 text-center py-4">FAQ</p>
+            <form (ngSubmit)="faqForm()" class="add-faq">
+                <p class="h4 text-center py-4 admin-title">FAQ</p>
                 <input type="hidden" [(ngModel)]="faqid" name="faqid" />
+                <div class="form-group ">
                 <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Designation</label>
                 <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="designation">
                   <option value="" disabled>--Select Category--</option>
                   <option *ngFor="let s of faqcategoryList" [value]="s._id">{{ s.name }}</option>
                 </select>
-                <br>
+                </div>
+                <div class="form-group ">
                 <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Question</label>
                 <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question">
-                <br>
+                </div>
+                <div class="form-group ">
                 <div class="md-form">
                   <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="answer" name="answer"></textarea>
                   <label for="defaultFormCarddescEx">Answer</label>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary waves-light" mdbWavesEffect>Submit</button>
+                </div></div>
+                
+                <button type="submit" class="btn btn-primary waves-light btn-submit" mdbWavesEffect>Submit</button>
             </form>
             <!-- Default form subscription -->
 

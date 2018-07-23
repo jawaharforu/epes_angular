@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { ProductTourComponent } from './product-tour.component';
@@ -16,7 +17,8 @@ const router: Routes = [
   imports: [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
-    RouterModule.forChild(router)
+    RouterModule.forChild(router),
+    FormsModule
   ],
   declarations: [
     ProductTourComponent,

@@ -14,12 +14,13 @@ export class OrganogramAddComponent implements OnInit {
   public name: String;
   public department: String;
   public designation: String;
-  public parentid: any;
+  public parentid: Number = 0;
   public organogramid: String;
   public organogramList: any;
   public parentName: String;
   public parentDept: String;
-  public parent: String = 'parent';
+  public parent: Number = 0;
+  public uniqueid: Number = 1;
   public childCount: any[] = [];
 
   constructor(
@@ -34,13 +35,12 @@ export class OrganogramAddComponent implements OnInit {
       const edit = params['edit'];
       if (!this._validationsService.isEmpty(edit) && !this._validationsService.isEmpty(params['organogramid'])) {
         this.getOrganogramById(params['organogramid'], 'edit');
-        this.parent = params['organogramid'];
       } else if (!this._validationsService.isEmpty(params['organogramid'])) {
-        this.getOrganogramById(params['organogramid'], 'parent');
-        this.parent = params['organogramid'];
+        this.getOrganogramById(params['organogramid'], 0);
+      } else if (this._validationsService.isEmpty(params['organogramid'])) {
+        this.getOrganogramList(0);
       }
     });
-    this.getOrganogramList(this.parent);
   }
 
   getOrganogramById(organogramid: any, which: any) {
@@ -52,12 +52,15 @@ export class OrganogramAddComponent implements OnInit {
         this.designation = res.data.designation;
         this.parentid = res.data.parentid;
         this.organogramid = res.data._id;
+        this.uniqueid = res.data.uniqueid;
       } else {
         this.parentName = res.data.name;
         this.parentDept = res.data.department;
-        this.parentid = res.data._id;
+        this.parentid = res.data.uniqueid;
+        this.uniqueid = res.data.uniqueid;
         this.organogramid = '';
       }
+      this.getOrganogramList(res.data.uniqueid);
     });
   }
 
@@ -66,7 +69,7 @@ export class OrganogramAddComponent implements OnInit {
     .subscribe(res => {
       this.organogramList = res.data;
       for (const prop of res.data) {
-        this.getOrganogramChild(prop._id);
+        this.getOrganogramChild(prop.uniqueid);
       }
     });
   }
@@ -89,15 +92,17 @@ export class OrganogramAddComponent implements OnInit {
         name: this.name,
         department: this.department,
         designation: this.designation,
-        parentid: (this.parentid !== '') ? this.parentid : '',
-        organogramid: this.organogramid
+        parentid: this.parentid,
+        organogramid: this.organogramid,
+        uniqueid: this.uniqueid
       };
     } else {
       field = {
         name: this.name,
         department: this.department,
         designation: this.designation,
-        parentid: this.parentid
+        parentid: this.parentid,
+        uniqueid: this.uniqueid,
       };
     }
     this.organogramService.addOrganogram(field)
@@ -108,9 +113,9 @@ export class OrganogramAddComponent implements OnInit {
         this.name = '';
         this.department = '';
         this.designation = '';
-        this.parentid = (this.parentid !== '') ? this.parentid : undefined;
+        this.parentid = (this.parentid !== undefined) ? this.parentid : 0;
         this.organogramid = '';
-        this.getOrganogramList(this.parent);
+        this.getOrganogramList(this.parentid);
       } else {
         this._commonService.showMessage('error', res.msg);
       }
@@ -142,10 +147,10 @@ export class OrganogramAddComponent implements OnInit {
     });
   }
 
-  getOrganogramChild(organogramid: any) {
-    this.organogramService.getOrganogramChild(organogramid)
+  getOrganogramChild(uniqueid: any) {
+    this.organogramService.getOrganogramChild(uniqueid)
     .subscribe(res => {
-      this.childCount[organogramid] = res.data.length;
+      this.childCount[uniqueid] = res.data.length;
     });
   }
 

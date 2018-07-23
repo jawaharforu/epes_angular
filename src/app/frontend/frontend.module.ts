@@ -9,7 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { FooterTopComponent } from './footer/footer-top/footer-top.component';
 import { FooterBottomComponent } from './footer/footer-bottom/footer-bottom.component';
 import { FrontendComponent } from './frontend.component';
-import { MdmodelComponent } from './mdmodel/mdmodel.component';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { MdmodelComponent } from './mdmodel/mdmodel.component';
     FooterComponent,
     FooterTopComponent,
     FooterBottomComponent,
-    FrontendComponent,
-    MdmodelComponent
+    FrontendComponent
   ]
 })
 export class FrontendModule { }

@@ -1,3 +1,42 @@
 #slide-out {
   z-index: 99999;
 }
+
+.sidenav-bg.mask-strong {
+    background: #fff;
+}
+.admin-header-img{
+  width: 150px;
+  order: -1;
+  margin-left: 15px;
+}
+.admin-header-img img{
+    max-width: 100%;
+}
+
+.epes-admin-navbar-container{
+  order: 0;
+}
+.btn-wizard{
+  background: #54afc6;
+  padding: 10px 25px !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+.cercle-icon{
+  border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+}
+.cercle-icon i.fa{
+  margin-left: 0px;
+}
+.user-icon{
+  width: 40px;
+  float: left;
+  margin-right: 5px;
+}
+.user-icon img{
+  max-width: 100%;
+}

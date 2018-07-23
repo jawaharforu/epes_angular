@@ -1,7 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FrontendComponent } from './frontend.component';
-import { MdmodelComponent } from './mdmodel/mdmodel.component';
 
 const routes: Routes = [
   {
@@ -21,9 +20,7 @@ const routes: Routes = [
       { path: 'support-services', loadChildren: './support/support.module#SupportModule' },
       { path: 'partner-with-us', loadChildren: './partner-with-us/partner-with-us.module#PartnerWithUsModule' },
       { path: 'about-us', loadChildren: './about-us/about-us.module#AboutUsModule' },
-      { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' },
-      { path: 'login', loadChildren: './login/login.module#LoginModule' },
-      { path: 'mdmodel', component: MdmodelComponent }
+      { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' }
     ]
    }
 ];

@@ -60,6 +60,10 @@ const routes: Routes = [
       {
         path: 'press-release',
         loadChildren: './frontend/pressrelease/pressrelease.module#PressreleaseModule',
+      },
+      {
+        path: 'whitepaper',
+        loadChildren: './frontend/whitepaper/whitepaper.module#WhitepaperModule',
       }
     ]
    }

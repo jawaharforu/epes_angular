@@ -4,9 +4,13 @@
 }
 .login_main{
     padding: 0px 15px 0px 0px ;
+    background: url("../../../assets/img/bg-contact.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    color: aliceblue;
 }
 .form-container {
-    padding-top: 90px;
+    padding-top: 100px;
     height: 100%;
     padding-left: 0;
     width: 100%;
@@ -14,7 +18,7 @@
     position: relative;
 }
 .login-heading {
-    color: #000;
+    color: #fff;
     font-weight: 500;
     font-size: 20px;
 }
@@ -40,12 +44,37 @@ p {
     box-shadow: none;
 }
 img.logo_login {
-    width: 150px;
+   /* width: 150px;
     margin-top: 25px;
+    margin-left: 10%;*/
+
+    width: 170px;
+    margin-top: -25px;
     margin-left: 10%;
+    margin-bottom: 44px;
 }
 @media only screen and (max-width: 767px){
     .hidden-sm-down{
         display: none
     }
+}
+
+/*------logo-img-size setting---*/
+.login_image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sign-up-link {
+    color: #fff;
+    display: block;
+    padding-top: 10px;
+}
+
+#login-form {
+    margin-top: 30px;
+}
+
+.sign-up-link:hover {
+    text-decoration: underline;
 }

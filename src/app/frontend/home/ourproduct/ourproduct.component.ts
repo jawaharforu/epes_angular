@@ -23,6 +23,7 @@ export class OurproductComponent implements OnInit {
     this.productService.getProductByStatus()
     .subscribe(res => {
       this.productList = res.data;
+      console.log(this.productList);
     });
   }
 

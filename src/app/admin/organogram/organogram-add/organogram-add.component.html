@@ -64,7 +64,7 @@
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ o.name }}</td>
                 <td>{{ o.department }}</td>
-                <td>{{ childCount[o._id] }}</td>
+                <td>{{ childCount[o.uniqueid] }}</td>
                 <td>
                   <button type="button" (click)="editHeader(o)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
                   <button type="button" (click)="deleteHeader(o._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>

@@ -44,6 +44,16 @@ export class ValidationsService {
     }
   }
 
+  isPassword(digit: any) {
+    //const dig = /[^0-9]/g;
+    const regpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/g;
+    if (!regpassword.test(digit)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   isMinimum(mobile: any) {
     if (mobile.length >= 10) {
       return false;

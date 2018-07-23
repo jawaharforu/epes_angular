@@ -13,11 +13,34 @@
   <div class="col-md-6 col-sm-12">
     <h6 class="item-title"> Get in touch with us</h6>
     <p>Fill out this contact form and we will get back to you as soon as possible.</p>
-<form class="contact-form" id="contact-form">
-    <input  id="name" name="name" type="text"  class="form-control" placeholder="Name">
-    <input  id="email" name="email" type="email"  class="form-control" placeholder="Email">
-    <input  id="phone" name="phone" type="text"  class="form-control" placeholder="Phone Number">
-    <textarea  id="comment" name="comment"   class="form-control" placeholder="Comments"></textarea>
+<form class="contact-form" id="contact-form" (ngSubmit)="contactusForm()">
+    <input  id="name" name="name" type="text"  class="form-control" placeholder="Name" [(ngModel)]="name">
+    <input 
+      id="email" 
+      name="field_email" 
+      type="email" 
+      class="form-control waves-light" 
+      placeholder="Email"
+      mdbPopover="Please enter the official Email Address!"
+      placement="top"
+      mdbPopoverHeader="Email Address"
+      triggers="focus" 
+      mdbWavesEffect
+      [(ngModel)]="field_email"
+    >
+    <input 
+      id="phone" 
+      name="field_phone" 
+      type="text"  
+      class="form-control waves-light" 
+      placeholder="Phone Number"
+      mdbPopover="Please enter the official Phone Number!"
+      placement="top"
+      mdbPopoverHeader="Phone Number"
+      triggers="focus" mdbWavesEffect
+      [(ngModel)]="field_phone"
+    >
+    <textarea id="comment" name="field_comment" class="form-control" placeholder="Comments" [(ngModel)]="field_comment"></textarea>
     <div class="txt_requid">Field is required</div>
     <button type="submit" class="btn_contactsubmit">Send</button>
   </form>

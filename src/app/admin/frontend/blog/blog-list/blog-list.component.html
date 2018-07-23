@@ -8,8 +8,7 @@
           <thead>
               <tr>
                   <th>#</th>
-                  <th>Name</th>
-                  <th>Description</th>
+                  <th>Title</th>
                   <th>Status</th>
                   <th>Action</th>
               </tr>
@@ -20,11 +19,10 @@
             <tr *ngFor="let c of blogList; let i = index">
                 <th scope="row">{{i+1}}</th>
                 <td>{{c.name}}</td>
-                <td>{{c.description}}</td>
                 <td><div class="form-group">
                     <input type="checkbox" class="filled-in" id="checkbox{{c._id}}" [checked]="c.status" (change)="updateStatus($event.target.checked,c)">
                     <label for="checkbox{{c._id}}"></label>
-                </div></td>                  
+                </div></td>
                 <td>
                     <button type="button" (click)="editBlog(c)" class="btn btn-primary waves-light" mdbRippleRadius>Edit<i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
                     &nbsp;

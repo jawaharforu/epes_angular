@@ -1,17 +1,22 @@
-<div class="card mt-5 mb-5">
+<div class="row">
+    <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12 product-list">
+      <!-- Card -->
+      <div class="card">
+
   <div class="card-body">
-    <p class="h4 text-center py-4">Testimonial List</p>
-    <a [routerLink]="['/admin/testimonial']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>
+    <p class="h4 text-center py-4 admin-title">Testimonial List
+        <a [routerLink]="['/admin/testimonial']" class="btn btn-outline-secondary btn-rounded waves-effect  btn-add-new">Add New</a>
+    </p>
       <!--Table-->
       <table *ngIf="testimonialList" datatable class="table table-hover table-responsive-md table-fixed">
 
           <!--Table head-->
           <thead>
               <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th class="label-no">#</th>
+                  <th class="label-name">Name</th>
+                  <th class="label-status">Status</th>
+                  <th class="label-action">Action</th>
               </tr>
           </thead>
           <!--Table head-->
@@ -19,16 +24,16 @@
           <!--Table body-->
           <tbody>
               <tr *ngFor="let c of testimonialList; let i = index">
-                  <th scope="row">{{i+1}}</th>
-                  <td>{{c.name}}</td>
-                  <td><div class="form-group">
+                  <th class="col-no" scope="row">{{i+1}}</th>
+                  <td  class="col-name">{{c.name}}</td>
+                  <td  class="col-status"><div class="form-group">
                       <input type="checkbox" class="filled-in" id="checkbox{{c._id}}" [checked]="c.status" (change)="updateStatus($event.target.checked,c)">
                       <label for="checkbox{{c._id}}"></label>
                   </div></td>
-                  <td>
-                      <button type="button" (click)="editTestimonial(c)" class="btn btn-primary waves-light" mdbRippleRadius>Edit <i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
+                  <td  class="col-action">
+                      <button type="button" (click)="editTestimonial(c)" class="btn btn-primary waves-light btn-edit" mdbRippleRadius>Edit <i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
                       &nbsp;
-                      <button type="button" (click)="deleteTestimonial(c._id)" class="btn btn-danger waves-light" mdbRippleRadius>Delete <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                      <button type="button" (click)="deleteTestimonial(c._id)" class="btn btn-danger waves-light btn-delete" mdbRippleRadius>Delete <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
               </tr>
           </tbody>
           <!--Table body-->
@@ -37,3 +42,4 @@
       <!--Table-->
   </div>
 </div>
+</div></div>

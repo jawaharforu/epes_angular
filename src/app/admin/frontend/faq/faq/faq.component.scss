@@ -1,0 +1,39 @@
+
+p.h4.text-center.py-4.admin-title {
+    margin: 0px;
+    color: #54afc6;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px !important;
+    background: #f9f6f6;
+    padding-left: 15px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.add-faq label{
+    font-size: 13px;
+    color: #000 !important;
+}
+
+.btn-submit{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    float: right;
+}
+.add-faq .form-group {
+    margin-bottom: .5rem;
+}
+select#defaultFormCardDesiEx, input#defaultFormCardNameEx,
+textarea#defaultFormCarddescEx {
+    font-size: 13px;
+}

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 
 import { ResourcesComponent } from './resources.component';
+import { FormsModule } from '@angular/forms';
 
 const router: Routes = [
   { path : '', component : ResourcesComponent  },
@@ -15,7 +16,8 @@ const router: Routes = [
   imports: [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
-    RouterModule.forChild(router)
+    RouterModule.forChild(router),
+    FormsModule
   ],
   declarations: [
     ResourcesComponent

@@ -1,58 +1,58 @@
 import { Injectable } from '@angular/core';
-import { CommonService } from '../../../../services/common.service';
 import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { CommonService } from '../../../services/common.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
-  
+export class WhitepaperService {
+
   public link: String;
 
   constructor(
     private _commonService: CommonService,
     private http: Http
-  ) {
+  ) { 
     this.link = this._commonService.link;
   }
 
-  addBlog(newBlog: any) {
+  addWhitepaper(newWhitepaper: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.post(`${this.link}/blogs/`, newBlog, {headers: headers})
+    return this.http.post(`${this.link}/whitepapers/`, newWhitepaper, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  getBlog() {
+  getWhitepaper() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/blogs/`, {headers: headers})
+    return this.http.get(`${this.link}/whitepapers/`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  deleteBlog(blogId: any) {
+  deleteWhitepaper(whitepaperId: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.delete(`${this.link}/blogs/${blogId}`, {headers: headers})
+    return this.http.delete(`${this.link}/whitepapers/${whitepaperId}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
  
-  getBlogById(featureid: any) {
+  getWhitepaperById(whitepaperId: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/blogs/${featureid}`, {headers: headers})
+    return this.http.get(`${this.link}/whitepapers/${whitepaperId}`, {headers: headers})
     .pipe(map(res => res.json()));
   } 
 
-  getBlogByStatus() {
+  getWhitepaperByStatus() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/blogs/get/list`, {headers: headers})
+    return this.http.get(`${this.link}/whitepapers/get/list`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

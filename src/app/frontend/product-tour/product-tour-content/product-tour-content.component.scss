@@ -1,0 +1,16 @@
+[type="radio"] + label, [type="checkbox"] + label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 14px;
+}
+[type="checkbox"][class*="filled-in"]:checked + label:after {
+    top: 0;
+    border-color: #fdb828;
+    background-color: #fdb828;
+    z-index: 0;
+}

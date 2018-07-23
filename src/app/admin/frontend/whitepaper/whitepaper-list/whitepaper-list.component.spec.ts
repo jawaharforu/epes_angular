@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MdmodelComponent } from './mdmodel.component';
+import { WhitepaperListComponent } from './whitepaper-list.component';
 
-describe('MdmodelComponent', () => {
-  let component: MdmodelComponent;
-  let fixture: ComponentFixture<MdmodelComponent>;
+describe('WhitepaperListComponent', () => {
+  let component: WhitepaperListComponent;
+  let fixture: ComponentFixture<WhitepaperListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MdmodelComponent ]
+      declarations: [ WhitepaperListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdmodelComponent);
+    fixture = TestBed.createComponent(WhitepaperListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,10 +3,10 @@
       <!-- Content here -->
       <div class="row">
         <div class="col-sm-8 main_head">
-          <h3><span>EPES360</span> - Enterprise Edition</h3>
+          <h3><span>360EPES</span> - Enterprise Edition</h3>
           <h3>Experience what over 2 Million customer</h3>
-          <h3>choose <span>EPES360</span></h3>
-          <img src="{{content_image}}" class="img-responsive" > 
+          <h3>choose <span>360EPES</span></h3>
+          <img src="{{content_image}}" class="img-responsive" >
 
           <div class="row">
               <div class="col-sm-6 sub_titels" *ngFor="let content1 of registration_content1">
@@ -57,45 +57,58 @@
           <h3>Start your</h3>
           <h3>Product Tour</h3>
           <p>Please fill out all fields</p>
-          <form class="reg_form">
-            <input type="text" id="first_name" class="form-control" placeholder="First Name">
-            <input type="text" id="last_name" class="form-control" placeholder="Last Name">
-            <!-- <input type="text" id="job_title" class="form-control" placeholder="Job title"> -->
-            <select class="mdb-select" >
+          <form class="reg_form" (ngSubmit)="producttourform()">
+            <input type="text" id="first_name" class="form-control browser-default" placeholder="First Name" [(ngModel)]="field_first_name" name="field_first_name">
+            <input type="text" id="last_name" class="form-control browser-default" placeholder="Last Name" [(ngModel)]="field_last_name" name="field_last_name">
+            <!--<input type="text" id="job_title" class="form-control" placeholder="Job title">-->
+            <select class="mdb-select browser-default" [(ngModel)]="field_job" name="field_job">
               <!-- <option value="" disabled selected>Job title</option> -->
               <option *ngFor="let job of select_list_job" [value]="job.id">{{job.label}}</option>
-              <!--<option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
-              <option value="5">Option 5</option>-->
             </select>
-            <input type="email" id="email" class="form-control" placeholder="Email">
-            <input type="text" id="Phone" class="form-control" placeholder="Phone"> 
-            <input type="text" id="Company" class="form-control" placeholder="Company">
+            <input
+              type="email"
+              id="email"
+              class="form-control browser-default"
+              placeholder="Email"
+              [(ngModel)]="field_email"
+              name="field_email"
+              mdbPopover="Please give official email id"
+              placement="top"
+              triggers="focus"
+              mdbPopoverHeader="Email Address"
+              mdbWavesEffect
+            >
+            <input
+              type="text"
+              id="Phone"
+              class="form-control browser-default"
+              placeholder="Phone"
+              [(ngModel)]="field_phone"
+              name="field_phone"
+              mdbPopover="Please give official Phone Number"
+              placement="top"
+              triggers="focus"
+              mdbPopoverHeader="Phone Number"
+              mdbWavesEffect
+            >
+            <input type="text" id="Company" class="form-control browser-default" placeholder="Company" [(ngModel)]="field_company" name="field_company">
             <!--  <input type="text" id="Employees" class="form-control" placeholder="Employees"> -->
-            <select class="">
+            <select class="browser-default" [(ngModel)]="field_select_company" name="field_select_company">
               <option *ngFor="let employee of select_list_employee" [value]="employee.id">{{employee.label}}</option>
-              <!--<option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
-              <option value="5">Option 5</option>-->
             </select>
-          
+
             <!--   <input type="text" id="Country" class="form-control" placeholder="Country"> -->
-            <select class="">
+            <select class="browser-default" [(ngModel)]="field_select_country" name="field_select_country">
               <option *ngFor="let country of select_list_country" [value]="country.id">{{country.label}}</option>
-              <!--<option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
-              <option value="5">Option 5</option>-->
             </select>
             <div class="clearfix"></div>
-            <input type="checkbox" id="checkbox" class="form-control"><span class="Agreement_text">I agree to the <a href="#">master subscription Agreement</a></span>
+            <input for="checkbox" type="checkbox" id="checkbox" class="form-control browser-default" [(ngModel)]="field_agree" name="field_agree">
+            <div class="form-check mr-3">
+              <input type="checkbox" class="filled-in form-check-input" id="inlineFormCheckbox2" [(ngModel)]="field_agree" name="field_agree" [checked]="field_agree">
+              <label class="form-check-label Agreement_text" for="inlineFormCheckbox2">I agree to the <a href="#">master subscription Agreement</a></label>
+          </div>
             <div class="text-center mt-4 sub_btn">
-                <button class="btn btn-unique" type="submit">Start Product Tour</button>
+                <button class="btn btn-unique" [disabled]="toogleBool" type="submit">Start Product Tour</button>
             </div>
           </form>
 <!-- Default form register -->
