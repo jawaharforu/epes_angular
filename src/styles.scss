@@ -42,7 +42,7 @@ li.nav-item {
     background-size: contain;
     margin-top: -94px !important;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 #ep_banner {
@@ -534,7 +534,7 @@ p.per_ad {
 }
 
 #footer {
-    background-color: #0F1336;
+    background-color: #06546e;
 }
 
 .footer-head h5 {
@@ -558,7 +558,7 @@ p.per_ad {
 }
 
 .detail ul li {
-    border-bottom: 1px solid #444444a3;
+    border-bottom: 1px solid #ccc;
     margin-top: 12px;
 }
 
@@ -624,7 +624,7 @@ p.per_ad {
 }
 
 #copy-right {
-    background-color: #080D2D;
+    background-color: #033240;
 }
 
 .vc_box_border_grey img {
@@ -2078,7 +2078,7 @@ nav.navbar {
     */
     border-bottom: 1px solid #ccc;
     background: #ffffffab;
-    box-shadow: 0px 2px 3px #1b1b1b;
+    box-shadow: none;
 }
 #hed1 h2, #hed1 h3, #hed1 p{
     padding-left: 15px;
@@ -2319,6 +2319,9 @@ a.nav-link.waves-light.active:after {
     background: #249ab8;
     color: #fff;
     border: none;
+}
+.view video.video-intro{
+    transform: translateX(-50%) translateY(-42%);
 }
 @media (min-width: 62em){
     .classic-tabs.tabs-new li:first-child {
