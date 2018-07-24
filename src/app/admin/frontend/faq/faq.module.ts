@@ -7,9 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FaqCategoryComponent } from './faq-category/faq-category.component';
 import { FaqComponent } from './faq/faq.component';
 import { FaqListComponent } from './faq-list/faq-list.component';
+import { FaqSubCategoryComponent } from './faq-sub-category/faq-sub-category.component';
 
 const router: Routes = [
   { path : 'category', component : FaqCategoryComponent  },
+  { path : 'subcategory', component : FaqSubCategoryComponent  },
   { path : '', component : FaqComponent  },
   { path : 'list', component : FaqListComponent  },
   { path : 'edit/:faqid', component : FaqComponent  }
@@ -23,6 +25,6 @@ const router: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [FaqCategoryComponent, FaqComponent, FaqListComponent]
+  declarations: [FaqCategoryComponent, FaqComponent, FaqListComponent, FaqSubCategoryComponent]
 })
 export class FaqModule { }

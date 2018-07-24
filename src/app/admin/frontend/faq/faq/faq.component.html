@@ -11,12 +11,19 @@
                 <p class="h4 text-center py-4 admin-title">FAQ</p>
                 <input type="hidden" [(ngModel)]="faqid" name="faqid" />
                 <div class="form-group ">
-                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Designation</label>
-                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="designation">
+                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Category</label>
+                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="faqcategoryid" (change)="getSubCategory()">
                   <option value="" disabled>--Select Category--</option>
                   <option *ngFor="let s of faqcategoryList" [value]="s._id">{{ s.name }}</option>
                 </select>
                 </div>
+                <div class="form-group ">
+                  <label for="defaultFormCarddfDesiEx" class="grey-text font-weight-light">Sub Category</label>
+                  <select class="browser-default form-control" id="defaultFormCarddfDesiEx" [(ngModel)]="faqsubcategoryid" name="faqsubcategoryid">
+                    <option value="" disabled>--Select Sub Category--</option>
+                    <option *ngFor="let s of faqSubCategoryList" [value]="s._id">{{ s.name }}</option>
+                  </select>
+                  </div>
                 <div class="form-group ">
                 <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Question</label>
                 <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question">
@@ -26,7 +33,7 @@
                   <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="answer" name="answer"></textarea>
                   <label for="defaultFormCarddescEx">Answer</label>
                 </div></div>
-                
+
                 <button type="submit" class="btn btn-primary waves-light btn-submit" mdbWavesEffect>Submit</button>
             </form>
             <!-- Default form subscription -->

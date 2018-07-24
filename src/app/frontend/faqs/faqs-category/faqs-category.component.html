@@ -7,8 +7,12 @@
             <a href="#">Categories
             </a>
           </li>
-          <li class="collapsed active">
-            <a *ngFor="let f of faqcategoryList; let i=index" (click)="getFaqByCategory(f._id)"><i class="fas fa-arrow-circle-right"></i> {{f.name}} <span class="arrow"></span></a>
+          <li class="collapsed active" *ngFor="let f of faqcategoryList; let i=index">{{f.name}}
+            <ul *ngIf="list[f._id]">
+              <li *ngFor="let sc of list[f._id]; let i=index">
+                  <a  (click)="getFaqByCategory(sc._id)"><i class="fas fa-arrow-circle-right"></i> {{sc.name}} <span class="arrow"></span></a>
+                </li>
+            </ul>
           </li>
         </ul>
       </div>

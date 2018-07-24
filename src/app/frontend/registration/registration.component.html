@@ -1,4 +1,3 @@
-
 <div class="container-fluid signupbg">
   <div class="container ">
     <div class="row">
@@ -6,77 +5,122 @@
   <div class="reg-tom-title">Create an Account</div>
 
   <!-- Register form -->
-  <form action="" id="reg_form" autocomplete="on">
+  <form action="" id="reg_form" autocomplete="on" (ngSubmit)="registrationForm()">
     <div class="row">
       <h5 class="section_title">Login Information</h5>
+
+      <div class="form-group col-md-6 col-sm-12">
+        <input 
+          type="text" 
+          class="form-control browser-default {{field_first_name.length > 0  ? 'input-clicked' : ''}}" 
+          id="fname" [(ngModel)]="field_first_name" 
+          name="field_first_name" 
+        >
+        <label class="reg-tom-label" for="fnane">First Name:</label>
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <input 
+          type="text" 
+          class="form-control browser-default {{field_middle_name.length > 0  ? 'input-clicked' : ''}}" 
+          [(ngModel)]="field_middle_name" 
+          name="field_middle_name" 
+          id="mname" 
+        >
+        <label class="reg-tom-label" for="ln">Middle Name:</label>
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <input 
+          type="text" 
+          class="form-control browser-default {{field_last_name.length > 0  ? 'input-clicked' : ''}}" 
+          [(ngModel)]="field_last_name" 
+          name="field_last_name" 
+          id="lname" 
+        >
+        <label class="reg-tom-label" for="ln">Last Name:</label>
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <input 
+          type="text" 
+          class="waves-light form-control browser-default {{field_phone_number.length > 0  ? 'input-clicked' : ''}}" 
+          [(ngModel)]="field_phone_number" 
+          name="field_last_name" 
+          id="lname"
+          mdbPopover="Please enter the official phone number!"
+          placement="top"
+          mdbPopoverHeader="Phone number"
+          triggers="focus"  
+        >
+        <label class="reg-tom-label" for="ln">Phone Number:</label>
+      </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input type="email" class="form-control {{field_email_id.length > 0  ? 'input-clicked' : ''}}" id="email" [(ngModel)]="field_email_id" name="field_email_id">
+      <input 
+        type="email" 
+        class="waves-light form-control browser-default {{field_email_id.length > 0  ? 'input-clicked' : ''}}" 
+        id="email" 
+        [(ngModel)]="field_email_id" 
+        name="field_email_id"
+        mdbPopover="Please enter the official Email Address!"
+        placement="top"
+        mdbPopoverHeader="Email Address"
+        triggers="focus" 
+      >
       <label class="reg-tom-label" for="email">Email address:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input type="password" class="form-control {{field_password.length > 0  ? 'input-clicked' : ''}}" id="pwd" [(ngModel)]="field_password" name="field_password">
+      <input type="password" class="form-control browser-default {{field_password.length > 0  ? 'input-clicked' : ''}}" id="pwd" [(ngModel)]="field_password" name="field_password">
       <label class="reg-tom-label" for="pwd">Password:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input type="email" class="form-control {{field_confirm_password.length > 0  ? 'input-clicked' : ''}}" id="cpwd" [(ngModel)]="field_confirm_password" name="field_confirm_password">
+      <input type="password" class="form-control browser-default {{field_confirm_password.length > 0  ? 'input-clicked' : ''}}" id="cpwd" [(ngModel)]="field_confirm_password" name="field_confirm_password">
       <label class="reg-tom-label" for="cpwd">Confirm Password:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_first_name.length > 0  ? 'input-clicked' : ''}}" id="fname" [(ngModel)]="field_first_name" name="field_first_name" >
-      <label class="reg-tom-label" for="fnane">First Name:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_last_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_last_name" name="field_last_name" id="lname" >
-      <label class="reg-tom-label" for="ln">Last Name:</label>
-    </div>
+    </div>    
   </div>
   <div class="row">
       <h5 class="section_title">Company Information</h5>
       <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_job_title.length > 0  ? 'input-clicked' : ''}}" id="jtitle" [(ngModel)]="field_job_title" name="field_job_title">
+      <input type="text" class="form-control browser-default {{field_job_title.length > 0  ? 'input-clicked' : ''}}" id="jtitle" [(ngModel)]="field_job_title" name="field_job_title">
       <label class="reg-tom-label" for="jt">Job Title:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_company_name.length > 0  ? 'input-clicked' : ''}}" id="cname" [(ngModel)]="field_company_name" name="field_company_name">
+      <input type="text" class="form-control browser-default {{field_company_name.length > 0  ? 'input-clicked' : ''}}" id="cname" [(ngModel)]="field_company_name" name="field_company_name">
       <label class="reg-tom-label" for="cn">Company Name:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control {{industry_name === ''  ? '' : 'input-clicked'}}" data-live-search="true" name="industry_name" [(ngModel)]="industry_name">
+      <select class="selectpicker form-control browser-default {{field_industry_name === ''  ? '' : 'input-clicked'}}" data-live-search="true" name="field_industry_name" [(ngModel)]="field_industry_name">
         <option *ngFor="let industry of industries" value="{{industry.id}}">{{industry.industryname}}</option>
       </select>
       <label class="reg-tom-label" for="pwd">Industry:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control {{no_of_employee === 0 ? '' : 'input-clicked'}}" data-live-search="true" name="no_of_employee" [(ngModel)]="no_of_employee">
+      <select class="selectpicker form-control browser-default {{field_no_of_employee === 0 ? '' : 'input-clicked'}}" data-live-search="true" name="field_no_of_employee" [(ngModel)]="field_no_of_employee">
         <option *ngFor="let employee of no_of_employees" value="{{employee.id}}">{{employee.employeesCount}}</option>
       </select>
       <label class="reg-tom-label" for="pwd">No of Employees:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_contact_number.length > 0  ? 'input-clicked' : ''}}" id="ccnumber" [(ngModel)]="field_contact_number" name="field_contact_number">
+      <input type="text" class="form-control browser-default {{field_contact_number.length > 0  ? 'input-clicked' : ''}}" id="ccnumber" [(ngModel)]="field_contact_number" name="field_contact_number">
       <label class="reg-tom-label" for="ccn">Company Contact Number:</label>
-    </div>
+    </div>    
     <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control {{field_company_address.length > 0  ? 'input-clicked' : ''}}" id="ccaddress" [(ngModel)]="field_company_address" name="field_company_address">
+      <input type="text" class="form-control browser-default {{field_company_address.length > 0  ? 'input-clicked' : ''}}" id="ccaddress" [(ngModel)]="field_company_address" name="field_company_address">
       <label class="reg-tom-label" for="caddress">Company Address:</label>
     </div>
-
     <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control {{country_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="country_name" name="country_name">
+      <select class="selectpicker form-control browser-default {{field_country_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="field_country_name" name="field_country_name">
         <option *ngFor="let country of country_list" value="{{country.id}}">{{country.countryName}}</option>
       </select>
       <label class="reg-tom-label" for="country">Country:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control {{state_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="state_name" name="state_name">
-        <option *ngFor="let states of state_list" value="{{states.id}}">{{states.stateName}}</option>
+      <select class="selectpicker form-control browser-default {{field_state_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="field_state_name" name="field_state_name">
+        <option *ngFor="let states of state_list" [value]="states.id">{{states.stateName}}</option>
       </select>
       <label class="reg-tom-label" for="state">State: </label>
     </div>
 
     <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control {{city_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="city_name" name="city_name">
-          <option *ngFor="let city of city_list" value="{{city.id}}">{{city.cityName}}</option>
+      <select class="selectpicker form-control browser-default {{field_city_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="field_city_name" name="field_city_name">
+          <option *ngFor="let city of city_list" [value]="city.id">{{city.cityName}}</option>
         </select>
       <label class="reg-tom-label" for="city">City:</label>
     </div>
@@ -85,9 +129,9 @@
     <button type="submit" class="btn btn-default btn-pay">Registration / Pay</button>
   </form>
 <!-- Register form -->
+
 </div>
 <div class="col-lg-6 col-md-12 col-sm-12  hidden-sm-down">
-
   <img src="../../assets/img/gir-360.png" />
 </div>
 </div>
