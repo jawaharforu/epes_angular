@@ -13,7 +13,7 @@ export class FaqsCategoryComponent implements OnInit {
   public faqcategoryList: any;
   public faqList: any;
   public ls: any[];
-  public list: any[] = {};
+  public list: any[] = [];
 
   constructor(
     private faqService: FaqService,
