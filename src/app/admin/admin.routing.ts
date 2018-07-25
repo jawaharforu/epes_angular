@@ -64,6 +64,14 @@ const routes: Routes = [
       {
         path: 'whitepaper',
         loadChildren: './frontend/whitepaper/whitepaper.module#WhitepaperModule',
+      },
+      {
+        path: 'career',
+        loadChildren: './frontend/career/career.module#CareerModule',
+      },
+      {
+        path: 'contactus',
+        loadChildren: './frontend/contactus/contactus.module#ContactusModule',
       }
     ]
    }

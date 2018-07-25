@@ -18,6 +18,7 @@ const router: Routes = [
     RouterModule.forChild(router),
     FormsModule,
     ReactiveFormsModule
+    
   ],
   declarations: [
     RegistrationComponent

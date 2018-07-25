@@ -34,7 +34,11 @@ export class ProductListComponent implements OnInit {
   updateStatus(event: boolean, c: any) {
     const fieldProduct = {
       name: c.name,
-      description: c.description,
+      type: c.type,
+      amount: c.amount,
+      numberofemployee: c.numberofemployee,
+      amountperemployee: c.amountperemployee,
+      additionfeatures: c.additionfeatures,
       status: event,
       productid: c._id
     };

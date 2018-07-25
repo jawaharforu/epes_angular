@@ -12,6 +12,7 @@ import { VoluptatemComponent } from './voluptatem/voluptatem.component';
 import { OurcustomersComponent } from './ourcustomers/ourcustomers.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { NewlinePipe } from '../../pipes/newline.pipe';
+import { CountUpModule } from 'countup.js-angular2';
 
 const router: Routes = [
   { path : '', component : HomeComponent  },
@@ -21,7 +22,8 @@ const router: Routes = [
   imports: [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
-    RouterModule.forChild(router)
+    RouterModule.forChild(router),
+    CountUpModule
   ],
   declarations: [
     HomeComponent,

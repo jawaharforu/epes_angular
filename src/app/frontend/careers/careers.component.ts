@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CareerService } from '../../admin/frontend/career/career.service';
 
 @Component({
   selector: 'app-careers',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CareersComponent implements OnInit {
 
-  constructor() { }
+  careersList: any;
+
+  constructor(
+    private careerService: CareerService
+  ) { }
 
   ngOnInit() {
+    this.getCareer();
   }
 
+  getCareer(){
+    this.careerService.getCareerByStatus()
+    .subscribe(res => {
+    this.careersList = res.data;
+    console.log(res.data);
+    /*let j = 0;
+    for (const prop of res.data) {
+        if ( j === 0 ) {
+        this.getFaqByCategory(prop._id);
+        }
+        j++;
+    }*/ 
+    });
+  }
+ 
 }

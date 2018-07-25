@@ -2449,11 +2449,11 @@ nav.admin-top-navbar {
   top: 0;
   z-index: 0;
 }
-.accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before{
-    content: "\f067";
+.single-job .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before{
+  content: "\f067";
 }
-.accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
-    content: "\f068";
+.single-job .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
+  content: "\f068";
 }
 .popover{
     background: #ffa0a9;
