@@ -1,0 +1,142 @@
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 30%;
+}
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.card {
+    position: relative;
+    padding: 25px 30px 50px 30px;
+}
+table.dataTable.no-footer {
+    border: 1px solid #f3eeee;
+}
+.btn-add-new{
+    float: right;
+    padding: 5px 10px;
+    border-radius: 0px !important;
+    color: #fff !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    box-shadow: none;
+}
+.btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled):active, 
+.btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-secondary.btn-add-new.dropdown-toggle{
+    color: #fff !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
+}
+label{
+    font-size: 13px;
+    color: #000 !important;
+}
+.col-no{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 30px;
+}
+.col-name{
+    width: 30%;
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 30px;
+}
+.label-name, .label-no, .label-status, .label-action {
+    font-size: 13px;
+    color: #666;
+    font-weight: 300;
+}
+.col-status .form-group{
+    margin: 0px;
+}
+.col-status .form-group label{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+[type="checkbox"][class*="filled-in"]:not(:checked) + label:after {
+    background-color: transparent;
+    border-color: #5a5a5a;
+    top: 0;
+    z-index: 0;
+    border: 1px solid #ccc;
+}
+[type="checkbox"][class*="filled-in"]:checked + label:before {
+    top: 0;
+    left: 1px;
+    width: 5px;
+    height: 9px;
+    border-color: transparent #666 #666 transparent;
+    margin-top: 3px;
+}
+[type="checkbox"][class*="filled-in"]:checked + label:after {
+    top: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 0;
+}
+
+span.btn-edit, span.btn-delete  {
+    font-size: 13px;
+    color: #54afc6;
+    font-weight: 500;
+}
+
+table.dataTable thead th{
+    border-bottom: 1px solid #dbe2e4;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #666;
+    font-size: 13px !important;
+}
+@media only screen and (max-width: 768px){
+    button.btn.btn-danger.waves-light.btn-delete,    
+    button.btn.btn-primary.waves-light.btn-edit{
+        padding: 6px 12px;
+        margin-top: 15px;
+
+    }
+}
+@media only screen and (max-width: 767px){
+    .btn-edit .fa , .btn-delete .fa {
+        display: none
+    }
+    button.btn.btn-danger.waves-light.btn-delete,
+     button.btn.btn-primary.waves-light.btn-edit {
+        padding: 6px 12px;
+        margin-top: 0px;
+    }
+}
+table.dataTable[_ngcontent-c4] thead[_ngcontent-c4] th[_ngcontent-c4],
+table.dataTable tbody th, table.dataTable tbody td{
+    border-right: 1px solid #f3eeee;    
+    text-transform: capitalize;
+}
+[type="radio"] + label, [type="checkbox"] + label{
+    height: 13px;;
+}
+table.dataTable[_ngcontent-c4][_ngcontent-c4] thead[_ngcontent-c4][_ngcontent-c4] th[_ngcontent-c4][_ngcontent-c4]{
+    border-bottom: none;
+}
+[type="checkbox"][class*="filled-in"] + label:after {
+    border-radius: 2px;
+    height: 15px;
+    width: 15px;
+}

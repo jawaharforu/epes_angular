@@ -3,20 +3,33 @@
     <div class="col-sm-12 our_testimoials">
         <div class="our_testi2" >
             <h3>Testimonials</h3>
-
             <div class="col-sm-12 carousel" >
-              <!--Carousel Wrapper-->
-              <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
-                  <!--First slide-->
-                  <mdb-slide *ngFor="let t of testimonialList; let i = index">
-                    <p [innerHtml]="t.description | newline"></p>
-                  </mdb-slide>
-                  <!--/First slide-->
-              </mdb-carousel>
-              <!--/.Carousel Wrapper-->
+                <!--Carousel Wrapper-->
+                <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+                    <!--First slide-->
+                    <mdb-slide *ngFor="let t of testimonialList; let i = index">
+                      <div class="testimonial">
+                          <p>
+                              <i class="fa fa-quote-left"></i> <span [innerHtml]="t.description | newline"></span> <i class="fa fa-quote-right"></i>
+                          </p>
+                           <!--Avatar-->
+                          <div class="row">
+                              <div class="col-md-6 col-sm-12">
+                                  <div class="avatar mx-auto mb-4">
+                                          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid" alt="First sample avatar image">
+                                      </div>
+                              </div>
+                              <div class="col-md-6 col-sm-12">
+                                  <h4 class="name_testimonial">{{t.name}}</h4>
+                                  <!--<h6 class="desic_testimonial">Founder </h6>-->
+                              </div>
+                          </div>
+                      </div>
+                    </mdb-slide>
+                    <!--/First slide-->
+                </mdb-carousel>
+                <!--/.Carousel Wrapper-->
             </div>
-
-
         </div>
        </div>
     </div>

@@ -1,21 +1,48 @@
-
 p.h4.text-center.py-4.admin-title {
-    margin: 0px;
-    color: #54afc6;
+    color: #494949;
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-bottom: 10px !important;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px !important;
-    background: #f9f6f6;
-    padding-left: 15px;
+    background: #ffffff;
     margin-left: -20px;
-    margin-right: -20px;
+    border: none;
+    width: 30%;
+}
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.card {
+    position: relative;
+    padding: 25px 30px 50px 30px;
+}
+.add-features label{
+    font-size: 13px;
+    color: #000 !important;
+}
+.breadcrumb a, .breadcrumb-item.active{
+    font-size: 12px;
+    color: #fff;
+}
+.form-group {
+    margin-bottom: .5rem;
+}
+.form-check{
+    padding: 0px;
+}
+.add-features .form-check label {
+    margin-right: 20px;
+}
+.add-features .form-control{
+    font-size: 15px;
+}
+.add-features .switch{
+    margin-top: 30px;
+    margin-left: 15px;
 }
 .breadcrumb {
     display: flex;
@@ -26,20 +53,31 @@ p.h4.text-center.py-4.admin-title {
     background-color: #54afc6;
     border-radius: 0.25rem;
 }
-.breadcrumb a, .breadcrumb-item.active{
-    font-size: 12px;
-    color: #fff;
-}
-.add-features label{
-    font-size: 13px;
-    color: #000 !important;
-}
 [type="radio"]:checked + label:after, .switch label input[type=checkbox]:checked + .lever:after{
-    border-color: #b37f13;
-background-color: #fdb827;
+        border-color: #54afc6;
+    background-color: #54afc6;
 }
 .switch label input[type=checkbox]:checked + .lever {
-    background-color: #e8d1a1;
+    background-color: #a6dbe8;
+}
+.btn-add-feild {
+    background: none !important;
+    box-shadow: none;
+    color: #54afc6 !important;
+    width: 20px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5px;
+}
+.btn-primary.btn-add-feild:not([disabled]):not(.disabled):active, 
+.btn-primary.btn-add-feild:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.btn-add-feild.dropdown-toggle{
+    background: none !important;
+    box-shadow: none;
+    color: #54afc6 !important;
+}
+.btn-add-feild .fa{
+    font-size: 25px;
 }
 .btn-submit{
     background-color: #f38e00 !important;
@@ -47,7 +85,41 @@ background-color: #fdb827;
     font-size: 14px;
     padding: 5px 15px;
     float: right;
+    text-transform: capitalize;
+    margin-top: 20px;
 }
-.add-features .form-group {
-    margin-bottom: .5rem;
+.btn-primary.btn-submit:not([disabled]):not(.disabled):active, 
+.btn-primary.btn-submit:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.btn-submit.dropdown-toggle{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    margin-top: 20px;
+}
+[type="radio"]:checked + label:before {
+    display: inline-block;
+    content: "";
+    z-index: 999;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border-color: #54afc6;
+}
+.form-control{
+    display: inline-block;
+}
+.form-control.col-md-10{
+    max-width: 300px;
+}
+.feild-features{   
+     max-width: 300px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.feild-button{
+    max-width: 250px;
 }

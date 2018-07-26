@@ -20,28 +20,30 @@
       name="field_email" 
       type="email" 
       class="form-control waves-light" 
-      placeholder="Email"
-      mdbPopover="Please enter the official Email Address!"
-      placement="top"
-      mdbPopoverHeader="Email Address"
-      triggers="focus" 
-      mdbWavesEffect
+      placeholder="Official Email Address"      
       [(ngModel)]="field_email"
     >
-    <input 
-      id="phone" 
-      name="field_phone" 
-      type="text"  
-      class="form-control waves-light" 
-      placeholder="Phone Number"
-      mdbPopover="Please enter the official Phone Number!"
-      placement="top"
-      mdbPopoverHeader="Phone Number"
-      triggers="focus" mdbWavesEffect
-      [(ngModel)]="field_phone"
-    >
+    <div class="row">
+      <div class="col-sm-2 col-country-code">
+          <select class="selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="field_country_code" name="field_country_code">
+              <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option>
+            </select>
+      </div>
+      <div class="col-sm-10">
+          <input 
+          id="phone" 
+          name="field_phone" 
+          type="text"  
+          class="form-control waves-light" 
+          placeholder="Official Phone Number"          
+          [(ngModel)]="field_phone"
+        >
+      </div>
+    </div>
+    
+    
     <textarea id="message" name="field_message" class="form-control" placeholder="Message" [(ngModel)]="field_message"></textarea>
-    <div class="txt_requid">Field is required</div>
+    <!-- <div class="txt_requid">Field is required</div> -->
     <button type="submit" class="btn_contactsubmit">Send</button>
   </form>
 </div>

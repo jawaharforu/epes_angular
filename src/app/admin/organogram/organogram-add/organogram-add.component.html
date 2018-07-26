@@ -18,10 +18,23 @@
                   <!-- Default input name -->
                   <div class="form-row">
                       <div class="col">
-                          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Title">
+                          <div class="form-group ">
+                              <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartmentList()">
+                                <option value="" disabled>--Select Category--</option>
+                                <option *ngFor="let s of departmentList" [value]="s._id">{{ s.name }}</option>
+                              </select>
+                          </div>
                       </div>
                       <div class="col">
-                          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="department" name="department" placeholder="Enter Department">
+                          <div class="form-group ">
+                              <select class="browser-default form-control" id="defaultFormCardDesiExwe" [(ngModel)]="subdepartmentid" name="subdepartmentid" (change)="getSubDepartmentList()">
+                                <option value="" disabled>--Select Sub Department--</option>
+                                <option *ngFor="let s of subDepartmentList" [value]="s._id">{{ s.name }}</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Title">
                       </div>
                       <div class="col">
                           <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation" placeholder="Enter Designation">

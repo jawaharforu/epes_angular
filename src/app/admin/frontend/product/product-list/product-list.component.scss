@@ -1,50 +1,44 @@
 p.h4.text-center.py-4.admin-title {
-    margin: 0px;
-    color: #54afc6;
+    color: #494949;
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-bottom: 10px !important;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px !important;
-    background: #f9f6f6;
-    padding-left: 15px;
+    background: #ffffff;
     margin-left: -20px;
-    margin-right: -20px;
+    border: none;
 }
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    list-style: none;
-    background-color: #54afc6;
-    border-radius: 0.25rem;
+.card .card-body{
+    background: #fff;
+    box-shadow: none;
 }
-.breadcrumb a, .breadcrumb-item.active{
-    font-size: 12px;
-    color: #fff;
+.card {
+    position: relative;
+    padding: 0px 30px 50px 30px;
+}
+table.dataTable.no-footer {
+    border: 1px solid #f3eeee;
 }
 .btn-add-new{
     float: right;
     padding: 5px 10px;
     border-radius: 0px !important;
     color: #fff !important;
-    background-color: #f38e00 !important;
-    border: 1px solid #f38e00 !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
     margin-top: -5px;
     margin-bottom: 15px;
+    box-shadow: none;
 }
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled):active, 
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled).active, 
 .show > .btn-outline-secondary.btn-add-new.dropdown-toggle{
     color: #fff !important;
-    background: #f38e00 !important;
-    border: 1px solid #f38e00 !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
 }
 label{
     font-size: 13px;
@@ -54,14 +48,14 @@ label{
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 30px;
 }
 .col-name{
-    width: 40%;
+    width: 30%;
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 30px;
 }
 .label-name, .label-no, .label-status, .label-action {
     font-size: 13px;
@@ -72,8 +66,10 @@ label{
     margin: 0px;
 }
 .col-status .form-group label{
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-left: 15px;
 }
+
 [type="checkbox"][class*="filled-in"]:not(:checked) + label:after {
     background-color: transparent;
     border-color: #5a5a5a;
@@ -84,8 +80,8 @@ label{
 [type="checkbox"][class*="filled-in"]:checked + label:before {
     top: 0;
     left: 1px;
-    width: 7px;
-    height: 12px;
+    width: 5px;
+    height: 9px;
     border-color: transparent #666 #666 transparent;
     margin-top: 3px;
 }
@@ -95,18 +91,14 @@ label{
     background-color: #fff;
     z-index: 0;
 }
-button.btn.btn-primary.waves-light.btn-edit {
-    background-color: #5bbc6d !important;
+
+span.btn-edit, span.btn-delete  {
     font-size: 13px;
-    padding: 10px 20px;
-    color: #fff !important;
+    color: #54afc6;
+    font-weight: 500;
+    cursor: pointer;
 }
-button.btn.btn-danger.waves-light.btn-delete {
-    background-color: #b51717 !important;
-    font-size: 13px;
-    padding: 10px 20px;
-    color: #fff !important;
-}
+
 table.dataTable thead th{
     border-bottom: 1px solid #dbe2e4;
 }
@@ -131,4 +123,20 @@ table.dataTable thead th{
         padding: 6px 12px;
         margin-top: 0px;
     }
+}
+table.dataTable[_ngcontent-c4] thead[_ngcontent-c4] th[_ngcontent-c4],
+table.dataTable tbody th, table.dataTable tbody td{
+    border-right: 1px solid #f3eeee;    
+    text-transform: capitalize;
+}
+[type="radio"] + label, [type="checkbox"] + label{
+    height: 13px;;
+}
+table.dataTable[_ngcontent-c4][_ngcontent-c4] thead[_ngcontent-c4][_ngcontent-c4] th[_ngcontent-c4][_ngcontent-c4]{
+    border-bottom: none;
+}
+[type="checkbox"][class*="filled-in"] + label:after {
+    border-radius: 2px;
+    height: 15px;
+    width: 15px;
 }

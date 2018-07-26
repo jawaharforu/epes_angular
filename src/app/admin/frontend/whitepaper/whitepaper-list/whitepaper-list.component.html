@@ -1,31 +1,35 @@
-<div class="card mt-5 mb-5">
-  <div class="card-body">
-    <p class="h4 text-center py-4">Whitepaper List</p>
+<div class="row">
+        <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12 product-list">
+          <!-- Card -->
+          <div class="card">
+    
+      <div class="card-body">
+    <p class="h4 text-center py-4 admin-title">Whitepaper List</p>
     <!--<a [routerLink]="['/admin/blog']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>-->
       <!--Table-->
       <table *ngIf="whitepaperList" datatable class="table table-hover table-responsive-md table-fixed">
           <!--Table head-->
           <thead>
               <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Company</th>
-                  <th>Website</th>
-                  <th>Action</th>
+                  <th class="label-no">#</th>
+                  <th class="label-name">Name</th>
+                  <th class="label-name">Email</th>
+                  <th class="label-name">Company</th>
+                  <th class="label-name">Website</th>
+                  <th class="label-action">Action</th>
               </tr>
           </thead>
           <!--Table head-->
           <!--Table body-->
           <tbody>
             <tr *ngFor="let c of whitepaperList; let i = index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{c.name}}</td>
-                <td>{{c.email}}</td>
-                <td>{{c.company}}</td>
-                <td>{{c.website}}</td>                                 
-                <td>
-                    <button type="button" (click)="deleteWhitepaper(c._id)" class="btn btn-danger waves-light" mdbRippleRadius>Delete<i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                <th class="col-no"  scope="row">{{i+1}}</th>
+                <td class="col-name">{{c.name}}</td>
+                <td class="col-name">{{c.email}}</td>
+                <td class="col-name">{{c.company}}</td>
+                <td class="col-name">{{c.website}}</td>                                 
+                <td  class="col-action">
+                    <span  (click)="deleteWhitepaper(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>
                 </td>
             </tr>
           </tbody>
@@ -34,3 +38,4 @@
       <!--Table-->
   </div>
 </div>
+</div></div>

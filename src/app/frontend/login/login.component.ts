@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       return false;
     }
     if (!this._validationsService.isEmail(this.field_username)) {
-      this._commonService.showMessage('error', 'Enter a valida email address!');
+      this._commonService.showMessage('error', 'Enter a valid email address!');
       return false;
     }
 
@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
       return false;
     }
 
-    if (this._validationsService.isPassword(this.field_password)) {
-      // tslint:disable-next-line:max-line-length
-      this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
-      return false;
-    }
+    // if (this._validationsService.isPassword(this.field_password)) {
+    //   // tslint:disable-next-line:max-line-length
+    //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
+    //   return false;
+    // }
 
     this._commonService.redirectTo('/admin');
   }

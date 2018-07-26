@@ -1,36 +1,43 @@
 <div class="row">
-    <div class="col-md-5 ">
-      <!-- Card -->
-      <div class="card mx-xl-5">
-
-          <!-- Card body -->
-          <div class="card-body">
+        <div class="col-md-4 ">
+          <!-- Card -->
+          <div class="card">
+      
+              <!-- Card body -->
+              <div class="card-body">
 
               <!-- Default form subscription -->
               <form (ngSubmit)="approverForm()" class="add-approver">
                   <p class="h4 text-center py-4 admin-title">Enter appraisal approver detail</p>
                   <input type="hidden" [(ngModel)]="approverid" name="approverid">
                   <!-- Default input name -->
-                  <div class="form-group ">
-                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
-                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
-                </div>
+                  
+                <div class="form-group  col-md-12 col-sm-12">
+                        <div class="row">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light col-md-4 label-faq">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-8" [(ngModel)]="name" name="name">
+                </div></div>
                  
-                <div class="form-group ">
+                
+                <div class="form-group  col-md-12 col-sm-12">
+                        <div class="row">
                   <!-- Default input email -->
-                  <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Email</label>
-                  <input type="email" id="defaultFormCardEmailEx" class="form-control" [(ngModel)]="email" name="email">
+                  <label for="defaultFormCardEmailEx" class="grey-text font-weight-light col-md-4 label-faq">Email</label>
+                  <input type="email" id="defaultFormCardEmailEx" class="form-control col-md-8" [(ngModel)]="email" name="email">
 
-                  </div>
-                  <div class="form-group ">
+                  </div></div>
 
-                  <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Designation</label>
-                  <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="designation" name="designation">
+                  
+                <div class="form-group  col-md-12 col-sm-12">
+                        <div class="row">
+
+                  <label for="defaultFormCardDesiEx" class="grey-text font-weight-light col-md-4 label-faq">Designation</label>
+                  <select class="browser-default form-control col-md-8" id="defaultFormCardDesiEx" [(ngModel)]="designation" name="designation">
                       <option value="MD">MD</option>
                       <option value="Board">Board</option>
                   </select>
 
-                </div>
+                        </div></div>
 
                   <div class="form-group">
                           <button class="btn btn-outline-warning px-3 btn-skip" type="button">Skip <i class="fa fa-fast-forward"></i></button>
@@ -70,8 +77,8 @@
               <td class="col-email">{{ a.email }}</td>
               <td class="col-designation">{{ a.designation }}</td>
               <td class="col-action">
-                <button type="button" (click)="editApprover(a)" class="btn btn-primary waves-light btn-edit" mdbWavesEffect>EDIT <i class="fa fa-edit" aria-hidden="true"></i></button>
-                <button type="button" (click)="deleteApprover(a._id)" class="btn btn-danger waves-light btn-delete" mdbWavesEffect>DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <span  (click)="editApprover(a)" class=" btn-edit" mdbWavesEffect>Edit </span>/
+                <span  (click)="deleteApprover(a._id)" class=" btn-delete" mdbWavesEffect>Delete </span>
                 </td>
           </tr>
       </tbody>

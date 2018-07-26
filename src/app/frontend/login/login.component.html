@@ -11,41 +11,35 @@
   <form class="login-form" id="login-form" (ngSubmit)="loginForm()">
       <h3 class="login-heading">Login</h3>
       <div class="form-group">
-        <label class="login-label">Please enter your email address</label>
+        <label class="login-label">Enter your email address</label>
         <input
+          placeholder="Email Address"
           type="text"
           id="defaultForm-email"
           [(ngModel)]="field_username"
           name="field_username"
-          class="form-control waves-light"
-          mdbPopover="Please enter your Email Address!"
-          placement="top"
-          mdbPopoverHeader="Username"
-          triggers="focus"
-          mdbWavesEffect
+          class="form-control waves-light"          
         >
       </div>
 
       <div class="form-group">
-          <label class="login-label">Please enter your Password</label>
+          <label class="login-label">Enter your Password</label>
         <input
+          placeholder="Password"
           type="password"
           id="defaultForm-pass"
           [(ngModel)]="field_password"
           name="field_password"
           class="form-control waves-light"
-          mdbPopover="Please enter your Password!"
-          placement="top"
-          mdbPopoverHeader="Password"
-          triggers="focus"
-          mdbWavesEffect
         >
       </div>
+      
 
       <div class="text-center">
         <input type="submit" class="btn btn-default btn_login" value="Login">
         <a class="sign-up-link" [routerLink]="['/registration']">Sign Up</a>
       </div>
+      
     </form>
     <div class="clearfix"></div>
 

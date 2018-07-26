@@ -72,6 +72,10 @@ const routes: Routes = [
       {
         path: 'contactus',
         loadChildren: './frontend/contactus/contactus.module#ContactusModule',
+      },
+      {
+        path: 'department',
+        loadChildren: './department/department.module#DepartmentModule',
       }
     ]
    }

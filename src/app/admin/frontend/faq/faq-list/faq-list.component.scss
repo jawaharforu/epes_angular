@@ -1,43 +1,37 @@
 p.h4.text-center.py-4.admin-title {
-    margin: 0px;
-    color: #54afc6;
+    color: #494949;
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-bottom: 10px !important;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px !important;
-    background: #f9f6f6;
-    padding-left: 15px;
+    background: #ffffff;
     margin-left: -20px;
-    margin-right: -20px;
+    border: none;
 }
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    list-style: none;
-    background-color: #54afc6;
-    border-radius: 0.25rem;
+.card .card-body{
+    background: #fff;
+    box-shadow: none;
 }
-.breadcrumb a, .breadcrumb-item.active{
-    font-size: 12px;
-    color: #fff;
+.card {
+    position: relative;
+    padding: 0px 30px 50px 30px;
+}
+table.table.table-hover.table-responsive-md.table-fixed {
+    border: 1px solid #f3eeee;
 }
 .btn-add-new{
     float: right;
     padding: 5px 10px;
     border-radius: 0px !important;
     color: #fff !important;
-    background-color: #f38e00 !important;
-    border: 1px solid #f38e00 !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
     margin-top: -5px;
     margin-bottom: 15px;
+    box-shadow: none;
 }
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled):active, 
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled).active, 
@@ -54,21 +48,19 @@ label{
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 30px;
 }
 .col-name{
-    width: 30%;
     font-size: 13px;
     color: #666;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 30px;
 }
 .col-question{
-    width: 30%;
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 30px;
 }
 .label-name, .label-no, .label-status, .label-action {
     font-size: 13px;
@@ -102,17 +94,11 @@ label{
     background-color: #fff;
     z-index: 0;
 }
-button.btn.btn-primary.waves-light.btn-edit {
-    background-color: #5bbc6d !important;
+span.btn-edit, span.btn-delete  {
     font-size: 13px;
-    padding: 10px 20px;
-    color: #fff !important;
-}
-button.btn.btn-danger.waves-light.btn-delete {
-    background-color: #b51717 !important;
-    font-size: 13px;
-    padding: 10px 20px;
-    color: #fff !important;
+    color: #54afc6;
+    font-weight: 500;
+    cursor: pointer;
 }
 table.dataTable thead th{
     border-bottom: 1px solid #dbe2e4;
@@ -121,21 +107,21 @@ table.dataTable thead th{
     color: #666;
     font-size: 13px !important;
 }
-@media only screen and (max-width: 768px){
-    button.btn.btn-danger.waves-light.btn-delete,    
-    button.btn.btn-primary.waves-light.btn-edit{
-        padding: 6px 12px;
-        margin-top: 15px;
 
-    }
+
+table.table thead th, .table th, .table td{
+    border-right: 1px solid #f3eeee;    
+    text-transform: capitalize;
 }
-@media only screen and (max-width: 767px){
-    .btn-edit .fa , .btn-delete .fa {
-        display: none
-    }
-    button.btn.btn-danger.waves-light.btn-delete,
-     button.btn.btn-primary.waves-light.btn-edit {
-        padding: 6px 12px;
-        margin-top: 0px;
-    }
+.table thead th{
+    border-bottom: none;
+}
+[type="radio"] + label, [type="checkbox"] + label{
+    height: 13px;;
+}
+
+[type="checkbox"][class*="filled-in"] + label:after {
+    border-radius: 2px;
+    height: 15px;
+    width: 15px;
 }

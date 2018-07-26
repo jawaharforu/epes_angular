@@ -5,7 +5,7 @@
             <div class="row">
                 <section id="featr_pic1">
                     <div class="container">
-                        <div class="feature_imgs">
+                        <div class="feature_imgs product_resource_arrow">
                             <div class="col-sm-4" *ngFor="let blog of blogList">
                                 <div class="image image_1">
                                     <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img1.png" alt="Avatar" class="image" style="width:100%">
@@ -46,31 +46,27 @@
                 <form class="whitepaper-form" (ngSubmit)="whitepaperForm()">
                     <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" name="name" [(ngModel)]="name" id="name" placeholder="Name">
+                    <input type="text" class="form-control" name="name" [(ngModel)]="name" id="name" placeholder="">
                     </div>
                     <div class="form-group">
-                    <label>Email</label>
+                    <label>Official Email</label>
                     <input
                         type="email"
                         class="form-control"
                         name="field_email"
                         [(ngModel)]="field_email"
                         id="Email"
-                        placeholder="Email"
-                        mdbPopover="Please enter the email Address!"
-                        placement="top"
-                        mdbPopoverHeader="Dismissible popover"
-                        triggers="focus" mdbWavesEffect
+                        placeholder=""                        
                     >
                     </div>
 
                     <div class="form-group">
-                    <label>Company</label>
-                    <input type="text" class="form-control" name="field_company" [(ngModel)]="field_company" id="company" placeholder="Company">
+                    <label>Company Name</label>
+                    <input type="text" class="form-control" name="field_company" [(ngModel)]="field_company" id="company" placeholder="">
                     </div>
                     <div class="form-group">
-                    <label>Website</label>
-                    <input type="text" class="form-control" name="field_website" [(ngModel)]="field_website" id="website" placeholder="Website">
+                    <label>Official Website</label>
+                    <input type="text" class="form-control" name="field_website" [(ngModel)]="field_website" id="website" placeholder="">
                     </div>
 
                     <input type="submit" value="Download" class="submit" id="sendWhitepaper">
@@ -84,11 +80,17 @@
                     3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
                     wes anderson cred nesciunt sapiente ea proident.
                     </p>
+                    <div class="row">
+                        <div class="col-sm-4 img-detl">
+                        <p class=" ">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                wes anderson cred nesciunt
+                        </p>
+                    </div>
+                        <div class="col-sm-8 whteimg">
                       <img class="img-responsive white-paperimg" src="../../assets/img/CM-2.jpg">
-                      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                           wes anderson cred nesciunt
-                          </p>
+                    </div>
+                    </div>
                       <ul class="resources_list">
                         <li> Food truck quinoa nesciunt labored nesciunt sapiente ea proident.  </li>
                         <li> Food truck quinoa nesciunt laborum wes anderson cred nesciunt sapiente ea proident. </li>

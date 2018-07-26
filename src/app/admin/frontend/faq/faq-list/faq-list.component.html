@@ -3,7 +3,7 @@
       <!-- Card -->
       <div class="card">
   <div class="card-body">
-    <p class="h4 text-center py-4 admin-title">FAQ List
+    <p class="h4 text-center py-4 admin-title">
     <a [routerLink]="['/admin/faq']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Add New</a>
      </p>
      <!--Table-->
@@ -29,9 +29,8 @@
                   <td class="col-name">{{c.faqsubcategoryid.name}}</td>
                   <td class="col-question">{{c.question}}</td>
                   <td class="col-action">
-                      <button type="button" (click)="editFaq(c)" class="btn btn-primary waves-light btn-edit" mdbRippleRadius>Edit <i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
-                      &nbsp;
-                      <button type="button" (click)="deleteFaq(c._id)" class="btn btn-danger waves-light btn-delete" mdbRippleRadius>Delete <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                      <span  (click)="editFaq(c)" class=" btn-edit" mdbRippleRadius>Edit </span>/ 
+                      <span  (click)="deleteFaq(c._id)" class=" btn-delete" mdbRippleRadius>Delete </span></td>
               </tr>
           </tbody>
           <!--Table body-->

@@ -10,31 +10,45 @@
             <form (ngSubmit)="faqForm()" class="add-faq">
                 <p class="h4 text-center py-4 admin-title">FAQ</p>
                 <input type="hidden" [(ngModel)]="faqid" name="faqid" />
-                <div class="form-group ">
-                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Category</label>
-                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="faqcategoryid" (change)="getSubCategory()">
+
+                
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="row">
+                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light control-label col-md-3">Category</label>
+                <select class="browser-default form-control col-md-10" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="faqcategoryid" (change)="getSubCategory()">
                   <option value="" disabled>--Select Category--</option>
                   <option *ngFor="let s of faqcategoryList" [value]="s._id">{{ s.name }}</option>
                 </select>
-                </div>
-                <div class="form-group ">
-                  <label for="defaultFormCarddfDesiEx" class="grey-text font-weight-light">Sub Category</label>
-                  <select class="browser-default form-control" id="defaultFormCarddfDesiEx" [(ngModel)]="faqsubcategoryid" name="faqsubcategoryid">
+                </div></div>
+                <div class="form-group col-md-12 col-sm-12">
+                    <div class="row">
+                  <label for="defaultFormCarddfDesiEx" class="grey-text font-weight-light control-label col-md-3">Sub Category</label>
+                  <select class="browser-default form-control col-md-10" id="defaultFormCarddfDesiEx" [(ngModel)]="faqsubcategoryid" name="faqsubcategoryid">
                     <option value="" disabled>--Select Sub Category--</option>
                     <option *ngFor="let s of faqSubCategoryList" [value]="s._id">{{ s.name }}</option>
                   </select>
-                  </div>
-                <div class="form-group ">
-                <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Question</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question">
-                </div>
-                <div class="form-group ">
-                <div class="md-form">
-                  <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="answer" name="answer"></textarea>
-                  <label for="defaultFormCarddescEx">Answer</label>
+                  </div></div>
+                  <div class="form-group col-md-12 col-sm-12">
+                      <div class="row">
+                <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Question</label>
+                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="question" name="question">
                 </div></div>
+                
+                    <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
+                        <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label col-md-3">Answer</label>
+                        <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control col-md-10" mdbInputDirective [(ngModel)]="answer" name="answer"></textarea>
 
+                      </div>
+                </div>
+
+                <div class="row">
+                    
+            <div  class="col-md-6 offset-md-4 feild-button">
                 <button type="submit" class="btn btn-primary waves-light btn-submit" mdbWavesEffect>Submit</button>
+            </div></div>
+
+                
             </form>
             <!-- Default form subscription -->
 

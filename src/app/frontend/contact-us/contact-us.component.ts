@@ -11,11 +11,14 @@ import { ContactusService } from '../../admin/frontend/contactus/contactus.servi
 })
 export class ContactUsComponent implements OnInit {
 
-  public contactusid: String;
-  public name = "";
-  public field_email = "";
-  public field_phone = "";
-  public field_message = "";
+  public contactusid: String = '';
+  public name: String = '';
+  public field_email: String = '';
+  public field_phone: String = '';
+  public field_message: String = '';
+  public field_country_code: String = '+91';
+  
+  public countryList : any;
 
   constructor(
     public _validationsService: ValidationsService,
@@ -31,6 +34,15 @@ export class ContactUsComponent implements OnInit {
         this.getContacusById(this.contactusid);
       }
     });
+
+    this.getCountryList();
+  }
+
+  getCountryList() {
+    this.contactusService.getCountryList()
+    .subscribe(res => {
+      this.countryList = res.data;
+    });
   }
 
   getContacusById(contactusid: any) {
@@ -40,9 +52,10 @@ export class ContactUsComponent implements OnInit {
       this.field_email = res.data.email;
       this.field_phone = res.data.mobile;
       this.field_message = res.data.message;
+      this.field_country_code = res.data.countrycode;
       this.contactusid = res.data._id;
     });
-}
+  }
 
   contactusForm(){
     if (this._validationsService.isEmpty(this.name)) {
@@ -73,42 +86,46 @@ export class ContactUsComponent implements OnInit {
       this._commonService.showMessage('error', 'phone number should not exceed more than 13 digits!');
       return false;
     }
+    
+    if (this._validationsService.isEmpty(this.field_country_code)) {
+      this._commonService.showMessage('error', 'Please Select Dialing Code!');
+      return false;
+    }
 
 
     let fieldcontactusid;
-        if (!this._validationsService.isEmpty(this.contactusid)) {
-          fieldcontactusid = {
-            name: this.name,
-            mobile: this.field_phone,
-            email: this.field_email,
-            message: this.field_message,
-            contactusid: this.contactusid
-          };
-          console.log(fieldcontactusid);
+    if (!this._validationsService.isEmpty(this.contactusid)) {
+      fieldcontactusid = {
+        name: this.name,
+        mobile: this.field_phone,
+        email: this.field_email,
+        message: this.field_message,
+        countrycode: this.field_country_code,
+        contactusid: this.contactusid
+      };
+      console.log(fieldcontactusid);
+    } else {
+      fieldcontactusid = {
+        name: this.name,
+        mobile: this.field_phone,
+        email: this.field_email,
+        message: this.field_message,
+        countrycode: this.field_country_code
+      };
+    }
+    this.contactusService.addContactus(fieldcontactusid)
+    .subscribe(res => {
+        if (res.success) {
+            this._commonService.showMessage('success', res.msg);
+            this.name = '';
+            this.field_message = '';
+            this.field_email= '';
+            this.field_phone = '';
+            this.field_country_code = '+91';
+            this._commonService.redirectTo('/contact-us');
         } else {
-          fieldcontactusid = {
-            name: this.name,
-            mobile: this.field_phone,
-            email: this.field_email,
-            message: this.field_message
-            
-          };
-          console.log(fieldcontactusid);
+            this._commonService.showMessage('error', res.msg);
         }
-        this.contactusService.addContactus(fieldcontactusid)
-        .subscribe(res => {
-            if (res.success) {
-                this._commonService.showMessage('success', res.msg);
-                this.name = '';
-                this.field_message = '';
-                this.field_email= '';
-                this.field_phone = '';
-                this._commonService.redirectTo('/contact-us');
-            } else {
-                this._commonService.showMessage('error', res.msg);
-            }
-        });
-      
-       
+    });
   }
 }

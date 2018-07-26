@@ -14,3 +14,22 @@
     background-color: #fdb828;
     z-index: 0;
 }
+
+.form_detail form select {
+    background-color: #ffffffc7;
+    width: 100%;
+    margin-bottom: 15px;
+    height: 37px;
+    /* color: #E91E63; */
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.country-code {
+    width: 60px !important;
+    margin-top: 0px;
+}
+
+#Phone {
+    padding-left: 15px;
+}

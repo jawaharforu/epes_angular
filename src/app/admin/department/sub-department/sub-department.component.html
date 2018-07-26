@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-4 ">
+      <!-- Card -->
+      <div class="card">
+
+          <!-- Card body -->
+          <div class="card-body">
+
+              <!-- Default form subscription -->
+              <form (ngSubmit)="subDepartmentForm()" class="add-faqCategory">
+                  <p class="h4 text-center py-4 admin-title">FAQ Sub Category</p>
+                  <input type="hidden" [(ngModel)]="subdepartmentid" name="subdepartmentid">
+                  <!-- Default input name -->
+                  <div class="form-group ">
+                    <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Category</label>
+                    <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid">
+                      <option value="" disabled>--Select Department--</option>
+                      <option *ngFor="let s of departmentList" [value]="s._id">{{ s.name }}</option>
+                    </select>
+                  </div>
+                  <div class="form-group ">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
+                  </div>
+                  <div class="form-group ">
+                          <button class="btn btn-outline-purple px-3 btn-submit" type="submit">Submit <i class="fa fa-arrow-right"></i></button>
+                  </div>
+              </form>
+              <!-- Default form subscription -->
+
+          </div>
+          <!-- Card body -->
+
+      </div>
+      <!-- Card -->
+    </div>
+
+  <div class="col-md-8 ">
+    <!--Table-->
+    <table class="table">
+
+      <!--Table head-->
+      <thead class="mdb-color darken-3">
+          <tr class="text-white">
+              <th class="label-no">#</th>
+              <th class="label-name">Department</th>
+              <th class="label-name">Name</th>
+              <th class="label-action">Action</th>
+          </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+          <tr *ngFor="let a of subDepartmentList; let i = index">
+              <th class="col-no" scope="row">{{ i + 1 }}</th>
+              <td class="col-name">{{ a.departmentid.name }}</td>
+              <td class="col-name">{{ a.name }}</td>
+              <td class="col-action">
+                <button type="button" (click)="editSubDepartment(a)" class="btn btn-primary waves-light btn-edit" mdbWavesEffect>EDIT <i class="fa fa-edit" aria-hidden="true"></i></button>
+                <button type="button" (click)="deleteSubDepartment(a._id)" class="btn btn-danger waves-light btn-delete" mdbWavesEffect>DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </td>
+          </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+  </div>

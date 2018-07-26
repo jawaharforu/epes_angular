@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { ValidationsService } from '../../services/validations.service';
+import { ContactusService } from '../../admin/frontend/contactus/contactus.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,29 +12,67 @@ export class RegistrationComponent implements OnInit {
 
   classer = "hi";
 
-  public field_email_id = "";
-  public field_phone_number = "";
-  public field_password = "";
-  public field_confirm_password = "";
-  public field_first_name = "";
-  public field_middle_name = "";
-  public field_last_name = "";
+  public field_email_id: String = '';
+  public field_phone_number: String = '';
+  // public field_password: String = '';
+  // public field_confirm_password: String = '';
+  public field_first_name: String = '';
+  public field_middle_name: String = '';
+  public field_last_name: String = '';
 
-  public field_job_title = "";
-  public field_company_name = "";
-  public field_contact_number = "";
-  public field_company_address = "";
+  public field_job_title: String = '';
+  public field_company_name: String = '';
+  public field_contact_number: String = '';
+  public field_company_address: String = '';
 
-  public field_industry_name = "";
-  public field_no_of_employee = "";
-  public field_country_name = "";
-  public field_state_name = "";
-  public field_city_name = "";
+  public field_industry_name: String = '';
+  public field_no_of_employee: String = '';
+  public field_country_name: String = '';
+  public field_state_name: String = '';
+  public field_city_name: String = '';
+  public countrycode: String = '+91';
 
-  industries: any[] = [
-    {id:1, industryname:'Information Technology'},
-    {id:2, industryname:'Civil Engineering'},
-    {id:3, industryname:'Others'}
+  public countryList : any;
+
+  
+
+  //Validation start here
+  
+  constructor(
+    private _commonService: CommonService,
+    private _validationsService: ValidationsService,
+    private contactusService: ContactusService
+  ) { }
+
+  ngOnInit() {
+    this.getCountryList();
+  }
+
+  getCountryList() {
+    this.contactusService.getCountryList()
+    .subscribe(res => {
+      console.log(res);
+      this.countryList = res.data;
+    });
+  }
+
+ 
+  industries: any[]= [
+    {id:0,industryname:"Agriculture & Forestry/Wildlife"},
+    {id:1,industryname:"Business & Information"},
+    {id:2,industryname:"Construction/Utilities/Contracting"},
+    {id:3,industryname:"Education"},
+    {id:4,industryname:"Finance & Insurance"},
+    {id:5,industryname:"Food & Hospitality"},
+	{id:6,industryname:"Gaming"},
+    {id:7,industryname:"Health Services"},
+    {id:8,industryname:"Motor Vehicle"},
+    {id:9,industryname:"Natural Resources/Environmental"},
+    {id:10,industryname:"Other"},
+    {id:11,industryname:"Personal Services"},
+	{id:12,industryname:"Real Estate & Housing"},
+    {id:13,industryname:"Safety/Security & Legal"},
+    {id:14,industryname:"Transportation"}
   ];
 
   no_of_employees: any[] = [
@@ -64,16 +103,6 @@ export class RegistrationComponent implements OnInit {
     {id:3, cityName: 'Mysore'},
     {id:4, cityName: 'Raichur'},
   ];
-
-  //Validation start here
-  
-  constructor(
-    private _commonService: CommonService,
-    private _validationsService: ValidationsService,
-  ) { }
-
-  ngOnInit() {
-  }
 
   registrationForm(){    
 
@@ -122,30 +151,30 @@ export class RegistrationComponent implements OnInit {
       return false;
     }
 
-    if (this._validationsService.isEmpty(this.field_password)) {
-      this._commonService.showMessage('error', 'Password field should not be empty!');
-      return false;
-    }
+    // if (this._validationsService.isEmpty(this.field_password)) {
+    //   this._commonService.showMessage('error', 'Password field should not be empty!');
+    //   return false;
+    // }
 
-    if (this._validationsService.isPassword(this.field_password)) {
-      this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
-      return false;
-    }
+    // if (this._validationsService.isPassword(this.field_password)) {
+    //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
+    //   return false;
+    // }
 
-    if (this._validationsService.isEmpty(this.field_confirm_password)) {
-      this._commonService.showMessage('error', 'Confirm Password field should not be empty!');
-      return false;
-    }
+    // if (this._validationsService.isEmpty(this.field_confirm_password)) {
+    //   this._commonService.showMessage('error', 'Confirm Password field should not be empty!');
+    //   return false;
+    // }
 
-    if (this._validationsService.isPassword(this.field_confirm_password)) {
-      this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
-      return false;
-    }
+    // if (this._validationsService.isPassword(this.field_confirm_password)) {
+    //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
+    //   return false;
+    // }
 
-    if(this.field_password !== this.field_confirm_password){
-      this._commonService.showMessage('error', 'password and confirm password fields should be same');
-      return false;
-    }
+    // if(this.field_password !== this.field_confirm_password){
+    //   this._commonService.showMessage('error', 'password and confirm password fields should be same');
+    //   return false;
+    // }
 
     if (this._validationsService.isEmpty(this.field_job_title)) {
       this._commonService.showMessage('error', 'Job Title field should not be empty!');

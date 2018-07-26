@@ -1,32 +1,35 @@
-<div class="card mt-5 mb-5">
-  <div class="card-body">
-    <p class="h4 text-center py-4">Career List</p>
-    <a [routerLink]="['/admin/career']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>
+<div class="row">
+        <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12 product-list">
+          <!-- Card -->
+          <div class="card">
+    
+      <div class="card-body">
+    <p class="h4 text-center py-4 admin-title">Career List
+    </p><a [routerLink]="['/admin/career']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Add New</a>
       <!--Table-->
       <table *ngIf="careerList" datatable class="table table-hover table-responsive-md table-fixed">
           <!--Table head-->
           <thead>
               <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th class="label-no">#</th>
+                  <th class="label-name">Title</th>
+                  <th class="label-status">Status</th>
+                  <th class="label-action">Action</th>
               </tr>
           </thead>
           <!--Table head-->
           <!--Table body-->
           <tbody>
             <tr *ngFor="let c of careerList; let i = index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{c.name}}</td>
-                <td><div class="form-group">
+                <th class="col-no" scope="row">{{i+1}}</th>
+                <td  class="col-name">{{c.name}}</td>
+                <td class="col-status"><div class="form-group">
                     <input type="checkbox" class="filled-in" id="checkbox{{c._id}}" [checked]="c.status" (change)="updateStatus($event.target.checked,c)">
                     <label for="checkbox{{c._id}}"></label>
                 </div></td>
-                <td>
-                    <button type="button" (click)="editCareer(c)" class="btn btn-primary waves-light" mdbRippleRadius>Edit<i class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
-                    &nbsp;
-                    <button type="button" (click)="deleteCareer(c._id)" class="btn btn-danger waves-light" mdbRippleRadius>Delete<i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                <td  class="col-action">
+                    <span  (click)="editCareer(c)" class="btn-edit" mdbRippleRadius>Edit</span>
+                    <span  (click)="deleteCareer(c._id)" class="btn-delete" mdbRippleRadius>Delete</span></td>
             </tr>
           </tbody>
           <!--Table body-->
@@ -34,3 +37,4 @@
       <!--Table-->
   </div>
 </div>
+</div></div>

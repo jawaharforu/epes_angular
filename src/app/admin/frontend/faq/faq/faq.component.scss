@@ -1,28 +1,29 @@
-
 p.h4.text-center.py-4.admin-title {
-    margin: 0px;
-    color: #54afc6;
+    color: #494949;
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-bottom: 10px !important;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px !important;
-    background: #f9f6f6;
-    padding-left: 15px;
+    background: #ffffff;
     margin-left: -20px;
-    margin-right: -20px;
+    border: none;
+    width: 30%;
 }
-
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.card {
+    position: relative;
+    padding: 25px 30px 50px 30px;
+}
 .add-faq label{
     font-size: 13px;
     color: #000 !important;
 }
-
 .btn-submit{
     background-color: #f38e00 !important;
     color: #fff !important;
@@ -36,4 +37,15 @@ p.h4.text-center.py-4.admin-title {
 select#defaultFormCardDesiEx, input#defaultFormCardNameEx,
 textarea#defaultFormCarddescEx {
     font-size: 13px;
+}
+.form-control.col-md-10{
+    max-width: 300px;
+}
+.feild-features{   
+     max-width: 300px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.feild-button{
+    max-width: 250px;
 }

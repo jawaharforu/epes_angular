@@ -1,32 +1,38 @@
 <div class="row">
-    <div class="col-md-12 mt-5">
-      <!-- Card -->
-      <div class="card">
-  
-          <!-- Card body -->
-          <div class="card-body">
+        <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12">
+    <!-- Card -->
+    <div class="card">
+
+        <div class="card-body">
   
               <!-- Default form subscription --> 
-              <form (ngSubmit)="blogForm()">
-                  <p class="h4 text-center py-4">Blog</p>
+              <form (ngSubmit)="blogForm()" class="addBlog">
+                  <p class="h4 text-center py-4 admin-title">Blog</p>
                   <input type="hidden" [(ngModel)]="blogid" name="blogid" />
-                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
-                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
-                  <br> 
+                  <div class="row">
+                        <div class="form-group col-md-12 col-sm-12">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
+                  </div></div>
+                  <div class="form-group col-md-12 ">
                   <label for="defaultFormCarddesc" class="grey-text font-weight-light">Description</label>
                   <ckeditor [(ngModel)]="description" name="description" id="defaultFormCarddesc"></ckeditor>
-                  <br>
-                  <div class="switch">
-                    <label>
-                        Status Off
+                 </div>
+                 <div class="row">
+                        <div class="col-md-6">
+                        <div class="switch">
+                            <label>
+                        Status OFF
                         <input [(ngModel)]="status" name="status" type="checkbox">
                         <span class="lever"></span>
-                        Status On
+                        Status ON
                     </label>
-                  </div>
-                  <br>                  
-                  <button type="submit" class="btn btn-primary waves-light" mdbWavesEffect>Submit</button>
-              </form>
+                </div>
+            </div>
+                <div  class="col-md-6 ">             
+                  <button type="submit" class="btn btn-primary waves-light btn-submit" mdbWavesEffect>Submit</button>
+                </div></div>
+                </form>
               <!-- Default form subscription -->
           </div>
           <!-- Card body -->

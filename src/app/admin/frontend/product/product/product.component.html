@@ -1,92 +1,94 @@
 <div class="row">
-  <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
-    <!-- Card -->
-    <div class="card">
-           <!-- <nav class="breadcrumb">
-                    <a class="breadcrumb-item" href="#">Home</a>
-                    <a class="breadcrumb-item" href="#">Product</a>
-                    <span class="breadcrumb-item active">Add Product</span>
-                  </nav>-->
-
-        <!-- Card body -->
-        <div class="card-body">
-
-            <!-- Default form subscription -->
-            <input type="hidden" [(ngModel)]="productid" name="productid" />
-            <form [formGroup]="productForm" class="addproduct">
-                <p class="h4 text-center py-4 admin-title">Product</p>
-                <div class="row">
-                <div class="form-group col-md-8 col-sm-12">
-                <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control" formControlName="name" name="name">
-                </div>
-
-            </div>
-                <div class="row">
-                <div class="form-group col-md-4 col-sm-12">
-                <label for="defaultFormCardamountEx" class="grey-text font-weight-light">Amount</label>
-                <input type="text" id="defaultFormCardamountEx" class="form-control" formControlName="amount" name="amount">
-              
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                <label for="defaultFormCardnumberofemployeeEx" class="grey-text font-weight-light">No. Of Employee</label>
-                <input type="text" id="defaultFormCardnumberofemployeeEx" class="form-control" formControlName="numberofemployee" name="numberofemployee">
-               
-                </div>
-                
-                 
-                <div class="form-group col-md-4 col-sm-12">
-                <label for="defaultFormCardamountperemployeeEx" class="grey-text font-weight-light">Amount per employee</label>
-                <input type="text" id="defaultFormCardamountperemployeeEx" class="form-control" formControlName="amountperemployee" name="amountperemployee">
-               
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6 col-sm-12">
-                        <label class="grey-text font-weight-light">Period</label>
-                        <div class="form-check">
-                          <input class="form-check-input" formControlName="type" name="type" id="monthly" type="radio" value="MO">
-                          <label class="form-check-label" for="monthly">Monthly</label>
-                          <input class="form-check-input" formControlName="type" id="yearly" name="type" type="radio" value="YR">
-                          <label class="form-check-label" for="yearly">Yearly</label>
-                        </div>
-                        </div>
-
-                <div class="switch">
-                  <label>
-                      Status Off
-                      <input formControlName="status" name="status" type="checkbox">
-                      <span class="lever"></span>
-                      Status On
-                  </label>
-                </div>
-                </div>
-                
-               
-                <label for="defaultFormCardadditionfeaturesEx" class="grey-text font-weight-light">Additional Features</label>
-                <div formArrayName="additionfeatures">
-                        <div class="row">
-                                <div class="form-group col-md-11 col-sm-11">
-                                    
-                  <div *ngFor="let itemrow of productForm.controls.additionfeatures.controls; let i=index"  [formGroupName]="i">
-                      <div class="form-group">
-                          <i *ngIf="productForm.controls.additionfeatures.controls.length > 1" (click)="deleteRow(i)" class="fa fa-remove prefix grey-text"></i>
-                          <input formControlName="itemname" placeholder="Feature {{ i + 1 }}" class="form-control">
-                      </div>
+    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
+      <!-- Card -->
+      <div class="card">
+  
+          <!-- Card body -->
+          <div class="card-body">
+  
+              <!-- Default form subscription -->
+              <input type="hidden" [(ngModel)]="productid" name="productid" />
+              <form [formGroup]="productForm" class="addproduct">
+                  <p class="h4 text-center py-4 admin-title">Product</p>
+                  <div class="row">
+                  <div class="form-group col-md-12 col-sm-12">
+                      
+                  <label  for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" formControlName="name" name="name">
                   </div>
-                </div>
-                <div class="form-group col-md-1 col-sm-1">
-                  <button type="button" (click)="addNewRow()" class="btn btn-primary btn-add-feild"><i class="fa fa-plus-circle" aria-hidden="true"></i>  </button>
+  
               </div>
+                  <div class="row">
+                  <div class="form-group col-md-12 col-sm-12">
+                  <label for="defaultFormCardamountEx" class="grey-text font-weight-light control-label col-md-3">Amount</label>
+                  <input type="text" id="defaultFormCardamountEx" class="form-control col-md-10" formControlName="amount" name="amount">
+                
+                  </div>
+                  <div class="form-group col-md-12 col-sm-12">
+                  <label for="defaultFormCardnumberofemployeeEx" class="grey-text font-weight-light control-label col-md-3">No. Of Employee</label>
+                  <input type="text" id="defaultFormCardnumberofemployeeEx" class="form-control col-md-10" formControlName="numberofemployee" name="numberofemployee">
+                 
+                  </div>
+                  
+                   
+                  <div class="form-group col-md-12 col-sm-12">
+                  <label for="defaultFormCardamountperemployeeEx" class="grey-text font-weight-light control-label col-md-3">Amount per employee</label>
+                  <input type="text" id="defaultFormCardamountperemployeeEx" class="form-control col-md-10" formControlName="amountperemployee" name="amountperemployee">
+                 
+                  </div>
+              </div>
+              
+                  <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
+                          <label class="grey-text font-weight-light control-label col-md-3">Period</label>
+                          <div class="form-check col-md-6 ">
+                            <input class="form-check-input" formControlName="type" name="type" id="monthly" type="radio" value="MO">
+                            <label class="form-check-label" for="monthly">Monthly</label>
+                            <input class="form-check-input" formControlName="type" id="yearly" name="type" type="radio" value="YR">
+                            <label class="form-check-label" for="yearly">Yearly</label>
+                          </div>
+                          </div></div>
+  
+                  
+                  
+                  
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="row">
+            <label for="defaultFormCardadditionfeaturesEx" class="grey-text font-weight-light control-label col-md-3">Additional Features</label>
+            <div class="col-md-9" formArrayName="additionfeatures">
+                          <div class="row">
+                    <div class="col-lg-10 feild-features" *ngFor="let itemrow of productForm.controls.additionfeatures.controls; let i=index"  [formGroupName]="i">
+                            <i *ngIf="productForm.controls.additionfeatures.controls.length > 1" (click)="deleteRow(i)" class="fa fa-remove prefix grey-text"></i>
+                            <input formControlName="itemname" placeholder="Feature {{ i + 1 }}" class="form-control col-md-10">
+                    </div>
+                    <div class="form-group col-md-1 col-sm-1">
+                         <button type="button" (click)="addNewRow()" class="btn btn-primary btn-add-feild"><i class="fa fa-plus-circle" aria-hidden="true"></i>  </button>
+                    </div>
+              </div>
+            </div>
             </div></div>
-                <button type="button" (click)="productSubmit()" class="btn btn-primary btn-submit " mdbWavesEffect>Submit</button>
-            </form>
-            <!-- Default form subscription -->
-
-        </div>
-        <!-- Card body -->
-
+                <div class="row">
+                    <div class="col-md-4">
+                    <div class="switch">
+                        <label>
+                            Status <span class="label-status">OFF</span>
+                            <input formControlName="status" name="status" type="checkbox">
+                            <span class="lever"></span>
+                            ON
+                        </label>
+                    </div>
+                </div>
+                    <div  class="col-md-6 feild-button">
+                    <button type="button" (click)="productSubmit()" class="btn btn-primary btn-submit " mdbWavesEffect>Submit</button>
+                </div></div>
+                </form>
+              <!-- Default form subscription -->
+  
+          </div>
+          <!-- Card body -->
+  
+      </div>
+      <!-- Card -->
     </div>
-    <!-- Card -->
   </div>
-</div>
+  

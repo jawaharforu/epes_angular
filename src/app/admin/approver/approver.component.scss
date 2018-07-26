@@ -1,25 +1,29 @@
 p.h4.text-center.py-4.admin-title {
-    margin: 0px;
-    color: #54afc6;
+    color: #494949;
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-bottom: 10px !important;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px !important;
-    background: #f9f6f6;
-    padding-left: 15px;
+    background: #ffffff;
+    border: none;
     margin-left: -20px;
-    margin-right: -20px;
 }
-
+.card {
+    position: relative;
+    padding: 25px 30px 50px 30px;
+}
+.card .card-body {
+    background: #f6f6f6;
+    box-shadow: none;
+}
 .add-approver label{
     font-size: 13px;
     color: #000 !important;
+    line-height: 28px;
+    padding: 0px;
 }
 .btn-submit{
     background-color: #f38e00 !important;
@@ -49,21 +53,21 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 }
 .col-name{
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 }
 .col-email{
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 
 }
@@ -71,7 +75,7 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 
 }
@@ -91,26 +95,18 @@ table.table th, table.table td {
     background-color: #f9f6f6 !important;
     border: 1px solid #ccc;
 }
-
-
-button.btn.btn-primary.waves-light.btn-edit {
-    background-color: #5bbc6d !important;
-    font-size: 13px;
-    padding: 5px 15px;
-    color: #fff !important;
-}
-button.btn.btn-danger.waves-light.btn-delete {
-    background-color: #b51717 !important;
-    font-size: 13px;
-    padding: 5px 15px;
-    color: #fff !important;
-}
 table.dataTable thead th{
     border-bottom: 1px solid #dbe2e4;
 }
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
     color: #666;
     font-size: 13px !important;
+}
+span.btn-edit, span.btn-delete  {
+    font-size: 13px;
+    color: #54afc6;
+    font-weight: 500;
+    cursor: pointer;
 }
 select#defaultFormCardDesiEx, input#defaultFormCardEmailEx,
 input#defaultFormCardNameEx {

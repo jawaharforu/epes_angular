@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestimonialService } from '../../../admin/frontend/testimonial/testimonial.service';
 
-
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',

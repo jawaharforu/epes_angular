@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Registration_content } from './product-tour-content';
 import { Job } from './product-tour-job';
 import { Employee } from './product-tour-job';
-import { Country } from './product-tour-job';
 
 import { ValidationsService } from '../../../services/validations.service';
 import { CommonService } from '../../../services/common.service';
+import { ContactusService } from '../../../admin/frontend/contactus/contactus.service';
 
 
 @Component({
@@ -16,15 +16,18 @@ import { CommonService } from '../../../services/common.service';
 export class ProductTourContentComponent implements OnInit {
 
 
-  public field_first_name = "";
-  public field_last_name = "";
-  public field_job = "";
-  public field_email = "";
-  public field_phone = "";
-  public field_company = "";
-  public field_select_company = "";
-  public field_select_country = "";
+  public field_first_name:String = '';
+  public field_last_name: String = '';
+  public field_job:String = '';
+  public field_email:String = '';
+  public field_phone:String = '';
+  public field_company:String = '';
+  public field_select_company:String = '';
+  public field_select_country:String = '';
   public field_agree: Boolean = false;
+  public field_country_code: String = '+91';
+
+  public countryList : any;
 
 
   content_image = "../../../assets/img/360 EPES.png";
@@ -62,42 +65,51 @@ export class ProductTourContentComponent implements OnInit {
 
   classmyclass = "col-my-1";
   select_list_job: Job[]= [
-    {id:0,label:"Find Industry"},
-    {id:1,label:"Information Technology"},
-    {id:2,label:"Student"},
-    {id:3,label:"Others"},
-    {id:4,label:"Option 4"},
-    {id:5,label:"Option 5"}
+    {id:0,label:"Agriculture & Forestry/Wildlife"},
+    {id:1,label:"Business & Information"},
+    {id:2,label:"Construction/Utilities/Contracting"},
+    {id:3,label:"Education"},
+    {id:4,label:"Finance & Insurance"},
+    {id:5,label:"Food & Hospitality"},
+	  {id:6,label:"Gaming"},
+    {id:7,label:"Health Services"},
+    {id:8,label:"Motor Vehicle"},
+    {id:9,label:"Natural Resources/Environmental"},
+    {id:10,label:"Other"},
+    {id:11,label:"Personal Services"},
+	  {id:12,label:"Real Estate & Housing"},
+    {id:13,label:"Safety/Security & Legal"},
+    {id:14,label:"Transportation"}
   ];
+  
 
   select_list_employee: Employee[]= [
-    {id:0,label:"Employee"},
-    {id:1,label:"10-50"},
-    {id:2,label:"50-100"},
-    {id:3,label:"100-500"},
-    {id:4,label:"500-1000"},
-    {id:5,label:"1000-5000"},
+    {id:0,label:"10-50"},
+    {id:1,label:"50-100"},
+    {id:2,label:"100-500"},
+    {id:3,label:"500-1000"},
+    {id:4,label:"1000-5000"},
     {id:5,label:"5000 above"}
   ];
-
-  select_list_country: Country[]= [
-    {id:0,label:"Country"},
-    {id:1,label:"India"},
-    {id:2,label:"Pakistan"},
-    {id:3,label:"Srilanka"},
-    {id:4,label:"Indonesia"},
-    {id:5,label:"Singapore"}
-  ];
-
   contact_us:any = "0088 3325 5545";
 
 
   constructor(
     private _commonService: CommonService,
     private _validationsService: ValidationsService,
+    private contactusService: ContactusService
   ) { }
 
   ngOnInit() {
+    this.getCountryList();
+  }
+
+  getCountryList() {
+    this.contactusService.getCountryList()
+    .subscribe(res => {
+      console.log(res);
+      this.countryList = res.data;
+    });
   }
 
 
@@ -127,6 +139,11 @@ export class ProductTourContentComponent implements OnInit {
       return false;
     }
 
+    if(this._validationsService.isEmpty(this.field_country_code)){
+      this._commonService.showMessage('error','Please select the Dial Code');
+      return false;
+    }
+
     if (this._validationsService.isEmpty(this.field_phone)) {
       this._commonService.showMessage('error', 'Phone Number field should not be empty!');
       return false;
@@ -139,6 +156,11 @@ export class ProductTourContentComponent implements OnInit {
 
     if(this._validationsService.isMinimum(this.field_phone)){
       this._commonService.showMessage('error','Should have atleast 10 digits!');
+      return false;
+    }
+
+    if(!this._validationsService.isEmail(this.field_email)){
+      this._commonService.showMessage('error','Not an Email Address!');
       return false;
     }
 

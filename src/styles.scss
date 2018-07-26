@@ -385,16 +385,16 @@ p.per_ad {
 }
 
 .our_pf1 h3:after {
-    content: "";
+       content: "";
     position: absolute;
     width: 80px;
     background-color: orange;
     height: 4px;
-    top: 68px;
     left: 0;
     right: 0;
     margin: 0 auto;
     border-radius: 5px;
+    margin-top: 35px;
 }
 
 .our_pf1{
@@ -2433,8 +2433,10 @@ nav.admin-top-navbar {
 .product-list .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .product-list .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
     padding: 1px 7px;
-    background: #e3f4f8;
+    background: #2599b7;
     border: 1px solid #54afc6;
+    color: #fff !important;
+    border-radius: 0;
 }
 .product-list input[type="search"]{
     border: 1px solid #ccc;
@@ -2488,3 +2490,13 @@ nav.admin-top-navbar {
         background: #000;
 }
 
+.our_pf_accor .row{
+    left: 0px !important;
+}
+.vp_adjust {
+    position: relative;
+    padding-top: 26%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
