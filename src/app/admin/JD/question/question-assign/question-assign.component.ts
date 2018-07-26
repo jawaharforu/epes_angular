@@ -90,7 +90,6 @@ export class QuestionAssignComponent implements OnInit {
   }
 
   public showModal(modal: any): void {
-    console.log(modal);
     if (modal === 's') {
       this.isModalShownScale = true;
     } else if (modal === 'a') {

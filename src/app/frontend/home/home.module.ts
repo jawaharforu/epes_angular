@@ -13,6 +13,7 @@ import { OurcustomersComponent } from './ourcustomers/ourcustomers.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { NewlinePipe } from '../../pipes/newline.pipe';
 import { CountUpModule } from 'countup.js-angular2';
+import { HRIndexComponent } from './hrindex/hrindex.component';
 
 const router: Routes = [
   { path : '', component : HomeComponent  },
@@ -33,7 +34,8 @@ const router: Routes = [
     VoluptatemComponent,
     OurcustomersComponent,
     TestimonialsComponent,
-    NewlinePipe
+    NewlinePipe,
+    HRIndexComponent
   ]
 })
 export class HomeModule { }
