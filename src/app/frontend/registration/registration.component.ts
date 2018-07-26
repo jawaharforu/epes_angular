@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { ValidationsService } from '../../services/validations.service';
 import { ContactusService } from '../../admin/frontend/contactus/contactus.service';
+import { CompanyService} from '../../admin/company/company.service';
+import { UserService } from '../../admin/user/user.service'
 
 @Component({
   selector: 'app-registration',
@@ -9,8 +11,6 @@ import { ContactusService } from '../../admin/frontend/contactus/contactus.servi
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
-  classer = "hi";
 
   public field_email_id: String = '';
   public field_phone_number: String = '';
@@ -32,16 +32,14 @@ export class RegistrationComponent implements OnInit {
   public field_city_name: String = '';
   public countrycode: String = '+91';
 
-  public countryList : any;
+  public countryList: any;
 
-  
-
-  //Validation start here
-  
   constructor(
     private _commonService: CommonService,
     private _validationsService: ValidationsService,
-    private contactusService: ContactusService
+    private contactusService: ContactusService,
+    private companyService: CompanyService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -51,60 +49,41 @@ export class RegistrationComponent implements OnInit {
   getCountryList() {
     this.contactusService.getCountryList()
     .subscribe(res => {
-      console.log(res);
       this.countryList = res.data;
     });
   }
 
- 
-  industries: any[]= [
-    {id:0,industryname:"Agriculture & Forestry/Wildlife"},
-    {id:1,industryname:"Business & Information"},
-    {id:2,industryname:"Construction/Utilities/Contracting"},
-    {id:3,industryname:"Education"},
-    {id:4,industryname:"Finance & Insurance"},
-    {id:5,industryname:"Food & Hospitality"},
-	{id:6,industryname:"Gaming"},
-    {id:7,industryname:"Health Services"},
-    {id:8,industryname:"Motor Vehicle"},
-    {id:9,industryname:"Natural Resources/Environmental"},
-    {id:10,industryname:"Other"},
-    {id:11,industryname:"Personal Services"},
-	{id:12,industryname:"Real Estate & Housing"},
-    {id:13,industryname:"Safety/Security & Legal"},
-    {id:14,industryname:"Transportation"}
+  // tslint:disable-next-line:member-ordering
+  public industries: any[]= [
+    {industryname: 'Agriculture & Forestry/Wildlife'},
+    {industryname: 'Business & Information'},
+    {industryname: 'Construction/Utilities/Contracting'},
+    {industryname: 'Education'},
+    {industryname: 'Finance & Insurance'},
+    {industryname: 'Food & Hospitality'},
+    {industryname: 'Gaming'},
+    {industryname: 'Health Services'},
+    {industryname: 'Motor Vehicle'},
+    {industryname: 'Natural Resources/Environmental'},
+    {industryname: 'Other'},
+    {industryname: 'Personal Services'},
+    {industryname: 'Real Estate & Housing'},
+    {industryname: 'Safety/Security & Legal'},
+    {industryname: 'Transportation'}
   ];
 
-  no_of_employees: any[] = [
-    {id:1, employeesCount: '10-50'},
-    {id:2, employeesCount: '50-100'},
-    {id:3, employeesCount: '100-500'},
-    {id:3, employeesCount: '500-1000'},
-    {id:3, employeesCount: '1000-5000'},
-    {id:3, employeesCount: '5000 above'}
+  // tslint:disable-next-line:member-ordering
+  public no_of_employees: any[] = [
+    {employeesCount: '10-50'},
+    {employeesCount: '50-100'},
+    {employeesCount: '100-500'},
+    {employeesCount: '500-1000'},
+    {employeesCount: '1000-5000'},
+    {employeesCount: '5000 above'}
   ];
 
-  country_list: any[] = [
-    {id:1, countryName: 'India'},
-    {id:2, countryName: 'Pakistan'},
-    {id:3, countryName: 'SriLanka'},
-  ];
 
-  state_list: any[] = [
-    {id:1, stateName: 'Karnataka'},
-    {id:2, stateName: 'Kerala'},
-    {id:3, stateName: 'Tamil Nadu'},
-    {id:4, stateName: 'Andhra Pradesh'},
-  ];
-
-  city_list: any[] = [
-    {id:1, cityName: 'Bangalore'},
-    {id:2, cityName: 'Mangalore'},
-    {id:3, cityName: 'Mysore'},
-    {id:4, cityName: 'Raichur'},
-  ];
-
-  registrationForm(){    
+  registrationForm() {
 
     if (this._validationsService.isEmpty(this.field_first_name)) {
       this._commonService.showMessage('error', 'First Name field should not be empty!');
@@ -139,7 +118,7 @@ export class RegistrationComponent implements OnInit {
     if (this._validationsService.isMaximum(this.field_phone_number)) {
       this._commonService.showMessage('error', 'Phone number field should exceed 13 digits!');
       return false;
-    }    
+    }
 
     if (this._validationsService.isEmpty(this.field_email_id)) {
       this._commonService.showMessage('error', 'Email field should not be empty!');
@@ -157,6 +136,7 @@ export class RegistrationComponent implements OnInit {
     // }
 
     // if (this._validationsService.isPassword(this.field_password)) {
+    // tslint:disable-next-line:max-line-length
     //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
     //   return false;
     // }
@@ -167,6 +147,7 @@ export class RegistrationComponent implements OnInit {
     // }
 
     // if (this._validationsService.isPassword(this.field_confirm_password)) {
+    // tslint:disable-next-line:max-line-length
     //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
     //   return false;
     // }
@@ -223,7 +204,57 @@ export class RegistrationComponent implements OnInit {
       this._commonService.showMessage('error', 'City Name field should not be empty!');
       return false;
     }
-    
+
+    const companyField = {
+      jobtitle: this.field_job_title,
+      companyname: this.field_company_name,
+      industry: this.field_industry_name,
+      noofemployees: this.field_no_of_employee,
+      companycontact: this.field_contact_number,
+      companyaddress: this.field_company_address,
+      country: this.field_country_name,
+      state: this.field_state_name,
+      city: this.field_city_name,
+      status: true
+    };
+
+    const email = {
+      email: this.field_email_id
+    };
+    this.userService.checkUserExist(email)
+    .subscribe(emailresult => {
+      if (!emailresult.success) {
+        this.companyService.addCompany(companyField)
+        .subscribe(res => {
+          if (res.success) {
+            const userField = {
+              companyid: res.data._id,
+              firstname: this.field_first_name,
+              middlename: this.field_middle_name,
+              lastname: this.field_last_name,
+              mobile: this.field_phone_number,
+              email: this.field_email_id,
+              password: 'Zolipe@123',
+              role: 'companyadmin',
+              status: true,
+            };
+            this.userService.addUser(userField)
+            .subscribe(result => {
+              if (result.success) {
+                this._commonService.redirectTo('/login');
+              } else {
+                this._commonService.showMessage('error', result.msg);
+              }
+            });
+          } else {
+            this._commonService.showMessage('error', res.msg);
+          }
+        });
+      } else {
+        this._commonService.showMessage('error', 'User email already exist!!!');
+      }
+    });
+
   }
 
 }

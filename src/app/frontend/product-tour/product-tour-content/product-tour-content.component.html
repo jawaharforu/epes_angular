@@ -17,16 +17,7 @@
                     <h3>{{content1.title}}</h3>
                     <p>{{content1.description}}</p>
                 </div>
-              </div>
-              <!--<div class="col-sm-6 sub_titels">
-                <div class="col-sm-2">
-                  <i class="far fa-globe"></i>
-                </div>
-                <div class="col-sm-10">
-                        <h3>Accusantinum dloremqu</h3>
-                        <p>When you next make a booking, we guarantee that you will always receive the best possible rates providing you book directly through the hotel  </p>
-                </div>
-              </div>-->
+              </div>              
           </div>
           <div class="row">
             <div class="col-sm-6 sub_titels" *ngFor="let content2 of registration_content2">
@@ -58,13 +49,16 @@
           <h3>Product Tour</h3>
           <p>Please fill out all fields</p>
           <form class="reg_form" (ngSubmit)="producttourform()">
-            <input type="text" id="first_name" class="form-control browser-default" placeholder="First Name" [(ngModel)]="field_first_name" name="field_first_name">
-            <input type="text" id="last_name" class="form-control browser-default" placeholder="Last Name" [(ngModel)]="field_last_name" name="field_last_name">
+            <input type="text" id="first_name" class="form-control browser-default" 
+            placeholder="First Name" [(ngModel)]="field_first_name" name="field_first_name">
+            <input type="text" id="last_name" class="form-control browser-default" 
+            placeholder="Last Name" [(ngModel)]="field_last_name" name="field_last_name">
+
             <!--<input type="text" id="job_title" class="form-control" placeholder="Job title">-->
             <select class="mdb-select browser-default" [(ngModel)]="field_job" name="field_job">
               <!-- <option value="" disabled selected>Job title</option> -->
               <option value="" hidden class="industry" >Industries</option>
-              <option *ngFor="let job of select_list_job" [value]="job.id">{{job.label}}</option>
+              <option *ngFor="let job of select_list_job" [value]="job.label">{{job.label}}</option>
             </select>
             <input
               type="email"
@@ -99,10 +93,10 @@
 
             <input type="text" id="Company" class="form-control browser-default" placeholder="Company Name" [(ngModel)]="field_company" name="field_company">
             <!--  <input type="text" id="Employees" class="form-control" placeholder="Employees"> -->
-            <select class="browser-default" [(ngModel)]="field_select_company" name="field_select_company">
+            <select class="browser-default" [(ngModel)]="field_no_of_employee" name="field_no_of_employee">
              
               <option value="" hidden class="Employees" >No. of Employees</option>
-              <option *ngFor="let employee of select_list_employee" [value]="employee.id">{{employee.label}}</option>
+              <option *ngFor="let employee of select_list_employee" [value]="employee.label">{{employee.label}}</option>
             </select>
 
             <!--   <input type="text" id="Country" class="form-control" placeholder="Country"> -->

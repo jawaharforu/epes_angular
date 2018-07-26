@@ -6,6 +6,8 @@ import { Employee } from './product-tour-job';
 import { ValidationsService } from '../../../services/validations.service';
 import { CommonService } from '../../../services/common.service';
 import { ContactusService } from '../../../admin/frontend/contactus/contactus.service';
+import { ProducttourService } from '../../../admin/frontend/producttour/producttour.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,20 +17,19 @@ import { ContactusService } from '../../../admin/frontend/contactus/contactus.se
 })
 export class ProductTourContentComponent implements OnInit {
 
-
+  public producttourid: String = '';
   public field_first_name:String = '';
   public field_last_name: String = '';
   public field_job:String = '';
   public field_email:String = '';
   public field_phone:String = '';
   public field_company:String = '';
-  public field_select_company:String = '';
+  public field_no_of_employee:String = '';
   public field_select_country:String = '';
   public field_agree: Boolean = false;
   public field_country_code: String = '+91';
 
   public countryList : any;
-
 
   content_image = "../../../assets/img/360 EPES.png";
 
@@ -93,15 +94,39 @@ export class ProductTourContentComponent implements OnInit {
   ];
   contact_us:any = "0088 3325 5545";
 
-
   constructor(
     private _commonService: CommonService,
     private _validationsService: ValidationsService,
-    private contactusService: ContactusService
+    private contactusService: ContactusService,
+    private producttourService: ProducttourService,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.getCountryList();
+    
+    this.activatedRoute.params.subscribe((params) => {
+      this.producttourid = params['producttourid'];
+      if (!this._validationsService.isEmpty(this.producttourid)) {
+        this.getProducttourById(this.producttourid);
+      }
+    });
+  }
+
+  getProducttourById(producttourid: any) {
+    this.producttourService.getProducttourById(producttourid)
+    .subscribe(res => {
+      this.field_first_name = res.data.firstname;
+      this.field_last_name = res.data.lastname;
+      this.field_job = res.data.industry;
+      this.field_email = res.data.email;
+      this.field_phone = res.data.contact;
+      this.field_no_of_employee = res.data.noofemployees;
+      this.field_company = res.data.company;
+      this.field_select_country = res.data.country;
+      this.field_country_code = res.data.countrycode;
+      this.producttourid = res.data._id;
+    });
   }
 
   getCountryList() {
@@ -174,7 +199,7 @@ export class ProductTourContentComponent implements OnInit {
       return false;
     }
 
-    if (this._validationsService.isEmpty(this.field_select_company)) {
+    if (this._validationsService.isEmpty(this.field_no_of_employee)) {
       this._commonService.showMessage('error', 'Employee field should not be empty!');
       return false;
     }
@@ -188,6 +213,58 @@ export class ProductTourContentComponent implements OnInit {
       this._commonService.showMessage('error', 'Please Accept terms and conditions!');
       return false;
     }
+
+    let fieldproducttourid;
+    if (!this._validationsService.isEmpty(this.producttourid)) {
+      fieldproducttourid = {
+        firstname: this.field_first_name,
+        lastname: this.field_last_name,
+        industry: this.field_job,
+        email: this.field_email,
+        contact: this.field_phone,
+        noofemployees: this.field_no_of_employee,
+        company:this.field_company,
+        country:this.field_select_country,
+        countrycode:this.field_country_code,
+        _id:this.producttourid
+      };
+      console.log(fieldproducttourid);
+    } else {
+      fieldproducttourid = {
+        firstname: this.field_first_name,
+        lastname: this.field_last_name,
+        industry: this.field_job,
+        email: this.field_email,
+        contact: this.field_phone,
+        noofemployees: this.field_no_of_employee,
+        company:this.field_company,
+        country:this.field_select_country,
+        countrycode:this.field_country_code,
+      };
+    }
+    this.producttourService.addProducttour(fieldproducttourid)
+    .subscribe(res => {
+        if (res.success) {
+            this._commonService.showMessage('success', res.msg);
+            this.field_first_name = '';
+            this.field_last_name = '';
+            this.field_job= '';
+            this.field_email = '';
+            this.field_phone = '';
+            this.field_no_of_employee = '';
+            this.field_company= '';
+            this.field_phone = '';
+            this.field_select_country ='';
+            this.field_country_code = '+91';
+            this._commonService.redirectTo('/product-tour');
+        } else {
+            this._commonService.showMessage('error', res.msg);
+        }
+    });
   }
 
-}
+
+
+  }
+
+  

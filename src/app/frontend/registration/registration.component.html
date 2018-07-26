@@ -10,31 +10,31 @@
       <h5 class="section_title">Login Information</h5>
 
       <div class="form-group col-md-6 col-sm-12">
-        <input 
-          type="text" 
-          class="form-control browser-default {{field_first_name.length > 0  ? 'input-clicked' : ''}}" 
-          id="fname" [(ngModel)]="field_first_name" 
-          name="field_first_name" 
+        <input
+          type="text"
+          class="form-control browser-default {{field_first_name.length > 0  ? 'input-clicked' : ''}}"
+          id="fname" [(ngModel)]="field_first_name"
+          name="field_first_name"
         >
         <label class="reg-tom-label browser-default" for="fnane">First Name:</label>
       </div>
       <div class="form-group col-md-6 col-sm-12">
-        <input 
-          type="text" 
-          class="form-control browser-default {{field_middle_name.length > 0  ? 'input-clicked' : ''}}" 
-          [(ngModel)]="field_middle_name" 
-          name="field_middle_name" 
-          id="mname" 
+        <input
+          type="text"
+          class="form-control browser-default {{field_middle_name.length > 0  ? 'input-clicked' : ''}}"
+          [(ngModel)]="field_middle_name"
+          name="field_middle_name"
+          id="mname"
         >
         <label class="reg-tom-label browser-default" for="ln">Middle Name:</label>
       </div>
       <div class="form-group col-md-6 col-sm-12">
-        <input 
-          type="text" 
-          class="form-control browser-default {{field_last_name.length > 0  ? 'input-clicked' : ''}}" 
-          [(ngModel)]="field_last_name" 
-          name="field_last_name" 
-          id="lname" 
+        <input
+          type="text"
+          class="form-control browser-default {{field_last_name.length > 0  ? 'input-clicked' : ''}}"
+          [(ngModel)]="field_last_name"
+          name="field_last_name"
+          id="lname"
         >
         <label class="reg-tom-label browser-default" for="ln">Last Name:</label>
       </div>
@@ -46,27 +46,28 @@
           </select>
           </div>
           <div class="col-md-8">
-        <input 
-          type="text" 
-          class="waves-light form-control browser-default {{field_phone_number.length > 0  ? 'input-clicked' : ''}}" 
-          [(ngModel)]="field_phone_number" 
-          name="field_phone_number" 
-          id="phonenumber"           
+        <input
+          type="text"
+          class="waves-light form-control browser-default {{field_phone_number.length > 0  ? 'input-clicked' : ''}}"
+          [(ngModel)]="field_phone_number"
+          name="field_phone_number"
+          id="phonenumber"
+          maxlength="13"
         >
-		
+
         <label class="reg-tom-label browser-default" for="ln">Phone Number:</label>
 		</div></div>
-		
+
       </div>
     <div class="form-group col-md-6 col-sm-12">
-      <input 
-        type="email" 
-        class="waves-light form-control browser-default {{field_email_id.length > 0  ? 'input-clicked' : ''}}" 
-        id="email" 
-        [(ngModel)]="field_email_id" 
-        name="field_email_id"        
+      <input
+        type="email"
+        class="waves-light form-control browser-default {{field_email_id.length > 0  ? 'input-clicked' : ''}}"
+        id="email"
+        [(ngModel)]="field_email_id"
+        name="field_email_id"
       >
-      <label class="reg-tom-label" for="email">Email address:</label>
+      <label class="reg-tom-label" for="email">Official email address:</label>
     </div>
     <!-- <div class="form-group col-md-6 col-sm-12">
       <input type="password" class="form-control browser-default {{field_password.length > 0  ? 'input-clicked' : ''}}" id="pwd" [(ngModel)]="field_password" name="field_password">
@@ -89,20 +90,20 @@
     </div>
     <div class="form-group col-md-6 col-sm-12">
       <select class="selectpicker form-control browser-default {{field_industry_name === ''  ? '' : 'input-clicked'}}" data-live-search="true" name="field_industry_name" [(ngModel)]="field_industry_name">
-        <option *ngFor="let industry of industries" value="{{industry.id}}">{{industry.industryname}}</option>
+        <option *ngFor="let industry of industries" value="{{industry.industryname}}">{{industry.industryname}}</option>
       </select>
       <label class="reg-tom-label" for="pwd">Industry:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
       <select class="selectpicker form-control browser-default {{field_no_of_employee === '' ? '' : 'input-clicked'}}" data-live-search="true" name="field_no_of_employee" [(ngModel)]="field_no_of_employee">
-        <option *ngFor="let employee of no_of_employees" value="{{employee.id}}">{{employee.employeesCount}}</option>
+        <option *ngFor="let employee of no_of_employees" value="{{employee.employeesCount}}">{{employee.employeesCount}}</option>
       </select>
       <label class="reg-tom-label" for="pwd">No of Employees:</label>
     </div>
     <div class="form-group col-md-6 col-sm-12">
       <input type="text" class="form-control browser-default {{field_contact_number.length > 0  ? 'input-clicked' : ''}}" id="ccnumber" [(ngModel)]="field_contact_number" name="field_contact_number">
       <label class="reg-tom-label" for="ccn">Contact Number:</label>
-    </div>    
+    </div>
     <div class="form-group col-md-6 col-sm-12">
       <input type="text" class="form-control browser-default {{field_company_address.length > 0  ? 'input-clicked' : ''}}" id="ccaddress" [(ngModel)]="field_company_address" name="field_company_address">
       <label class="reg-tom-label" for="caddress">Company Address:</label>

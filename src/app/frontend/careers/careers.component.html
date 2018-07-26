@@ -15,7 +15,7 @@
 
                 <!--Accordion wrapper-->
                 <mdb-squeezebox class="single-job" [multiple]="false" aria-multiselectable="true">
-                    <mdb-item  [collapsed]="false" *ngFor="let item of careersList">
+                    <mdb-item  [collapsed]="true" *ngFor="let item of careersList">
                         <mdb-item-head class="accodian-header-q"> <span class="panel-title job-title">
                             <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 {{ item.name }}

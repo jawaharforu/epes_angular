@@ -218,10 +218,15 @@
   margin-top: 100px;
 }
 
+.modal-dialog.modal-notify .modal-body{
+  padding: 0px;
+}
+
 .pro {
   width: 80%;
   padding: 40px 0px;
   padding-bottom: 20px;
+  display: flex;
 }
 
 .progress-bar {
@@ -230,6 +235,7 @@
 
 .progress {
   height: 6px;
+  display: contents;
 }
 
 .progress-bar:after {
@@ -250,7 +256,7 @@
   color: #000;
   position: absolute;
   text-align: center;
-  bottom: -5px;
+  bottom: -24px;
   margin-bottom: 0;
 }
 
@@ -277,6 +283,7 @@
   left: 24px;
   color: #000 !important;
   font-weight: 400;
+  bottom: -26px;
 }
 
 .progress-bar2 p {

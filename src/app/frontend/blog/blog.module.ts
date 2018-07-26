@@ -9,7 +9,7 @@ import { BloginnerComponent } from './bloginner/bloginner.component';
 
 const router: Routes = [
   { path : '', component : BlogComponent  },
-  { path : 'inner', component : BloginnerComponent  },
+  { path : ':blogid', component : BloginnerComponent  },
 ];
 
 @NgModule({

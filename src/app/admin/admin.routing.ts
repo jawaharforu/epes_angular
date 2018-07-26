@@ -76,6 +76,18 @@ const routes: Routes = [
       {
         path: 'department',
         loadChildren: './department/department.module#DepartmentModule',
+      },
+      {
+        path: 'company',
+        loadChildren: './company/company.module#CompanyModule',
+      },
+      {
+        path: 'user',
+        loadChildren: './user/user.module#UserModule',
+      },
+      {
+        path: 'producttour',
+        loadChildren: './frontend/producttour/producttour.module#ProducttourModule',
       }
     ]
    }

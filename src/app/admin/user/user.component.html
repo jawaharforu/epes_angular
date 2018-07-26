@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12 faq-list">
+      <!-- Card -->
+      <div class="card">
+  <div class="card-body">
+    <p class="h4 text-center py-4 admin-title">
+     </p>
+     <!--Table-->
+      <table *ngIf="userList" datatable class="table table-hover table-responsive-md table-fixed">
+
+          <!--Table head-->
+          <thead>
+              <tr>
+                  <th class="label-no">#</th>
+                  <th class="label-name">Name</th>
+                  <th class="label-name">Company</th>
+                  <th class="label-name">Email</th>
+                  <th class="label-action">Action</th>
+              </tr>
+          </thead>
+          <!--Table head-->
+
+          <!--Table body-->
+          <tbody>
+              <tr *ngFor="let c of userList; let i = index">
+                  <th class="col-no" scope="row">{{i+1}}</th>
+                  <td class="col-name">{{c.firstname}}</td>
+                  <td class="col-name">{{c.companyid.companyname}}</td>
+                  <td class="col-name">{{c.email}}</td>
+                  <td class="col-action">
+                      <span  (click)="deleteUser(c._id)" class=" btn-delete" mdbRippleRadius>Delete </span></td>
+              </tr>
+          </tbody>
+          <!--Table body-->
+
+      </table>
+      <!--Table-->
+  </div>
+</div>
+</div></div>

@@ -22,24 +22,15 @@
     <div class="col-md-3 col-sm-6 video-thumbnail"><img class="img-responsive" src="../../assets/img/video-tutorial4.jpg"></div>
    </div>
   <div class="row">
-      <div class="col-md-4 col-sm-12">
-        <h3 class="col-title">Getting Started</h3>
-        <ul class="support-links">
-          <li>Lorem Ipsum is simply dummy</li>
-          <li>Lorem Ipsum is simply dummy</li>
-          <li>Lorem Ipsum is simply dummy</li>
-          <li>Lorem Ipsum is simply dummy</li>
-        </ul>
+      <div class="col-md-4 col-sm-12" *ngFor="let f of faqcategoryList | slice:0:2; let i=index">
+        <h3 class="col-title">{{f.name}}</h3>
+        <p>{{list[f._id][0] | json}}</p>
+        <!--
+        <ul class="support-links" *ngIf="list[f._id].length > 0">
+          <li *ngFor="faq of list[f._id]">{{faq.name}}</li>
+        </ul>-->
       </div>
-      <div class="col-md-4 col-sm-12">
-          <h3 class="col-title">FAQs</h3>
-          <ul class="support-links">
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
-          </ul>
-      </div>
+
       <div class="col-md-4 col-sm-12">
           <h3 class="col-title">Billing & Shipping & Returns</h3>
           <ul class="support-links">

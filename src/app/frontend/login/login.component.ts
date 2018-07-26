@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationsService } from '../../services/validations.service';
 import { CommonService } from '../../services/common.service';
+import { UserService } from '../../admin/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,14 @@ import { CommonService } from '../../services/common.service';
 })
 export class LoginComponent implements OnInit {
 
-  public field_username = "";
-  public field_password = "";
+  public field_username: String = '';
+  public field_password: String = '';
 
 
   constructor(
     public _validationsService: ValidationsService,
     public _commonService: CommonService,
+    public userService: UserService
   ) { }
 
   ngOnInit() {
@@ -37,14 +39,23 @@ export class LoginComponent implements OnInit {
     }
 
     // if (this._validationsService.isPassword(this.field_password)) {
-    //   // tslint:disable-next-line:max-line-length
+    // tslint:disable-next-line:max-line-length
     //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
     //   return false;
     // }
-
-    this._commonService.redirectTo('/admin');
+    const user = {
+      email: this.field_username,
+      password: this.field_password
+    };
+    this.userService.authenticateUser(user).subscribe(res => {
+      if (res.success) {
+        this.userService.storeUserData(res.token, res.user);
+        this._commonService.showMessage('success', 'Your Successfully Logged In');
+        this._commonService.redirectTo('/admin');
+      } else {
+        this._commonService.showMessage('error', res.msg);
+      }
+    });
   }
-
-
 
 }

@@ -9,15 +9,17 @@
 </section>
 <section id="featr_pic1">
     <div class="container">
-        <div class="feature_imgs" >
-            <div class="col-sm-4" *ngFor="let blog of blogList">
-                <div class="image image_1">
-                    <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img1.png" alt="Avatar" class="image" style="width:100%">
-                </div>
-                <div class="middle">
-                    <div class="blog_title">{{blog.name}}</div>
-                    <div class="post_date">{{blog.createdon}}</div>
-                </div>
+        <div class="row feature_imgs">
+            <div class="col-sm-4 mb-4" *ngFor="let blog of blogList; let i=index">
+                <a [routerLink]="['/blog/',blog._id]">
+                    <div class="image image_1" >
+                        <img src="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/assets/img1.png" alt="Avatar" class="image" style="width:100%">
+                    </div>
+                    <div class="middle">
+                        <div class="blog_title">{{blog.name}}</div>
+                        <div class="post_date">{{blog.createdon | date}}</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

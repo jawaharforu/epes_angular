@@ -1,65 +1,59 @@
 import { Injectable } from '@angular/core';
-import { CommonService } from '../../../../services/common.service';
-import { Http, Headers } from '@angular/http';
+import { CommonService } from '../../../services/common.service';
+import { Http,Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class FaqService {
+export class ProducttourService {
 
   public link: String;
 
   constructor(
     private _commonService: CommonService,
     private http: Http
-  ) {
+  ) { 
     this.link = this._commonService.link;
   }
 
-  addFaq(newFaq: any) {
+  addProducttour(newProducttourr: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.post(`${this.link}/faqs/`, newFaq, {headers: headers})
+    return this.http.post(`${this.link}/producttours/`, newProducttourr, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  getFaq() {
+  getProducttour() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/faqs/`, {headers: headers})
+    return this.http.get(`${this.link}/producttours/`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  deleteFaq(Faqid: any) {
+  deleteProducttour(producttourId: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.delete(`${this.link}/faqs/${Faqid}`, {headers: headers})
+    return this.http.delete(`${this.link}/producttours/${producttourId}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
-
-  getFaqById(Faqid: any) {
+ 
+  getProducttourById(producttourId: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/faqs/${Faqid}`, {headers: headers})
+    return this.http.get(`${this.link}/producttours/${producttourId}`, {headers: headers})
     .pipe(map(res => res.json()));
-  }
+  } 
 
-  getFaqByCategory(faqcategoryid: any) {
+  getProducttourByStatus() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/faqs/category/${faqcategoryid}`, {headers: headers})
-    .pipe(map(res => res.json()));
-  }
-
-  getFaqByMainCategory(faqcategoryid: any) {
-    const headers = new Headers();
-    headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/faqs/maincategory/${faqcategoryid}`, {headers: headers})
+    return this.http.get(`${this.link}/producttours/get/list`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }
