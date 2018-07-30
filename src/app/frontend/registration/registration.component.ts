@@ -86,47 +86,47 @@ export class RegistrationComponent implements OnInit {
   registrationForm() {
 
     if (this._validationsService.isEmpty(this.field_first_name)) {
-      this._commonService.showMessage('error', 'First Name field should not be empty!');
+      this._commonService.showMessage('error', 'First Name should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_middle_name)) {
-      this._commonService.showMessage('error', 'Middle Name field should not be empty!');
+      this._commonService.showMessage('error', 'Middle Name should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_last_name)) {
-      this._commonService.showMessage('error', 'Last Name field should not be empty!');
+      this._commonService.showMessage('error', 'Last Name should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_phone_number)) {
-      this._commonService.showMessage('error', 'Phone number field should not be empty!');
+      this._commonService.showMessage('error', 'Phone number should not be empty!');
       return false;
     }
 
     if (this._validationsService.isDigit(this.field_phone_number)) {
-      this._commonService.showMessage('error', 'Phone number field should have only digits!');
+      this._commonService.showMessage('error', 'Phone Number should have only digits!');
       return false;
     }
 
     if (this._validationsService.isMinimum(this.field_phone_number)) {
-      this._commonService.showMessage('error', 'Phone number field should have atleast 10 digits!');
+      this._commonService.showMessage('error', 'Phone Number should have atleast 10 digits!');
       return false;
     }
 
     if (this._validationsService.isMaximum(this.field_phone_number)) {
-      this._commonService.showMessage('error', 'Phone number field should exceed 13 digits!');
+      this._commonService.showMessage('error', 'Phone Number should not exceed 13 digits!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_email_id)) {
-      this._commonService.showMessage('error', 'Email field should not be empty!');
+      this._commonService.showMessage('error', 'Email Address should not be empty!');
       return false;
     }
 
     if (!this._validationsService.isEmail(this.field_email_id)) {
-      this._commonService.showMessage('error', 'Field should be an Email Address!');
+      this._commonService.showMessage('error', 'Enter Valid Email Address!');
       return false;
     }
 
@@ -158,27 +158,27 @@ export class RegistrationComponent implements OnInit {
     // }
 
     if (this._validationsService.isEmpty(this.field_job_title)) {
-      this._commonService.showMessage('error', 'Job Title field should not be empty!');
+      this._commonService.showMessage('error', 'Job Title should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_company_name)) {
-      this._commonService.showMessage('error', 'Company Name field should not be empty!');
+      this._commonService.showMessage('error', 'Company Name should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_industry_name)) {
-      this._commonService.showMessage('error', 'Industry Name field should not be empty!');
+      this._commonService.showMessage('error', 'Industry should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_no_of_employee)) {
-      this._commonService.showMessage('error', 'Number of Employees field should not be empty!');
+      this._commonService.showMessage('error', 'Number of Employees should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_contact_number)) {
-      this._commonService.showMessage('error', 'Contact Number field should not be empty!');
+      this._commonService.showMessage('error', 'Contact Number should not be empty!');
       return false;
     }
     /*if (this._validationsService.isMobile(this.field_contact_number)) {
@@ -187,21 +187,21 @@ export class RegistrationComponent implements OnInit {
     }*/
 
     if (this._validationsService.isEmpty(this.field_company_address)) {
-      this._commonService.showMessage('error', 'Company Address field should not be empty!');
+      this._commonService.showMessage('error', 'Company Address should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.field_country_name)) {
-      this._commonService.showMessage('error', 'Country Name field should not be empty!');
+      this._commonService.showMessage('error', 'Country should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_state_name)) {
-      this._commonService.showMessage('error', 'State Name field should not be empty!');
+      this._commonService.showMessage('error', 'State should not be empty!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_city_name)) {
-      this._commonService.showMessage('error', 'City Name field should not be empty!');
+      this._commonService.showMessage('error', 'City should not be empty!');
       return false;
     }
 

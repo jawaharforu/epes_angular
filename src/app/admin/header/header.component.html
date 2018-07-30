@@ -1,22 +1,23 @@
-<div class="row">
-  <div class="col-md-6 offset-md-3 mt-5">
-    <!-- Card -->
-    <div class="card mx-xl-5">
+<div class="row justify-content-md-center ">
+    <div class="col-md-10  ">
+      <!-- Card -->
+      <div class="card row">
 
-        <!-- Card body -->
-        <div class="card-body">
+      <!-- Card body -->
+      <div class="card-body">
 
             <!-- Default form subscription -->
             <form (ngSubmit)="headerFormSubmit()">
               <!-- Default input name -->
-              <p class="h4 text-center py-4">Header</p>
+              <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Header</p>
               <input type="hidden" [(ngModel)]="headerid" name="headerid">
-              <br>
-              <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="headername" name="headername" placeholder="Header Name">
-              <br>
-              <input type="text" id="defaultFormCardDisEx" class="form-control" [(ngModel)]="description" name="description" placeholder="Header Description">
-              <br>
-              <button type="submit" class="btn btn-primary">Submit</button>
+
+              <div class="row">
+
+              <input type="text" id="defaultFormCardNameEx" class="form-control col-md-4" [(ngModel)]="headername" name="headername" placeholder="Header Name">
+              <input type="text" id="defaultFormCardDisEx" class="form-control col-md-4" [(ngModel)]="description" name="description" placeholder="Header Description">
+              <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+            </div>
             </form>
             <!-- Default form subscription -->
 
@@ -28,18 +29,18 @@
   </div>
 </div>
 
-<div class="row justify-content-md-center mb-5">
-  <div class="col-md-10 mt-5">
+<div class="row justify-content-md-center  ">
+  <div class="col-md-10 mt-5 product-list scale-list">
     <!--Table-->
     <table *ngIf="headerList" datatable class="table table-hover table-responsive-md table-fixed">
 
       <!--Table head-->
       <thead class="mdb-color darken-3">
         <tr class="text-white">
-            <th>#</th>
-            <th>Header</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th class="label-no">#</th>
+            <th class="label-name">Header Name</th>
+            <th class="label-name">Header Description</th>
+            <th class="label-action">Action</th>
         </tr>
       </thead>
       <!--Table head-->
@@ -47,12 +48,12 @@
       <!--Table body-->
       <tbody>
           <tr *ngFor="let h of headerList; let i = index">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>{{ h.headername }}</td>
-              <td>{{ h.description }}</td>
-              <td>
-                <button type="button" (click)="editHeader(h)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
-                <button type="button" (click)="deleteHeader(h._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              <th class="col-no" scope="row">{{ i + 1 }}</th>
+              <td class="col-name">{{ h.headername }}</td>
+              <td class="col-name">{{ h.description }}</td>
+              <td class="col-action">
+                <span  (click)="editHeader(h)" class="btn-edit" >Edit </span> /
+                <span  (click)="deleteHeader(h._id)" class="btn-delete" >Delete</span>
                 </td>
           </tr>
       </tbody>

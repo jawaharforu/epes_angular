@@ -8,7 +8,7 @@
             </a>
           </li>
           <li class="collapsed active" *ngFor="let f of faqcategoryList; let i=index"><i class="fa fa-arrow-circle-right"></i>{{f.name}}<span class="arrow"></span>
-            <ul *ngIf="list[f._id]" >
+            <ul class="faqsub-cat" *ngIf="list[f._id]" >
               <li *ngFor="let sc of list[f._id]; let i=index">
                   <a  (click)="getFaqByCategory(sc._id)"><i class="fa fa-angle-right"></i> {{sc.name}} <span class="arrow"></span></a>
                 </li>

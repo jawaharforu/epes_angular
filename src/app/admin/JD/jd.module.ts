@@ -33,8 +33,8 @@ import { DataTablesModule } from 'angular-datatables';
     QuestionAssignComponent,
     ScaleComponent,
     HeaderComponent,
-    ArrayToStringPipe,
-    AssessmentTypeComponent
+    AssessmentTypeComponent,
+    ArrayToStringPipe
   ]
 })
 export class JdModule { }

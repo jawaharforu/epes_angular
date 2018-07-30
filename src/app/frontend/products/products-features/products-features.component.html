@@ -27,7 +27,7 @@
              <div class="col-sm-12 fold_pge_pf">
 
             <h5 class="sub_head1">All Foundation Features</h5>
-            <ul>
+            <ul *ngIf="p.additionfeatures[0].itemname !== ''">
               <li *ngFor="let f of p.additionfeatures">{{f.itemname}}</li>
             </ul>
 

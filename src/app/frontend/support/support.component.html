@@ -3,9 +3,11 @@
     <h2 class="col-12 support_page_main_heading" >How can we help you?    </h2>
     <div class="col-12">
       <form class="form-inline md-form mr-auto mb-12">
-        <input class="form-control col-9 col-md-9 col-sm-12 search-input" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light col-2 col-md-2  search-btn" mdbWavesEffect type="submit">Search</button>
-      </form>
+        <input class="form-control col-12 col-md-12 col-sm-12 search-input" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search" name="search">
+        <!-- <button class="btn aqua-gradient btn-rounded btn-sm mngy-0 waves-light col-2 col-md-2  search-btn" mdbWavesEffect type="submit">Search</button> -->
+       <div class="search-icon"> <i class="fa fa-search " aria-hidden="true"></i>
+      </div>
+    </form>
     </div>
   </div>
 </section>
@@ -16,28 +18,53 @@
     <h6 class="col-md-4 col-sm-12 support_links">All video tutorials</h6>
   </div>
   <div class="row thumbnailsrow">
-    <div class="col-md-3 col-sm-6 video-thumbnail"><img class="img-responsive" src="../../assets/img/video-tutorial.png"></div>
-    <div class="col-md-3 col-sm-6 video-thumbnail"><img class="img-responsive" src="../../assets/img/video-tutorial2.jpg"></div>
-    <div class="col-md-3 col-sm-6 video-thumbnail"><img class="img-responsive" src="../../assets/img/video-tutorial3.jpg"></div>
-    <div class="col-md-3 col-sm-6 video-thumbnail"><img class="img-responsive" src="../../assets/img/video-tutorial4.jpg"></div>
-   </div>
+      <div class="col-md-3 col-sm-6 video-thumbnail"><iframe class="img-responsive" src="https://www.youtube.com/embed/fUKpGLk9Ml8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <div class="col-md-3 col-sm-6 video-thumbnail"><iframe class="img-responsive" src="https://www.youtube.com/embed/9IIgH0hNtgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <div class="col-md-3 col-sm-6 video-thumbnail"><iframe class="img-responsive" src="https://www.youtube.com/embed/Yde2qMN7uSw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <div class="col-md-3 col-sm-6 video-thumbnail"><iframe class="img-responsive" src="https://www.youtube.com/embed/eZ9XoyQ6b1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+    </div>
   <div class="row">
       <div class="col-md-4 col-sm-12" *ngFor="let f of faqcategoryList | slice:0:2; let i=index">
         <h3 class="col-title">{{f.name}}</h3>
-        <p>{{list[f._id][0] | json}}</p>
-        <!--
-        <ul class="support-links" *ngIf="list[f._id].length > 0">
-          <li *ngFor="faq of list[f._id]">{{faq.name}}</li>
-        </ul>-->
+        <ul class="support-links" *ngIf="list[f._id]">
+          <!--Accordion wrapper-->
+          <mdb-squeezebox *ngIf="list[f._id][0]" [multiple]="false" aria-multiselectable="true">
+              <mdb-item  [collapsed]="true">
+                  <mdb-item-head> {{list[f._id][0].question}} </mdb-item-head>
+                  <mdb-item-body> {{ list[f._id][0].answer }} </mdb-item-body>
+              </mdb-item>
+          </mdb-squeezebox>
+          <mdb-squeezebox *ngIf="list[f._id][1]" [multiple]="false" aria-multiselectable="true">
+              <mdb-item  [collapsed]="true">
+                  <mdb-item-head> {{list[f._id][1].question}} </mdb-item-head>
+                  <mdb-item-body> {{ list[f._id][1].answer }} </mdb-item-body>
+              </mdb-item>
+          </mdb-squeezebox>
+          <mdb-squeezebox *ngIf="list[f._id][2]" [multiple]="false" aria-multiselectable="true">
+              <mdb-item  [collapsed]="true">
+                  <mdb-item-head> {{list[f._id][2].question}} </mdb-item-head>
+                  <mdb-item-body> {{ list[f._id][2].answer }} </mdb-item-body>
+              </mdb-item>
+          </mdb-squeezebox>
+          <mdb-squeezebox *ngIf="list[f._id][3]" [multiple]="false" aria-multiselectable="true">
+              <mdb-item  [collapsed]="true">
+                  <mdb-item-head> {{list[f._id][3].question}} </mdb-item-head>
+                  <mdb-item-body> {{ list[f._id][3].answer }} </mdb-item-body>
+              </mdb-item>
+          </mdb-squeezebox>
+          <!--/.Accordion wrapper-->
+        </ul>
       </div>
 
       <div class="col-md-4 col-sm-12">
-          <h3 class="col-title">Billing & Shipping & Returns</h3>
+          <h3 class="col-title">FAQ</h3>
           <ul class="support-links">
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
-            <li>Lorem Ipsum is simply dummy</li>
+              <mdb-squeezebox *ngFor="let f of faqList | slice:0:4 |filter:search; let i=index" [multiple]="false" aria-multiselectable="true">
+                  <mdb-item  [collapsed]="true">
+                      <mdb-item-head> {{f.question}} </mdb-item-head>
+                      <mdb-item-body> {{ f.answer }} </mdb-item-body>
+                  </mdb-item>
+              </mdb-squeezebox>
           </ul>
       </div>
     </div>

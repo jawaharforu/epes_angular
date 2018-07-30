@@ -17,7 +17,7 @@ export class ContactUsComponent implements OnInit {
   public field_phone: String = '';
   public field_message: String = '';
   public field_country_code: String = '+91';
-  
+
   public countryList : any;
 
   constructor(
@@ -59,34 +59,34 @@ export class ContactUsComponent implements OnInit {
 
   contactusForm(){
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.field_email)) {
-      this._commonService.showMessage('error', 'Email Address field should not be empty!');
+      this._commonService.showMessage('error', 'Email Address should not be empty!');
       return false;
     }
     if (!this._validationsService.isEmail(this.field_email)) {
-      this._commonService.showMessage('error', 'Enter the valid Email address!');
+      this._commonService.showMessage('error', 'Enter Valid Email Address!');
       return false;
     }
     if (this._validationsService.isEmpty(this.field_phone)) {
-      this._commonService.showMessage('error', 'Phone number field should not be empty!');
+      this._commonService.showMessage('error', 'Phone Number should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.field_phone)) {
-      this._commonService.showMessage('error', 'phone number should contain only digits!');
+      this._commonService.showMessage('error', 'Phone Number should contain only digits!');
       return false;
     }
     if (this._validationsService.isMinimum(this.field_phone)) {
-      this._commonService.showMessage('error', 'Phone number field should have 10 digits and above!');
-      return false;
-    } 
-    if (this._validationsService.isMaximum(this.field_phone)) {
-      this._commonService.showMessage('error', 'phone number should not exceed more than 13 digits!');
+      this._commonService.showMessage('error', 'Phone Number should have atleast 10 digits!');
       return false;
     }
-    
+    if (this._validationsService.isMaximum(this.field_phone)) {
+      this._commonService.showMessage('error', 'Phone number should not exceed 13 digits!');
+      return false;
+    }
+
     if (this._validationsService.isEmpty(this.field_country_code)) {
       this._commonService.showMessage('error', 'Please Select Dialing Code!');
       return false;

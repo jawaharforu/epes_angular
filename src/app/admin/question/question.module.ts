@@ -26,10 +26,10 @@ const router: Routes = [
   ],
   declarations: [
     QuestionComponent,
-    ArrayToStringPipe,
     ScaleComponent,
     HeaderComponent,
-    AssessmentTypeComponent
+    AssessmentTypeComponent,
+    ArrayToStringPipe
   ]
 })
 export class QuestionModule { }

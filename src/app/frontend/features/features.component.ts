@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeatureService } from '../../admin/frontend/feature/feature.service';
+import {ActivatedRoute} from '@angular/router';
+import { ValidationsService } from '../../services/validations.service';
 
 @Component({
   selector: 'app-features',
@@ -10,12 +12,20 @@ export class FeaturesComponent implements OnInit {
 
   public featureList: any;
   public featuresData: any[] = [];
+  public faqid: any = 0;
 
   constructor(
-    private featureService: FeatureService
+    private featureService: FeatureService,
+    private activatedRoute: ActivatedRoute,
+    private _validationsService: ValidationsService
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params) => {
+      if (!this._validationsService.isEmpty(params['faqid'])) {
+        this.faqid = params['faqid'];
+      }
+    });
     this.getFeatureList();
   }
 
@@ -23,8 +33,9 @@ export class FeaturesComponent implements OnInit {
     this.featureService.getFeatureByStatus()
     .subscribe(res => {
       this.featureList = res.data;
+      console.log(this.faqid);
       for (let j = 0; j < res.data.length; j++) {
-        (j === 0) ? this.featuresData.push(true) : this.featuresData.push(false);
+        (j === parseInt(this.faqid)) ? this.featuresData.push(true) : this.featuresData.push(false);
       }
     });
   }

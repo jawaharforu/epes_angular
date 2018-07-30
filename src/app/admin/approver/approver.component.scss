@@ -25,21 +25,29 @@ p.h4.text-center.py-4.admin-title {
     line-height: 28px;
     padding: 0px;
 }
-.btn-submit{
+.btn-submit,
+.btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle{
     background-color: #f38e00 !important;
     color: #fff !important;
     font-size: 14px;
     padding: 5px 15px;
     float: right;
     border:none !important;
+    box-shadow: none;
 }
-.btn-skip{
-    background-color: #54afc6 !important;
+.btn-skip,
+.btn-outline-warning:not([disabled]):not(.disabled):active, 
+.btn-outline-warning:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-warning.dropdown-toggle{
+    background-color: #666 !important;
     color: #fff !important;
     font-size: 14px;
     padding: 5px 15px;
     float: left;
     border:none !important;
+    box-shadow: none;
 }
 label{
     font-size: 13px;

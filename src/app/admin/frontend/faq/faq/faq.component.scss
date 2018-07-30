@@ -24,12 +24,21 @@ p.h4.text-center.py-4.admin-title {
     font-size: 13px;
     color: #000 !important;
 }
-.btn-submit{
+.btn-submit,
+.btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle,
+.btn-primary:not([disabled]):not(.disabled):active, 
+.btn-primary:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.dropdown-toggle{
     background-color: #f38e00 !important;
     color: #fff !important;
     font-size: 14px;
     padding: 5px 15px;
     float: right;
+    border:none !important;
+    box-shadow: none;
+    margin-top: 20px;
 }
 .add-faq .form-group {
     margin-bottom: .5rem;

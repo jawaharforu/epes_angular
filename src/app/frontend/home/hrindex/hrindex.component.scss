@@ -143,7 +143,7 @@
   padding: 0px 40px;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px;
+  max-height: 500px;
   margin-top: 0px;
   background-position: 0px 72px;
 
@@ -151,7 +151,7 @@
 
 .staffing-scrol {
   overflow-y: auto;
-  height: 435px;
+  height: 300px;
 }
 
 .staffing h3 {

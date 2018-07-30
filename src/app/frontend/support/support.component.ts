@@ -12,6 +12,7 @@ export class SupportComponent implements OnInit {
   public faqcategoryList: any;
   public faqList: any;
   public list: any[] = [];
+  public search: String;
 
   constructor(
     private faqService: FaqService,
@@ -40,7 +41,6 @@ export class SupportComponent implements OnInit {
         }
         this.list[prop.faqcategoryid._id].push(prop);
       }
-      console.log(this.list);
     });
   }
 

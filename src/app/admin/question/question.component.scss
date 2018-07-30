@@ -1,0 +1,159 @@
+body{
+    background: #f4f3f9;
+}
+.admin-title-header{
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.card  {
+    background: #f4f3f9;
+    box-shadow: none;
+}
+.card .card-body {
+    padding: 0px;
+    background: #f4f3f9;
+}
+.btn-submit,
+.btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle,
+.btn-primary:not([disabled]):not(.disabled):active, 
+.btn-primary:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.dropdown-toggle{
+    padding: 16px 10px;
+    background: #5ebd71 !important;
+    box-shadow: none;
+    font-size: 10px;
+    margin: 0px;
+}
+
+.scale-list{
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #fff;
+}
+.questionwrapper{
+    background: #dedddd;
+    padding: 5px;
+}
+table.table th, table.table td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.col-no{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 30px;
+    border-right: 1px solid #ccc;
+
+}
+.col-name{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    line-height: 30px;
+    border-right: 1px solid #ccc;
+
+}
+.col-action {
+
+    line-height: 30px;
+}
+.label-name, .label-no, .label-Scale, .label-action {
+    font-size: 13px;
+    color: #666;
+    font-weight: 300;
+    border-right: 1px solid #ccc;
+    padding-top: 1.1rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: none;
+}
+.label-action{
+    border: none;
+}
+.mdb-color.darken-3 {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+}
+
+table.dataTable.no-footer{
+    border: 1px solid #dbe2e4;
+}
+span.btn-edit, span.btn-delete  {
+    font-size: 13px;
+    color: #54afc6;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #666;
+    font-size: 13px !important;
+}
+.form-control{
+    font-size: 15px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 2px);
+    width: 75%;
+    float: left;
+    font-size: 12px;
+    padding: 0px;
+}
+
+.btn_add {
+    color: inherit;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    float: right !important;
+    margin: 0px;
+    box-shadow: none;
+    background: #54afc6;
+    border-radius: 50%;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.btn_add .fa{
+    margin-left: 8px;
+    font-size: 12px;
+    margin-top: 7px;
+    color: #fff;
+}
+.btn_additem{       
+    padding: 16px 10px;
+    background: #5ebd71 !important;
+    box-shadow: none;
+    font-size: 10px;
+    margin: 0px;
+}
+.modal-dialog{
+    margin-top: 120px;
+}
+.modal-dialog.modal-notify.modal-primary .modal-header{
+    background: transparent;
+    box-shadow: none;
+}
+button.close {
+    background: #666;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    padding: 12px;
+    margin: -1rem -1rem -1rem auto;
+    font-weight: normal;
+    font-size: 20px;
+}
+button.close .white-text{
+    margin-left: -5px;
+}
+.modal-dialog.modal-notify .heading {
+    color: #fff;
+    background: #666;
+    margin-left: -16px;
+    margin-top: -16px;
+    width: 30%;
+}

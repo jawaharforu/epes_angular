@@ -8,20 +8,22 @@
 
               <!-- Default form subscription -->
               <form (ngSubmit)="subDepartmentForm()" class="add-faqCategory">
-                  <p class="h4 text-center py-4 admin-title">FAQ Sub Category</p>
+                  <p class="h4 text-center py-4 admin-title"> Sub Department</p>
                   <input type="hidden" [(ngModel)]="subdepartmentid" name="subdepartmentid">
                   <!-- Default input name -->
-                  <div class="form-group ">
-                    <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Category</label>
-                    <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid">
+                  <div class="form-group  col-md-12 col-sm-12">
+                    <div class="row">
+                    <label for="defaultFormCardDesiEx" class="grey-text font-weight-light control-label col-md-4 label-faq">Department</label>
+                    <select class="browser-default form-control col-md-8" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid">
                       <option value="" disabled>--Select Department--</option>
                       <option *ngFor="let s of departmentList" [value]="s._id">{{ s.name }}</option>
                     </select>
-                  </div>
-                  <div class="form-group ">
-                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
-                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
-                  </div>
+                  </div></div>
+                  <div class="form-group  col-md-12 col-sm-12">
+                    <div class="row">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-4 label-faq">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-8" [(ngModel)]="name" name="name">
+                  </div></div>
                   <div class="form-group ">
                           <button class="btn btn-outline-purple px-3 btn-submit" type="submit">Submit <i class="fa fa-arrow-right"></i></button>
                   </div>
@@ -57,8 +59,8 @@
               <td class="col-name">{{ a.departmentid.name }}</td>
               <td class="col-name">{{ a.name }}</td>
               <td class="col-action">
-                <button type="button" (click)="editSubDepartment(a)" class="btn btn-primary waves-light btn-edit" mdbWavesEffect>EDIT <i class="fa fa-edit" aria-hidden="true"></i></button>
-                <button type="button" (click)="deleteSubDepartment(a._id)" class="btn btn-danger waves-light btn-delete" mdbWavesEffect>DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <span  (click)="editSubDepartment(a)" class=" btn-edit" >Edit </span>/
+                <span (click)="deleteSubDepartment(a._id)" class=" btn-delete" >Delete </span>
                 </td>
           </tr>
       </tbody>

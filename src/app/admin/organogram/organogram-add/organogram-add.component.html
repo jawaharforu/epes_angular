@@ -19,15 +19,15 @@
                   <div class="form-row">
                       <div class="col">
                           <div class="form-group ">
-                              <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartmentList()">
+                              <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartment()">
                                 <option value="" disabled>--Select Category--</option>
-                                <option *ngFor="let s of departmentList" [value]="s._id">{{ s.name }}</option>
+                                <option *ngFor="let d of departmentList" [value]="d._id">{{ d.name }}</option>
                               </select>
                           </div>
                       </div>
                       <div class="col">
                           <div class="form-group ">
-                              <select class="browser-default form-control" id="defaultFormCardDesiExwe" [(ngModel)]="subdepartmentid" name="subdepartmentid" (change)="getSubDepartmentList()">
+                              <select class="browser-default form-control" id="defaultFormCardDesiExwe" [(ngModel)]="subdepartmentid" name="subdepartmentid">
                                 <option value="" disabled>--Select Sub Department--</option>
                                 <option *ngFor="let s of subDepartmentList" [value]="s._id">{{ s.name }}</option>
                               </select>

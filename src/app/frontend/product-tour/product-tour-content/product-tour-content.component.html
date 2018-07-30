@@ -17,7 +17,7 @@
                     <h3>{{content1.title}}</h3>
                     <p>{{content1.description}}</p>
                 </div>
-              </div>              
+              </div>
           </div>
           <div class="row">
             <div class="col-sm-6 sub_titels" *ngFor="let content2 of registration_content2">
@@ -49,9 +49,9 @@
           <h3>Product Tour</h3>
           <p>Please fill out all fields</p>
           <form class="reg_form" (ngSubmit)="producttourform()">
-            <input type="text" id="first_name" class="form-control browser-default" 
+            <input type="text" id="first_name" class="form-control browser-default"
             placeholder="First Name" [(ngModel)]="field_first_name" name="field_first_name">
-            <input type="text" id="last_name" class="form-control browser-default" 
+            <input type="text" id="last_name" class="form-control browser-default"
             placeholder="Last Name" [(ngModel)]="field_last_name" name="field_last_name">
 
             <!--<input type="text" id="job_title" class="form-control" placeholder="Job title">-->
@@ -66,7 +66,7 @@
               class="form-control browser-default"
               placeholder="Official Email Address"
               [(ngModel)]="field_email"
-              name="field_email"              
+              name="field_email"
             >
             <div class="clearfix"></div>
             <div class="row">
@@ -83,10 +83,10 @@
               class="form-control browser-default"
               placeholder="Official Phone Number"
               [(ngModel)]="field_phone"
-              name="field_phone"              
+              name="field_phone"
             >
           </div>
-          
+
             <!-- end test-->
           </div>
 
@@ -94,7 +94,7 @@
             <input type="text" id="Company" class="form-control browser-default" placeholder="Company Name" [(ngModel)]="field_company" name="field_company">
             <!--  <input type="text" id="Employees" class="form-control" placeholder="Employees"> -->
             <select class="browser-default" [(ngModel)]="field_no_of_employee" name="field_no_of_employee">
-             
+
               <option value="" hidden class="Employees" >No. of Employees</option>
               <option *ngFor="let employee of select_list_employee" [value]="employee.label">{{employee.label}}</option>
             </select>
@@ -111,7 +111,7 @@
               <label class="form-check-label Agreement_text" for="inlineFormCheckbox2">I agree to the <a href="#">master subscription Agreement</a></label>
           </div>
             <div class="text-center mt-4 sub_btn">
-                <button class="btn btn-unique" [disabled]="toogleBool" type="submit">Start Product Tour</button>
+                <button class="btn btn-unique" type="submit">Start Product Tour</button>
             </div>
           </form>
 <!-- Default form register -->

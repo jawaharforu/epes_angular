@@ -12,7 +12,7 @@
          </div>
          <div class="collapse navbar-collapse navbar-left" id="navbar-collapse-1">
           <ul class="nav nav-pills nav-stacked sidebar_menu">
-            <li *ngFor="let f of featureList; let i=index"><a (click)="showFeature(i)">{{f.name}}</a></li>
+            <li *ngFor="let f of featureList; let i=index" id="{{i}}"><a (click)="showFeature(i)">{{f.name}}</a></li>
           </ul>
        </div>
       </div>

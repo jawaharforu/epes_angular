@@ -7,14 +7,15 @@
           <div class="card-body">
 
               <!-- Default form subscription -->
-              <form (ngSubmit)="departmentForm()" class="add-faqCategory">
+              <form (ngSubmit)="departmentForm()" class="add-Department">
                   <p class="h4 text-center py-4 admin-title">Department</p>
                   <input type="hidden" [(ngModel)]="departmentid" name="departmentid">
                   <!-- Default input name -->
-                  <div class="form-group ">
-                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
-                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
-                  </div>
+                  <div class="form-group  col-md-12 col-sm-12">
+                    <div class="row">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3 label-Department">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9" [(ngModel)]="name" name="name">
+                  </div></div>
                   <div class="form-group ">
                           <button class="btn btn-outline-purple px-3 btn-submit" type="submit">Submit <i class="fa fa-arrow-right"></i></button>
                   </div>
@@ -48,8 +49,8 @@
               <th class="col-no" scope="row">{{ i + 1 }}</th>
               <td class="col-name">{{ a.name }}</td>
               <td class="col-action">
-                <button type="button" (click)="editDepartment(a)" class="btn btn-primary waves-light btn-edit" mdbWavesEffect>EDIT <i class="fa fa-edit" aria-hidden="true"></i></button>
-                <button type="button" (click)="deleteDepartment(a._id)" class="btn btn-danger waves-light btn-delete" mdbWavesEffect>DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <span (click)="editDepartment(a)" class=" btn-edit" >Edit </span>/
+                <span  (click)="deleteDepartment(a._id)" class=" btn-delete" >Delete </span>
                 </td>
           </tr>
       </tbody>

@@ -25,16 +25,16 @@ export class LoginComponent implements OnInit {
 
   loginForm() {
     if (this._validationsService.isEmpty(this.field_username)) {
-      this._commonService.showMessage('error', 'Username field should not be empty!');
+      this._commonService.showMessage('error', 'Username should not be empty!');
       return false;
     }
     if (!this._validationsService.isEmail(this.field_username)) {
-      this._commonService.showMessage('error', 'Enter a valid email address!');
+      this._commonService.showMessage('error', 'Enter Valid Email Address!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.field_password)) {
-      this._commonService.showMessage('error', 'Password field should not be empty!');
+      this._commonService.showMessage('error', 'Password should not be empty!');
       return false;
     }
 

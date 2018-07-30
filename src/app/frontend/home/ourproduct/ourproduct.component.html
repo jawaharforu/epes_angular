@@ -22,11 +22,13 @@
                 <p class="per_ad">PER ADDITIONAL EMPLOYEE</p>
                 <div class="col-sm-12 fold_pge">
                     <a href="#">Buy Now</a>
-                    <h5>ALL FOUNDATION FEATURES</h5>
-                    <span>+</span>
-                    <ul>
-                        <li *ngFor="let f of p.additionfeatures">{{f.itemname}}</li>
-                    </ul>
+                    <div *ngIf="p.additionfeatures[0].itemname !== ''">
+                        <h5>ALL FOUNDATION FEATURES</h5>
+                        <span>+</span>
+                        <ul>
+                            <li *ngFor="let f of p.additionfeatures">{{f.itemname}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

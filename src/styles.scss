@@ -579,7 +579,7 @@ p.per_ad {
     margin-top: 5px;
 }
 .contact-info .col-sm-6 {
-    padding: 0px 0px;
+  /*  padding: 0px 0px;*/
     font-size: 12px;
 }
 
@@ -1587,6 +1587,7 @@ list-style: none;
 
 .caterory_sub li {
 padding: 5px 0px;
+list-style: none;
 }
 
 .first_li{
@@ -2146,6 +2147,7 @@ i.fa {
     color: #fff;
     top:20em;
     z-index: 9999;
+    cursor: pointer;
 }
 button.video-btn {
     background: #03c5ff;
@@ -2308,17 +2310,17 @@ a.nav-link.waves-light.active:after {
     -moz-osx-font-smoothing: grayscale;
     content: "\f107";
 }
-#sendWhitepaper{
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 15px;
-    line-height: 2.9;
-    padding: 0 1.8em;
-    border-radius: 1.5em;
-    letter-spacing: 0px;
-    background: #249ab8;
-    color: #fff;
-    border: none;
+#sendWhitepaper {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 2.9;
+  padding: 0 1.5em;
+  border-radius: 3px;
+  letter-spacing: 0px;
+  background: #249ab8;
+  color: #fff;
+  border: none;
 }
 .view video.video-intro{
     transform: translateX(-50%) translateY(-42%);
@@ -2452,10 +2454,10 @@ nav.admin-top-navbar {
   z-index: 0;
 }
 .single-job .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before{
-  content: "\f067";
+  content: "\f068";
 }
 .single-job .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
-  content: "\f068";
+  content: "\f067";
 }
 .popover{
     background: #ffa0a9;
@@ -2499,4 +2501,54 @@ nav.admin-top-navbar {
     bottom: 0;
     left: 0;
     right: 0;
+}
+a.apply-job {
+  background: #56ba64;
+  color: #fff;
+  padding: 7px 20px;
+}
+
+.single-job .accordion .card .card-header a:not(.collapsed) .rotate-icon {
+  margin-top: -15px;
+}
+.side-nav .collapsible .card{
+  background: #ffffff;
+}
+
+@media (min-width: 1200px){
+  .fixed-sn main, .fixed-sn .page-footer .container-fluid {
+      margin-left: 6%;
+      margin-right: 6%;
+      background: #f4f3f9;
+      margin: 0px;
+      padding: 0 6%;
+      padding-top: 5.5rem;
+      min-height: 100vh;
+      height: 100%;
+  }
+}
+.carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon{
+  display: none;
+}
+
+.faqsub-cat{
+  padding-left: 15px;
+}
+.oc-border {
+  border: 1px solid green;
+}
+
+.oc-background {
+  background-color: limegreen;
+}
+
+.oc-name {
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  white-space: nowrap;
+}
+
+.oc-designation {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  white-space: nowrap;
 }

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScaleComponent } from './scale.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ArrayToStringPipe } from '../../pipes/array-to-string.pipe';
+// import { ShareModule } from '../../pipes/share/share.module';
 
 const router: Routes = [
   { path : '', component : ScaleComponent  }

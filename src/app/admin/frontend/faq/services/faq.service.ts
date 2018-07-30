@@ -55,11 +55,4 @@ export class FaqService {
     return this.http.get(`${this.link}/faqs/category/${faqcategoryid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
-
-  getFaqByMainCategory(faqcategoryid: any) {
-    const headers = new Headers();
-    headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/faqs/maincategory/${faqcategoryid}`, {headers: headers})
-    .pipe(map(res => res.json()));
-  }
 }

@@ -8,7 +8,8 @@ import { FeaturesComponent } from './features.component';
 import { FeaturesBannerComponent } from './features-banner/features-banner.component';
 
 const router: Routes = [
-  { path : '', component : FeaturesComponent }
+  { path : '', component : FeaturesComponent },
+  { path : ':faqid', component : FeaturesComponent }
 ];
 
 @NgModule({

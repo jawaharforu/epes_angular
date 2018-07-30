@@ -2,7 +2,7 @@ section.container-fluid.support_page_header {
     border-radius: 0px;
     margin: 0px;
     padding: 0px;
-    margin-left: -15px;
+
     margin-right: -15px;
     text-align: center;
     display: block;
@@ -28,7 +28,7 @@ h2.support_page_main_heading {
     padding: 34px 15px;
     font-size: 40px;
 }
-input.form-control.col-9.col-md-9.col-sm-12 {
+input.form-control.col-12.col-md-12.col-sm-12 {
     border: 1px solid #ccc;
     background: #fff;
     padding: 10px;
@@ -93,7 +93,7 @@ section.container-fluid.support_page_news-letter {
     border: 1px solid #ccc !important;
     height: 35px !important;
     padding: 5px !important;
-   
+
 }
 ul.support-links{
     margin: 0px;
@@ -179,4 +179,12 @@ i.fa.fa-long-arrow-right.pull-right {
     .email-submit{
         margin-top: 0px !important;
     }
+}
+.search-icon {
+  float: right;
+  width: 20px;
+  position: absolute;
+  right: 0px;
+  color: #7d7979;
+  margin-top: -5px;
 }
