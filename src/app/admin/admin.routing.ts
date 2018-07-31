@@ -88,6 +88,42 @@ const routes: Routes = [
       {
         path: 'producttour',
         loadChildren: './frontend/producttour/producttour.module#ProducttourModule',
+      },
+      {
+        path: 'training',
+        loadChildren: './training/training.module#TrainingModule',
+      },
+      {
+        path: 'companyinfo',
+        loadChildren: './settings/company-information/company-information.module#CompanyInformationModule',
+      },
+      {
+        path: 'email',
+        loadChildren: './settings/email/email.module#EmailModule',
+      },
+      {
+        path: 'email-template',
+        loadChildren: './settings/email-template/email-template.module#EmailTemplateModule',
+      },
+      {
+        path: 'subscriptioninfo',
+        loadChildren: './settings/subscription-info/subscription-info.module#SubscriptionInfoModule',
+      },
+      {
+        path: 'appraisal',
+        loadChildren: './settings/appraisal/appraisal.module#AppraisalModule',
+      },
+      {
+        path: 'general-settings',
+        loadChildren: './settings/general-settings/general-settings.module#GeneralSettingsModule',
+      },
+      {
+        path: 'employee',
+        loadChildren: './master/employee/employee.module#EmployeeModule',
+      },
+      {
+        path: 'assessment',
+        loadChildren: './assessment/assessment.module#AssessmentModule',
       }
     ]
    }

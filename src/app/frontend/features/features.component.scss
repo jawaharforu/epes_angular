@@ -82,12 +82,14 @@ h3.title-bottom {
 .img-responsive.img-center {
     margin: 0 auto;
   }
+ 
   @media  screen and (max-width: 767px) {
     .Features-container{
         padding: 0px 15px 0px 15px;
     }
     .Features-sidebar{
         text-align: left;
+        margin-top: 30px;
     }
     ul.nav.nav-pills.nav-stacked.sidebar_menu{
         float: left;
@@ -104,8 +106,12 @@ h3.title-bottom {
 @media  screen and (min-width: 767px) {
     .collapse:not(.show) {
         display: block;
-    } 
+    } .Features-sidebar
     i.fa.fa-bars.visible-xs{
         display:none;
+    }
+    .Features-container {
+        padding: 0px 15px 0px 15px;
+        margin-top: 30px;
     }
 }

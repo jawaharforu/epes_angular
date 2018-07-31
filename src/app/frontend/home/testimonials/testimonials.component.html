@@ -5,7 +5,7 @@
             <h3>Testimonials</h3>
             <div class="col-sm-12 carousel" >
                 <!--Carousel Wrapper-->
-                <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+                <mdb-carousel [isControls]="true" class="carousel slide " [animation]="'fade'">
                     <!--First slide-->
                     <mdb-slide *ngFor="let t of testimonialList; let i = index">
                       <div class="testimonial">
@@ -14,12 +14,12 @@
                           </p>
                            <!--Avatar-->
                           <div class="row">
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-6 col-sm-4 hidden-sm">
                                   <div class="avatar mx-auto mb-4">
                                           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid" alt="First sample avatar image">
                                       </div>
                               </div>
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-6 col-sm-8">
                                   <h4 class="name_testimonial">{{t.name}}</h4>
                                   <!--<h6 class="desic_testimonial">Founder </h6>-->
                               </div>

@@ -1,10 +1,16 @@
 <div class="row">
     <div class="col-md-12">
+            <div class="row">
+                   
+
             <input type="hidden" [(ngModel)]="scaleid" name="scaleid">
-            <form [formGroup]="scaleForm" (ngSubmit)="scaleFormSubmit()">
+            <form class="col-md-12 col-sm-12" [formGroup]="scaleForm" (ngSubmit)="scaleFormSubmit()">
                 <!-- Default input name -->
-                <br>
-                <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Number of Options</label>
+                <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
+                <!--<label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Number of Options</label>-->
+                <div class="col-md-6">
+                        <div class="row">
                 <select class="browser-default form-control" id="defaultFormCardDesiEx" formControlName="noofoption" name="noofoption" (change)="optionFields($event.target.value)">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -13,31 +19,36 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-                <br>
+                    </div>  
+                </div></div></div>
                 <div formArrayName="options">
-                    <div *ngFor="let itemrow of scaleForm.controls.options.controls; let i=index"  [formGroupName]="i">
+                        <div class="row">
+                    <div class="col-md-6" *ngFor="let itemrow of scaleForm.controls.options.controls; let i=index"  [formGroupName]="i">
                         <div class="form-group">
                             <input formControlName="itemname" placeholder="Option {{ i + 1 }}" class="form-control">
                         </div>
                     </div>
                 </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+                <div class="row">
+                        <div  class="col-md-12 feild-button">
+                <button type="submit" class="btn btn-primary btn-submit">Add Item</button>
+            </div></div>
             </form>
     </div>
 </div>
 
-<div class="row justify-content-md-center mb-5">
-  <div class="col-md-10 mt-5">
+<div class=" mb-2 col-md-12 col-sm-12">
+  <div class="col-md-12 mt-2">
     <!--Table-->
-    <table class="table">
+    <table class="table col-md-12 col-sm-12">
 
       <!--Table head-->
       <thead class="mdb-color darken-3">
           <tr class="text-white">
-              <th>#</th>
-              <th>Scale</th>
-              <th>Action</th>
+              <th class="label-no">#</th>
+              <th class="label-Scale">Scale</th>
+              <th class="label-action">Action</th>
           </tr>
       </thead>
       <!--Table head-->
@@ -45,12 +56,15 @@
       <!--Table body-->
       <tbody>
           <tr *ngFor="let s of scaleList; let i = index">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>{{ s.options | arrayToString:',' }}</td>
-              <td>
-                <button type="button" (click)="editScale(s)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
+              <th class="col-no" scope="row">{{ i + 1 }}</th>
+              <td class="col-Scale">{{ s.options | arrayToString:',' }}</td>
+              <td class="col-action">
+               <!-- <button type="button" (click)="editScale(s)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
                 <button type="button" (click)="deleteScale(s._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-              </td>
+               -->
+                <span  (click)="editScale(s)" class="btn-edit" >Edit </span>/
+                <span  (click)="deleteScale(s._id)" class="btn-delete" >Delete</span>
+            </td>
           </tr>
       </tbody>
       <!--Table body-->

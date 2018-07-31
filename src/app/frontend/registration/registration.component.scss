@@ -4,7 +4,6 @@
     background-image: url('../../../assets//img/signup_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -81,4 +80,20 @@ h5.section_title {
 }
 .browser-default.country-code{
     padding: 0px;
+}
+@media  screen and (max-width: 1000px) and (min-width:768px) {
+    .signupbg{
+        padding-top: 100px;
+    }
+    .hidden-sm-down{
+        display: none;
+    }
+}
+@media  screen and (max-width: 767px) {
+    .signupbg{
+        padding-top: 100px;
+    }
+    .hidden-sm-down{
+        display: none;
+    }
 }

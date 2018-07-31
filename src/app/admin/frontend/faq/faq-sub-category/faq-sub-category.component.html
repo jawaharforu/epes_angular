@@ -59,8 +59,8 @@
             <td class="col-name">{{ a.faqcategoryid.name }}</td>
             <td class="col-name">{{ a.name }}</td>
             <td class="col-action">
-              <button type="button" (click)="editFaqSubCategory(a)" class="btn btn-primary waves-light btn-edit" mdbWavesEffect>EDIT <i class="fa fa-edit" aria-hidden="true"></i></button>
-              <button type="button" (click)="deleteFaqSubCategory(a._id)" class="btn btn-danger waves-light btn-delete" mdbWavesEffect>DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              <span  (click)="editFaqSubCategory(a)" class=" btn-edit" >Edit </span> / 
+              <span  (click)="deleteFaqSubCategory(a._id)" class=" btn-delete" >Delete </span>
               </td>
         </tr>
     </tbody>

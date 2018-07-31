@@ -4,28 +4,33 @@
             <form (ngSubmit)="headerFormSubmit()">
                 <!-- Default input name -->
                 <input type="hidden" [(ngModel)]="headerid" name="headerid">
-                <br>
+                <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
                 <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="headername" name="headername" placeholder="Header Name">
-                <br>
+                </div></div>
+                <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
                 <input type="text" id="defaultFormCardDisEx" class="form-control" [(ngModel)]="description" name="description" placeholder="Header Description">
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                </div></div>
+                <div  class="col-md-12 feild-button">
+                <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+            </div>
             </form>
     </div>
 </div>
 
-<div class="row justify-content-md-center mb-5">
-  <div class="col-md-10 mt-5">
+<div class="row justify-content-md-center mb-2">
+  <div class="col-md-12 mt-2">
     <!--Table-->
     <table class="table">
 
       <!--Table head-->
       <thead class="mdb-color darken-3">
           <tr class="text-white">
-              <th>#</th>
-              <th>Header</th>
-              <th>Description</th>
-              <th>Action</th>
+              <th  class="label-no">#</th>
+              <th  class="label-name">Header</th>
+              <th  class="label-name">Description</th>
+              <th  class="label-action">Action</th>
           </tr>
       </thead>
       <!--Table head-->
@@ -33,13 +38,16 @@
       <!--Table body-->
       <tbody>
           <tr *ngFor="let h of headerList; let i = index">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>{{ h.headername }}</td>
-              <td>{{ h.description }}</td>
-              <td>
-                <button type="button" (click)="editHeader(h)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
+              <th class="col-no" scope="row">{{ i + 1 }}</th>
+              <td class="col-name">{{ h.headername }}</td>
+              <td class="col-name">{{ h.description }}</td>
+              <td class="col-no">
+              <!--  <button type="button" (click)="editHeader(h)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
                 <button type="button" (click)="deleteHeader(h._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                </td>
+              -->
+                <span  (click)="editHeader(h)" class="btn-edit" >Edit </span> /
+                <span  (click)="deleteHeader(h._id)" class="btn-delete" >Delete</span>    
+            </td>
           </tr>
       </tbody>
       <!--Table body-->

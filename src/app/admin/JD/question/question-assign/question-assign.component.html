@@ -1,69 +1,77 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
             <form (ngSubmit)="questionForm()">
                 <input type="hidden" [(ngModel)]="questionid" name="questionid">
                 <!-- Default input name -->
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
-                <br>
-                <div class="form-row">
-                    <div class="col">
-                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
+                <div class="form-group col-md-12 col-sm-12">
+                    <div class="row">
+                    <label  for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Enter Question</label>
+                     <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9" [(ngModel)]="question" name="question" placeholder="Enter Question">
+            </div></div>
+            <div class="form-group col-md-12 col-sm-12">
+                    <div class="row">
+                            <label  for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Scale</label>
+                        <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
                             <option value="" disabled>--Select Scale--</option>
                             <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
                         </select>
-                        <a (click)="showModal('s')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
-                    </div>
-                    <div class="col">
-                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
+                        <a (click)="showModal('s')" class="btn_add" ><i class="fa fa-plus"></i></a>
+                    </div></div>
+                    <div class="form-group col-md-12 col-sm-12">
+                            <div class="row">
+                                    <label  for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Assessment</label>
+                        <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
                             <option value="" disabled>--Select Assessment--</option>
                             <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
                         </select>
-                        <a (click)="showModal('a')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
+                        <a (click)="showModal('a')" class="btn_add"><i class="fa fa-plus"></i></a>
                     </div>
                 </div>
-                <br>
-                <div class="form-row">
-                    <div class="col">
-                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
+             
+                <div class="form-group col-md-12 col-sm-12">
+                        <div class="row">
+                                <label  for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Header</label>
+                        <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
                             <option value="" disabled>--Select Header--</option>
                             <option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
                         </select>
-                        <a (click)="showModal('h')" class="btn-floating btn-sm blue-gradient waves-light" mdbWavesEffect><i class="fa fa-plus"></i></a>
-                    </div>
+                        <a (click)="showModal('h')" class="btn_add"><i class="fa fa-plus"></i></a>
+                    </div> </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-primary waves-light m-0" mdbWavesEffect>Submit</button>
+                        <button type="submit" class="btn btn-primary  btn_additem" ><i class="fa fa-plus"></i> Add Question</button>
                     </div>
-                </div>
+               
             </form>
     </div>
 </div>
-<div class="row justify-content-md-center mb-5">
-    <div class="col-md-12 mt-5">
+<div class="row justify-content-md-center mt-2 product-list list-jd-q">
+    <div class="col-md-12 ">
         <!--Table-->
         <table *ngIf="questionList" class="table table-hover table-responsive-md table-fixed" datatable>
 
         <!--Table head-->
         <thead class="mdb-color darken-3">
             <tr class="text-white">
-                <th>#</th>
-                <th>Question</th>
-                <th>Scale</th>
-                <th>Assessment</th>
-                <th>Header</th>
-                <th>Assign</th>
+                    <th class="label-no">#</th>>
+                    <th class="label-name">Question</th>
+                    <th class="label-name">Scale</th>
+                    <th class="label-name">Assessment</th>
+                    <th class="label-name">Header</th>
+                    <th class="label-action">Assign</th>
             </tr>
+         
         </thead>
         <!--Table head-->
 
         <!--Table body-->
         <tbody>
             <tr *ngFor="let q of questionList; let i = index">
-                <th scope="row">{{ i + 1 }}</th>
-                <td>{{ q.question }}</td>
-                <td>{{ q.scaleid.options | arrayToString:',' }}</td>
-                <td>{{ q.assessmenttypeid.name }}</td>
-                <td>{{ q.headerid.headername }}</td>
-                <td><div class="form-group">
+                <th class="col-no" scope="row">{{ i + 1 }}</th>
+                <td class="col-name">{{ q.question }}</td>
+                <td class="col-name">{{ q.scaleid.options | arrayToString:',' }}</td>
+                <td class="col-name">{{ q.assessmenttypeid.name }}</td>
+                <td class="col-name">{{ q.headerid.headername }}</td>
+                <td class="col-status"><div class="form-group">
                   <input type="checkbox" class="filled-in" id="checkbox{{q._id}}" [checked]="checkQuestion(q._id)" (change)="updateStatus($event.target.checked,q)">
                   <label for="checkbox{{q._id}}"></label>
               </div></td>

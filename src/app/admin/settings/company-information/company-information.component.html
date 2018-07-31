@@ -1,0 +1,110 @@
+<div class="form-group">
+    <div class="row">
+        <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                        <p class="h4 text-center py-4 admin-title">Information</p>
+                    <form (ngSubmit)="companyinformationForm()">
+                        <div class="row">
+                                <div class="form-group col-md-6 col-sm-12">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">First Name</label>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="firstname" name="firstname">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Last Name</label>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="lastname" name="lastname">
+                                    </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-6 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Company Name</label>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Job Title</label>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle">
+                                    </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-6 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Industry</label>
+                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="industry" name="industry">
+                                            <option value="" disabled>--Select Category--</option>
+                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">No. of Employees</label>
+                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="employees" name="employees">
+                                            <option value="" disabled>--Select Category--</option>
+                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        </select>
+                                    </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12 browser-default">
+                            <label class="grey-text font-weight-light" for="phonenumber">Phone Number:</label>
+                            <div class="row">
+                                <div class="col-md-4 col-country-code">
+                                    <select class=" selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="countrycode"
+                                        name="countrycode">
+                                        <!-- <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option> -->
+                                        <option value="" disabled>--Select Category--</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="waves-light form-control browser-default" [(ngModel)]="phone_number" name="phone_number" id="phonenumber"
+                                        maxlength="13">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12 col-sm-12">
+                                <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label col-md-3">Company Address</label>
+                                <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="companyaddress"
+                                    rows="5" name="companyaddress"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-4 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Country</label>
+                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="country" name="country">
+                                            <option value="" disabled>--Select Category--</option>
+                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">State</label>
+                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="state" name="state">
+                                            <option value="" disabled>--Select Category--</option>
+                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4 col-sm-12 ">
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">City</label>
+                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="city" name="city">
+                                            <option value="" disabled>--Select Category--</option>
+                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        </select>
+                                    </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-md-12 col-sm-12">
+                                <p class="h4 text-center py-4 admin-title">Billing Address</p>
+                                <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="billingaddress"
+                                    rows="5" name="billingaddress"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6 field-button">
+                            <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -24,7 +24,7 @@
       <div class="col-md-3 col-sm-6 video-thumbnail"><iframe class="img-responsive" src="https://www.youtube.com/embed/eZ9XoyQ6b1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
     </div>
   <div class="row">
-      <div class="col-md-4 col-sm-12" *ngFor="let f of faqcategoryList | slice:0:2; let i=index">
+      <div class="col-lg-4 col-sm-12" *ngFor="let f of faqcategoryList | slice:0:2; let i=index">
         <h3 class="col-title">{{f.name}}</h3>
         <ul class="support-links" *ngIf="list[f._id]">
           <!--Accordion wrapper-->
@@ -56,7 +56,7 @@
         </ul>
       </div>
 
-      <div class="col-md-4 col-sm-12">
+      <div class="col-lg-4 col-sm-12">
           <h3 class="col-title">FAQ</h3>
           <ul class="support-links">
               <mdb-squeezebox *ngFor="let f of faqList | slice:0:4 |filter:search; let i=index" [multiple]="false" aria-multiselectable="true">

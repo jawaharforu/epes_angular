@@ -1,0 +1,242 @@
+.add-btn {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-right: 0;
+}
+
+.add-btn button {
+    padding: 6px 25px;
+    font-size: 11px;
+    font-weight: 400;
+    background-color: #64c669 !important;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 20px;
+}
+
+.add-btn button:before {
+    content: "\f067";
+    font-family: fontawesome;
+    margin-right: 5px;
+}
+
+.msg-box {
+    border: 1px solid #eee;
+    padding: 0;
+}
+
+.msg-box table tr td {
+    font-size: 12px;
+    color: #8b8b8b;
+    font-weight: 400;
+}
+
+.msg-box table tr th {
+    font-size: 12px;
+    color: #6d6767;
+    font-weight: 500;
+}
+
+.msg-box table tr td a {
+    color: #2fa0b9;
+    font-weight: 400;
+}
+
+.pagination .page-item .page-link:focus, .pagination .page-item .page-link:hover {
+    background-color: #249ab6;
+    color: #fff;
+    box-shadow: none;
+}
+
+.training-page {
+    margin-top: 20px;
+    padding-right: 0;
+}
+
+.training-page ul li a {
+    font-size: 11px !important;
+    font-weight: 300;
+}
+
+.training-page ul li:last-child a {
+    padding-right: 0;
+}
+
+.asd {
+    box-shadow: 0px 0px 15px #8866;
+    padding: 0px 20px;
+}
+
+.msg-box .table tr td, .msg-box .table tr th {
+    border-right: 1px solid #ccc;
+}
+
+.msg-box .table {
+    margin-bottom: 0;
+}
+
+.msg-box table tr td:last-child {
+    border-right: 0 !important;
+}
+
+.msg-box table tr th:last-child {
+    border-right: 0 !important;
+}
+
+.modal-header {
+    padding: 0;
+    background-color: #f6f6f6 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.modal-header .heading {
+    font-size: 14px !important;
+    color: #fff !important;
+    background-color: #949494;
+    padding: 12px 65px !important;
+    font-weight: 500;
+    padding-left: 20px !important;
+}
+
+.modal-header .close {
+    background-color: #7e7d7d;
+    padding: 0px 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+    margin-right: -8px;
+}
+
+.training-label label {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b6b6b !important;
+    padding-top: 8px;
+ }
+
+ .training-label {
+    text-align: right;
+}
+
+.input-place {
+    padding: 0;
+}
+
+.input-place input {
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.modal-body {
+    background-color: #f6f6f6;
+}
+
+.add-icon-btn button {
+    padding: 6px 10px;
+    border-radius: 50px;
+    background-color: #2399b5;
+    margin-top: 2px;
+}
+
+.add-icon-btn button .fa-plus {
+    margin: 0;
+}
+
+.save-btn {
+    background-color: #ff8b36;
+}
+
+.train-popup-btn button {
+    padding: 8px 40px;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.cancel-btn {
+    background-color: #b4b4b4;
+}
+
+.train-popup-btn .save-btn {
+    margin-right: -10px;
+}
+
+.train-popup-btn {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.modal-body {
+    padding: 65px 26px !important;
+}
+
+.modal.fade.in .modal-dialog {
+    padding: 5px;
+    background-color: #cccccc5e;
+    border-radius: 3px;
+    margin-top: 135px;
+}
+
+
+
+@media only screen and (max-width:768px){
+    .training-page{
+        padding-right: 0;
+    }
+
+    .training-page ul li a{
+        font-size: 12px !important;
+     }
+
+     .modal-body {
+        padding: 0px;
+    }
+
+    .training-label {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .modal-body {
+        padding: 35px 26px !important;
+    }
+
+    .add-icon-btn button {
+        padding: 8px 20px;
+        border-radius: 0;
+        background-color: #2399b5;
+        margin-top: 2px !important;
+        margin: 0;
+    }
+
+    .train-popup-btn {
+         text-align: left !important;
+         margin-left: -20px;
+    }
+
+    .add-icon-btn {
+        padding-left: 0;
+        width: 20%;
+    }
+
+    .input-place {
+        padding: 0;
+        width: 75%;
+        margin-right: 15px;
+    }
+
+}
+
+@media only screen and (min-width:769px) and (max-width:1024px){
+    .input-place {
+        padding: 0;
+        width: 75%;
+        margin-right: 0px;
+    }
+
+    .add-icon-btn {
+        padding-left: 0;
+        width: 20%;
+        text-align: right;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12 product-list">
+      <!-- Card -->
+      <div class="card">
+             <!-- <nav class="breadcrumb">
+                      <a class="breadcrumb-item" href="#">Home</a>
+                      <a class="breadcrumb-item" href="#">Product</a>
+                      <span class="breadcrumb-item active">Product List</span>
+                    </nav>-->
+  
+          <!-- Card body -->
+          <div class="card-body">
+
+    <p class="h4 text-center py-4 admin-title"><!--Product List--> <a [routerLink]="['/admin/employee']" class="btn btn-outline-secondary btn-rounded  btn-add-new">Add New</a></p>
+    
+      <!--Table-->
+      <table datatable class="table table-hover table-responsive-md table-fixed">
+
+          <!--Table head-->
+          <thead>
+              <tr>
+                  <th class="label-no">Employee No.</th>
+                  <th class="label-name">Head Name</th>
+                  <th class="label-designation">Designation</th>
+                  <th class="label-email">Email Id</th>
+                  <th class="label-jd">JD</th>
+                  <th class="label-action">Action</th>
+              </tr>
+          </thead>
+          <!--Table head-->
+
+          <!--Table body-->
+          <tbody>
+              <tr>
+                  <th class="col-no" scope="row">1</th>
+                  <td class="col-name">om</td>
+                  <td class="col-designation">sri</td>
+                  <td class="col-email">sai</td>
+                  <td class="col-jd">ram</td>
+                  <td class="col-action">
+                      <span class="btn-edit" mdbRippleRadius>Edit </span>/
+                      <span class="btn-delete" mdbRippleRadius>Delete </span></td>
+              </tr>
+          </tbody>
+          <!--Table body-->
+
+      </table>
+      <!--Table-->
+  </div>
+</div>
+  </div>
+</div>

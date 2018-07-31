@@ -1,0 +1,61 @@
+<div class="form-group">
+    <div class="row">
+        <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <p class="h4 text-center py-4 admin-title">Primary Email</p>
+                    <div class="">
+                        <h5>Add an Email Address</h5>
+                        <h6>
+                            <strong>We recommend you atleast one personal address and one work address.</strong> After adding the
+                            new address, go to that account and click the link in the confimation email.</h6>
+                    </div>
+                    <form (ngSubmit)="emailForm()">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 ">
+                                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Email id</label>
+                                    <input type="email" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="email" name="email">
+                                </div>
+                                <div class="col-md-6 field-button">
+                                    <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Add Email Address</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="">
+                        <h5>
+                            <strong>Choose your primary email address</strong>
+                        </h5>
+                        <h6>Choose your primary email address Click "make Primary" next to the addressw you want to use for 360
+                            EPES email addresses must be confirmed before they can become primary.</h6>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
+                            <table class="table table-hover table-responsive-md table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th class="label-email">Email</th>
+                                        <th class="label-primaryaddress">Primary Address</th>
+                                        <th class="label-action">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-email">om</td>
+                                        <td class="col-primaryaddress">sai</td>
+                                        <td class="col-action">
+                                            <span class="btn-delete" mdbRippleRadius>Remove </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

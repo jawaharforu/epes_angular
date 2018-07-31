@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12 product-list">
+      <!-- Card -->
+      <div class="card">
+
+  <div class="card-body">
+  <p class="h4 text-center py-4 admin-title">Assessment List</p>
+  <a [routerLink]="['/admin/assessment']" class="btn btn-outline-secondary btn-rounded waves-effect">Create Assessment</a>
+    <table class="table table-hover table-responsive-md table-fixed">
+        <!-- Table head -->
+        <thead>
+            <tr>
+                <th class="label-no">Title</th>
+                <th class="label-name">Period of time</th>
+                <th class="label-name">Duration</th>
+                <th class="label-name">Due Date</th>
+                <th class="label-action">Action</th>
+            </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+          <tr>
+              <th class="col-no" scope="row">Good</th>
+              <td class="col-name">Morning</td>
+              <td class="col-name">Om</td>
+              <td class="col-name">Nama</td>
+              <td class="col-action">
+                  <span class="btn-edit" mdbRippleRadius>Edit </span>/
+                  <span class="btn-delete" mdbRippleRadius>Delete</span>
+              </td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+    </table>
+    <!--Table-->
+</div>
+</div>
+</div></div>

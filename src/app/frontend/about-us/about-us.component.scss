@@ -174,8 +174,18 @@
   width: 80%;
   margin: 0 auto;
 }
+@media only screen and (max-width:1000px) and (min-width:768px){
+  .sub-principles {
+      max-width: 45%;
+      margin-bottom: 12px;
+  }
+}
 
 @media only screen and (max-width:767px){
+    .sub-principles {
+      max-width: 100%;
+      margin-bottom: 12px;
+  }
 
   .banner-heading h3 {
       font-size: 20px;

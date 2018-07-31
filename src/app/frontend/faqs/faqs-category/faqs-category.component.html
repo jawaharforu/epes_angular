@@ -7,7 +7,14 @@
             <a href="#">Categories
             </a>
           </li>
-          <li class="collapsed active" *ngFor="let f of faqcategoryList; let i=index"><i class="fa fa-arrow-circle-right"></i>{{f.name}}<span class="arrow"></span>
+          <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 4  <i class="fa fa-caret-down"></i></a>
+        <div class="collapse" id="demo4">
+          <a href="" class="list-group-item">Subitem 1</a>
+          <a href="" class="list-group-item">Subitem 2</a>
+          <a href="" class="list-group-item">Subitem 3</a>
+        </div>
+
+          <li class="collapsed" *ngFor="let f of faqcategoryList; let i=index"><i class="fa fa-arrow-circle-right"></i>{{f.name}}<span class="arrow"></span>
             <ul class="faqsub-cat" *ngIf="list[f._id]" >
               <li *ngFor="let sc of list[f._id]; let i=index">
                   <a  (click)="getFaqByCategory(sc._id)"><i class="fa fa-angle-right"></i> {{sc.name}} <span class="arrow"></span></a>
