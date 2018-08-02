@@ -5,9 +5,6 @@ import { ValidationsService } from '../../../services/validations.service';
 import { JdService } from '../../JD/services/jd.service';
 import { ModalDirective } from '../../../../../ng-uikit-pro-standard';
 
-
-const URL = 'http://localhost:3000/api/jds/upload';
-
 @Component({
   selector: 'app-add-jd',
   templateUrl: './add-jd.component.html',
@@ -20,7 +17,7 @@ export class AddJdComponent implements OnInit {
   public filename: String = '';
   public jdid: String = '';
   public passjdid: String = '';
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
+  public uploader: FileUploader;
   public jdList: any;
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShown: Boolean = false;
@@ -29,7 +26,9 @@ export class AddJdComponent implements OnInit {
     private _commonService: CommonService,
     private _validationsService: ValidationsService,
     private jdService: JdService
-  ) { }
+  ) {
+    this.uploader = new FileUploader({url: this._commonService.jdUpload, itemAlias: 'file'});
+  }
 
   ngOnInit() {
     this._commonService.loader(false);

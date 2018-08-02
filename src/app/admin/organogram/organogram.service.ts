@@ -72,4 +72,12 @@ export class OrganogramService {
     return this.http.get(`${this.link}/organograms/getfull/list`, {headers: headers})
     .pipe(map(res => res.json()));
   }
+
+  getOrganogramFullList() {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/organograms/get/full/list`, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
 }

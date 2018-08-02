@@ -41,5 +41,13 @@ export class JdService {
     .pipe(map(res => res.json()));
   }
 
+  getJDById(jdid: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/jds/${jdid}`, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
+
 }
 

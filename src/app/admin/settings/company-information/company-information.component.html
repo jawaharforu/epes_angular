@@ -6,14 +6,15 @@
                         <p class="h4 text-center py-4 admin-title">Information</p>
                     <form (ngSubmit)="companyinformationForm()">
                         <div class="row">
-                                <div class="form-group col-md-6 col-sm-12">
-                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">First Name</label>
-                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="firstname" name="firstname">
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-12 ">
-                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Last Name</label>
-                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="lastname" name="lastname">
-                                    </div>
+                            <div class="form-group col-md-6 col-sm-12">
+                              <img [src]="logo" />
+                                <input type="file" class="btn file-choose " name="file" ng2FileSelect [uploader]="uploader" />
+                                <button type="button" class="btn btn-upload" mdbWavesEffect
+                                      (click)="uploader.uploadAll()"
+                                      [disabled]="!uploader.getNotUploadedItems().length" >
+                                 <i class="fa fa-cloud-upload mr-1"></i> Upload JD
+                                </button>
+                            </div>
                         </div>
                         <div class="row">
                                 <div class="form-group col-md-6 col-sm-12 ">
@@ -28,18 +29,14 @@
                         <div class="row">
                                 <div class="form-group col-md-6 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Industry</label>
-                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
                                         <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="industry" name="industry">
-                                            <option value="" disabled>--Select Category--</option>
-                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                            <option *ngFor="let industry of industries" value="{{industry.industryname}}">{{industry.industryname}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">No. of Employees</label>
-                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="employees" name="employees">
-                                            <option value="" disabled>--Select Category--</option>
-                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="noofemployees" name="noofemployees">
+                                            <option *ngFor="let employee of no_of_employees" value="{{employee.employeesCount}}">{{employee.employeesCount}}</option>
                                         </select>
                                     </div>
                         </div>
@@ -49,12 +46,11 @@
                                 <div class="col-md-4 col-country-code">
                                     <select class=" selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="countrycode"
                                         name="countrycode">
-                                        <!-- <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option> -->
-                                        <option value="" disabled>--Select Category--</option>
+                                        <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option>
                                     </select>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="waves-light form-control browser-default" [(ngModel)]="phone_number" name="phone_number" id="phonenumber"
+                                    <input type="text" class="waves-light form-control browser-default" [(ngModel)]="companycontact" name="companycontact" id="phonenumber"
                                         maxlength="13">
                                 </div>
                             </div>
@@ -69,36 +65,18 @@
                         <div class="row">
                                 <div class="form-group col-md-4 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Country</label>
-                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
                                         <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="country" name="country">
-                                            <option value="" disabled>--Select Category--</option>
-                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                            <option *ngFor="let job of countryList" [value]="job.name">{{job.name}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">State</label>
-                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="state" name="state">
-                                            <option value="" disabled>--Select Category--</option>
-                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
-                                        </select>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="state" name="state">
                                     </div>
                                     <div class="form-group col-md-4 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">City</label>
-                                        <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="city" name="city">
-                                            <option value="" disabled>--Select Category--</option>
-                                            <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
-                                        </select>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="city" name="city">
                                     </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-md-12 col-sm-12">
-                                <p class="h4 text-center py-4 admin-title">Billing Address</p>
-                                <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="billingaddress"
-                                    rows="5" name="billingaddress"></textarea>
-                            </div>
                         </div>
                         <div class="col-md-6 field-button">
                             <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>

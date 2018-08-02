@@ -3,7 +3,7 @@ import { CommonService } from '../../services/common.service';
 import { ValidationsService } from '../../services/validations.service';
 import { ContactusService } from '../../admin/frontend/contactus/contactus.service';
 import { CompanyService} from '../../admin/company/company.service';
-import { UserService } from '../../admin/user/user.service'
+import { UserService } from '../../admin/user/user.service';
 
 @Component({
   selector: 'app-registration',

@@ -62,6 +62,7 @@ export class FaqComponent implements OnInit {
     }
     this.getFaqSubCategoryList(this.faqcategoryid);
   }
+
   getFaqById(Faqid: any) {
     this.faqService.getFaqById(Faqid)
     .subscribe(res => {

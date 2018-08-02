@@ -11,10 +11,13 @@ export class CommonService {
 
   private isLoading = new Subject<any>();
   public link: String = 'http://localhost:3000/api';
+  public jdUpload: any = 'http://localhost:3000/api/jds/upload';
+  public uploadImage: any = 'http://localhost:3000/api/commons/upload/image';
+  public serverUrl: any = 'http://localhost:3000/images/';
   // link: String = '';
   // tslint:disable-next-line:max-line-length
   // tslint:disable-next-line:no-inferrable-types
-  public userDetail: string = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMTBlN2ZhNmRkOGM1MzY2OGYyMDNkZSIsImNvbXBhbnlpZCI6IjViMTBlNzczNmRkOGM1MzY2OGYyMDNkZCIsImZpcnN0bmFtZSI6Imphd2FoYXIiLCJsYXN0bmFtZSI6ImoiLCJlbWFpbCI6Imphd2FoYXJAem9saXBlLmNvbSIsInJvbGUiOiJzdXBlcmFkbWluIiwic3Vic2NyaWJlIjoxLCJwYXNzd29yZCI6IiQyYSQxMCRrejZ3dmdmSkxtTUtwMTFCU2xpZVV1bWZPSGY0V0VtTUVjN1pyaFZXNi5zSkswdVFuUnNvdSIsImlhdCI6MTUzMjU5ODQ0NSwiZXhwIjoxNTMzMjAzMjQ1fQ.JxPmUHe1MDNaMjSBEDVsU83r31l9B_B7Oj-XI-XAE9A';
+  public userDetail: string = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMTBlN2ZhNmRkOGM1MzY2OGYyMDNkZSIsImNvbXBhbnlpZCI6IjViMTBlNzczNmRkOGM1MzY2OGYyMDNkZCIsImZpcnN0bmFtZSI6Imphd2FoYXIiLCJsYXN0bmFtZSI6ImoiLCJlbWFpbCI6Imphd2FoYXJAem9saXBlLmNvbSIsInJvbGUiOiJzdXBlcmFkbWluIiwic3Vic2NyaWJlIjoxLCJwYXNzd29yZCI6IiQyYSQxMCRrejZ3dmdmSkxtTUtwMTFCU2xpZVV1bWZPSGY0V0VtTUVjN1pyaFZXNi5zSkswdVFuUnNvdSIsImlhdCI6MTUzMzIwNzE4OCwiZXhwIjoxNTMzODExOTg4fQ.LwLKuSMtY9EigFucozK10UCXFNg3d_9zlqe5TvbhypQ';
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssignJdComponent } from './assign-jd.component';
+import { JDListComponent } from './jdlist.component';
 
-describe('AssignJdComponent', () => {
-  let component: AssignJdComponent;
-  let fixture: ComponentFixture<AssignJdComponent>;
+describe('JDListComponent', () => {
+  let component: JDListComponent;
+  let fixture: ComponentFixture<JDListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AssignJdComponent ]
+      declarations: [ JDListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AssignJdComponent);
+    fixture = TestBed.createComponent(JDListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

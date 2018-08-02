@@ -124,6 +124,10 @@ const routes: Routes = [
       {
         path: 'assessment',
         loadChildren: './assessment/assessment.module#AssessmentModule',
+      },
+      {
+        path: 'assigntoJD',
+        loadChildren: './master/assign-jd/assign-jd.module#AssignJDModule',
       }
     ]
    }

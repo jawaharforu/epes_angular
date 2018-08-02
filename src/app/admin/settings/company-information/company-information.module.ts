@@ -7,6 +7,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyInformationComponent } from './company-information.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 const router: Routes = [
   { path : '', component : CompanyInformationComponent  },
@@ -23,7 +24,8 @@ const router: Routes = [
     CKEditorModule
   ],
   declarations: [
-    CompanyInformationComponent
+    CompanyInformationComponent,
+    FileSelectDirective
   ]
 })
 export class CompanyInformationModule { }
