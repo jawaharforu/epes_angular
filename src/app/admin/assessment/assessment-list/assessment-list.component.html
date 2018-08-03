@@ -6,7 +6,7 @@
   <div class="card-body">
   <p class="h4 text-center py-4 admin-title">Assessment List</p>
   <a [routerLink]="['/admin/assessment']" class="btn btn-outline-secondary btn-rounded waves-effect">Create Assessment</a>
-    <table class="table table-hover table-responsive-md table-fixed">
+    <table class="table table-hover table-responsive-md table-fixed" *ngIf="assessmentList">
         <!-- Table head -->
         <thead>
             <tr>
@@ -14,20 +14,22 @@
                 <th class="label-name">Period of time</th>
                 <th class="label-name">Duration</th>
                 <th class="label-name">Due Date</th>
+                <th class="label-name">Description</th>
                 <th class="label-action">Action</th>
             </tr>
         </thead>
         <!--Table head-->
         <!--Table body-->
         <tbody>
-          <tr>
-              <th class="col-no" scope="row">Good</th>
-              <td class="col-name">Morning</td>
-              <td class="col-name">Om</td>
-              <td class="col-name">Nama</td>
+          <tr *ngFor="let c of assessmentList;let i = index">
+              <th class="col-no" scope="row">{{c.title}}</th>
+              <td class="col-name">{{c.periodoftime}}</td>
+              <td class="col-name">{{c.duration}}</td>
+              <td class="col-name">{{c.duedate}}</td>
+              <td class="col-name">{{c.description}}</td>
               <td class="col-action">
-                  <span class="btn-edit" mdbRippleRadius>Edit </span>/
-                  <span class="btn-delete" mdbRippleRadius>Delete</span>
+                    <span  (click)="editAssessment(c)" class="btn-edit" mdbRippleRadius>Edit </span>/
+                    <span  (click)="deleteAssessment(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>
               </td>
           </tr>
         </tbody>

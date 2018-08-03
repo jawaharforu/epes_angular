@@ -9,6 +9,7 @@ import { AppraisalComponent } from './appraisal.component';
 
 const router: Routes = [
   { path : '', component : AppraisalComponent  },
+  { path : 'appraisal', component : AppraisalComponent  }
 ];
 
 

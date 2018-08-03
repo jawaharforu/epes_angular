@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CommonService } from '../../../services/common.service';
 import { JdService } from '../../JD/services/jd.service';
 import { OrganogramService } from '../../organogram/organogram.service';
 import { EmployeeService } from '../employee/employee.service';
+import { AssignJDService } from './assign-jd.service';
 
 @Component({
   selector: 'app-assign-jd',
@@ -21,20 +23,17 @@ export class AssignJDComponent implements OnInit {
 
   constructor(
     private jdService: JdService,
+    private _commonService: CommonService,
     private organogramService: OrganogramService,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private assignJDService: AssignJDService,
   ) { }
 
   ngOnInit() {
     this.getJDData();
     this.getOrganogramFullList();
     this.getEmployeeList();
-    this.selectedItems = [
-            {'id': 2, 'itemName': 'Singapore'},
-            {'id': 3, 'itemName': 'Australia'},
-            {'id': 4, 'itemName': 'Canada'},
-            {'id': 5, 'itemName': 'South Korea'}
-        ];
+    this.getAssignJDByJDId();
     this.dropdownSettings = {
               singleSelection: false,
               text: 'Select Countries',
@@ -62,10 +61,52 @@ export class AssignJDComponent implements OnInit {
   getEmployeeList() {
     this.employeeService.getEmployee()
     .subscribe(res => {
+      this.dropdownList = [];
       for (const prop of res.data) {
-        this.dropdownList.push({'id': prop._id, 'itemName': prop.name});
+        this.dropdownList.push({'id': prop._id, 'itemName': prop.employeename + '-' + prop.employeenum});
       }
-      console.log(this.dropdownList);
+    });
+  }
+
+  filterEmployee() {
+    this.employeeService.getEmployeeByLevel(this.organogramid)
+    .subscribe(res => {
+      this.dropdownList = [];
+      for (const prop of res.data) {
+        this.dropdownList.push({'id': prop._id, 'itemName': prop.employeename + '-' + prop.employeenum});
+      }
+    });
+  }
+
+  getAssignJDByJDId() {
+    this.assignJDService.getAssignJDByJDId(this.getjdid)
+    .subscribe(res => {
+      this.selectedItems = [];
+      for (const prop of res.data[0].employeeid) {
+        this.selectedItems.push({'id': prop._id, 'itemName': prop.employeename + '-' + prop.employeenum});
+      }
+    });
+  }
+
+  assignJDForm() {
+    const employeeids = this.selectedItems.map(item => item.id);
+    if (employeeids.length === 0) {
+      this._commonService.showMessage('error', 'Select atleast one employee');
+      return false;
+    }
+    const field = {
+      jdid: this.getjdid,
+      employeeid: employeeids
+    };
+
+    this.assignJDService.addAssignJD(field)
+    .subscribe(res => {
+      if (res.success) {
+        this._commonService.showMessage('success', res.msg);
+        this._commonService.redirectTo('/admin/assigntoJD/');
+      } else {
+        this._commonService.showMessage('error', res.msg);
+      }
     });
   }
 
@@ -83,4 +124,5 @@ export class AssignJDComponent implements OnInit {
   onDeSelectAll(items: any) {
       console.log(items);
   }
+
 }

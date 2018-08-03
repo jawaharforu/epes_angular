@@ -1,155 +1,170 @@
 <div class="row">
     <div class="col-md-12">
-      <!-- Card -->
-      <div class="card">
-
-          <!-- Card body -->
-          <div class="card-body">
-
-              <!-- Default form subscription -->
-              <form (ngSubmit)="questionForm()">
-
-                  <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Question</p>
-
-                  <input type="hidden" [(ngModel)]="questionid" name="questionid">
-                  <!-- Default input name -->
-                  <div class="row">
-                  <div class="col-md-11 questionwrapper">
-                        <div class="row">
-                      <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form (ngSubmit)="questionForm()">
+                    <p class="h4 admin-title-header ">
+                        <i class="fa fa-home" aria-hidden="true"></i> - Question</p>
+                    <input type="hidden" [(ngModel)]="questionid" name="questionid">
+                    <!-- Default input name -->
+                    <div class="row">
+                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
+                            <option value="" disabled>--Select Employee--</option>
+                            <option value="md">MD</option>
+                            <option value="admin">Admin</option>
+                            <option value="commonreception">Common Reception</option>
+                            <option value="secretary">Department/Secretary</option>
+                            <option value="hr">HR</option>
+                            <option value="others">Others</option>
+                            <!-- <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option> -->
+                        </select>
+                    </div>
+                    <div class="form-group"></div>
+                    <div class="row">
+                        <div class="col-md-11 questionwrapper">
                             <div class="row">
-                          <div class="col-md-8">
-                            <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
-                        </div>
-                        <div class="col-md-4">
-                                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
-                                        <option value="" disabled>--Select Scale--</option>
-                                        <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
-                                    </select>
-                                    <a (click)="showModal('s')" class="btn_add" ><i class="fa fa-plus"></i></a>
-                               
-                        </div></div>
-                    
-                    </div>
-                      <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-6">
-                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
-                                    <option value="" disabled>--Select Assessment--</option>
-                                    <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
-                                </select>
-                                <a (click)="showModal('a')" class="btn_add" ><i class="fa fa-plus"></i></a>
-                        </div>
-                        <div class="col-md-6">
-                                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
-                                        <option value="" disabled>--Select Header--</option>
-                                        <option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
-                                    </select>
-                                    <a (click)="showModal('h')" class="btn_add" ><i class="fa fa-plus"></i></a>
-                      </div>
-                    </div>
-                  </div></div></div>
-                  <div class="col-md-1">
-                        <button type="submit" class="btn btn-primary btn_additem" >Add Item</button>
-                  </div>
-                </div>
-                 
-              </form>
-              <!-- Default form subscription -->
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="scale">
+                                                <option value="" disabled>--Select Scale--</option>
+                                                <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
+                                            </select>
+                                            <a (click)="showModal('s')" class="btn_add">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
 
-          </div>
-          <!-- Card body -->
-
-      </div>
-      <!-- Card -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
+                                                <option value="" disabled>--Select Assessment--</option>
+                                                <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
+                                            </select>
+                                            <a (click)="showModal('a')" class="btn_add">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
+                                                <option value="" disabled>--Select Header--</option>
+                                                <option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
+                                            </select>
+                                            <a (click)="showModal('h')" class="btn_add">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="submit" class="btn btn-primary btn_additem">Add Item</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <div class="row justify-content-md-center mb-5 ">
+<div class="row justify-content-md-center mb-5 ">
     <div class="col-md-12 mt-5 product-list scale-list">
-      <!--Table-->
-      <table *ngIf="questionList" datatable class="table table-hover table-responsive-md table-fixed">
+        <!--Table-->
+        <table *ngIf="questionList" datatable class="table table-hover table-responsive-md table-fixed">
 
-        <!--Table head-->
-        <thead class="mdb-color darken-3">
-            <tr class="text-white">
-                <th class="label-no">#</th>
-                <th class="label-name">Question</th>
-                <th class="label-name">Scale</th>
-                <th class="label-name">Assessment</th>
-                <th class="label-name">Header</th>
-                <th class="label-action">Assign</th>
-            </tr>
-        </thead>
-        <!--Table head-->
-
-        <!--Table body-->
-        <tbody>
-            <tr *ngFor="let q of questionList; let i = index">
-                <th class="col-no" scope="row">{{ i + 1 }}</th>
-                <td class="col-name">{{ q.question }}</td>
-                <td class="col-name">{{ q.scaleid.options | arrayToString:',' }}</td>
-                <td class="col-name">{{ q.assessmenttypeid.name }}</td>
-                <td class="col-name">{{ q.headerid.headername }}</td>
-                <td></td>
-            </tr>
-        </tbody>
-        <!--Table body-->
-      </table>
-      <!--Table-->
+            <!--Table head-->
+            <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                    <th class="label-no">#</th>
+                    <th class="label-name">Employee Type</th>
+                    <th class="label-name">Question</th>
+                    <th class="label-name">Scale</th>
+                    <th class="label-name">Assessment</th>
+                    <th class="label-name">Header</th>
+                    <th class="label-action">Assign</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let q of questionList; let i = index">
+                    <th class="col-no" scope="row">{{ i + 1 }}</th>
+                    <td class="col-name">{{ q.type }}</td>
+                    <td class="col-name">{{ q.question }}</td>
+                    <td class="col-name">{{ q.scaleid.options | arrayToString:',' }}</td>
+                    <td class="col-name">{{ q.assessmenttypeid.name }}</td>
+                    <td class="col-name">{{ q.headerid.headername }}</td>
+                    <td>
+                        <span (click)="editQuestion(q)" class="btn-edit" mdbRippleRadius>Edit </span>/
+                        <span (click)="deleteQuestion(q._id)" class="btn-delete" mdbRippleRadius>Delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
+</div>
 
-  <div *ngIf="isModalShownScale" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('s')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-      <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <p class="heading lead">Scale</p><!---->
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('s')">
-                      <span aria-hidden="true" class="white-text">×</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <div class="">
-                      <app-scale (getScale)="getScaleList()"></app-scale>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-
-    <div *ngIf="isModalShownAssess" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-        <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="heading lead">Assessment Type</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('a')">
-                        <span aria-hidden="true" class="white-text">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="">
-                        <app-assessment-type (getAssessmentType)="getAssessmenttypeList()"></app-assessment-type>
-                    </div>
+<div *ngIf="isModalShownScale" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('s')" mdbModal #autoShownModal="mdb-modal"
+    class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="heading lead">Scale</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('s')">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <app-scale (getScale)="getScaleList()"></app-scale>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
+</div>
 
-      <div *ngIf="isModalShownHeader" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('h')" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-        <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="heading lead">Header</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('h')">
-                        <span aria-hidden="true" class="white-text">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="">
-                        <app-header (getHeader)="getHeaderList()"></app-header>
-                    </div>
+<div *ngIf="isModalShownAssess" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal
+    #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="heading lead">Assessment Type</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('a')">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <app-assessment-type (getAssessmentType)="getAssessmenttypeList()"></app-assessment-type>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
+</div>
+
+<div *ngIf="isModalShownHeader" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('h')" mdbModal
+    #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="heading lead">Header</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden('h')">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <app-header (getHeader)="getHeaderList()"></app-header>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

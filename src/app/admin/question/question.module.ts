@@ -6,10 +6,11 @@ import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { QuestionComponent } from './question.component';
-import { ArrayToStringPipe } from '../../pipes/array-to-string.pipe';
-import { ScaleComponent } from '../JD/scale/scale/scale.component';
-import { HeaderComponent } from '../JD/header/header/header.component';
-import { AssessmentTypeComponent } from '../JD/assessment-type/assessment-type.component';
+import { SharedModule } from '../share/share.module';
+// import { ArrayToStringPipe } from '../../pipes/array-to-string.pipe';
+// import { ScaleComponent } from '../JD/scale/scale/scale.component';
+// import { HeaderComponent } from '../JD/header/header/header.component';
+// import { AssessmentTypeComponent } from '../JD/assessment-type/assessment-type.component';
 
 const router: Routes = [
   { path : '', component : QuestionComponent  }
@@ -22,14 +23,15 @@ const router: Routes = [
     RouterModule.forChild(router),
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    SharedModule
   ],
   declarations: [
     QuestionComponent,
-    ScaleComponent,
-    HeaderComponent,
-    AssessmentTypeComponent,
-    ArrayToStringPipe
+    // ScaleComponent,
+    // HeaderComponent,
+    // AssessmentTypeComponent,
+    // ArrayToStringPipe
   ]
 })
 export class QuestionModule { }

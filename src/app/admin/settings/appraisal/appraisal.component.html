@@ -3,100 +3,106 @@
     <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
       <div class="card">
         <div class="card-body">
-          <p class="h4 text-center py-4 admin-title">Salary Appraisal & Jobs </p><a href="#">(What is this?)</a>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-3 col-sm-12">
-              </div>
-              <div class="col-md-3 col-sm-12">
-                Fixed
-              </div>
-              <div class="col-md-3 col-sm-12">
-                Variable
-              </div>
-              <div class="col-md-3 col-sm-12">
-                Bonus
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-3 col-sm-12">
-                <label>Senior Manager & above</label>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+          <form (ngSubmit)="appraisalform()" class="add-faq">
+            <p class="h4 text-center py-4 admin-title">Salary Appraisal & Jobs </p>
+            <a href="#">(What is this?)</a>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-3 col-sm-12">
                 </div>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+                <div class="col-md-3 col-sm-12">
+                  Fixed
                 </div>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+                <div class="col-md-3 col-sm-12">
+                  Variable
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  Bonus
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-3 col-sm-12">
-                <label>Managers</label>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+            <div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    <label>Senior Manager & above</label>
+                  </div>
+                  <input type="hidden" class="form-control" [(ngModel)]="appraisalid" name="appraisalid">
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="seniormanagerfixed" name="seniormanagerfixed">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="seniormanagervariable" name="seniormanagervariable">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="seniormanagerbonus" name="seniormanagerbonus">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    <label>Managers</label>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="managerfixed" name="managerfixed">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="managervariable" name="managervariable">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="managerbonus" name="managerbonus">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    <label>Executives</label>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="executivesfixed" name="executivesfixed">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="executivesvariable" name="executivesvariable">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+                  <div class="input-group col-md-3 col-sm-12 ">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="executivesbonus" name="executivesbonus">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-3 col-sm-12">
-                <label>Executives</label>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-              <div class="input-group col-md-3 col-sm-12 ">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="companyname" name="companyname">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
+            <div class="col-md-6 field-button">
+              <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
             </div>
-          </div>
-          <div class="col-md-6 field-button">
-            <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

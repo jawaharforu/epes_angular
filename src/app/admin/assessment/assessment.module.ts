@@ -12,6 +12,7 @@ import { AssessmentListComponent } from './assessment-list/assessment-list.compo
 const router: Routes = [
   { path : '', component : AssessmentComponent  },
   { path : 'list', component : AssessmentListComponent  },
+  { path : 'edit/:assessmentid', component : AssessmentComponent  }
 ];
 
 @NgModule({

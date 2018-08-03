@@ -18,7 +18,7 @@
       <form (ngSubmit)="assignJDForm()">
           <div class="form-group col-md-6 col-sm-12">
               <label for="defaultFormCardNameExorg" class="grey-text font-weight-light">Level</label>
-              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="organogramid" name="organogramid">
+              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="organogramid" name="organogramid" (change)="filterEmployee()">
                 <option value="" disabled>--Select Level--</option>
                 <option *ngFor="let o of organogramList" [value]="o._id">{{ o.name }} - {{ o.departmentid.name }} - {{ o.subdepartmentid.name }}</option>
               </select>

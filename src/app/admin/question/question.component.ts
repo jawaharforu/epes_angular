@@ -19,6 +19,8 @@ export class QuestionComponent implements OnInit {
   public isModalShownScale: Boolean = false;
   public isModalShownHeader: Boolean = false;
   public isModalShownAssess: Boolean = false;
+
+  public type: String = '';
   public questionid: String = '';
   public question: String = '';
   public scale: String = '';
@@ -48,6 +50,7 @@ export class QuestionComponent implements OnInit {
   getQuestionList() {
     this.questionService.getQuestion()
     .subscribe(res => {
+      console.log(res);
       this.questionList = res.data;
     });
   }
@@ -123,14 +126,16 @@ export class QuestionComponent implements OnInit {
         question: this.question,
         scaleid: this.scale,
         assessmenttypeid: this.assessmenttype,
-        headerid: this.header
+        headerid: this.header,
+        type: this.type
       };
     } else {
       fields = {
         question: this.question,
         scaleid: this.scale,
         assessmenttypeid: this.assessmenttype,
-        headerid: this.header
+        headerid: this.header,
+        type: this.type
       };
     }
     this.questionService.addQuestion(fields)
@@ -143,6 +148,7 @@ export class QuestionComponent implements OnInit {
         this.scale = '';
         this.assessmenttype = '';
         this.header = '';
+        this.type = '';
         this.getQuestionList();
       } else {
         this._commonService.showMessage('error', res.msg);
@@ -153,9 +159,10 @@ export class QuestionComponent implements OnInit {
   editQuestion(q: any) {
     this.questionid = q._id;
     this.question = q.question;
-    this.scale = q.scaleid;
-    this.assessmenttype = q.assessmenttypeid;
-    this.header = q.headerid;
+    this.scale = q.scaleid._id;
+    this.assessmenttype = q.assessmenttypeid._id;
+    this.header = q.headerid._id;
+    this.type = q.type;
     window.scrollTo(0, 0);
   }
 

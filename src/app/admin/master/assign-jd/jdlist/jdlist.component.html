@@ -8,6 +8,7 @@
       <tr class="text-white">
           <th class="label-no">#</th>
           <th class="label-name">Name</th>
+          <th class="label-name">No. of emp</th>
           <th class="label-action">Action</th>
       </tr>
   </thead>
@@ -18,6 +19,7 @@
       <tr *ngFor="let j of jdList; let i = index">
           <th class="col-no" scope="row">{{ i + 1 }}</th>
           <td class="col-name">{{ j.name }}</td>
+          <td class="col-name">{{ noofemp[i] }}</td>
           <td class="col-action">
             <span  mdbTooltip="Assign Employees" placement="top" (click)="showModal(j._id)" class="btn-question" mdbWavesEffect>
                     Assign JD to Employees
