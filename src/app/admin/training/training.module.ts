@@ -10,14 +10,13 @@ import { TrainingComponent } from './training.component';
 import { BudgetPlanningComponent } from './budget-planning/budget-planning.component';
 import { BudgetmasterComponent } from './budgetmaster/budgetmaster.component';
 import { AddsubheadsComponent } from './addsubheads/addsubheads.component';
-import { TrainingheadComponent } from './traininghead/traininghead.component';
 
 const router: Routes = [
   { path : '', component : TrainingComponent  },
   { path : 'budgetplanning', component : BudgetPlanningComponent  },
   { path : 'budgetmaster', component : BudgetmasterComponent  },
   { path : 'addsubheads', component : AddsubheadsComponent  },
-  { path : 'traininghead', component : TrainingheadComponent  }
+  { path : 'budgetplanning/:budgetid', component : BudgetPlanningComponent  },
 ];
 
 @NgModule({
@@ -35,7 +34,6 @@ const router: Routes = [
     BudgetPlanningComponent,
     BudgetmasterComponent,
     AddsubheadsComponent,
-    TrainingheadComponent
   ]
 })
 export class TrainingModule { }

@@ -5,24 +5,24 @@
         <div class="card-body">
 
             <!-- Default form subscription -->
-            <form (ngSubmit)="faqForm()" class="add-faq">
+            <form (ngSubmit)="trainingsubheadForm()" class="add-faq">
                 <p class="h4 text-center py-4 admin-title">Create Sub Head</p>
-                <input type="hidden" [(ngModel)]="faqid" name="faqid" />
-
-
+                <input type="hidden" [(ngModel)]="trainingsubheadid" name="trainingsubheadid" />
                 <div class="form-group col-md-12 col-sm-12">
-                    <div class="row">
+                    <div class="row" *ngIf="trainingHeadList">
                         <label for="defaultFormCardDesiEx" class="grey-text font-weight-light control-label col-md-3">Select Training Head</label>
-                        <select class="browser-default form-control col-md-10" id="defaultFormCardDesiEx" [(ngModel)]="faqcategoryid" name="faqcategoryid"
-                            (change)="getSubCategory()">
-                            <option value="" disabled>--Select Category--</option>
+                        <select class="browser-default form-control col-md-10" id="defaultFormCardDesiEx" [(ngModel)]="trainingheadid" name="trainingheadid">
+                            <option value="" disabled>--Select Training Head--</option>
+                            <option *ngFor="let traininghead of trainingHeadList" value="{{traininghead._id}}">{{traininghead.name}}</option>
+                            <!-- <option value="2">B</option>
+                            <option value="3">C</option> -->
                         </select>
                     </div>
                 </div>
                 <div class="form-group col-md-12 col-sm-12">
                     <div class="row">
                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Sub Head</label>
-                        <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="question" name="question">
+                        <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
                     </div>
                 </div>
                 <div class="col-sm-10 train-popup-btn text-right">
@@ -40,54 +40,26 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 msg-box">
-                <table class="table table-striped">
+                <table *ngIf="trainingSubheadList" class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" width="30%">Year</th>
-                            <th scope="col" width="30%">Total Budget(USD)</th>
+                            <th scope="col" width="30%">Training Subhead</th>
+                            <th scope="col" width="30%">Training Head</th>
                             <th scope="col" width="40%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">2018</td>
-                            <td>450$</td>
+                        <tr *ngFor="let subhead of trainingSubheadList">
+                            <td scope="row">{{subhead.name}}</td>
+                            <td>{{subhead.trainingheadid.name}}</td>
                             <td>
-                                <a href="#" class="edit">Edit</a>/
-                                <a href="#" class="delete">Delete</a>
+                                <span (click)="editTrainingsubhead(subhead)" class="btn-edit" mdbRippleRadius>Edit </span>/
+                                <span (click)="deleteTrainingsubhead(subhead._id)" class="btn-delete" mdbRippleRadius>Delete</span>
                             </td>
                         </tr>
-                        <tr>
-                            <td scope="row">2018</td>
-                            <td>450$</td>
-                            <td>
-                                <a href="#" class="edit">Edit</a>/
-                                <a href="#" class="delete">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2018</td>
-                            <td>450$</td>
-                            <td>
-                                <a href="#" class="edit">Edit</a>/
-                                <a href="#" class="delete">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td scope="row">2018</td>
-                            <td>450$</td>
-                            <td>
-                                <a href="#" class="edit">Edit</a>/
-                                <a href="#" class="delete">Delete</a>
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
-
             </div>
-
         </div>
     </div>
 </div>

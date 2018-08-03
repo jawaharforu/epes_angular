@@ -1,59 +1,58 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { map } from 'rxjs/operators';
 import { CommonService } from '../../../services/common.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmailService {
+export class BudgetmasterService {
 
   public link: String;
 
   constructor(
     private _commonService: CommonService,
     private http: Http
-  ) { 
+  ) {
     this.link = this._commonService.link;
-  }
+   }
 
-  addEmail(newEmail: any) {
-    console.log(newEmail);
+  addBudgetMaster(newBudgetMaster: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.post(`${this.link}/primaryemails/`, newEmail, {headers: headers})
+    return this.http.post(`${this.link}/budgets`, newBudgetMaster, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  getEmail() {
+  getBudgetMaster() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/primaryemails/`, {headers: headers})
+    return this.http.get(`${this.link}/budgets`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  deleteEmail(emailId: any) {
+  deleteBudgetMaster(budgetid: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.delete(`${this.link}/primaryemails/${emailId}`, {headers: headers})
+    return this.http.delete(`${this.link}/budgets/${budgetid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  getEmailById(emailId: any) {
+  getBudgetMasterById(budgetid: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/primaryemails/${emailId}`, {headers: headers})
+    return this.http.get(`${this.link}/budgets/${budgetid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
-  getEmailByStatus() {
+  getBudgetMasterStatus() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/primaryemails/get/list`, {headers: headers})
+    return this.http.get(`${this.link}/budgets/get/list`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }
