@@ -28,6 +28,7 @@ export class QuestionAssignComponent implements OnInit {
   public scaleList: any;
   public headerList: any;
   public assessmentTypeList: any;
+  public type: any;
   @Input() getjdid: String;
   public jdquestionList: any[] = [];
 
@@ -50,42 +51,44 @@ export class QuestionAssignComponent implements OnInit {
 
   getQuestionToJDList() {
     this.questionService.getQuestionToJDList(this.getjdid)
-    .subscribe(res => {
-      for (const prop of res.data) {
-        this.jdquestionList.push(prop.questionid);
-      }
-    });
+      .subscribe(res => {
+        for (const prop of res.data) {
+          this.jdquestionList.push(prop.questionid);
+        }
+      });
   }
 
   getQuestionList() {
     this.questionService.getQuestionList()
-    .subscribe(res => {
-      this.questionList = res.data;
-    });
+      .subscribe(res => {
+        this.questionList = res.data;
+      });
   }
 
   getScaleList() {
     this.scaleService.getScaleList()
-    .subscribe(res => {
-      this.scaleList = res.data;
-    });
+      .subscribe(res => {
+        this.scaleList = res.data;
+      });
   }
 
   getAssessmenttypeList() {
     this.assessmentTypeService.getAssessmenttype()
-    .subscribe(res => {
-      this.assessmentTypeList = res.data;
-    });
+      .subscribe(res => {
+        this.assessmentTypeList = res.data;
+      });
   }
 
   getHeaderList() {
     this.headerService.getHeaderList()
-    .subscribe(res => {
-      this.headerList = res.data;
-    });
+      .subscribe(res => {
+        this.headerList = res.data;
+      });
   }
 
   checkQuestion(questionid: any) {
+    console.log(this.jdquestionList);
+    console.log(questionid);
     return this.jdquestionList.includes(questionid);
   }
 
@@ -100,7 +103,7 @@ export class QuestionAssignComponent implements OnInit {
   }
 
   public hideModal(): void {
-      this.autoShownModal.hide();
+    this.autoShownModal.hide();
   }
 
   public onHidden(modal: any): void {
@@ -130,6 +133,10 @@ export class QuestionAssignComponent implements OnInit {
       this._commonService.showMessage('error', 'Pleasse select header!');
       return false;
     }
+    if (this._validationsService.isEmpty(this.type)) {
+      this._commonService.showMessage('error', 'Pleasse select Employee!');
+      return false;
+    }
 
     let fields;
     if (!this._validationsService.isEmail(this.questionid)) {
@@ -138,32 +145,35 @@ export class QuestionAssignComponent implements OnInit {
         question: this.question,
         scaleid: this.scale,
         assessmenttypeid: this.assessmenttype,
-        headerid: this.header
+        headerid: this.header,
+        type: this.type
       };
     } else {
       fields = {
         question: this.question,
         scaleid: this.scale,
         assessmenttypeid: this.assessmenttype,
-        headerid: this.header
+        headerid: this.header,
+        type: this.type
       };
     }
     this.questionService.addQuestion(fields)
-    .subscribe(res => {
-      if (res.success) {
-        this._commonService.showMessage('success', res.msg);
-        // this._commonService.redirectTo('/admin/jd/');
-        this.questionid = '';
-        this.question = '';
-        this.scale = '';
-        this.assessmenttype = '';
-        this.header = '';
-        this.getQuestionToJDList();
-        this.getQuestionList();
-      } else {
-        this._commonService.showMessage('error', res.msg);
-      }
-    });
+      .subscribe(res => {
+        if (res.success) {
+          this._commonService.showMessage('success', res.msg);
+          // this._commonService.redirectTo('/admin/jd/');
+          this.questionid = '';
+          this.question = '';
+          this.scale = '';
+          this.assessmenttype = '';
+          this.header = '';
+          this.type = '';
+          this.getQuestionToJDList();
+          this.getQuestionList();
+        } else {
+          this._commonService.showMessage('error', res.msg);
+        }
+      });
   }
 
   editQuestion(q: any) {
@@ -172,20 +182,21 @@ export class QuestionAssignComponent implements OnInit {
     this.scale = q.scaleid;
     this.assessmenttype = q.assessmenttypeid;
     this.header = q.headerid;
+    this.type = q.type;
     window.scrollTo(0, 0);
   }
 
   deleteQuestion(questionid: any) {
     this.questionService.deleteQuestion(questionid)
-    .subscribe(res => {
-      if (res.success) {
-        this._commonService.showMessage('success', res.msg);
-        this.getQuestionToJDList();
-        this.getQuestionList();
-      } else {
-        this._commonService.showMessage('error', res.msg);
-      }
-    });
+      .subscribe(res => {
+        if (res.success) {
+          this._commonService.showMessage('success', res.msg);
+          this.getQuestionToJDList();
+          this.getQuestionList();
+        } else {
+          this._commonService.showMessage('error', res.msg);
+        }
+      });
   }
 
   updateStatus(event: boolean, q: any) {
@@ -195,24 +206,24 @@ export class QuestionAssignComponent implements OnInit {
         questionid: q._id
       };
       this.questionService.setQuestionsToJD(qjd)
-      .subscribe(res => {
-        if (res.success) {
-          this._commonService.showMessage('success', res.msg);
-          // this.getQuestionToJDList();
-        } else {
-          this._commonService.showMessage('error', res.msg);
-        }
-      });
+        .subscribe(res => {
+          if (res.success) {
+            this._commonService.showMessage('success', res.msg);
+            // this.getQuestionToJDList();
+          } else {
+            this._commonService.showMessage('error', res.msg);
+          }
+        });
     } else {
-      this.questionService.deleteQuestion(q.question.id)
-      .subscribe(res => {
-        if (res.success) {
-          this._commonService.showMessage('success', res.msg);
-          // this.getQuestionToJDList();
-        } else {
-          this._commonService.showMessage('error', res.msg);
-        }
-      });
+      this.questionService.deleteQuestionsToJD(this.getjdid + '::' + q._id)
+        .subscribe(res => {
+          if (res.success) {
+            this._commonService.showMessage('success', res.msg);
+            // this.getQuestionToJDList();
+          } else {
+            this._commonService.showMessage('error', res.msg);
+          }
+        });
     }
   }
 }

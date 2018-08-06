@@ -22,7 +22,7 @@ export class OrganogramComponent implements OnInit {
     this.organogramService.getOrganogramStructure()
     .subscribe(res => {
       const data = res.data;
-      this.organogramStructure = data[0];
+      this.organogramStructure = data;
     });
   }
 

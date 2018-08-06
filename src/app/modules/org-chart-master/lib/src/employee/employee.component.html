@@ -1,0 +1,7 @@
+<div class="oc-h-bar oc-border" *ngIf="hasManager"></div>
+<div class="oc-box oc-border oc-background">
+	<div class="oc-name">{{employee?.name}}</div>
+  <div class="oc-designation">{{employee?.designation}}</div>
+  <div class="oc-emp-count">{{employee?.numemp}}</div>
+</div>
+<div class="oc-h-bar oc-border" *ngIf="employee?.subordinates.length"></div>

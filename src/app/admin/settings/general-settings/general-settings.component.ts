@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralSettingsService } from './general-settings.service';
+import { CommonService } from '../../../services/common.service';
+import { ValidationsService } from '../../../services/validations.service';
 
 @Component({
   selector: 'app-general-settings',
@@ -7,9 +10,184 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralSettingsComponent implements OnInit {
 
-  constructor() { }
+  public tolerance: String = '';
+  public externalreference: String = '';
+  public internalemployeereference: String = '';
+  public managingdirectorsdescretion: String = '';
+  public specialallowance: String = '';
+  public cim: String = '';
+  public nocim: String = '';
+  public thirdpartyevaluation1: String = '';
+  public thirdpartyevaluation2: String = '';
+  public thirdpartyevaluation3: String = '';
+  public controlsworkingaquantance05: String = '';
+  public controlsworkingaquantance510: String = '';
+  public controlsworkingaquantance10: String = '';
+  public chairmansreference: String = '';
+  public overworkingaquantance05: String = '';
+  public overworkingaquantance510: String = '';
+  public overworkingaquantance10: String = '';
+  public overpriorrelevant05: String = '';
+  public overpriorrelevant510: String = '';
+  public overpriorrelevant10: String = '';
+  public globalsettingsid: String = '';
+
+  constructor(
+    private _commonService: CommonService,
+    private _validationsService: ValidationsService,
+    private globalsettingsService: GeneralSettingsService
+  ) { }
 
   ngOnInit() {
+    this.getGlobalSettingsList();
+  }
+
+  getGlobalSettingsList() {
+    this.globalsettingsService.getGlobalsettings()
+    .subscribe(res => {
+      if (res.data.length > 0) {
+        this.globalsettingsid = res.data[0]._id;
+        this.tolerance = res.data[0].tolerance;
+        this.externalreference = res.data[0].externalreference;
+        this.internalemployeereference = res.data[0].internalemployeereference;
+        this.managingdirectorsdescretion = res.data[0].managingdirectorsdescretion;
+        this.specialallowance = res.data[0].specialallowance;
+        this.cim = res.data[0].cim;
+        this.nocim = res.data[0].nocim;
+        this.thirdpartyevaluation1 = res.data[0].thirdpartyevaluation1;
+        this.thirdpartyevaluation2 = res.data[0].thirdpartyevaluation2;
+
+        this.thirdpartyevaluation3 = res.data[0].thirdpartyevaluation3;
+        this.controlsworkingaquantance05 = res.data[0].controlsworkingaquantance05;
+        this.controlsworkingaquantance510 = res.data[0].controlsworkingaquantance510;
+        this.controlsworkingaquantance10 = res.data[0].controlsworkingaquantance10;
+        this.chairmansreference = res.data[0].chairmansreference;
+        this.overworkingaquantance05 = res.data[0].overworkingaquantance05;
+        this.overworkingaquantance510 = res.data[0].overworkingaquantance510;
+        this.overworkingaquantance10 = res.data[0].overworkingaquantance10;
+        this.overpriorrelevant05 = res.data[0].overpriorrelevant05;
+        this.overpriorrelevant510 = res.data[0].overpriorrelevant510;
+        this.overpriorrelevant10 = res.data[0].overpriorrelevant10;
+      }
+    });
+  }
+
+  globalsettings() {
+
+    if (this._validationsService.isEmpty(this.tolerance)) {
+      this._commonService.showMessage('error', 'SeniorManager Fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.externalreference)) {
+      this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.internalemployeereference)) {
+      this._commonService.showMessage('error', 'Senior Manager Bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.managingdirectorsdescretion)) {
+      this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.specialallowance)) {
+      this._commonService.showMessage('error', 'Manager variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.cim)) {
+      this._commonService.showMessage('error', 'Manager bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.nocim)) {
+      this._commonService.showMessage('error', 'Executives fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.thirdpartyevaluation1)) {
+      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.thirdpartyevaluation2)) {
+      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.thirdpartyevaluation3)) {
+      this._commonService.showMessage('error', 'SeniorManager Fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.controlsworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.controlsworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Senior Manager Bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.controlsworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.chairmansreference)) {
+      this._commonService.showMessage('error', 'Manager variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Manager bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Executives fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overpriorrelevant05)) {
+      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overpriorrelevant510)) {
+      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.overpriorrelevant10)) {
+      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      return false;
+    }
+
+    const fieldGlobalsettingsid = {
+      tolerance: this.tolerance,
+      externalreference: this.externalreference,
+      internalemployeereference :this.internalemployeereference,
+      managingdirectorsdescretion :this.managingdirectorsdescretion,
+      specialallowance:this.specialallowance,
+      cim:this.cim,
+      nocim:this.nocim,
+      thirdpartyevaluation1:this.thirdpartyevaluation1,
+      thirdpartyevaluation2:this.thirdpartyevaluation2,
+      thirdpartyevaluation3:this.thirdpartyevaluation3,
+      controlsworkingaquantance05:this.controlsworkingaquantance05,
+      controlsworkingaquantance510:this.controlsworkingaquantance510,
+      controlsworkingaquantance10:this.controlsworkingaquantance10,
+      chairmansreference:this.chairmansreference,
+      overworkingaquantance05:this.overworkingaquantance05,
+      overworkingaquantance510:this.overworkingaquantance510,
+      overworkingaquantance10:this.overworkingaquantance10,
+      overpriorrelevant05 :this.overpriorrelevant05,
+      overpriorrelevant510 :this.overpriorrelevant510,
+      overpriorrelevant10 :this.overpriorrelevant10,
+    };
+
+    this.globalsettingsService.addGlobalsettings(fieldGlobalsettingsid)
+      .subscribe(res => {
+        if (res.success) {
+          this._commonService.showMessage('success', res.msg);
+          this.getGlobalSettingsList();
+        } else {
+          this._commonService.showMessage('error', res.msg);
+        }
+      });
+
   }
 
 }

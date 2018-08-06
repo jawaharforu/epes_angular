@@ -1,0 +1,17 @@
+:host {
+	margin: 0 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.oc-box {
+	padding: 0.25em 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.oc-h-bar {
+	height: 0.5em;
+}

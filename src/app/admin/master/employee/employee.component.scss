@@ -1,0 +1,156 @@
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 30%;
+}
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.card {
+    position: relative;
+    padding: 25px 30px 25px 30px;
+}
+.add-employee label{
+    font-size: 13px;
+    color: #000 !important;
+    font-weight: 400 !important;
+}
+.employees-type label {
+    font-size: 13px;
+    color: #000 !important;
+    font-weight: 400 !important;
+    width: 100px;
+}
+
+.breadcrumb a, .breadcrumb-item.active{
+    font-size: 12px;
+    color: #fff;
+}
+.form-group {
+    margin-bottom: .5rem;
+}
+.form-check{
+    padding: 0px;
+}
+.addproduct .form-check label {
+    margin-right: 20px;
+}
+.addproduct .form-control{
+    font-size: 15px;
+}
+.addproduct .switch{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #54afc6;
+    border-radius: 0.25rem;
+}
+[type="radio"]:checked + label:after, .switch label input[type=checkbox]:checked + .lever:after{
+        border-color: #54afc6;
+    background-color: #54afc6;
+}
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: #a6dbe8;
+}
+.btn-add-feild {
+    background: none !important;
+    box-shadow: none;
+    color: #54afc6 !important;
+    width: 20px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5px;
+}
+.btn-primary.btn-add-feild:not([disabled]):not(.disabled):active, 
+.btn-primary.btn-add-feild:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.btn-add-feild.dropdown-toggle{
+    background: none !important;
+    box-shadow: none;
+    color: #54afc6 !important;
+}
+.btn-add-feild .fa{
+    font-size: 25px;
+}
+.btn-submit,
+.btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    border: none !important;
+    box-shadow: none;
+    float: none;
+    margin: 0px auto;
+    display: block;
+    margin-top: 10px;
+    clear: both;
+}
+.btn-primary.btn-submit:not([disabled]):not(.disabled):active, 
+.btn-primary.btn-submit:not([disabled]):not(.disabled).active, 
+.show > .btn-primary.btn-submit.dropdown-toggle{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    margin-top: 20px;
+    box-shadow: none;
+}
+[type="radio"]:checked + label:before {
+    display: inline-block;
+    content: "";
+    z-index: 999;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border-color: #54afc6;
+}
+.form-control{
+    display: inline-block;
+}
+.form-control.col-md-10{
+    max-width: 300px;
+}
+.feild-features{   
+     max-width: 300px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.feild-button{
+    max-width: 250px;
+}
+.form-check{
+    float: left;
+    margin-right: 15px;
+}
+.btn-add-new{
+    float: right;
+    padding: 5px 10px;
+    border-radius: 0px !important;
+    color: #fff !important;
+    background-color: #56ba65 !important;
+    border: 1px solid #43b64a !important;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    box-shadow: none;
+}

@@ -3,14 +3,14 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 17px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
     background: #ffffff;
     margin-left: -20px;
     border: none;
-    width: 30%;
+    width: 40%;
 }
 
 .card .card-body{
@@ -19,5 +19,37 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px ;
+}
+p.h4.text-center.py-4.admin-title a {
+    font-size: 12px;
+    color: #54afc6;
+}
+input#defaultFormCardNameEx {
+    padding: 0px;
+    border-radius: 0px;
+}
+.input-group .input-group-text {
+    background-color: #e0e0e0;
+    background: none;
+    color: #14a3c7;
+    border: none;
+}
+.col-md-3.col-sm-12{
+    text-align: right;
+}
+label {
+    font-size: 13px;
+}
+.field-label{
+    color: #14a3c7;
+    font-size: 14px;
+    text-align: left !important;
+}
+button.btn.btn-submit.btn-save {
+    background: #f38e00;
+    padding: 5px 25px;
+    font-size: 15px;
+    margin-top: 15px;
+    text-transform: capitalize;
 }

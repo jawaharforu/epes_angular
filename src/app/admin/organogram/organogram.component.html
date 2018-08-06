@@ -1,1 +1,4 @@
-<ng-org-chart [topEmployee]="organogramStructure"></ng-org-chart>
+<div>
+  <ng-org-chart *ngFor="let o of organogramStructure; let i = index" [topEmployee]="o"></ng-org-chart>
+</div>
+

@@ -21,3 +21,49 @@ p.h4.text-center.py-4.admin-title {
     position: relative;
     padding: 25px 30px 50px 30px;
 }
+.company-logo {
+    width: 130px;
+    height: 130px;
+    float: left;
+    background: #ccc;
+    margin-right: 15px;
+}
+.company-logo img{
+    width: 100%;
+}
+input.btn.file-choose {
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+button.btn.btn-upload {
+    padding: 9px;
+    background: #ec9d08;
+    box-shadow: none;
+    padding-left: 0px;
+    cursor: pointer;
+}
+.label-logo{
+    width: 50%;
+    margin-top: 30px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    color: #666;
+    font-weight: 400;
+}
+.btn:not([disabled]):not(.disabled):active, .btn:not([disabled]):not(.disabled).active{
+    box-shadow: none;
+}
+label.grey-text.font-weight-light {
+    font-size: 13px;
+    color: #212529 !important;
+    font-weight: 400 !important;
+}
+button.btn.btn-submit.btn-save {
+    background: #f38e00;
+    padding: 5px 25px;
+    font-size: 15px;
+    margin-top: 15px;
+    text-transform: capitalize;
+}

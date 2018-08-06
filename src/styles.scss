@@ -2553,8 +2553,42 @@ nav.admin-top-navbar {
   top: 0;
   z-index: 0;
 }
-
-
+.email-title .card-header{
+    padding: .7rem 1rem !important;
+}
+.email-title h5{
+    color: #007694 !important;
+    font-size: 14px !important;
+    font-weight: 300;
+}
+.side-nav {
+    transition: 0.5s;
+    background-color: #ffffff;
+    overflow: auto;
+}
+.accordion .card.is-collapsed .email-title .card-header a .rotate-icon.fa-angle-down:before {
+    content: "\f067";
+    font-size: 10px;
+}
+.accordion .card.active .email-title .card-header a .rotate-icon.fa-angle-down:before {
+    content: "\f068";
+    font-size: 10px;
+}
+.assessmentForm .md-form input[type=text]{
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    height: 24px !important;
+    font-size: 1rem !important;
+    width: 93% !important;
+    margin-left: -15px !important;
+}
+.assessmentForm .md-form input[type=text]:focus:not([readonly]){
+    border-bottom: 1px solid #ced4da;
+    box-shadow: none;
+}
   @media (min-width: 1200px){
     .fixed-sn main, .fixed-sn .page-footer .container-fluid {
         margin-left: 6%;
@@ -2565,5 +2599,51 @@ nav.admin-top-navbar {
         padding-top: 5.5rem;
         min-height: 100vh;
         height: 100%;
+    }
+}
+@media only screen and (max-width:1000px){
+    .admin-topnav, .admin-topnav-right{
+        width:100% !important
+    }
+    .double-nav logo{
+        width: 30%;
+        float: left;
+    }
+    .admin-topnav  ul.nav.navbar-nav.nav-flex-icons.ml-auto.ie-double-nav.admin-leftnav{
+        width: 38%;
+        float: right;
+    }
+    .admin-topnav-right  ul.nav.navbar-nav.nav-flex-icons.ml-auto.ie-double-nav {
+        width: 60%;
+    }
+
+}
+@media only screen and (max-width:767px){
+    .admin-topnav ul.nav.navbar-nav.nav-flex-icons.ml-auto.ie-double-nav.admin-leftnav {
+        width: 100%;
+        float: right;
+    }
+    .admin-topnav-right  ul.nav.navbar-nav.nav-flex-icons.ml-auto.ie-double-nav {
+        width: 100%;
+    }
+    .admin-topnav-right  ul.nav.navbar-nav.nav-flex-icons.ml-auto.ie-double-nav  li.nav-item {
+        font-size: 11px;
+        margin: 0px 5px;
+        border-bottom: 1px solid #fff;
+    }
+    .card {
+        position: relative;
+        padding: 25px 30px ;
+        margin-top: 60px;
+    }
+    input.btn.file-choose {
+        width: 100%; 
+    }
+    .label-logo{
+        widows: 100%;
+        margin-top: 0px;
+    }
+    p.h4.text-center.py-4.admin-title{
+        width: 100%;
     }
 }

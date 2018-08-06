@@ -10,20 +10,23 @@ p.h4.text-center.py-4.admin-title {
     background: #ffffff;
     border: none;
     margin-left: -20px;
+    width: 35%;
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px;
 }
 .card .card-body {
     background: #f6f6f6;
     box-shadow: none;
+    margin-bottom: 25px;
 }
 .add-faqCategory label{
     font-size: 13px;
     color: #000 !important;
     line-height: 28px;
     padding: 0px;
+    font-weight: 400 !important;
 }
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 

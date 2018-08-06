@@ -36,7 +36,7 @@ export class AssignJDComponent implements OnInit {
     this.getAssignJDByJDId();
     this.dropdownSettings = {
               singleSelection: false,
-              text: 'Select Countries',
+              text: 'Select Employee',
               selectAllText: 'Select All',
               unSelectAllText: 'UnSelect All',
               enableSearchFilter: true,
@@ -89,7 +89,7 @@ export class AssignJDComponent implements OnInit {
   }
 
   assignJDForm() {
-    const employeeids = this.selectedItems.map(item => item.id);
+    const employeeids = this.selectedItems.map((item: any) => item.id);
     if (employeeids.length === 0) {
       this._commonService.showMessage('error', 'Select atleast one employee');
       return false;

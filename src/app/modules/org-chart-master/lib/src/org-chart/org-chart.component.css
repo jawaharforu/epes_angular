@@ -1,0 +1,23 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.oc-reports {
+	display: flex;
+	flex: 1;
+}
+
+.oc-org-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.oc-h-bar-container {
+	display: flex;
+}
+
+.oc-h-bar {
+	flex: 1;
+}

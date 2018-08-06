@@ -7,7 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { OrganogramComponent } from './organogram.component';
 import { OrganogramAddComponent } from './organogram-add/organogram-add.component';
-import { OrgChartModule } from 'ng-org-chart';
+// import { OrgChartModule } from 'ng-org-chart';
+import { OrgChartModule } from '../../modules/org-chart-master/lib';
 
 const router: Routes = [
   { path : '', component : OrganogramAddComponent  },

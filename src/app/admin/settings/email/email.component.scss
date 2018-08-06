@@ -19,5 +19,53 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px ;
+}
+h5.admin-subtitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555555;
+}
+h6 {
+    font-size: 13px;
+    color: #666;
+    line-height: 22px;
+}
+button.btn.btn-warning.waves-light.btn-submit {
+    padding: 8px 15px;
+    margin: 0px;
+    box-shadow: none;
+    background: rgb(241,241,243);
+    background: -moz-linear-gradient(top, rgba(241,241,243,1) 2%, rgba(222,227,231,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(241,241,243,1) 2%,rgba(222,227,231,1) 100%);
+    background: linear-gradient(to bottom, rgba(241,241,243,1) 2%,rgba(222,227,231,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f3', endColorstr='#dee3e7',GradientType=0 );
+    border: 1px solid #666;
+    color: #464545 !important;
+}
+
+.table {
+    border: 1px solid #ece4e4;
+}
+.table thead th {
+    border-bottom: 0px;
+    border: 1px solid #ccc;
+    color: #32a3bf;
+}
+table.table th, table.table td{
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid #ccc;
+}
+td.col-action {
+    color: #138ead;
+    cursor: pointer;
+}
+.form-group {
+    margin-bottom: 1.5rem;
 }
