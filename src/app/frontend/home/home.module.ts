@@ -14,6 +14,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { NewlinePipe } from '../../pipes/newline.pipe';
 import { CountUpModule } from 'countup.js-angular2';
 import { HRIndexComponent } from './hrindex/hrindex.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const router: Routes = [
   { path : '', component : HomeComponent  },
@@ -24,7 +25,9 @@ const router: Routes = [
     CommonModule,
     MDBBootstrapModulesPro.forRoot(),
     RouterModule.forChild(router),
-    CountUpModule
+    CountUpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,

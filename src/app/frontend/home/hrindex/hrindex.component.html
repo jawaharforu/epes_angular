@@ -55,16 +55,17 @@
                      </div>
 
                      <div class="col-sm-12 form-modle">
-                        <form class="reg_form">
-                            <input type="text" id="first_name" class="form-control" placeholder="*Name">
-                            <input type="email" id="email" class="form-control" placeholder="*Email">
-                            <input type="text" id="Phone" class="form-control" placeholder="*Phone">
-                            <input type="text" id="designation" class="form-control" placeholder="Designation">
-                            <input type="text" id="company_name" class="form-control" placeholder="Company Name">
-                            <input type="text" id="industry" class="form-control" placeholder="Industry">
+                        <form class="reg_form" (ngSubmit)="hrIndexForm()">
+                            <input type="text" id="first_name" class="form-control" placeholder="*Name" [(ngModel)]="name" name="name" >
+                            <input type="email" id="email" class="form-control" placeholder="*Email" [(ngModel)]="email" name="email">
+                            <input type="text" id="Phone" class="form-control" placeholder="*Phone" [(ngModel)]="mobile" name="mobile" >
+                            <input type="text" id="designation" class="form-control" placeholder="Designation" [(ngModel)]="designation" name="designation">
+                            <input type="text" id="company_name" class="form-control" placeholder="Company Name" [(ngModel)]="companyname" name="companyname">
+                            <input type="text" id="industry" class="form-control" placeholder="Industry" [(ngModel)]="industry" name="industry">
 
                          <div class="text-center mt-4 sub_btn">
-                            <a class="btn btn-primary" type="button" (click)="openThird()">Check Your HR Index</a>
+                            <!-- <a class="btn btn-primary" type="submit" (click)="openThird()">Check Your HR Index</a> -->
+                            <button type="submit" class="btn btn-default btn-pay">Check Your HR Index </button>
                         </div>
                         </form>
                      </div>
