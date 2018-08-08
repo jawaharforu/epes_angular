@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JdService } from '../../../JD/services/jd.service';
+import { JdService } from '../../../master/JD/services/jd.service';
 import { ModalDirective } from '../../../../../../ng-uikit-pro-standard';
 import { AssignJDService } from '../assign-jd.service';
 

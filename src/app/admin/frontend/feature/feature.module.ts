@@ -9,11 +9,19 @@ import { CKEditorModule } from 'ng2-ckeditor';
 import { FeatureComponent } from './feature.component';
 import { FeatureListComponent } from './feature-list/feature-list.component';
 import { DataTablesModule } from 'angular-datatables';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : FeatureComponent  },
-  { path : 'list', component : FeatureListComponent  },
-  { path : 'edit/:featureid', component : FeatureComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : FeatureComponent  },
+      { path : 'list', component : FeatureListComponent  },
+      { path : 'edit/:featureid', component : FeatureComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -26,6 +34,6 @@ const router: Routes = [
     CKEditorModule,
     DataTablesModule
   ],
-  declarations: [FeatureComponent, FeatureListComponent]
+  declarations: [FeatureComponent, FeatureListComponent, SubmenuComponent, ParentComponent]
 })
 export class FeatureModule { }

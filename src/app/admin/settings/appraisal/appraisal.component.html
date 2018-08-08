@@ -1,22 +1,24 @@
 <div class="form-group">
   <div class="row">
-    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
       <div class="card">
-        <div class="card-body">
+        
+		
           <form (ngSubmit)="appraisalform()" class="add-faq">
-            <p class="h4 text-center py-4 admin-title">Salary Appraisal & Jobs </p>
-            <a href="#">(What is this?)</a>
+		  <div class="card-body">
+            <p class="h4 text-center py-4 admin-title">Salary Appraisal & Jobs <a href="#">(What is this?)</a></p>
+            
             <div class="form-group">
               <div class="row">
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 ">
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 field-label">
                   Fixed
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 field-label">
                   Variable
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 field-label">
                   Bonus
                 </div>
               </div>
@@ -27,13 +29,16 @@
                   <div class="col-md-3 col-sm-12">
                     <label>Senior Manager & above</label>
                   </div>
+				  
                   <input type="hidden" class="form-control" [(ngModel)]="appraisalid" name="appraisalid">
+				  
                   <div class="input-group col-md-3 col-sm-12 ">
                     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="seniormanagerfixed" name="seniormanagerfixed">
                     <div class="input-group-append">
                       <span class="input-group-text">%</span>
                     </div>
                   </div>
+				  
                   <div class="input-group col-md-3 col-sm-12 ">
                     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="seniormanagervariable" name="seniormanagervariable">
                     <div class="input-group-append">
@@ -99,11 +104,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 field-button">
-              <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
+           
+        </div>
+		 <div class="field-button float-right">
+              <button type="submit" class="btn btn-submit float-right btn-save" >Save</button>
             </div>
           </form>
-        </div>
       </div>
     </div>
   </div>

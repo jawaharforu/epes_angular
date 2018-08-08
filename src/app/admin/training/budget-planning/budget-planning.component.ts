@@ -4,8 +4,8 @@ import { TrainingService } from '../training.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../../services/common.service';
 import { ValidationsService } from '../../../services/validations.service';
-import { HeaderService } from '../../JD/header/services/header.service';
-import { AssessmentTypeService } from '../../JD/assessment-type/assessment-type.service';
+import { HeaderService } from '../../master/JD/header/services/header.service';
+import { AssessmentTypeService } from '../../master/JD/assessment-type/assessment-type.service';
 import { BudgetmasterService } from '../budgetmaster/budgetmaster.service';
 
 @Component({
@@ -55,7 +55,8 @@ export class BudgetPlanningComponent implements OnInit {
             if (!this._validationsService.isEmpty(this.budgetid)) {
                 this.getBudgetplanByBudgetId(this.budgetid);
             } else {
-                this._commonService.redirectTo('/admin/training/budgetmaster');
+              this._commonService.showMessage('error', 'Add budget plan from budget master!!!');
+              this._commonService.redirectTo('/admin/training/budgetmaster');
             }
         });
 

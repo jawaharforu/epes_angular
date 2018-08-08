@@ -8,11 +8,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { AssessmentComponent } from './assessment.component';
 import { AssessmentListComponent } from './assessment-list/assessment-list.component';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : AssessmentComponent  },
-  { path : 'list', component : AssessmentListComponent  },
-  { path : 'edit/:assessmentid', component : AssessmentComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path: '', component: AssessmentComponent },
+      { path : 'edit/:assessmentid', component : AssessmentComponent },
+      { path : 'list', component : AssessmentListComponent }
+    ]
+  }
 ];
 
 @NgModule({
@@ -27,7 +35,9 @@ const router: Routes = [
   ],
   declarations: [
     AssessmentComponent,
-    AssessmentListComponent
+    AssessmentListComponent,
+    SubmenuComponent,
+    ParentComponent
   ]
 })
 export class AssessmentModule { }

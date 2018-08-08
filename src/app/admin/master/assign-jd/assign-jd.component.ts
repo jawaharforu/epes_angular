@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from '../../../services/common.service';
-import { JdService } from '../../JD/services/jd.service';
-import { OrganogramService } from '../../organogram/organogram.service';
+import { JdService } from '../../master/JD/services/jd.service';
+import { OrganogramService } from '../organogram/organogram.service';
 import { EmployeeService } from '../employee/employee.service';
 import { AssignJDService } from './assign-jd.service';
 

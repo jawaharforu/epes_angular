@@ -1,0 +1,40 @@
+<div class="card">
+
+    <!-- Card body -->
+    <div class="card-body">
+        <!-- Default form subscription -->
+        <form (ngSubmit)="jdForm()">
+            <p class="h4 text-center py-4 admin-title">Create JD</p>
+            <input type="hidden" [(ngModel)]="jdid" name="jdid" />
+            <div class="row">
+                      <div class="form-group col-md-7 col-sm-12">
+
+                                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">JD Name</label>
+                                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
+                      </div>
+                      <div class="col-md-5">
+                          <input type="file" class="btn file-choose " name="file" ng2FileSelect [uploader]="uploader" />
+                          <button type="button" class="btn btn-upload" mdbWavesEffect
+                                (click)="uploader.uploadAll()"
+                                [disabled]="!uploader.getNotUploadedItems().length" >
+                           <i class="fa fa-cloud-upload mr-1"></i> Upload JD
+                          </button>
+                      </div>
+              </div>
+              <div class="form-group col-md-12 col-sm-12">
+                      <div class="row">
+            <label for="defaultFormCardJD" class="grey-text font-weight-light">Description</label>
+            <ckeditor [(ngModel)]="description" name="ckeditorContent"></ckeditor>
+                      </div></div>
+                      <div  class="col-md-12 feild-button">
+            <button type="submit" class="btn btn-primary btn-submit" mdbWavesEffect>Submit</button>
+          </div>
+          </form>
+        <!-- Default form subscription -->
+
+    </div>
+    <!-- Card body -->
+
+</div>
+
+

@@ -19,7 +19,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px 25px 30px;
 }
 .company-logo {
     width: 130px;
@@ -66,4 +66,7 @@ button.btn.btn-submit.btn-save {
     font-size: 15px;
     margin-top: 15px;
     text-transform: capitalize;
+}
+.form-control {
+    font-size: 14px;
 }

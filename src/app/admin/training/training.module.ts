@@ -10,13 +10,21 @@ import { TrainingComponent } from './training.component';
 import { BudgetPlanningComponent } from './budget-planning/budget-planning.component';
 import { BudgetmasterComponent } from './budgetmaster/budgetmaster.component';
 import { AddsubheadsComponent } from './addsubheads/addsubheads.component';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : TrainingComponent  },
-  { path : 'budgetplanning', component : BudgetPlanningComponent  },
-  { path : 'budgetmaster', component : BudgetmasterComponent  },
-  { path : 'addsubheads', component : AddsubheadsComponent  },
-  { path : 'budgetplanning/:budgetid', component : BudgetPlanningComponent  },
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : TrainingComponent  },
+      { path : 'budgetplanning', component : BudgetPlanningComponent  },
+      { path : 'budgetmaster', component : BudgetmasterComponent  },
+      { path : 'addsubheads', component : AddsubheadsComponent  },
+      { path : 'budgetplanning/:budgetid', component : BudgetPlanningComponent  },
+    ]
+  }
 ];
 
 @NgModule({
@@ -34,6 +42,8 @@ const router: Routes = [
     BudgetPlanningComponent,
     BudgetmasterComponent,
     AddsubheadsComponent,
+    SubmenuComponent,
+    ParentComponent,
   ]
 })
 export class TrainingModule { }

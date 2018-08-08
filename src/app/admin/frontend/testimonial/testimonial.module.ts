@@ -8,11 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestimonialComponent } from './testimonial.component';
 import { TestimonialListComponent } from './testimonial-list/testimonial-list.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ParentComponent } from './parent/parent.component';
+import { SubmenuComponent } from './submenu/submenu.component';
 
 const router: Routes = [
-  { path : '', component : TestimonialComponent  },
-  { path : 'list', component : TestimonialListComponent  },
-  { path : 'edit/:testimonialid', component : TestimonialComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : TestimonialComponent  },
+      { path : 'list', component : TestimonialListComponent  },
+      { path : 'edit/:testimonialid', component : TestimonialComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -26,7 +34,9 @@ const router: Routes = [
   ],
   declarations: [
     TestimonialComponent,
-    TestimonialListComponent
+    TestimonialListComponent,
+    ParentComponent,
+    SubmenuComponent
   ]
 })
 export class TestimonialModule { }

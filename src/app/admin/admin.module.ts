@@ -4,12 +4,12 @@ import { Routing } from './admin.routing';
 import { MDBBootstrapModulesPro } from '../../../ng-uikit-pro-standard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ApproverComponent } from './approver/approver.component';
 import { AdminComponent } from './admin.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { CommonService } from '../services/common.service';
 import { ValidationsService } from '../services/validations.service';
+
 
 @NgModule({
   imports: [
@@ -20,7 +20,6 @@ import { ValidationsService } from '../services/validations.service';
     ReactiveFormsModule
   ],
   declarations: [
-    ApproverComponent,
     AdminComponent,
     NavBarComponent
   ],

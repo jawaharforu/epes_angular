@@ -8,11 +8,19 @@ import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeComponent } from './employee.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : EmployeeComponent  },
-  { path : 'list', component : EmployeeListComponent  },
-  { path : 'edit/:employeeid', component : EmployeeComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path: '', component: EmployeeComponent },
+      { path : 'edit/:employeeid', component : EmployeeComponent },
+      { path : 'list', component : EmployeeListComponent }
+    ]
+  }
 ];
 
 @NgModule({
@@ -27,7 +35,9 @@ const router: Routes = [
   ],
   declarations: [
     EmployeeListComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    SubmenuComponent,
+    ParentComponent
   ]
 })
 export class EmployeeModule { }

@@ -10,11 +10,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogComponent } from './blog/blog.component';
 import { DataTablesModule } from '../../../../../node_modules/angular-datatables';
 import { CKEditorModule } from '../../../../../node_modules/ng2-ckeditor';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : BlogComponent  },
-  { path : 'list', component : BlogListComponent  },
-  { path : 'edit/:blogid', component : BlogComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : BlogComponent  },
+      { path : 'list', component : BlogListComponent  },
+      { path : 'edit/:blogid', component : BlogComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -29,7 +37,9 @@ const router: Routes = [
   ],
   declarations: [
     BlogListComponent,
-    BlogComponent
+    BlogComponent,
+    SubmenuComponent,
+    ParentComponent
   ]
 })
 export class BlogModule { }

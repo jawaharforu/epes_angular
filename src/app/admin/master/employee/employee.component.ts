@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { OrganogramService } from '../../organogram/organogram.service';
+import { OrganogramService } from '../organogram/organogram.service';
 import { CommonService } from '../../../services/common.service';
 import { ValidationsService } from '../../../services/validations.service';
 import { EmployeeService } from './employee.service';

@@ -8,11 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { DataTablesModule } from 'angular-datatables';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { ParentComponent } from './parent/parent.component';
 
 const router: Routes = [
-  { path : '', component : ProductComponent  },
-  { path : 'list', component : ProductListComponent  },
-  { path : 'edit/:productid', component : ProductComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : ProductComponent  },
+      { path : 'list', component : ProductListComponent  },
+      { path : 'edit/:productid', component : ProductComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -24,6 +32,6 @@ const router: Routes = [
     ReactiveFormsModule,
     DataTablesModule
   ],
-  declarations: [ProductComponent, ProductListComponent]
+  declarations: [ProductComponent, ProductListComponent, SubmenuComponent, ParentComponent]
 })
 export class ProductModule { }

@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <p class="h4 text-center py-4 admin-title">Primary Email</p>
                     <div class="">
-                        <h5>Add an Email Address</h5>
+                        <h5 class="admin-subtitle">Add an Email Address</h5>
                         <h6>
                             <strong>We recommend you atleast one personal address and one work address.</strong> After adding the
                             new address, go to that account and click the link in the confimation email.</h6>
@@ -15,20 +15,18 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 ">
-                                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Email id</label>
-                                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="email" name="email">
+                                   <!-- <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Email id</label>-->
+                                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="email" name="email" placeholder="Email Address">
                                 </div>
                                 <div class="col-md-6 field-button">
-                                    <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Add Email Address</button>
+                                    <button type="submit" class="btn btn-warning waves-light btn-submit" >Add Email Address</button>
                                 </div>
                             </div>
                         </div>
                     </form>
 
                     <div class="">
-                        <h5>
-                            <strong>Choose your primary email address</strong>
-                        </h5>
+                        <h5 class="admin-subtitle">Choose your primary email address </h5>
                         <h6>Choose your primary email address Click "make Primary" next to the addressw you want to use for 360
                             EPES email addresses must be confirmed before they can become primary.</h6>
                     </div>

@@ -9,11 +9,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { DataTablesModule } from '../../../../../node_modules/angular-datatables';
 import { ProductroadmapComponent } from './productroadmap/productroadmap.component';
+import { ParentComponent } from './parent/parent.component';
+import { SubmenuComponent } from './submenu/submenu.component';
 
 const router: Routes = [
-  { path : '', component : ProductroadmapComponent  },
-  { path : 'list', component : ProductroadmapListComponent  },
-  { path : 'edit/:productroadmapid', component : ProductroadmapComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : ProductroadmapComponent  },
+      { path : 'list', component : ProductroadmapListComponent  },
+      { path : 'edit/:productroadmapid', component : ProductroadmapComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -28,7 +36,9 @@ const router: Routes = [
   ],
   declarations: [
     ProductroadmapListComponent,
-    ProductroadmapComponent
+    ProductroadmapComponent,
+    ParentComponent,
+    SubmenuComponent
   ]
 })
 export class ProductroadmapModule { }

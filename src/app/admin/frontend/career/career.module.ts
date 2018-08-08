@@ -8,11 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CareerComponent } from './career/career.component';
 import { DataTablesModule } from '../../../../../node_modules/angular-datatables';
 import { CKEditorModule } from '../../../../../node_modules/ng2-ckeditor';
+import { ParentComponent } from './parent/parent.component';
+import { SubmenuComponent } from './submenu/submenu.component';
 
 const router: Routes = [
-  { path : '', component : CareerComponent  },
-  { path : 'list', component : CareerListComponent  },
-  { path : 'edit/:careerid', component : CareerComponent  }
+  {
+    path : '',
+    component : ParentComponent,
+    children: [
+      { path : '', component : CareerComponent  },
+      { path : 'list', component : CareerListComponent  },
+      { path : 'edit/:careerid', component : CareerComponent  }
+    ]
+  }
 ];
 
 @NgModule({
@@ -27,8 +35,9 @@ const router: Routes = [
   ],
   declarations: [
     CareerComponent,
-    CareerListComponent
+    CareerListComponent,
+    ParentComponent,
+    SubmenuComponent
   ]
 })
 export class CareerModule { }
- 

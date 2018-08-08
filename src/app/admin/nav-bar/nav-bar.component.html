@@ -19,211 +19,58 @@
       <li>
           <ul class="collapsible collapsible-accordion ">
               <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-
-                  <!-- Collapsible link -->
                   <mdb-item>
-                      <mdb-item-head > Product</mdb-item-head>
+                      <mdb-item-head > Master</mdb-item-head>
                       <mdb-item-body>
                           <ul>
-                              <li><a [routerLink]="['/admin/product']" class="waves-effect" >Product Add</a></li>
-                              <li><a [routerLink]="['/admin/product/list']" class="waves-effect" >Product List</a></li>
+                              <li><a [routerLink]="['/admin/jd']" class="waves-effect" >JD</a></li>
+                              <li><a [routerLink]="['/admin/header']" class="waves-effect" >Header</a></li>
+                              <li><a [routerLink]="['/admin/scale']" class="waves-effect" >Scale</a></li>
+                              <li><a [routerLink]="['/admin/question']" class="waves-effect" >Question</a></li>
+                              <li><a [routerLink]="['/admin/department']" class="waves-effect" >Department</a></li>
+                              <li><a [routerLink]="['/admin/organogram']" class="waves-effect" >Organogram</a></li>
+                              <li><a [routerLink]="['/admin/employee']" class="waves-effect" >Employee</a></li>
                           </ul>
                       </mdb-item-body>
                   </mdb-item>
-
-                  <mdb-item>
-                    <mdb-item-head > Features</mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/feature']" class="waves-effect" mdbWavesEffect>Features Add</a></li>
-                            <li><a [routerLink]="['/admin/feature/list']" class="waves-effect" mdbWavesEffect>Features List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-
-                  <mdb-item>
-                    <mdb-item-head > Testimonial</mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/testimonial']" class="waves-effect" mdbWavesEffect>Testimonial Add</a></li>
-                            <li><a [routerLink]="['/admin/testimonial/list']" class="waves-effect" mdbWavesEffect>Testimonial List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-
-                  <mdb-item>
-                    <mdb-item-head > FAQ</mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/faq/category']" class="waves-effect" mdbWavesEffect>FAQ Category</a></li>
-                            <li><a [routerLink]="['/admin/faq/subcategory']" class="waves-effect" mdbWavesEffect>FAQ Sub Category</a></li>
-                            <li><a [routerLink]="['/admin/faq']" class="waves-effect" mdbWavesEffect>FAQ Add</a></li>
-                            <li><a [routerLink]="['/admin/faq/list']" class="waves-effect" mdbWavesEffect>FAQ List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-                  <mdb-item>
-                    <mdb-item-head > BLOG </mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/blog']" class="waves-effect" mdbWavesEffect>BLOG Add</a></li>
-                            <li><a [routerLink]="['/admin/blog/list']" class="waves-effect" mdbWavesEffect>BLOG List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-
-                  <mdb-item>
-                    <mdb-item-head> PRODUCT ROADMAP </mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/roadmap']" class="waves-effect" mdbWavesEffect>Product RoadMap Add</a></li>
-                            <li><a [routerLink]="['/admin/roadmap/list']" class="waves-effect" mdbWavesEffect>Product RoadMap List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-
-                  <mdb-item>
-                    <mdb-item-head > PRESS RELEASE </mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/press-release']" class="waves-effect" mdbWavesEffect>Press Release Add</a></li>
-                            <li><a [routerLink]="['/admin/press-release/list']" class="waves-effect" mdbWavesEffect>Press Release List</a></li>
-                        </ul>
-                    </mdb-item-body>
-                  </mdb-item>
-
-                  <mdb-item>
-                      <mdb-item-head > White Paper </mdb-item-head>
-                      <mdb-item-body>
-                          <ul>
-                              <li><a [routerLink]="['/admin/whitepaper']" class="waves-effect" mdbWavesEffect>White Paper List</a></li>
-                          </ul>
-                      </mdb-item-body>
-                    </mdb-item>
-                    <mdb-item>
-                        <mdb-item-head > Careers </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/career']" class="waves-effect" mdbWavesEffect>Career Add</a></li>
-                                <li><a [routerLink]="['/admin/career/list']" class="waves-effect" mdbWavesEffect>Career List</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-
-                      <mdb-item>
-                        <mdb-item-head > Contact Us </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/contactus']" class="waves-effect" mdbWavesEffect>Contact Us List</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-
-                      <mdb-item>
-                        <mdb-item-head >Training</mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/training']" class="waves-effect" mdbWavesEffect>Training Head</a></li>
-                                <li><a [routerLink]="['/admin/training/addsubheads']" class="waves-effect" mdbWavesEffect>Add Sub Heads</a></li>
-                                <li><a [routerLink]="['/admin/training/budgetmaster']" class="waves-effect" mdbWavesEffect>Budget Master</a></li>
-                                <li><a [routerLink]="['/admin/training/budgetplanning']" class="waves-effect" mdbWavesEffect>Budget Planning</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-                      <mdb-item>
-                        <mdb-item-head > Company Info </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/companyinfo']" class="waves-effect" mdbWavesEffect>Company Information List</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-
-                      <mdb-item>
-                        <mdb-item-head > Settings </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/email']" class="waves-effect" mdbWavesEffect>Email</a></li>
-                                <li><a [routerLink]="['/admin/email-template']" class="waves-effect" mdbWavesEffect>Email Template</a></li>
-                                <li><a [routerLink]="['/admin/subscriptioninfo']" class="waves-effect" mdbWavesEffect>Subscription Info</a></li>
-                                <li><a [routerLink]="['/admin/appraisal']" class="waves-effect" mdbWavesEffect>Appraisal</a></li>
-                                <li><a [routerLink]="['/admin/general-settings']" class="waves-effect" mdbWavesEffect>General Settings</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-                      <mdb-item>
-                        <mdb-item-head > Employee </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/employee']" class="waves-effect" mdbWavesEffect>Create Employee</a></li>
-                                <li><a [routerLink]="['/admin/employee/list']" class="waves-effect" mdbWavesEffect>Employee List</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-                      <mdb-item>
-                        <mdb-item-head > assign JD to Employee  </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/assigntoJD']" class="waves-effect" mdbWavesEffect>assign JD to Employee</a></li>
-                            </ul>
-                        </mdb-item-body>
-                      </mdb-item>
-                      <mdb-item>
-                        <mdb-item-head > Assessment </mdb-item-head>
-                        <mdb-item-body>
-                            <ul>
-                                <li><a [routerLink]="['/admin/assessment']" class="waves-effect" mdbWavesEffect>Create Assessments</a></li>
-                                <li><a [routerLink]="['/admin/assessment/list']" class="waves-effect" mdbWavesEffect>All</a></li>
-                            </ul>
-                        </mdb-item-body>
-                        </mdb-item>
               </mdb-squeezebox>
           </ul>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/admin/assessment']" mdbWavesEffect>Assessment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/admin/training']" mdbWavesEffect>Training</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/admin/settings']" mdbWavesEffect>Settings</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="['/admin/hrindex']" mdbWavesEffect>HR Index</a>
+      </li>
       <li>
-        <ul class="collapsible collapsible-accordion">
-            <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-                <!-- Collapsible link -->
-                <mdb-item>
-                    <mdb-item-head > Approver</mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/approver']" class="waves-effect" mdbWavesEffect>Approver</a></li>
-                        </ul>
-                    </mdb-item-body>
-                </mdb-item>
-
-                <mdb-item>
-                  <mdb-item-head > JD</mdb-item-head>
-                  <mdb-item-body>
-                      <ul>
-                          <li><a [routerLink]="['/admin/jd']" class="waves-effect" mdbWavesEffect>JD</a></li>
-                      </ul>
-                  </mdb-item-body>
-                </mdb-item>
-                <mdb-item>
-                  <mdb-item-head > Global Setting</mdb-item-head>
-                  <mdb-item-body>
-                      <ul>
-                          <li><a [routerLink]="['/admin/scale']" class="waves-effect" mdbWavesEffect>Scale</a></li>
-                          <li><a [routerLink]="['/admin/header']" class="waves-effect" mdbWavesEffect>Header</a></li>
-                          <li><a [routerLink]="['/admin/question']" class="waves-effect" mdbWavesEffect>Question</a></li>
-                      </ul>
-                  </mdb-item-body>
-                </mdb-item>
-                <mdb-item>
-                    <mdb-item-head > Department</mdb-item-head>
-                    <mdb-item-body>
-                        <ul>
-                            <li><a [routerLink]="['/admin/department']" class="waves-effect" mdbWavesEffect>Department</a></li>
-                            <li><a [routerLink]="['/admin/department/sub']" class="waves-effect" mdbWavesEffect>Sub Department</a></li>
-                        </ul>
-                    </mdb-item-body>
+          <ul class="collapsible collapsible-accordion ">
+              <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+                  <mdb-item>
+                      <mdb-item-head > CMS</mdb-item-head>
+                      <mdb-item-body>
+                          <ul>
+                              <li><a [routerLink]="['/admin/frontend/testimonial']" class="waves-effect" >Testimonial</a></li>
+                              <li><a [routerLink]="['/admin/frontend/feature']" class="waves-effect" >Features</a></li>
+                              <li><a [routerLink]="['/admin/frontend/faq']" class="waves-effect" >FAQ</a></li>
+                              <li><a [routerLink]="['/admin/frontend/blog']" class="waves-effect" >Blog</a></li>
+                              <li><a [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Product Roadmap</a></li>
+                              <li><a [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Press Release</a></li>
+                              <li><a [routerLink]="['/admin/frontend/whitepaper']" class="waves-effect" >White Paper</a></li>
+                              <li><a [routerLink]="['/admin/frontend/career']" class="waves-effect" >Careers</a></li>
+                              <li><a [routerLink]="['/admin/frontend/contactus']" class="waves-effect" >Contact Us</a></li>
+                              <li><a [routerLink]="['/admin/frontend/product']" class="waves-effect" >Product</a></li>
+                          </ul>
+                      </mdb-item-body>
                   </mdb-item>
-            </mdb-squeezebox>
-        </ul>
-    </li>
+              </mdb-squeezebox>
+          </ul>
+      </li>
       <!--/. Side navigation links -->
       </links>
       <div class="sidenav-bg mask-strong"></div>

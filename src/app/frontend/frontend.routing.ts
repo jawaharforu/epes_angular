@@ -12,7 +12,7 @@ const routes: Routes = [
       { path: 'faqs', loadChildren: './faqs/faqs.module#FaqsModule' },
       { path: 'product-tour', loadChildren: './product-tour/product-tour.module#ProductTourModule' },
       { path: 'features', loadChildren: './features/features.module#FeaturesModule' },
-      { path: 'blog', loadChildren: './blog/blog.module#BlogModule' },
+      { path: 'blogs', loadChildren: './blogs/blogs.module#BlogsModule' },
       { path: 'resources', loadChildren: './resources/resources.module#ResourcesModule' },
       { path: 'registration', loadChildren: './registration/registration.module#RegistrationModule' },
       { path: 'customer-experience', loadChildren: './customer-experience/customer-experience.module#CustomerExperienceModule' },
