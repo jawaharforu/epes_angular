@@ -14,7 +14,7 @@ export class HrindexComponent implements OnInit {
 
   constructor(
     private _commonService: CommonService,
-    private hrindexService: HrindexService 
+    private hrindexService: HrindexService
   ) { }
 
   ngOnInit(  ) {
@@ -48,12 +48,11 @@ export class HrindexComponent implements OnInit {
       }
     });
   }
-  
+
   getHrIndexList() {
     this.hrindexService.getHrIndex()
     .subscribe(res => {
       this.hrindexList = res.data;
-      console.log(this.hrindexList);
     });
   }
 

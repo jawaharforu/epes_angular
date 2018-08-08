@@ -6,8 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyInformationComponent } from './company-information.component';
-import { CKEditorModule } from 'ng2-ckeditor';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { SharedModule } from '../../share/share.module';
 
 const router: Routes = [
   { path : '', component : CompanyInformationComponent  },
@@ -21,11 +20,10 @@ const router: Routes = [
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
-    CKEditorModule
+    SharedModule
   ],
   declarations: [
     CompanyInformationComponent,
-    FileSelectDirective
   ]
 })
 export class CompanyInformationModule { }
