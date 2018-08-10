@@ -3,10 +3,6 @@ import { ModalDirective } from '../../../../../ng-uikit-pro-standard';
 import { CommonService } from '../../../services/common.service';
 import { ValidationsService } from '../../../services/validations.service';
 import { HrindexService } from '../../../admin/hrindex/hrindex.service';
-import Highcharts = require('highcharts');
-// import { forEach } from '@angular/router/src/utils/collection';
-// import { summaryFileName } from '@angular/compiler/src/aot/util';
-// import { ActivatedRoute } from '../../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-hrindex',
@@ -63,6 +59,7 @@ export class HRIndexComponent implements OnInit {
         text: null
       },
       xAxis: {
+        // tslint:disable-next-line:max-line-length
         categories: ['Staffing', 'Training & Development', 'Performance Systems', 'Safety and Health', 'Labour Relations', 'Internal Communication', 'Diversity'],
         title: {
           text: null
@@ -109,7 +106,7 @@ export class HRIndexComponent implements OnInit {
       ]
     };
 
-    
+
   }
 
   ngOnInit() {

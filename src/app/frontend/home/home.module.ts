@@ -16,9 +16,17 @@ import { CountUpModule } from 'countup.js-angular2';
 import { HRIndexComponent } from './hrindex/hrindex.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ChartModule } from 'angular2-highcharts';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+
 const router: Routes = [
   { path : '', component : HomeComponent  },
 ];
+
+declare var require: any;
+export function highchartsFactory() {
+  return require('highcharts');
+}
 
 @NgModule({
   imports: [
@@ -27,7 +35,14 @@ const router: Routes = [
     RouterModule.forChild(router),
     CountUpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
+  ],
+  providers: [
+    {
+      provide: HighchartsStatic,
+      useFactory: highchartsFactory
+    },
   ],
   declarations: [
     HomeComponent,

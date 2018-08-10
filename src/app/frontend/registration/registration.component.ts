@@ -5,6 +5,7 @@ import { ContactusService } from '../../admin/frontend/contactus/contactus.servi
 import { CompanyService} from '../../admin/company/company.service';
 import { UserService } from '../../admin/user/user.service';
 import { ModalDirective } from '../../../../ng-uikit-pro-standard';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -36,10 +37,13 @@ export class RegistrationComponent implements OnInit {
   public countryList: any;
   public otpid: String = '';
   public otp: String = '';
+  public productid: String;
+
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShown: Boolean = false;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private _commonService: CommonService,
     private _validationsService: ValidationsService,
     private contactusService: ContactusService,
@@ -48,6 +52,12 @@ export class RegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.productid = params['productid'];
+      if (!this._validationsService.isEmpty(this.productid)) {
+
+      }
+    });
     this.getCountryList();
   }
 
