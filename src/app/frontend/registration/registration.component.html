@@ -5,7 +5,7 @@
   <div class="reg-tom-title">Create an Account</div>
 
   <!-- Register form -->
-  <form action="" id="reg_form" autocomplete="on" (ngSubmit)="registrationForm()">
+  <form action="" id="reg_form" autocomplete="on" (ngSubmit)="getOTP()">
     <div class="row">
       <h5 class="section_title">Login Information</h5>
 
@@ -125,7 +125,7 @@
     </div>
   </div>
 
-    <button type="submit" class="btn btn-default btn-pay">Registration </button>
+    <button type="submit" class="btn btn-default btn-pay">Get OTP </button>
   </form>
 <!-- Register form -->
 
@@ -136,3 +136,28 @@
 </div>
 </div>
 </div>
+
+<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-sm" role="document">
+        <div class="modal-content">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden()">
+                    <span aria-hidden="true" class="black-text close-btn">×</span>
+                </button>
+
+            <div class="modal-body">
+              <form (ngSubmit)="registrationForm()">
+                <div class="">
+                <label class="label-otp">Enter OTP</label>
+                <input type="hidden" name="otpid" [(ngModel)]="otpid" />
+                <input class="input-otp" type="text" name="otp" [(ngModel)]="otp" />
+                </div>
+                <a (click)="getOTP()" class="rotp">Resend OTP</a>
+
+                <input type="submit" class="btn btn-default btn-otp-submit" value="Login">
+
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>

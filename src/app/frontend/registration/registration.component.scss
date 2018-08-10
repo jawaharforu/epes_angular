@@ -97,3 +97,65 @@ h5.section_title {
         display: none;
     }
 }
+
+.input-otp{
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0px 15px;
+}
+.label-otp{
+    font-size: 15px;
+    color: #555;
+}
+.btn-otp-submit {
+  background: #fcb827 !important;
+  padding: 8px 20px;
+  box-shadow: none;
+  float: right;
+  margin-right: 0px;
+}
+.rotp{
+    padding-top: 15px;
+    display: block;
+    float: left;
+    font-size: 13px;
+}
+.modal-sm{
+  margin-top: 10%;
+}
+.close{
+  color: #555;
+  z-index: 9999;
+}.input-otp{
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0px 15px;
+}
+.label-otp{
+    font-size: 15px;
+    color: #555;
+}
+.btn-otp-submit {
+  background: #fcb827 !important;
+  padding: 8px 20px;
+  box-shadow: none;
+  float: right;
+  margin-right: 0px;
+}
+.rotp{
+    padding-top: 15px;
+    display: block;
+    float: left;
+    font-size: 13px;
+}
+.modal-sm{
+  margin-top: 10%;
+}
+.close{
+  color: #555;
+  z-index: 9999;
+}

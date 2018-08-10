@@ -1,41 +1,52 @@
-<form (ngSubmit)="employeeForm()">
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+      <!-- Card -->
+      <div class="card">
+          <!-- Card body -->
+          <div class="card-body">
+<form (ngSubmit)="employeeForm()" class="add-employee">
   <input type="hidden" [(ngModel)]="employeeid" name="employeeid" />
-  <div class="form-group col-md-6 col-sm-12 ">
-      <div class="form-check">
+    <p class="h4 text-center py-4 admin-title">Create Employee</p>
+	
+	<div class="form-group employees-type">
         <input type="radio" class="form-check-input" id="materialGroupExample1" name="type" value="MD" [(ngModel)]="type">
         <label class="form-check-label" for="materialGroupExample1">MD</label>
-      </div>
-      <div class="form-check">
         <input type="radio" class="form-check-input" id="materialGroupExample2" name="type" value="others" [(ngModel)]="type">
         <label class="form-check-label" for="materialGroupExample2">Others</label>
       </div>
-  </div>
+
+ <div class="row">  
   <div class="form-group col-md-6 col-sm-12">
-      <label for="defaultFormCardNameExorg" class="grey-text font-weight-light">Level</label>
-      <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="organogramid" name="organogramid">
+      <label for="defaultFormCardNameExorg" class="grey-text font-weight-light control-label">Level</label>
+      <select class="browser-default form-control " id="defaultFormCardDesiEx" [(ngModel)]="organogramid" name="organogramid">
         <option value="" disabled>--Select Level--</option>
         <option *ngFor="let o of organogramList" [value]="o._id">{{ o.name }} - {{ o.departmentid.name }} - {{ o.subdepartmentid.name }}</option>
       </select>
     </div>
+	
+	
   <div class="form-group col-md-6 col-sm-12">
-    <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Employee No.</label>
+    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Employee No.</label>
     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="employeenum" name="employeenum">
   </div>
+  
+  
   <div class="form-group col-md-6 col-sm-12 ">
-      <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
+      <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Name</label>
       <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="employeename" name="employeename">
   </div>
   <div class="form-group col-md-6 col-sm-12 ">
-    <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Designation</label>
+    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Designation</label>
     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation">
   </div>
   <div class="form-group col-md-6 col-sm-12 ">
-      <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Email id</label>
+      <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Email id</label>
       <input type="email" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="email" name="email">
   </div>
 
   <div class="form-group col-md-6 col-sm-12 browser-default">
-      <label class="grey-text font-weight-light" for="phonenumber">Phone Number:</label>
+      <label class="grey-text font-weight-light control-label" for="phonenumber">Phone Number:</label>
       <div class="row">
           <div class="col-md-4 col-country-code">
               <select class=" selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="countrycode" name="countrycode">
@@ -54,14 +65,16 @@
           </div>
       </div>
   </div>
+  </div>
+  
   <div class="row">
       <div class="form-group col-md-12 col-sm-12">
-          <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label col-md-3">Address</label>
+          <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label">Address</label>
           <textarea type="text" id="defaultFormCarddescEx"  class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="address" rows="5" name="address"></textarea>
       </div>
   </div>
   <div class="row">
-    <div class="form-group col-md-6 col-sm-12 ">
+    <div class="form-group col-md-12 col-sm-12 ">
       <div class="form-check">
         <input type="radio" class="form-check-input" id="materialGroupExample1admin" name="employeetype" value="admin" [(ngModel)]="employeetype">
         <label class="form-check-label" for="materialGroupExample1admin">Admin</label>
@@ -84,7 +97,8 @@
       </div>
     </div>
   </div>
-  <div  class="col-md-6 field-button">
+  <div  class="col-md-12 field-button">
       <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
   </div>
 </form>
+</div></div></div></div>

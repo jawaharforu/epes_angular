@@ -2,7 +2,7 @@
     <div class="card">
 
         <!-- Card body -->
-        <div class="card-body">
+        <div class="card-body mb-3">
 
             <!-- Default form subscription -->
             <form (ngSubmit)="trainingsubheadForm()" class="add-faq">
@@ -25,8 +25,8 @@
                         <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
                     </div>
                 </div>
-                <div class="col-sm-10 train-popup-btn text-right">
-                    <button class="btn save-btn">Save</button>
+                <div class="col-md-6 offset-md-2 feild-button">
+                    <button class="btn btn-outline-purple px-3 btn-submit">Save</button>
 
                 </div>
 
@@ -35,24 +35,23 @@
 
         </div>
         <!-- Card body -->
-    </div>
-    <!-- Card -->
+  
     <div class="container">
         <div class="row">
             <div class="col-sm-12 msg-box">
                 <table *ngIf="trainingSubheadList" class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" width="30%">Training Subhead</th>
-                            <th scope="col" width="30%">Training Head</th>
-                            <th scope="col" width="40%">Action</th>
+                            <th class="label-no" scope="col" width="30%">Training Subhead</th>
+                            <th  class="label-name" scope="col" width="30%">Training Head</th>
+                            <th class="label-action" scope="col" width="40%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let subhead of trainingSubheadList">
-                            <td scope="row">{{subhead.name}}</td>
-                            <td>{{subhead.trainingheadid.name}}</td>
-                            <td>
+                            <td class="col-no" scope="row">{{subhead.name}}</td>
+                            <td class="col-name" >{{subhead.trainingheadid.name}}</td>
+                            <td class="col-action">
                                 <span (click)="editTrainingsubhead(subhead)" class="btn-edit" mdbRippleRadius>Edit </span>/
                                 <span (click)="deleteTrainingsubhead(subhead._id)" class="btn-delete" mdbRippleRadius>Delete</span>
                             </td>
@@ -63,7 +62,8 @@
         </div>
     </div>
 </div>
-
+</div>
+<!-- Card -->
 <!--
 <button type="button" class="btn btn-primary relative waves-light" (click)="showModal()" mdbWavesEffect>Launch demo modal</button>
 -->

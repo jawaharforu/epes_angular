@@ -137,9 +137,10 @@ input.btn.file-choose {
     margin: 0px;
     color: #000;
     box-shadow: none !important;
-    padding-top: 8px;
+    margin-top: 8px;
     float: left;
     max-width: 180px;
+    border: 1px solid #ccc;
 }
 .btn-upload{
     padding: 7px;
@@ -152,13 +153,13 @@ input.btn.file-choose {
 }
 .btn-upload {
     padding: 5px;
-    margin: 0px;
+    margin: 2px;
     color: #000;
     box-shadow: none !important;
-    margin-top: 3px;
-    background: #dedede;
-    border: 1px solid #bbb7b7;
-    font-size: 12px;
+    background: #f1ecec;
+    border: 1px solid #cacaca;
+    font-size: 11px;
+    margin-top: 6px;
 }
 
 label {

@@ -1,15 +1,21 @@
 <div class="row">
-    <div class="col-md-12 mt-5">
+    <div class="col-md-12">
       <!-- Card -->
       <div class="card">
 
           <!-- Card body -->
           <div class="card-body">
-            <p class="h4 text-center py-4 admin-title"> <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Organogram Structure</a>
-            </p>
+          <!--  <p class="h4 text-center py-4 btn-orange"> 
+            </p>-->
               <!-- Default form subscription -->
               <form (ngSubmit)="organogramForm()">
-                  <p class="h4 text-center py-4">Organogram</p>
+                    <p class="h4 admin-title-header ">
+                            <i class="fa fa-home" aria-hidden="true"></i> - Organogram
+                            <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-green-new float-right">Organogram Structure</a>
+                        </p>
+                        <div class="clear-fix"></div>
+
+                 <!-- <p class="h4 text-center py-4">Organogram</p>-->
                   <div *ngIf="parentName !== ''">
                     <p class="text-center">{{parentName}}</p>
                     <p class="text-center">{{parentDept}}</p>
@@ -17,7 +23,7 @@
                   <input type="hidden" [(ngModel)]="organogramid" name="organogramid">
                   <input type="hidden" [(ngModel)]="parentid" name="parentid">
                   <!-- Default input name -->
-                  <div class="form-row">
+                  <div class="form-row questionwrapper">
                       <div class="col">
                           <div class="form-group ">
                               <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartment()">
@@ -40,8 +46,8 @@
                       <div class="col">
                           <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation" placeholder="Enter Designation">
                       </div>
-                      <div class="col">
-                          <button type="submit" class="btn btn-primary waves-light m-0" mdbWavesEffect>Submit</button>
+                      <div class="">
+                          <button type="submit" class="btn btn-primary waves-light m-0 btn_additem" mdbWavesEffect>Submit</button>
                       </div>
                   </div>
               </form>
@@ -56,18 +62,18 @@
   </div>
 
   <div class="row justify-content-md-center mb-5">
-    <div class="col-md-12 mt-5">
+    <div class="col-md-12 mt-5 product-list scale-list">
       <!--Table-->
       <table *ngIf="organogramList" datatable class="table table-hover table-responsive-md table-fixed">
 
         <!--Table head-->
         <thead class="mdb-color darken-3">
           <tr class="text-white">
-              <th>#</th>
-              <th>Header</th>
-              <th>Department</th>
-              <th>Sub Level</th>
-              <th>Action</th>
+              <th class="label-no">#</th>
+              <th class="label-org">Header</th>
+              <th class="label-org">Department</th>
+              <th class="label-org">Sub Level</th>
+              <th class="label-action">Action</th>
           </tr>
         </thead>
         <!--Table head-->
@@ -75,14 +81,14 @@
         <!--Table body-->
         <tbody>
             <tr *ngFor="let o of organogramList; let i = index">
-                <th scope="row">{{ i + 1 }}</th>
-                <td>{{ o.name }}</td>
-                <td>{{ o.department }}</td>
-                <td>{{ childCount[o.uniqueid] }}</td>
-                <td>
-                  <button type="button" (click)="editHeader(o)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
-                  <button type="button" (click)="deleteHeader(o._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                  <button type="button" (click)="addSublevel(o._id)" class="btn btn-success waves-light" mdbWavesEffect><i class="fa level-down" aria-hidden="true"></i></button>
+                <th class="col-no" scope="row">{{ i + 1 }}</th>
+                <td class="col-org">{{ o.name }}</td>
+                <td class="col-org">{{ o.department }}</td>
+                <td class="col-org">{{ childCount[o.uniqueid] }}</td>
+                <td class="col-action">
+                  <span  (click)="editHeader(o)" class="btn-edit" >Edit </span> / 
+                  <span (click)="deleteHeader(o._id)" class="btn-delete" > Delete </span>/ 
+                  <span (click)="addSublevel(o._id)" class="btn-level" > Add Sub Level</span>
                   </td>
             </tr>
         </tbody>

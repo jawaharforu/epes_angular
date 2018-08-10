@@ -8,7 +8,7 @@
   <div class="col-lg-4 col-md-6 col-sm-12 form-container">
   <!-- Login form -->
   <a [routerLink]="['/']"><img src="../../../assets/img/epes-logo-footer.png" class="logo_login"></a>
-  <form class="login-form" id="login-form" (ngSubmit)="loginForm()">
+  <form class="login-form" id="login-form" (ngSubmit)="getOTP()">
       <h3 class="login-heading">Login</h3>
       <div class="form-group">
         <!-- <label class="login-label">Enter your email address</label> -->
@@ -22,8 +22,8 @@
         >
       </div>
 
-      <div class="form-group">
-          <!-- <label class="login-label">Enter your Password</label> -->
+      <!-- <div class="form-group">
+        <label class="login-label">Enter your Password</label>
         <input
           placeholder="Password"
           type="password"
@@ -32,11 +32,11 @@
           name="field_password"
           class="form-control waves-light"
         >
-      </div>
+      </div> -->
 
 
       <div class="text-center">
-        <input type="submit" class="btn btn-default btn_login" value="Login">
+        <input type="submit" class="btn btn-default btn_login" value="Get OTP">
         <a class="sign-up-link" [routerLink]="['/registration']">Sign Up</a>
       </div>
 
@@ -47,3 +47,28 @@
   </div>
 </div>
 </section>
+
+<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+  <div class="modal-dialog modal-notify modal-sm" role="document">
+      <div class="modal-content">
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden()">
+                  <span aria-hidden="true" class="black-text close-btn">×</span>
+              </button>
+
+          <div class="modal-body">
+            <form (ngSubmit)="loginForm()">
+              <div class="">
+              <label class="label-otp">Enter OTP</label>
+              <input type="hidden" name="otpid" [(ngModel)]="otpid" />
+              <input class="input-otp" type="text" name="otp" [(ngModel)]="otp" />
+              </div>
+              <a (click)="getOTP()" class="rotp">Resend OTP</a>
+
+              <input type="submit" class="btn btn-default btn-otp-submit" value="Login">
+
+            </form>
+          </div>
+      </div>
+  </div>
+</div>

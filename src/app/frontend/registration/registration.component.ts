@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { ValidationsService } from '../../services/validations.service';
 import { ContactusService } from '../../admin/frontend/contactus/contactus.service';
 import { CompanyService} from '../../admin/company/company.service';
 import { UserService } from '../../admin/user/user.service';
+import { ModalDirective } from '../../../../ng-uikit-pro-standard';
 
 @Component({
   selector: 'app-registration',
@@ -33,6 +34,10 @@ export class RegistrationComponent implements OnInit {
   public countrycode: String = '+91';
 
   public countryList: any;
+  public otpid: String = '';
+  public otp: String = '';
+  @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
+  public isModalShown: Boolean = false;
 
   constructor(
     private _commonService: CommonService,
@@ -82,6 +87,149 @@ export class RegistrationComponent implements OnInit {
     {employeesCount: '5000 above'}
   ];
 
+  getOTP() {
+    if (this._validationsService.isEmpty(this.field_first_name)) {
+      this._commonService.showMessage('error', 'First Name should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_middle_name)) {
+      this._commonService.showMessage('error', 'Middle Name should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_last_name)) {
+      this._commonService.showMessage('error', 'Last Name should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_phone_number)) {
+      this._commonService.showMessage('error', 'Phone number should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isDigit(this.field_phone_number)) {
+      this._commonService.showMessage('error', 'Phone Number should have only digits!');
+      return false;
+    }
+
+    if (this._validationsService.isMinimum(this.field_phone_number)) {
+      this._commonService.showMessage('error', 'Phone Number should have atleast 10 digits!');
+      return false;
+    }
+
+    if (this._validationsService.isMaximum(this.field_phone_number)) {
+      this._commonService.showMessage('error', 'Phone Number should not exceed 13 digits!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_email_id)) {
+      this._commonService.showMessage('error', 'Email Address should not be empty!');
+      return false;
+    }
+
+    if (!this._validationsService.isEmail(this.field_email_id)) {
+      this._commonService.showMessage('error', 'Enter Valid Email Address!');
+      return false;
+    }
+
+    // if (this._validationsService.isEmpty(this.field_password)) {
+    //   this._commonService.showMessage('error', 'Password field should not be empty!');
+    //   return false;
+    // }
+
+    // if (this._validationsService.isPassword(this.field_password)) {
+    // tslint:disable-next-line:max-line-length
+    //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
+    //   return false;
+    // }
+
+    // if (this._validationsService.isEmpty(this.field_confirm_password)) {
+    //   this._commonService.showMessage('error', 'Confirm Password field should not be empty!');
+    //   return false;
+    // }
+
+    // if (this._validationsService.isPassword(this.field_confirm_password)) {
+    // tslint:disable-next-line:max-line-length
+    //   this._commonService.showMessage('error', 'Password Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!');
+    //   return false;
+    // }
+
+    // if(this.field_password !== this.field_confirm_password){
+    //   this._commonService.showMessage('error', 'password and confirm password fields should be same');
+    //   return false;
+    // }
+
+    if (this._validationsService.isEmpty(this.field_job_title)) {
+      this._commonService.showMessage('error', 'Job Title should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_company_name)) {
+      this._commonService.showMessage('error', 'Company Name should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_industry_name)) {
+      this._commonService.showMessage('error', 'Industry should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_no_of_employee)) {
+      this._commonService.showMessage('error', 'Number of Employees should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_contact_number)) {
+      this._commonService.showMessage('error', 'Contact Number should not be empty!');
+      return false;
+    }
+    /*if (this._validationsService.isMobile(this.field_contact_number)) {
+      this._commonService.showMessage('error', 'Contact Number should be a mobile number!');
+      return false;
+    }*/
+
+    if (this._validationsService.isEmpty(this.field_company_address)) {
+      this._commonService.showMessage('error', 'Company Address should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.field_country_name)) {
+      this._commonService.showMessage('error', 'Country should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_state_name)) {
+      this._commonService.showMessage('error', 'State should not be empty!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.field_city_name)) {
+      this._commonService.showMessage('error', 'City should not be empty!');
+      return false;
+    }
+    this.userService.getOTP({email: this.field_email_id})
+    .subscribe(otpres => {
+      if (otpres.success) {
+        this.otpid = otpres.data._id;
+        this._commonService.showMessage('success', 'OTP send to your email');
+        this.showModal();
+      } else {
+        this._commonService.showMessage('error', otpres.msg);
+      }
+    });
+  }
+
+  public showModal(): void {
+    this.isModalShown = true;
+  }
+
+  public hideModal(): void {
+    this.autoShownModal.hide();
+  }
+
+  public onHidden(): void {
+    this.isModalShown = false;
+  }
 
   registrationForm() {
 
@@ -205,56 +353,66 @@ export class RegistrationComponent implements OnInit {
       return false;
     }
 
-    const companyField = {
-      jobtitle: this.field_job_title,
-      companyname: this.field_company_name,
-      industry: this.field_industry_name,
-      noofemployees: this.field_no_of_employee,
-      companycontact: this.field_contact_number,
-      companyaddress: this.field_company_address,
-      country: this.field_country_name,
-      state: this.field_state_name,
-      city: this.field_city_name,
-      status: true
+    const otpField = {
+      otpid: this.otpid,
+      otp: this.otp
     };
+    this.userService.checkOTP(otpField)
+    .subscribe(resotp => {
+      if (resotp.success) {
+        const companyField = {
+          jobtitle: this.field_job_title,
+          companyname: this.field_company_name,
+          industry: this.field_industry_name,
+          noofemployees: this.field_no_of_employee,
+          companycontact: this.field_contact_number,
+          companyaddress: this.field_company_address,
+          country: this.field_country_name,
+          state: this.field_state_name,
+          city: this.field_city_name,
+          status: true
+        };
 
-    const email = {
-      email: this.field_email_id
-    };
-    this.userService.checkUserExist(email)
-    .subscribe(emailresult => {
-      if (!emailresult.success) {
-        this.companyService.addCompany(companyField)
-        .subscribe(res => {
-          if (res.success) {
-            const userField = {
-              companyid: res.data._id,
-              firstname: this.field_first_name,
-              middlename: this.field_middle_name,
-              lastname: this.field_last_name,
-              mobile: this.field_phone_number,
-              email: this.field_email_id,
-              password: 'Zolipe@123',
-              role: 'companyadmin',
-              status: true,
-            };
-            this.userService.addUser(userField)
-            .subscribe(result => {
-              if (result.success) {
-                this._commonService.redirectTo('/login');
+        const email = {
+          email: this.field_email_id
+        };
+        this.userService.checkUserExist(email)
+        .subscribe(emailresult => {
+          if (!emailresult.success) {
+            this.companyService.addCompany(companyField)
+            .subscribe(res => {
+              if (res.success) {
+                const userField = {
+                  companyid: res.data._id,
+                  firstname: this.field_first_name,
+                  middlename: this.field_middle_name,
+                  lastname: this.field_last_name,
+                  mobile: this.field_phone_number,
+                  email: this.field_email_id,
+                  password: '123456',
+                  role: 'companyadmin',
+                  status: true,
+                };
+                this.userService.addUser(userField)
+                .subscribe(result => {
+                  if (result.success) {
+                    this._commonService.redirectTo('/login');
+                  } else {
+                    this._commonService.showMessage('error', result.msg);
+                  }
+                });
               } else {
-                this._commonService.showMessage('error', result.msg);
+                this._commonService.showMessage('error', res.msg);
               }
             });
           } else {
-            this._commonService.showMessage('error', res.msg);
+            this._commonService.showMessage('error', 'User email already exist!!!');
           }
         });
       } else {
-        this._commonService.showMessage('error', 'User email already exist!!!');
+        this._commonService.showMessage('error', resotp.msg);
       }
     });
-
   }
 
 }

@@ -87,4 +87,18 @@ export class UserService {
     this.user = null;
     localStorage.clear();
   }
+
+  getOTP(email: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post(`${this.link}/users/send/email/otp`, email, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
+
+  checkOTP(fields: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post(`${this.link}/users/check/otp`, fields, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
 }

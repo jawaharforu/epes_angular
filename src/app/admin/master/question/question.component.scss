@@ -122,9 +122,9 @@ select.form-control:not([size]):not([multiple]) {
     margin-top: 7px;
     color: #fff;
 }
-.btn_additem{       
+.btn_additem, .btn-primary[_ngcontent-c4]:not([disabled]):not(.disabled):active{       
     padding: 16px 10px;
-    background: #5ebd71 !important;
+    background: #f38e00 !important;
     box-shadow: none;
     font-size: 10px;
     margin: 0px;

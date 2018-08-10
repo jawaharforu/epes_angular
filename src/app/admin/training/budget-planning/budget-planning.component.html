@@ -3,21 +3,6 @@
       <div class="container">
             <div class="row">
 
-                  <!-- <div class="col-sm-3 side-box">
-              <h4>General</h4>
-              <ul class="msg-list">
-                <li class="active"><a href="#" class="comp-info">Company Information</a></li>
-                <li><a href="#" class="email">Email</a></li>
-                <li><a href="#" class="psw">Password</a></li>
-                <li><a href="#" class="360epes">360EPES</a></li>
-                <li><a href="#" class="apprisal">Appraisal</a></li>
-                <li><a href="#" class="suc-info">Subscription Info</a></li>
-                <li><a href="#" class="email-temp">Email Template</a></li>
-
-                </ul>
-
-          </div> -->
-
                   <div class="col-sm-12 add-btn">
                         <button type="button" class="btn btn-warning add-btn relative waves-light" (click)="showModal()" mdbWavesEffect>Budget Planning</button>
                   </div>
@@ -118,7 +103,6 @@
                                                             </select>
                                                       </div>
                                                       <div class="col-sm-10 train-popup-btn text-right">
-                                                            <button class="btn cancel-btn">Cancel</button>
                                                             <button class="btn save-btn">Save</button>
                                                       </div>
                                                 </form>
@@ -127,32 +111,32 @@
                               </div>
                         </div>
                   </div>
-                  <div class="col-sm-12 msg-box">
+                  <div class="col-sm-12 msg-box ">
                         <table class="table table-striped" *ngIf="budgetplanList">
                               <thead>
                                     <tr>
-                                          <th scope="col" width="5%">#</th>
-                                          <th scope="col" width="15%">Assessment</th>
-                                          <th scope="col" width="10%">Header</th>
-                                          <th scope="col" width="20%">Training Head</th>
-                                          <th scope="col" width="20%">Training Subhead</th>
-                                          <th scope="col" width="5%">Year</th>
-                                          <th scope="col" width="10%">Budget</th>
-                                          <th scope="col" width="5%">Percentage(%)</th>
-                                          <th scope="col" width="10%">Action</th>
+                                          <th class="label-no" scope="col" width="5%">#</th>
+                                          <th class="label-no" scope="col" width="15%">Assessment</th>
+                                          <th class="label-no" scope="col" width="10%">Header</th>
+                                          <th class="label-no" scope="col" width="20%">Training Head</th>
+                                          <th class="label-no" scope="col" width="20%">Training Subhead</th>
+                                          <th class="label-no" scope="col" width="5%">Year</th>
+                                          <th class="label-no" scope="col" width="10%">Budget</th>
+                                          <th class="label-no" scope="col" width="5%">Percentage(%)</th>
+                                          <th class="label-no" scope="col" width="10%">Action</th>
                                     </tr>
                               </thead>
                               <tbody>
                                     <tr *ngFor="let c of budgetplanList;let i = index">
-                                          <td scope="row">{{i+1}}</td>
-                                          <td>{{c.assessmenttypeid.name}}</td>
-                                          <td>{{c.headerid.headername}}</td>
-                                          <td>{{c.trainingheadid.name}}</td>
-                                          <td>{{c.trainingsubheadid.name}}</td>
-                                          <td>{{c.budgetid.year}}</td>
-                                          <td>{{c.budgetid.amount}}</td>
-                                          <td>{{c.percentage}}</td>
-                                          <td>
+                                          <td class="col-no" scope="row">{{i+1}}</td>
+                                          <td class="col-no">{{c.assessmenttypeid.name}}</td>
+                                          <td class="col-no">{{c.headerid.headername}}</td>
+                                          <td class="col-no">{{c.trainingheadid.name}}</td>
+                                          <td class="col-no">{{c.trainingsubheadid.name}}</td>
+                                          <td class="col-no">{{c.budgetid.year}}</td>
+                                          <td class="col-no">{{c.budgetid.amount}}</td>
+                                          <td class="col-no">{{c.percentage}}</td>
+                                          <td class="col-action">
                                                 <span (click)="editBudgetPlan(c)" class="btn-edit" mdbRippleRadius>Edit</span>/
                                                 <span (click)="deleteBudgetPlan(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>
                                           </td>

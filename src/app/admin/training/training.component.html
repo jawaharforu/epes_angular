@@ -2,7 +2,7 @@
     <div class="card">
 
         <!-- Card body -->
-        <div class="card-body">
+        <div class="card-body mb-3">
 
             <!-- Default form subscription -->
             <form (ngSubmit)="trainingHeadForm()" class="add-faq">
@@ -14,8 +14,8 @@
                         <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
                     </div>
                 </div>
-                <div class="col-sm-10 train-popup-btn text-right">
-                    <button class="btn save-btn">Save</button>
+                <div class="col-md-6 offset-md-2 feild-button ">
+                    <button class="btn btn-outline-purple px-3 btn-submit">Save</button>
 
                 </div>
 
@@ -24,7 +24,7 @@
 
         </div>
         <!-- Card body -->
-    </div>
+
     <!-- Card -->
     <div class="container">
         <div class="row">
@@ -32,17 +32,17 @@
                 <table *ngIf="trainingHeadList" class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" width="10%">#</th>
-                            <th scope="col" width="70%">Training Head</th>
-                            <th scope="col" width="20%">Action</th>
+                            <th class="label-no"  scope="col" width="10%">#</th>
+                            <th class="label-name" scope="col" width="70%">Training Head</th>
+                            <th class="label-action" scope="col" width="20%">Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let c of trainingHeadList;let i = index">
-                            <td scope="row">{{i+1}}</td>
-                            <td scope="row">{{c.name}}</td>
-                            <td>
+                            <td class="col-no" scope="row">{{i+1}}</td>
+                            <td class="col-name" scope="row">{{c.name}}</td>
+                            <td class="col-action">
                                 <span (click)="editTraininghead(c)" class="btn-edit" mdbRippleRadius>Edit </span>/
                                 <span (click)="deleteTraininghead(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>
                             </td>
@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-
+</div>
 <!--
 <button type="button" class="btn btn-primary relative waves-light" (click)="showModal()" mdbWavesEffect>Launch demo modal</button>
 -->

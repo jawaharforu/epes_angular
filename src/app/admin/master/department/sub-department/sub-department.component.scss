@@ -10,6 +10,7 @@ p.h4.text-center.py-4.admin-title {
     background: #ffffff;
     border: none;
     margin-left: -20px;
+    width: 35%;
 }
 .card {
     position: relative;
@@ -18,6 +19,9 @@ p.h4.text-center.py-4.admin-title {
 .card .card-body {
     background: #f6f6f6;
     box-shadow: none;
+}
+.form-control.col-md-10 {
+    max-width: 300px;
 }
 .aadd-faq-sub-Category label{
     font-size: 13px;

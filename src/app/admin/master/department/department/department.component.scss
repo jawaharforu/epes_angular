@@ -10,10 +10,14 @@ p.h4.text-center.py-4.admin-title {
     background: #ffffff;
     border: none;
     margin-left: -20px;
+    width: 24%;
 }
 .card {
     position: relative;
     padding: 25px 30px 50px 30px;
+}
+.form-control.col-md-10 {
+    max-width: 300px;
 }
 .card .card-body {
     background: #f6f6f6;

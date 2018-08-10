@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: 'features', loadChildren: './features/features.module#FeaturesModule' },
       { path: 'blogs', loadChildren: './blogs/blogs.module#BlogsModule' },
       { path: 'resources', loadChildren: './resources/resources.module#ResourcesModule' },
-      { path: 'registration', loadChildren: './registration/registration.module#RegistrationModule' },
+      { path: 'registration/:productid', loadChildren: './registration/registration.module#RegistrationModule' },
       { path: 'customer-experience', loadChildren: './customer-experience/customer-experience.module#CustomerExperienceModule' },
       { path: 'careers', loadChildren: './careers/careers.module#CareersModule' },
       { path: 'support-services', loadChildren: './support/support.module#SupportModule' },

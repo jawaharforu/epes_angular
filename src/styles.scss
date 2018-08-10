@@ -2583,11 +2583,32 @@ nav.admin-top-navbar {
     height: 24px !important;
     font-size: 1rem !important;
     width: 93% !important;
-    margin-left: -15px !important;
 }
 .assessmentForm .md-form input[type=text]:focus:not([readonly]){
     border-bottom: 1px solid #ced4da;
     box-shadow: none;
+}
+.assessmentForm .md-form{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.admin-sidebar-nav li.nav-item a{
+    font-size: 0.8rem;
+    line-height: 40px;
+    font-weight: 300;
+    position: relative;
+    color: #000;
+    padding-left: 17%;
+}
+.dataTables_wrapper {
+    background: #fff !important;
+}
+.mdb-color.darken-3 {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+}
+.hr-list thead {
+    background-color: #f9f6f6 !important;
 }
   @media (min-width: 1200px){
     .fixed-sn main, .fixed-sn .page-footer .container-fluid {
@@ -2647,3 +2668,61 @@ nav.admin-top-navbar {
         width: 100%;
     }
 }
+
+/*----------Organogram------------*/
+.oc-box::before{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    margin-left: -55px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f2be";
+    color: #54afc6;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #54afc6;
+    margin-top: 7px;
+}
+.oc-box{
+    padding: 0px;
+}
+
+.oc-border {
+    border: 1px solid #54afc6;
+    position: relative;
+}
+
+.oc-name {
+    width: 140px;
+    text-align: center;
+    padding-left: 30px;
+    float: right;
+    background: #54afc6;
+    border-radius: 11px 0px 0px 10px;
+    margin-top: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    height: 25px;
+    line-height: 25px;
+}
+.oc-emp-count {
+    width: 140px;
+    text-align: center;
+    height: 24px;
+    margin-bottom: 10px;
+    border-radius: 11px 0px 0px 10px;
+    border: 1px solid #54afc6;
+    font-weight: 400;
+}
+
+/*---------Organogram-------------*/
