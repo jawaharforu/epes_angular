@@ -41,6 +41,10 @@ const routes: Routes = [
         loadChildren: './master/employee/employee.module#EmployeeModule',
       },
       {
+        path: 'assignjd',
+        loadChildren: './master/assign-jd/assign-jd.module#AssignJDModule',
+      },
+      {
         path: 'assessment',
         loadChildren: './assessment/assessment.module#AssessmentModule',
       },
