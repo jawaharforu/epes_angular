@@ -48,4 +48,11 @@ export class AssessmentTypeService {
     return this.http.get(`${this.link}/assessmenttypes/getlist`, {headers: headers})
     .pipe(map(res => res.json()));
   }
+
+  getAssessmenttypeById(assessmenttypeid: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/assessmenttypes/${assessmenttypeid}`, { headers: headers }).pipe(map(res => res.json()));
+  }
 }
