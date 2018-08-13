@@ -56,7 +56,7 @@ export class TrainingComponent implements OnInit {
 
     trainingHeadForm() {
         if (this._validationsService.isEmpty(this.name)) {
-            this._commonService.showMessage('error', 'Name should not be empty!');
+            this._commonService.showMessage('error', 'Training Head should not be empty!');
             return false;
         }
         let fieldTrainingHeadid;

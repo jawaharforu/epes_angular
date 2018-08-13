@@ -11,7 +11,12 @@
               <!-- Default input name -->
               <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Header</p>
               <input type="hidden" [(ngModel)]="headerid" name="headerid">
-
+              <div class="row">
+                <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+                    <option value="" disabled>--Select Assessment--</option>
+                    <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
+                </select>
+              </div>
               <div class="row">
 
               <input type="text" id="defaultFormCardNameEx" class="form-control col-md-4" [(ngModel)]="headername" name="headername" placeholder="Header Name">
@@ -38,6 +43,7 @@
       <thead class="mdb-color darken-3">
         <tr class="text-white">
             <th class="label-no">#</th>
+            <th class="label-name">Assessment type</th>
             <th class="label-name">Header Name</th>
             <th class="label-name">Header Description</th>
             <th class="label-action">Action</th>
@@ -49,6 +55,7 @@
       <tbody>
           <tr *ngFor="let h of headerList; let i = index">
               <th class="col-no" scope="row">{{ i + 1 }}</th>
+              <td class="col-name">{{ h.assessmenttypeid.name }}</td>
               <td class="col-name">{{ h.headername }}</td>
               <td class="col-name">{{ h.description }}</td>
               <td class="col-action">

@@ -73,11 +73,11 @@ export class BudgetmasterComponent implements OnInit {
 
   budgetmasterform() {
     if (this._validationsService.isEmpty(this.year)) {
-      this._commonService.showMessage('error', 'Year should not be empty!');
+      this._commonService.showMessage('error', 'Please select year!');
       return false;
     }
     if (this._validationsService.isEmpty(this.amount)) {
-      this._commonService.showMessage('error', 'Amount field should not be empty!');
+      this._commonService.showMessage('error', 'Total Budget Amount should not be empty!');
       return false;
     }
     let fieldBudgetMasterid;

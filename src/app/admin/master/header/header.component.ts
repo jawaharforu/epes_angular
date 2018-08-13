@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../../services/common.service';
 import { ValidationsService } from '../../../services/validations.service';
 import { HeaderService } from '../JD/header/services/header.service';
+import { AssessmentTypeService } from '../JD/assessment-type/assessment-type.service';
 
 @Component({
   selector: 'app-header',
@@ -13,16 +14,20 @@ export class HeaderComponent implements OnInit {
   public headername: String;
   public description: String;
   public headerid: String;
+  public assessmenttypeid: String = '';
   public headerList: any;
+  public assessmentTypeList: any;
 
   constructor(
     private _validationsService: ValidationsService,
     private _commonService: CommonService,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    private assessmentTypeService: AssessmentTypeService,
   ) { }
 
   ngOnInit() {
     this.getHeaderList();
+    this.getAssessmenttypeList();
   }
 
   getHeaderList() {
@@ -31,7 +36,19 @@ export class HeaderComponent implements OnInit {
       this.headerList = res.data;
     });
   }
+
+  getAssessmenttypeList() {
+    this.assessmentTypeService.getAssessmenttype()
+      .subscribe(res => {
+        this.assessmentTypeList = res.data;
+      });
+  }
+
   headerFormSubmit() {
+    if (this._validationsService.isEmpty(this.assessmenttypeid)) {
+      this._commonService.showMessage('error', 'Assessmenttype field should select!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.headername)) {
       this._commonService.showMessage('error', 'Name field should not be empty!');
       return false;
@@ -43,12 +60,14 @@ export class HeaderComponent implements OnInit {
     let field;
     if (!this._validationsService.isEmpty(this.headerid)) {
       field = {
+        assessmenttypeid: this.assessmenttypeid,
         headername: this.headername,
         description: this.description,
         headerid: this.headerid
       };
     } else {
       field = {
+        assessmenttypeid: this.assessmenttypeid,
         headername: this.headername,
         description: this.description,
       };

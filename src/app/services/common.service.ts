@@ -14,10 +14,13 @@ export class CommonService {
   public jdUpload: any = 'http://localhost:3000/api/jds/upload';
   public uploadImage: any = 'http://localhost:3000/api/commons/upload/image';
   public serverUrl: any = 'http://localhost:3000/images/';
-  // link: String = '';
+  // public link: String = '/api';
+  // public jdUpload: any = '/api/jds/upload';
+  // public uploadImage: any = '/api/commons/upload/image';
+  // public serverUrl: any = '/images/';
   // tslint:disable-next-line:max-line-length
   // tslint:disable-next-line:no-inferrable-types
-  public userDetail: string = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMTBlN2ZhNmRkOGM1MzY2OGYyMDNkZSIsImNvbXBhbnlpZCI6IjViMTBlNzczNmRkOGM1MzY2OGYyMDNkZCIsImZpcnN0bmFtZSI6Imphd2FoYXIiLCJsYXN0bmFtZSI6ImoiLCJlbWFpbCI6Imphd2FoYXJAem9saXBlLmNvbSIsInJvbGUiOiJzdXBlcmFkbWluIiwic3Vic2NyaWJlIjoxLCJwYXNzd29yZCI6IiQyYSQxMCRrejZ3dmdmSkxtTUtwMTFCU2xpZVV1bWZPSGY0V0VtTUVjN1pyaFZXNi5zSkswdVFuUnNvdSIsImlhdCI6MTUzMzIwNzE4OCwiZXhwIjoxNTMzODExOTg4fQ.LwLKuSMtY9EigFucozK10UCXFNg3d_9zlqe5TvbhypQ';
+  public userDetail: string = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMTBlN2ZhNmRkOGM1MzY2OGYyMDNkZSIsImNvbXBhbnlpZCI6IjViMTBlNzczNmRkOGM1MzY2OGYyMDNkZCIsImZpcnN0bmFtZSI6Imphd2FoYXIiLCJsYXN0bmFtZSI6ImoiLCJlbWFpbCI6Imphd2FoYXJAem9saXBlLmNvbSIsInJvbGUiOiJzdXBlcmFkbWluIiwic3Vic2NyaWJlIjoxLCJwYXNzd29yZCI6IiQyYSQxMCRrejZ3dmdmSkxtTUtwMTFCU2xpZVV1bWZPSGY0V0VtTUVjN1pyaFZXNi5zSkswdVFuUnNvdSIsImlhdCI6MTUzMzg3ODIxNCwiZXhwIjoxNTM0NDgzMDE0fQ.4Y5JArUh9KAAkDD7ILi6Nz6exYMUMTBHbKO_NOAHutY';
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,

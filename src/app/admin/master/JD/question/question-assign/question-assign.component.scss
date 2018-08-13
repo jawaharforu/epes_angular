@@ -3,14 +3,14 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
     background: #ffffff;
     margin-left: -20px;
     border: none;
-    width: 30%;
+    width: 20%;
 }
 .btn_add {
     color: inherit;
@@ -34,15 +34,19 @@ p.h4.text-center.py-4.admin-title {
 }
 .btn_additem,
 .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
-    padding: 16px 10px;
-    background: #5ebd71 !important;
+    padding: 13px 10px;
+    background: #f38e00 !important;
     box-shadow: none;
-    font-size: 10px;
+    font-size: 13px;
     margin: 0px;
     float: right;
+    width: 100%;
 }
 .btn_additem  .fa {
     margin: 0px;
+}
+.no-padding{
+    padding-right: 0px;
 }
 
 .list-jd-q {
@@ -153,17 +157,38 @@ span.btn-edit, span.btn-delete  {
     background: transparent;
     box-shadow: none;
 }
-button.close {
-    background: #666;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    line-height: 0px;
-    padding: 12px;
-    margin: -1rem -1rem -1rem auto;
-    font-weight: normal;
-    font-size: 20px;
-}
+
 button.close .white-text{
     margin-left: -5px;
+}
+select.form-control:not([size]):not([multiple]){
+    height: calc(2.25rem + 2px);
+   /* width: 75%;*/
+    float: left;
+    font-size: 12px;
+    padding: 0px;
+    width: -webkit-calc(100% - 35px);
+	width: -moz-calc(100% - 35px);
+	width: calc(100% - 35px);
+}
+.btn_add {
+    color: inherit;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    float: right !important;
+    margin: 0px;
+    box-shadow: none;
+    background: #54afc6;
+    border-radius: 50%;
+    font-size: 15px;
+    margin-top: 5px;
+}
+[type="checkbox"][class*="filled-in"] + label:after {
+    border-radius: 2px;
+    height: 15px;
+    width: 15px;
+}
+select.browser-default.form-control.col-md-3.ng-valid.ng-dirty.ng-touched{
+    font-size: 14px;
 }

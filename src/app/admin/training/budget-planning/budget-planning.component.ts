@@ -130,27 +130,27 @@ export class BudgetPlanningComponent implements OnInit {
 
     budgetplanningForm() {
         if (this._validationsService.isEmpty(this.assessmenttypeid)) {
-            this._commonService.showMessage('error', 'Select atleast one Assessment');
+            this._commonService.showMessage('error', 'Please select Assessment!');
             return false;
         }
 
         if (this._validationsService.isEmpty(this.headerid)) {
-            this._commonService.showMessage('error', 'Select atleast one Header');
+            this._commonService.showMessage('error', 'Please select Header!');
             return false;
         }
 
         if (this._validationsService.isEmpty(this.trainingheadid)) {
-            this._commonService.showMessage('error', 'Select atleast one Training Head');
+            this._commonService.showMessage('error', 'Please select Training Head!');
             return false;
         }
 
         if (this._validationsService.isEmpty(this.trainingsubheadid)) {
-            this._commonService.showMessage('error', 'Select atleast one Training Head');
+            this._commonService.showMessage('error', 'Please select Training Sub Head!');
             return false;
         }
 
         if (this._validationsService.isEmpty(this.percentage)) {
-            this._commonService.showMessage('error', 'Select Percentage');
+            this._commonService.showMessage('error', 'Please select Percentage!');
             return false;
         }
 

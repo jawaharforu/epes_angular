@@ -1,12 +1,12 @@
-<p class="h4 admin-title-header">
-        <i class="fa fa-home" aria-hidden="true"></i> - HR Index List</p>
+<div class="card">
+        <div class="card-body">
+                <p class="h4 text-center py-4 admin-title"> HR Index List</p>
+
 <div class="row justify-content-md-center ">
   <div class="col-md-12  product-list scale-list">
     <!-- Card -->  
-    <div class="card">
-<div class="card-body">
-<!--<a [routerLink]="['/admin/blog']" class="btn btn-outline-secondary btn-rounded waves-effect">Add New</a>-->
-  <!--Table-->
+
+
   <table *ngIf="hrindexList" datatable class="table table-hover table-responsive-md table-fixed hr-list">
       <!--Table head-->
       <thead>
@@ -18,13 +18,6 @@
               <th class="label-name">Designation</th>
               <th class="label-name">Company Name</th>
               <th class="label-name">Industry</th>
-              <!-- <th class="label-name">Staffing</th>
-              <th class="label-name">Training and Development</th>
-              <th class="label-name">Performance Systems</th>
-              <th class="label-name">Safety and Health</th>
-              <th class="label-name">Labour Relations</th>
-              <th class="label-name">Internal Communication</th>
-              <th class="label-name">Diversity</th> -->
               <th class="label-action">Action</th>
           </tr>
       </thead>

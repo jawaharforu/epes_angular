@@ -69,7 +69,10 @@ span.btn-edit, span.btn-delete  {
     padding-right: 0;
 }
 
-.add-btn button {
+.add-btn button, 
+.btn-warning:not([disabled]):not(.disabled):active, 
+.btn-warning:not([disabled]):not(.disabled).active, 
+.show > .btn-warning.dropdown-toggle {
     padding: 6px 25px;
     font-size: 11px;
     font-weight: 400;
@@ -77,6 +80,7 @@ span.btn-edit, span.btn-delete  {
     margin-bottom: 0;
     margin-right: 0;
     margin-top: 20px;
+    box-shadow: none;
 }
 
 .add-btn button:before {

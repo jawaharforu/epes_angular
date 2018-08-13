@@ -14,6 +14,7 @@ import { SharedModule } from '../../share/share.module';
 import { JdComponent } from './jd.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { JdListComponent } from './jd-list/jd-list.component';
+import { AssignedQuestionsComponent } from './assigned-questions/assigned-questions.component';
 
 const router: Routes = [
   {
@@ -43,7 +44,8 @@ const router: Routes = [
     QuestionAssignComponent,
     JdComponent,
     SubmenuComponent,
-    JdListComponent
+    JdListComponent,
+    AssignedQuestionsComponent
   ]
 })
 export class JdModule { }

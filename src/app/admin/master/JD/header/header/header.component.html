@@ -5,6 +5,13 @@
                 <!-- Default input name -->
                 <input type="hidden" [(ngModel)]="headerid" name="headerid">
                 <div class="form-group col-md-12 col-sm-12">
+                  <div class="row">
+                    <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+                        <option value="" disabled>--Select Assessment--</option>
+                        <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
+                    </select>
+                  </div></div>
+                <div class="form-group col-md-12 col-sm-12">
                         <div class="row">
                 <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="headername" name="headername" placeholder="Header Name">
                 </div></div>
@@ -46,7 +53,7 @@
                 <button type="button" (click)="deleteHeader(h._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
               -->
                 <span  (click)="editHeader(h)" class="btn-edit" >Edit </span> /
-                <span  (click)="deleteHeader(h._id)" class="btn-delete" >Delete</span>    
+                <span  (click)="deleteHeader(h._id)" class="btn-delete" >Delete</span>
             </td>
           </tr>
       </tbody>

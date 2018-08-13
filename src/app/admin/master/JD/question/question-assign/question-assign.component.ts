@@ -44,7 +44,6 @@ export class QuestionAssignComponent implements OnInit {
   ngOnInit() {
     this.getQuestionToJDList();
     this.getScaleList();
-    this.getHeaderList();
     this.getAssessmenttypeList();
     this.getQuestionList();
   }
@@ -79,16 +78,26 @@ export class QuestionAssignComponent implements OnInit {
       });
   }
 
+  getHeader() {
+    if (this._validationsService.isEmpty(this.assessmenttype)) {
+      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
+      return false;
+    }
+    this.getHeaderList();
+  }
+
   getHeaderList() {
-    this.headerService.getHeaderList()
-      .subscribe(res => {
-        this.headerList = res.data;
-      });
+    if (this._validationsService.isEmpty(this.assessmenttype)) {
+      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
+      return false;
+    }
+    this.headerService.getHeaderByAssessmenttype(this.assessmenttype)
+    .subscribe(res => {
+      this.headerList = res.data;
+    });
   }
 
   checkQuestion(questionid: any) {
-    console.log(this.jdquestionList);
-    console.log(questionid);
     return this.jdquestionList.includes(questionid);
   }
 

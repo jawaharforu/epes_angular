@@ -1,18 +1,34 @@
 body{
     background: #f4f3f9;
 }
+
 .admin-title-header{
     margin-bottom: 30px;
     font-size: 16px;
     font-weight: 400;
 }
-.card  {
-    background: #f4f3f9;
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 30%;
+}
+
+.card .card-body{
+    background: #f6f6f6;
     box-shadow: none;
 }
-.card .card-body {
-    padding: 0px;
-    background: #f4f3f9;
+.card {
+    position: relative;
+    padding: 25px 30px ;
 }
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 
@@ -29,9 +45,9 @@ body{
 }
 
 .scale-list{
-    border: 1px solid #ccc;
-    padding: 25px;
-    background: #fff;
+    border: 1px solid #e8e8e8;
+    padding: 10px;
+    background: #ffffff;
 }
 .questionwrapper{
     background: #dedddd;

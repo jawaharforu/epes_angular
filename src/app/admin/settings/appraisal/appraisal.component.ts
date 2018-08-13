@@ -55,36 +55,72 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'SeniorManager Fixed should not be empty!');
       return false;
     }
+    if (this._validationsService.isDigit(this.seniormanagerfixed)) {
+      this._commonService.showMessage('error', 'SeniorManager Fixed should have only digits!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.seniormanagervariable)) {
       this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.seniormanagervariable)) {
+      this._commonService.showMessage('error', 'Senior Manager variable should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.seniormanagerbonus)) {
       this._commonService.showMessage('error', 'Senior Manager Bonus should not be empty!');
       return false;
     }
+    if (this._validationsService.isDigit(this.seniormanagerbonus)) {
+      this._commonService.showMessage('error', 'Senior Manager Bonus should have only digits!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.managerfixed)) {
       this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.managerfixed)) {
+      this._commonService.showMessage('error', 'Manager Fixed should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.managervariable)) {
       this._commonService.showMessage('error', 'Manager variable should not be empty!');
       return false;
     }
+    if (this._validationsService.isDigit(this.managervariable)) {
+      this._commonService.showMessage('error', 'Manager variable should have only digits!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.managerbonus)) {
       this._commonService.showMessage('error', 'Manager bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.managerbonus)) {
+      this._commonService.showMessage('error', 'Manager bonus should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.executivesfixed)) {
       this._commonService.showMessage('error', 'Executives fixed should not be empty!');
       return false;
     }
+    if (this._validationsService.isDigit(this.executivesfixed)) {
+      this._commonService.showMessage('error', 'Executives fixed should have only digits!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.executivesvariable)) {
       this._commonService.showMessage('error', 'Executives variable should not be empty!');
       return false;
     }
+    if (this._validationsService.isDigit(this.executivesvariable)) {
+      this._commonService.showMessage('error', 'Executives variable should have only digits!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.executivesbonus)) {
       this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.executivesbonus)) {
+      this._commonService.showMessage('error', 'Executives bonus should have only digits!');
       return false;
     }
 

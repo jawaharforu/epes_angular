@@ -110,28 +110,45 @@ export class CompanyInformationComponent implements OnInit {
 
   companyinformationForm() {
 
-    if (this._validationsService.isEmpty(this.jobtitle)) {
-      this._commonService.showMessage('error', 'Job Title should not be empty!');
-      return false;
-    }
-
     if (this._validationsService.isEmpty(this.companyname)) {
       this._commonService.showMessage('error', 'Company Name should not be empty!');
       return false;
     }
 
+    if (this._validationsService.isEmpty(this.jobtitle)) {
+      this._commonService.showMessage('error', 'Job Title should not be empty!');
+      return false;
+    }
+
     if (this._validationsService.isEmpty(this.industry)) {
-      this._commonService.showMessage('error', 'Industry should not be empty!');
+      this._commonService.showMessage('error', 'Please select Industry!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.noofemployees)) {
-      this._commonService.showMessage('error', 'Number of Employees should not be empty!');
+      this._commonService.showMessage('error', 'Please select Number of Employees!');
+      return false;
+    }
+
+    if (this._validationsService.isEmpty(this.countrycode)) {
+      this._commonService.showMessage('error', 'Please select countrycode!');
       return false;
     }
 
     if (this._validationsService.isEmpty(this.companycontact)) {
-      this._commonService.showMessage('error', 'Contact Number should not be empty!');
+      this._commonService.showMessage('error', 'Phone Number should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.companycontact)) {
+      this._commonService.showMessage('error', 'Phone Number should have only numbers!');
+      return false;
+    }
+    if (this._validationsService.isMinimum(this.companycontact)) {
+      this._commonService.showMessage('error', 'Phone Number should have atleast 10 digits!');
+      return false;
+    }
+    if (this._validationsService.isMaximum(this.companycontact)) {
+      this._commonService.showMessage('error', 'Phone Number should not exceed 13 digits!');
       return false;
     }
 
@@ -139,8 +156,9 @@ export class CompanyInformationComponent implements OnInit {
       this._commonService.showMessage('error', 'Company Address should not be empty!');
       return false;
     }
+
     if (this._validationsService.isEmpty(this.country)) {
-      this._commonService.showMessage('error', 'Country should not be empty!');
+      this._commonService.showMessage('error', 'Please select Country!');
       return false;
     }
 

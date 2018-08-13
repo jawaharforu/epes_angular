@@ -44,11 +44,11 @@ export class FeatureComponent implements OnInit {
 
   featureForm() {
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Features Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.description)) {
-      this._commonService.showMessage('error', 'Description field should not be empty!');
+      this._commonService.showMessage('error', 'Description should not be empty!');
       return false;
     }
     let fieldFeatureid;

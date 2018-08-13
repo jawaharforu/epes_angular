@@ -55,11 +55,11 @@ export class AssessmentComponent implements OnInit {
 
   assessmentForm(){
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name should not be empty!');
+      this._commonService.showMessage('error', 'Assessment Title should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.periodoftime)) {
-      this._commonService.showMessage('error', 'Period of Time should not be empty!');
+      this._commonService.showMessage('error', 'Please select Period of time!');
       return false;
     }
     if (this._validationsService.isEmpty(this.duration)) {

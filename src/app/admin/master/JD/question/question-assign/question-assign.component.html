@@ -1,13 +1,10 @@
 <div class="row">
-    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12">
-        <form (ngSubmit)="questionForm()">
-            <input type="hidden" [(ngModel)]="questionid" name="questionid">
-            <!-- Default input name -->
-            <div class="form-group col-md-12 col-sm-12">
-                <div class="row">
-                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Enter Employee</label>
+    <div class="col-md-12">
+                <form (ngSubmit)="questionForm()">
+                    <input type="hidden" [(ngModel)]="questionid" name="questionid">
+                    <!-- Default input name -->
                     <div class="row">
-                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
+                        <select class="browser-default form-control col-md-3" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
                             <option value="" disabled>--Select Employee--</option>
                             <option value="md">MD</option>
                             <option value="admin">Admin</option>
@@ -18,58 +15,63 @@
                             <!-- <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option> -->
                         </select>
                     </div>
-                </div>
-            </div>
-            <div class="form-group col-md-12 col-sm-12">
-                <div class="row">
-                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Enter Question</label>
-                    <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9" [(ngModel)]="question" name="question" placeholder="Enter Question">
-                </div>
-            </div>
-            <div class="form-group col-md-12 col-sm-12">
-                <div class="row">
-                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Scale</label>
-                    <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
-                        <option value="" disabled>--Select Scale--</option>
-                        <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
-                    </select>
-                    <a (click)="showModal('s')" class="btn_add">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="form-group col-md-12 col-sm-12">
-                <div class="row">
-                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Assessment</label>
-                    <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
-                        <option value="" disabled>--Select Assessment--</option>
-                        <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
-                    </select>
-                    <a (click)="showModal('a')" class="btn_add">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="form-group col-md-12 col-sm-12">
-                <div class="row">
-                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Header</label>
-                    <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
-                        <option value="" disabled>--Select Header--</option>
-                        <option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
-                    </select>
-                    <a (click)="showModal('h')" class="btn_add">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary  btn_additem">
-                    <i class="fa fa-plus"></i> Add Question</button>
-            </div>
-        </form>
-    </div>
+                    <div class="form-group"></div>
+                    <div class="row">
+                        <div class="col-md-11 questionwrapper">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-8">
+												<input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
+                                        </div>
+                                        <div class="col-md-4">
+												   <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
+														<option value="" disabled>--Select Scale--</option>
+														<option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
+													</select>
+													<a (click)="showModal('s')" class="btn_add">
+														<i class="fa fa-plus"></i>
+													</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+												   <select class="browser-default form-control " id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype" (change)="getHeader()">
+														<option value="" disabled>--Select Assessment--</option>
+														<option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
+													</select>
+													<a (click)="showModal('a')" class="btn_add">
+														<i class="fa fa-plus"></i>
+													</a>
+										</div>
+                                        <div class="col-md-6">
+												   <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="header" name="designation">
+														<option value="" disabled>--Select Header--</option>
+														<option *ngFor="let h of headerList" [value]="h._id">{{ h.headername }}</option>
+													</select>
+													<a (click)="showModal('h')" class="btn_add">
+														<i class="fa fa-plus"></i>
+													</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 no-padding">
+                            <button type="submit" class="btn btn-primary  btn_additem">
+							Submit</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
 </div>
+
+
+
+
+
 <div class="row justify-content-md-center mt-2 product-list list-jd-q">
     <div class="col-md-12 ">
         <!--Table-->

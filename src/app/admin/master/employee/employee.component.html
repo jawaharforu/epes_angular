@@ -7,13 +7,38 @@
           <div class="card-body">
 <form (ngSubmit)="employeeForm()" class="add-employee">
   <input type="hidden" [(ngModel)]="employeeid" name="employeeid" />
-    <p class="h4 text-center py-4 admin-title">Create Employee</p>
+    <p class="h4 text-center py-4 admin-title"> Employee</p>
 	
 	<div class="form-group employees-type">
         <input type="radio" class="form-check-input" id="materialGroupExample1" name="type" value="MD" [(ngModel)]="type">
         <label class="form-check-label" for="materialGroupExample1">MD</label>
         <input type="radio" class="form-check-input" id="materialGroupExample2" name="type" value="others" [(ngModel)]="type">
         <label class="form-check-label" for="materialGroupExample2">Others</label>
+      </div>
+      
+      <div class="row">
+        <div class="form-group col-md-12 col-sm-12 ">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="materialGroupExample1admin" name="employeetype" value="admin" [(ngModel)]="employeetype">
+            <label class="form-check-label" for="materialGroupExample1admin">Admin</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="materialGroupExample1commonreciption" name="employeetype" value="commonreciption" [(ngModel)]="employeetype">
+            <label class="form-check-label" for="materialGroupExample1commonreciption">Common reciption</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="materialGroupExample1secretary" name="employeetype" value="secretary" [(ngModel)]="employeetype">
+            <label class="form-check-label" for="materialGroupExample1secretary">Department/Secretary</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="materialGroupExample1employeetype" name="employeetype" value="hr" [(ngModel)]="employeetype">
+            <label class="form-check-label" for="materialGroupExample1employeetype">HR</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="materialGroupExample1others" name="employeetype" checked value="others" [(ngModel)]="employeetype">
+            <label class="form-check-label" for="materialGroupExample1others">Others</label>
+          </div>
+        </div>
       </div>
 
  <div class="row">  
@@ -73,32 +98,9 @@
           <textarea type="text" id="defaultFormCarddescEx"  class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="address" rows="5" name="address"></textarea>
       </div>
   </div>
-  <div class="row">
-    <div class="form-group col-md-12 col-sm-12 ">
-      <div class="form-check">
-        <input type="radio" class="form-check-input" id="materialGroupExample1admin" name="employeetype" value="admin" [(ngModel)]="employeetype">
-        <label class="form-check-label" for="materialGroupExample1admin">Admin</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" class="form-check-input" id="materialGroupExample1commonreciption" name="employeetype" value="commonreciption" [(ngModel)]="employeetype">
-        <label class="form-check-label" for="materialGroupExample1commonreciption">Common reciption</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" class="form-check-input" id="materialGroupExample1secretary" name="employeetype" value="secretary" [(ngModel)]="employeetype">
-        <label class="form-check-label" for="materialGroupExample1secretary">Department/Secretary</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" class="form-check-input" id="materialGroupExample1employeetype" name="employeetype" value="hr" [(ngModel)]="employeetype">
-        <label class="form-check-label" for="materialGroupExample1employeetype">HR</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" class="form-check-input" id="materialGroupExample1others" name="employeetype" checked value="others" [(ngModel)]="employeetype">
-        <label class="form-check-label" for="materialGroupExample1others">Others</label>
-      </div>
-    </div>
-  </div>
+ 
   <div  class="col-md-12 field-button">
-      <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>Save</button>
+      <button type="submit" class="btn btn-warning waves-light btn-submit" mdbWavesEffect>submit</button>
   </div>
 </form>
 </div></div></div></div>

@@ -9,10 +9,8 @@
             </p>-->
               <!-- Default form subscription -->
               <form (ngSubmit)="organogramForm()">
-                    <p class="h4 admin-title-header ">
-                            <i class="fa fa-home" aria-hidden="true"></i> - Organogram
-                            <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-green-new float-right">Organogram Structure</a>
-                        </p>
+                        <p class="h4 text-center py-4 admin-title">Organogram</p>
+                        <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-green-new float-right">Organogram Structure</a>
                         <div class="clear-fix"></div>
 
                  <!-- <p class="h4 text-center py-4">Organogram</p>-->
@@ -61,8 +59,8 @@
     </div>
   </div>
 
-  <div class="row justify-content-md-center mb-5">
-    <div class="col-md-12 mt-5 product-list scale-list">
+  <div class="justify-content-md-center mb-2">
+    <div class="col-md-12 mt-4 product-list scale-list">
       <!--Table-->
       <table *ngIf="organogramList" datatable class="table table-hover table-responsive-md table-fixed">
 

@@ -6,6 +6,7 @@ import { CompanyService} from '../../admin/company/company.service';
 import { UserService } from '../../admin/user/user.service';
 import { ModalDirective } from '../../../../ng-uikit-pro-standard';
 import {ActivatedRoute} from '@angular/router';
+import { ProductService } from '../../admin/frontend/product/product.service';
 
 @Component({
   selector: 'app-registration',
@@ -38,9 +39,11 @@ export class RegistrationComponent implements OnInit {
   public otpid: String = '';
   public otp: String = '';
   public productid: String;
+  public productList: any;
 
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShown: Boolean = false;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -48,14 +51,18 @@ export class RegistrationComponent implements OnInit {
     private _validationsService: ValidationsService,
     private contactusService: ContactusService,
     private companyService: CompanyService,
-    private userService: UserService
+    private userService: UserService,
+    private productService: ProductService
   ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.productid = params['productid'];
       if (!this._validationsService.isEmpty(this.productid)) {
-
+        this.getProductById(this.productid);
+      } else {
+        this._commonService.showMessage('error', 'Select Product First!!!');
+        this._commonService.redirectTo('/products');
       }
     });
     this.getCountryList();
@@ -65,6 +72,13 @@ export class RegistrationComponent implements OnInit {
     this.contactusService.getCountryList()
     .subscribe(res => {
       this.countryList = res.data;
+    });
+  }
+
+  getProductById(productid: any) {
+    this.productService.getProductById(productid)
+    .subscribe(res => {
+      this.productList = res.data;
     });
   }
 

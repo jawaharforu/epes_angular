@@ -43,11 +43,11 @@ export class EmailComponent implements OnInit {
       this.email = res.data.name;
       this.primaryemailid = res.data._id;
     });
-  } 
+  }
 
   emailForm() {
     if (this._validationsService.isEmpty(this.email)) {
-      this._commonService.showMessage('error', 'Email field should not be empty!');
+      this._commonService.showMessage('error', 'Email Address should not be empty!');
       return false;
     }
     let fieldemailid;
@@ -92,7 +92,7 @@ export class EmailComponent implements OnInit {
       }
     });
   }
-  
+
   getEmailList() {
     this.emailService.getEmail()
     .subscribe(res => {

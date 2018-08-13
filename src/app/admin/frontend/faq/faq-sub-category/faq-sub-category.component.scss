@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -14,7 +14,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px ;
+    padding: 25px 30px  10px 30px;;
 }
 .card .card-body {
     background: #f6f6f6;
@@ -27,6 +27,9 @@ p.h4.text-center.py-4.admin-title {
     line-height: 28px;
     padding: 0px;
     font-weight: 400 !important;
+}
+.form-control.col-md-10 {
+    max-width: 300px;
 }
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 
@@ -124,4 +127,9 @@ span.btn-edit, span.btn-delete  {
         padding-bottom: 5px;
     }
         
+}
+.scale-list {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 25px 25px  10px 25px;;
 }

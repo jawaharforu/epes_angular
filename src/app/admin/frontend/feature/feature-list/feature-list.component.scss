@@ -17,7 +17,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 0px 30px 50px 30px;
+    padding: 0px 30px 15px 30px;
 }
 table.dataTable.no-footer {
     border: 1px solid #f3eeee;
@@ -139,4 +139,9 @@ table.dataTable[_ngcontent-c4][_ngcontent-c4] thead[_ngcontent-c4][_ngcontent-c4
     border-radius: 2px;
     height: 15px;
     width: 15px;
+}
+thead {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+    padding: 44px;
 }

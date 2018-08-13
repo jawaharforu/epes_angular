@@ -1,0 +1,32 @@
+<div class="row justify-content-md-center mt-2 product-list list-jd-q">
+  <div class="col-md-12 ">
+      <!--Table-->
+      <table *ngIf="jdquestionList" class="table table-hover table-responsive-md table-fixed" datatable>
+          <!--Table head-->
+          <thead class="mdb-color darken-3">
+              <tr class="text-white">
+                  <th class="label-no">#</th>
+                  <th class="label-name">Employee</th>
+                  <th class="label-name">Question</th>
+                  <th class="label-name">Scale</th>
+                  <th class="label-name">Assessment</th>
+                  <th class="label-name">Header</th>
+              </tr>
+          </thead>
+          <!--Table head-->
+          <!--Table body-->
+          <tbody>
+              <tr *ngFor="let q of jdquestionList; let i = index">
+                  <th class="col-no" scope="row">{{ i + 1 }}</th>
+                  <td class="col-name">{{ q.questionid.type }}</td>
+                  <td class="col-name">{{ q.questionid.question }}</td>
+                  <td class="col-name">{{ q.questionid.scaleid.options | arrayToString:',' }}</td>
+                  <td class="col-name">{{ q.questionid.assessmenttypeid.name }}</td>
+                  <td class="col-name">{{ q.questionid.headerid.headername }}</td>
+              </tr>
+          </tbody>
+          <!--Table body-->
+      </table>
+      <!--Table-->
+  </div>
+</div>

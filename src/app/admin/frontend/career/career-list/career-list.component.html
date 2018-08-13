@@ -1,11 +1,12 @@
 <div class="row">
-        <div class="col-xl-9 col-lg-9 col-md-10 col-sm-12 product-list">
+        <div class="col-md-12 col-sm-12 product-list">
           <!-- Card -->
           <div class="card">
     
       <div class="card-body">
-    <p class="h4 text-center py-4 admin-title">Career List
-    </p><a [routerLink]="['/admin/career']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Add New</a>
+    <!--<p class="h4 text-center py-4 admin-title">Career List
+    </p>-->
+    <a [routerLink]="['/admin/career']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Add New</a>
       <!--Table-->
       <table *ngIf="careerList" datatable class="table table-hover table-responsive-md table-fixed">
           <!--Table head-->

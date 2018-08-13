@@ -1708,6 +1708,9 @@ button.video-btn {
     border-radius: 4px;
     cursor: pointer;
 }
+.accordion .card {
+    background: #f6f6f6;
+}
 ul.nav.classic-tabs.tabs-new {
     background: #0059c7;
     border-radius: 0px;
@@ -2726,3 +2729,16 @@ nav.admin-top-navbar {
 }
 
 /*---------Organogram-------------*/
+.form-control {
+    font-size: 14px;
+}
+.modal-dialog .modal-content {
+    background-color: #f6f6f6;
+}
+.modal.fade.in .modal-dialog {
+    background-color: #cccccc5e;
+    padding: 5px;
+}
+li.submenu-item a{
+    font-size: 12px !important;
+}

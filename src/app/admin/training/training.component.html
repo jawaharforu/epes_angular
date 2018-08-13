@@ -1,21 +1,21 @@
 <div class="container asd">
-    <div class="card">
+    <div class="card mb-4">
 
         <!-- Card body -->
         <div class="card-body mb-3">
 
             <!-- Default form subscription -->
             <form (ngSubmit)="trainingHeadForm()" class="add-faq">
-                <p class="h4 text-center py-4 admin-title">Create Training Head</p>
+                <p class="h4 text-center py-4 admin-title">Training Head</p>
                 <input type="hidden" [(ngModel)]="trainingheadid" name="trainingheadid" />
                 <div class="form-group col-md-12 col-sm-12">
                     <div class="row">
-                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Training Head Name</label>
+                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Training Head</label>
                         <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
                     </div>
                 </div>
                 <div class="col-md-6 offset-md-2 feild-button ">
-                    <button class="btn btn-outline-purple px-3 btn-submit">Save</button>
+                    <button class="btn btn-outline-purple px-3 btn-submit">Submit</button>
 
                 </div>
 
@@ -24,11 +24,10 @@
 
         </div>
         <!-- Card body -->
-
+    </div>
     <!-- Card -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 msg-box">
+
+            <div class="col-sm-12 msg-box product-list scale-list">
                 <table *ngIf="trainingHeadList" class="table table-striped">
                     <thead>
                         <tr>
@@ -50,10 +49,4 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
 </div>
-</div>
-<!--
-<button type="button" class="btn btn-primary relative waves-light" (click)="showModal()" mdbWavesEffect>Launch demo modal</button>
--->

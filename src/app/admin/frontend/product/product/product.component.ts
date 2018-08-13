@@ -15,6 +15,9 @@ export class ProductComponent implements OnInit {
   public productForm: FormGroup;
   public productid: String;
 
+  public type: String;
+  public featurenumber: String;
+
   constructor(
     private _fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -81,29 +84,36 @@ export class ProductComponent implements OnInit {
 
   productSubmit() {
     if (this._validationsService.isEmpty(this.productForm.value.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Product Name  should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.productForm.value.amount)) {
-      this._commonService.showMessage('error', 'Amount field should not be empty!');
+      this._commonService.showMessage('error', 'Product Amount should not be empty!');
       return false;
-    } else if (! this._validationsService.isNumber(this.productForm.value.amount)) {
-
-      this._commonService.showMessage('error', 'Amount field should only number!');
+    }else if (!this._validationsService.isNumber(this.productForm.value.amount)) {
+      this._commonService.showMessage('error', 'Product Amount  should have only number!');
       return false;
     }
     if (this._validationsService.isEmpty(this.productForm.value.numberofemployee)) {
-      this._commonService.showMessage('error', 'Number of employee field should not be empty!');
+      this._commonService.showMessage('error', 'Number of employee should not be empty!');
       return false;
     } else if (! this._validationsService.isNumber(this.productForm.value.numberofemployee)) {
-      this._commonService.showMessage('error', 'Number of employee field should only number!');
+      this._commonService.showMessage('error', 'Number of employee should only number!');
       return false;
     }
     if (this._validationsService.isEmpty(this.productForm.value.amountperemployee)) {
-      this._commonService.showMessage('error', 'Amount per employee field should not be empty!');
+      this._commonService.showMessage('error', 'Amount per employee should not be empty!');
       return false;
     } else if (! this._validationsService.isNumber(this.productForm.value.amountperemployee)) {
       this._commonService.showMessage('error', 'Amount per employee field should only number!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.type)) {
+      this._commonService.showMessage('error', 'Please choose Period!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.featurenumber)) {
+      this._commonService.showMessage('error', 'Features should not be empty!');
       return false;
     }
 

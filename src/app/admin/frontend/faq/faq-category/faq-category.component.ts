@@ -34,7 +34,7 @@ export class FaqCategoryComponent implements OnInit {
 
   faqCategoryForm() {
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'FAQ category name should not be empty!');
       return false;
     }
     let newFaqCategory;

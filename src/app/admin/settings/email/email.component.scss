@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -31,17 +31,15 @@ h6 {
     color: #666;
     line-height: 22px;
 }
-button.btn.btn-warning.waves-light.btn-submit {
-    padding: 8px 15px;
-    margin: 0px;
+button.btn.btn-warning.waves-light.btn-submit,
+.btn-warning:not([disabled]):not(.disabled):active,
+.btn-warning:not([disabled]):not(.disabled).active, 
+.show > .btn-warning.dropdown-toggle {
+    background: #f38e00 !important;
+    padding: 5px 25px;
+    font-size: 15px;
+    text-transform: capitalize;
     box-shadow: none;
-    background: rgb(241,241,243);
-    background: -moz-linear-gradient(top, rgba(241,241,243,1) 2%, rgba(222,227,231,1) 100%);
-    background: -webkit-linear-gradient(top, rgba(241,241,243,1) 2%,rgba(222,227,231,1) 100%);
-    background: linear-gradient(to bottom, rgba(241,241,243,1) 2%,rgba(222,227,231,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f3', endColorstr='#dee3e7',GradientType=0 );
-    border: 1px solid #666;
-    color: #464545 !important;
 }
 
 .table {

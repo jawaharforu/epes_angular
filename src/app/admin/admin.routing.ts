@@ -13,6 +13,10 @@ const routes: Routes = [
         loadChildren: './master/JD/jd.module#JdModule',
       },
       {
+        path: 'assessmenttype',
+        loadChildren: './master/assessmenttype/assessmenttype.module#AssessmenttypeModule',
+      },
+      {
         path: 'header',
         loadChildren: './master/header/header.module#HeaderModule',
       },

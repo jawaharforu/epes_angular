@@ -72,4 +72,12 @@ export class QuestionService {
     return this.http.get(`${this.link}/jdquestions/getbyjd/${jdid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
+
+  getQuestionToJDListWithQu(jdid: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/jdquestions/getbyjdwithqu/${jdid}`, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
 }

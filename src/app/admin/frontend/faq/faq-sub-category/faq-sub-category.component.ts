@@ -45,11 +45,11 @@ export class FaqSubCategoryComponent implements OnInit {
 
   faqSubCategoryForm() {
     if (this._validationsService.isEmpty(this.faqcategoryid)) {
-      this._commonService.showMessage('error', 'Faq category field should not be empty!');
+      this._commonService.showMessage('error', 'Please select Faq category!');
       return false;
     }
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Sub Category Name should not be empty!');
       return false;
     }
     let newFaqSubCategory;

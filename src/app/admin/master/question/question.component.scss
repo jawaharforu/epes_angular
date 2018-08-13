@@ -6,14 +6,29 @@ body{
     font-size: 16px;
     font-weight: 400;
 }
-.card  {
-    background: #f4f3f9;
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 30%;
+}
+.card .card-body{
+    background: #f6f6f6;
     box-shadow: none;
 }
-.card .card-body {
-    padding: 0px;
-    background: #f4f3f9;
+.card {
+    position: relative;
+    padding: 25px 30px 50px 30px;
 }
+
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 
 .btn-outline-purple:not([disabled]):not(.disabled).active, 
@@ -34,8 +49,8 @@ body{
     background: #fff;
 }
 .questionwrapper{
-    background: #dedddd;
-    padding: 5px;
+   /* background: #dedddd;*/
+    padding: 0px;
 }
 table.table th, table.table td {
     padding-top: 5px;
@@ -97,10 +112,12 @@ span.btn-edit, span.btn-delete  {
 }
 select.form-control:not([size]):not([multiple]) {
     height: calc(2.25rem + 2px);
-    width: 75%;
     float: left;
     font-size: 12px;
     padding: 0px;
+    width: -webkit-calc(100% - 35px);
+	width: -moz-calc(100% - 35px);
+	width: calc(100% - 35px);
 }
 
 .btn_add {
@@ -123,11 +140,12 @@ select.form-control:not([size]):not([multiple]) {
     color: #fff;
 }
 .btn_additem, .btn-primary[_ngcontent-c4]:not([disabled]):not(.disabled):active{       
-    padding: 16px 10px;
+    padding: 9px 10px;
     background: #f38e00 !important;
     box-shadow: none;
-    font-size: 10px;
+    font-size: 13px;
     margin: 0px;
+    width: 100%;
 }
 .modal-dialog{
     margin-top: 120px;
@@ -146,6 +164,7 @@ button.close {
     margin: -1rem -1rem -1rem auto;
     font-weight: normal;
     font-size: 20px;
+    margin: 0px !important;
 }
 button.close .white-text{
     margin-left: -5px;
@@ -156,4 +175,7 @@ button.close .white-text{
     margin-left: -16px;
     margin-top: -16px;
     width: 30%;
+}
+.no-padding{
+    padding-right: 0px;
 }

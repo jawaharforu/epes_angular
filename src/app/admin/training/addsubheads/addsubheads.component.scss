@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -103,6 +103,12 @@ span.btn-edit, span.btn-delete  {
 thead{
     background-color: #f9f6f6 !important;
     border: 1px solid #ccc;
+}
+.scale-list {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #fff;
+    padding-bottom: 10px;
 }
 @media only screen and (max-width: 768px){
     button.btn.btn-danger.waves-light.btn-delete,

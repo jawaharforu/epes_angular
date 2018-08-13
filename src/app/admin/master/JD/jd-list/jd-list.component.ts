@@ -14,6 +14,7 @@ export class JdListComponent implements OnInit {
   public passjdid: String = '';
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShown: Boolean = false;
+  public isModalShownQuestion: Boolean = false;
   constructor(
     private _commonService: CommonService,
     private jdService: JdService
@@ -46,17 +47,25 @@ export class JdListComponent implements OnInit {
     });
   }
 
-  public showModal(jdid: any): void {
+  public showModal(which: any, jdid: any): void {
+    if (which === 'a') {
+      this.isModalShown = true;
+    } else {
+      this.isModalShownQuestion = true;
+    }
     this.passjdid = jdid;
-    this.isModalShown = true;
   }
 
   public hideModal(): void {
       this.autoShownModal.hide();
   }
 
-  public onHidden(): void {
+  public onHidden(which: any): void {
+    if (which === 'a') {
       this.isModalShown = false;
+    } else {
+      this.isModalShownQuestion = false;
+    }
   }
 
 }

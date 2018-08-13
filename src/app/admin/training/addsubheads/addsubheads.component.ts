@@ -70,13 +70,12 @@ export class AddsubheadsComponent implements OnInit {
     }
 
     trainingsubheadForm() {
-        if (this._validationsService.isEmpty(this.name)) {
-            this._commonService.showMessage('error', 'Name should not be empty!');
+        if (this._validationsService.isEmpty(this.trainingheadid)) {
+            this._commonService.showMessage('error', 'Please select Training Head!');
             return false;
         }
-
-        if (this._validationsService.isEmpty(this.trainingheadid)) {
-            this._commonService.showMessage('error', 'Training Head should not be empty!');
+        if (this._validationsService.isEmpty(this.name)) {
+            this._commonService.showMessage('error', 'Training Sub Head should not be empty!');
             return false;
         }
         let fieldTrainingsubheadid;

@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 17px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -51,6 +51,7 @@ button.btn.btn-submit.btn-save {
     font-size: 15px;
     margin-top: 15px;
     text-transform: capitalize;
+    box-shadow: none;
 }
 .form-control {
 

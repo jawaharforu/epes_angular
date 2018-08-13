@@ -1,3 +1,26 @@
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 30%;
+}
+
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.card {
+    position: relative;
+    padding: 25px 30px ;
+}
 h4.admin-title {
     margin-top: 20px;
     font-size: 17px;

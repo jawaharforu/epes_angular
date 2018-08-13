@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -14,7 +14,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px 25px 30px;
 }
 .form-control.col-md-10 {
     max-width: 300px;
@@ -99,6 +99,11 @@ span.btn-edit, span.btn-delete  {
     font-weight: 500;
     cursor: pointer;
     line-height: 30px;
+}
+.scale-list {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #fff;
 }
 @media only screen and (max-width: 768px){
     button.btn.btn-danger.waves-light.btn-delete,

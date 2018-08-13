@@ -3,12 +3,11 @@
         <div class="card">
             <div class="card-body">
                 <form (ngSubmit)="questionForm()">
-                    <p class="h4 admin-title-header ">
-                        <i class="fa fa-home" aria-hidden="true"></i> - Question</p>
-                    <input type="hidden" [(ngModel)]="questionid" name="questionid">
+                        <p class="h4 text-center py-4 admin-title">Question</p>
+                        <input type="hidden" [(ngModel)]="questionid" name="questionid">
                     <!-- Default input name -->
                     <div class="row">
-                        <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
+                        <select class="browser-default form-control col-md-3" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
                             <option value="" disabled>--Select Employee--</option>
                             <option value="md">MD</option>
                             <option value="admin">Admin</option>
@@ -43,7 +42,7 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype">
+                                            <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype" (change)="getHeader()">
                                                 <option value="" disabled>--Select Assessment--</option>
                                                 <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
                                             </select>
@@ -64,8 +63,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1">
-                            <button type="submit" class="btn btn-primary btn_additem">Add Item</button>
+                        <div class="col-md-1 no-padding">
+                            <button type="submit" class="btn btn-primary btn_additem">Submit</button>
                         </div>
                     </div>
                 </form>

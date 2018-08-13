@@ -76,19 +76,19 @@ export class FaqComponent implements OnInit {
 
   faqForm() {
     if (this._validationsService.isEmpty(this.faqcategoryid)) {
-      this._commonService.showMessage('error', 'Category field should not be empty!');
+      this._commonService.showMessage('error', 'Please select FAQ Category!');
       return false;
     }
-    if (this._validationsService.isEmpty(this.faqcategoryid)) {
-      this._commonService.showMessage('error', 'Category field should not be empty!');
+    if (this._validationsService.isEmpty(this.faqsubcategoryid)) {
+      this._commonService.showMessage('error', 'Please select FAQ Sub Category!');
       return false;
     }
     if (this._validationsService.isEmpty(this.question)) {
-      this._commonService.showMessage('error', 'Question field should not be empty!');
+      this._commonService.showMessage('error', 'Question should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.answer)) {
-      this._commonService.showMessage('error', 'Answer field should not be empty!');
+      this._commonService.showMessage('error', 'Answer should not be empty!');
       return false;
     }
     let fieldFaq;

@@ -1,28 +1,29 @@
 <div class="form-group">
     <div class="row">
         <div class=" col-md-12 col-sm-12">
-           
+
 		   <div class="card">
 
-		   
+		   <div class="card-body">
                     <form (ngSubmit)="companyinformationForm()">
+
+
+
+                        <p class="h4 text-center py-4 admin-title">Company Information</p>
                         <div class="row">
                             <div class="form-group col-md-12 col-sm-12">
 							<div class="company-logo">
                               <img [src]="logo" />
 							  </div>
-							   <label for="" class="label-logo">Upload Company Logo</label>
+							   <label for="" class="label-logo"> Company Logo</label>
                                 <input type="file" class="btn file-choose " name="file" ng2FileSelect [uploader]="uploader" />
                                 <button type="button" class="btn btn-upload" mdbWavesEffect
                                       (click)="uploader.uploadAll()"
                                       [disabled]="!uploader.getNotUploadedItems().length" >
-                                 <i class="fa fa-cloud-upload mr-1"></i> Upload Logo
-                                </button>
+                                 <i class="fa fa-cloud-upload mr-1"></i> Upload</button>
                             </div>
                         </div>
-						
-						<div class="card-body">
-                        <p class="h4 text-center py-4 admin-title">Information</p>
+
                         <div class="row">
                                 <div class="form-group col-md-6 col-sm-12 ">
                                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Company Name</label>
@@ -47,7 +48,7 @@
                                         </select>
                                     </div>
                         </div>
-						 <div class="row"> 
+						 <div class="row">
                         <div class="form-group col-md-6 col-sm-12 browser-default">
                             <label class="grey-text font-weight-light" for="phonenumber">Phone Number:</label>
                             <div class="row">
@@ -87,11 +88,11 @@
                                         <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="city" name="city">
                                     </div>
                         </div>
-						</div> 
+
                         <div class="field-button float-right">
-                            <button type="submit"  class="btn btn-submit btn-save" >Save</button>
+                            <button type="submit"  class="btn btn-submit btn-save" >SUBMIT</button>
                         </div>
                 </form>
-            </div>
+            </div></div>
         </div>
     </div>

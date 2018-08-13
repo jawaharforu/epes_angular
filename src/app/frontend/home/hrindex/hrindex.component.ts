@@ -40,7 +40,6 @@ export class HRIndexComponent implements OnInit {
   constructor(
     public _validationsService: ValidationsService,
     public _commonService: CommonService,
-    // private activatedRoute: ActivatedRoute,
     private hrindexService: HrindexService,
 
   ) {
@@ -101,7 +100,7 @@ export class HRIndexComponent implements OnInit {
       },
       series: [{
         name: 'Score',
-        data: [10,12,14,16,18,20,22]
+        data: [10, 12, 14, 16, 18, 20, 22]
       }
       ]
     };
@@ -119,7 +118,7 @@ export class HRIndexComponent implements OnInit {
   staffingForm() {
     let k = 0;
     for (let j = 0; j < this.question.length; j++) {
-      k = k + parseInt(this.question[j]);
+      k = k + parseInt(this.question[j], 10);
     }
     console.log(k);
     this.staffing = k;

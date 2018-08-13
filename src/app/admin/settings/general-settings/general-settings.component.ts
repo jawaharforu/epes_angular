@@ -75,83 +75,163 @@ export class GeneralSettingsComponent implements OnInit {
   globalsettings() {
 
     if (this._validationsService.isEmpty(this.tolerance)) {
-      this._commonService.showMessage('error', 'SeniorManager Fixed should not be empty!');
+      this._commonService.showMessage('error', 'Tolerance should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.tolerance)) {
+      this._commonService.showMessage('error', 'Tolerance should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.externalreference)) {
-      this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
+      this._commonService.showMessage('error', 'External Reference should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.externalreference)) {
+      this._commonService.showMessage('error', 'External Reference should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.internalemployeereference)) {
-      this._commonService.showMessage('error', 'Senior Manager Bonus should not be empty!');
+      this._commonService.showMessage('error', 'Internal Employee Reference should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.internalemployeereference)) {
+      this._commonService.showMessage('error', 'Internal Employee Reference should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.managingdirectorsdescretion)) {
-      this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
+      this._commonService.showMessage('error', 'Managing Directors Descretion not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.managingdirectorsdescretion)) {
+      this._commonService.showMessage('error', 'Managing Directors Descretion should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.specialallowance)) {
-      this._commonService.showMessage('error', 'Manager variable should not be empty!');
+      this._commonService.showMessage('error', 'Special Allowance should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.specialallowance)) {
+      this._commonService.showMessage('error', 'Special Allowance should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.cim)) {
-      this._commonService.showMessage('error', 'Manager bonus should not be empty!');
+      this._commonService.showMessage('error', 'CIM should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.cim)) {
+      this._commonService.showMessage('error', 'CIM should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.nocim)) {
-      this._commonService.showMessage('error', 'Executives fixed should not be empty!');
+      this._commonService.showMessage('error', 'NO-CIM should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.nocim)) {
+      this._commonService.showMessage('error', 'NO-CIM should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation1)) {
-      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      this._commonService.showMessage('error', 'Third Party Evaluation 1 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.thirdpartyevaluation1)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 1 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation2)) {
-      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      this._commonService.showMessage('error', 'Third Party Evaluation 2 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.thirdpartyevaluation2)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 2 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation3)) {
-      this._commonService.showMessage('error', 'SeniorManager Fixed should not be empty!');
+      this._commonService.showMessage('error', 'Third Party Evaluation 3 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.thirdpartyevaluation3)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 3 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working aquantance 0-5 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.controlsworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Controls Working aquantance 0-5 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Senior Manager Bonus should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working aquantance 5-10 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.controlsworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Controls Working aquantance 5-10 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working aquantance 10> should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.controlsworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Controls Working aquantance 10> should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.chairmansreference)) {
-      this._commonService.showMessage('error', 'Manager variable should not be empty!');
+      this._commonService.showMessage('error', 'Chairmans Reference should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.chairmansreference)) {
+      this._commonService.showMessage('error', 'Chairmans Reference should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Manager bonus should not be empty!');
+      this._commonService.showMessage('error', 'Over Working aquantance 0-5 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Over Working aquantance 0-5 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Executives fixed should not be empty!');
+      this._commonService.showMessage('error', 'Over Working aquantance 5-10 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Over Working aquantance 5-10 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      this._commonService.showMessage('error', 'Over Working aquantance 10> should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Over Working aquantance 10> should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overpriorrelevant05)) {
-      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      this._commonService.showMessage('error', 'Prior Relevant 0-5 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overpriorrelevant05)) {
+      this._commonService.showMessage('error', 'Prior Relevant 0-5 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overpriorrelevant510)) {
-      this._commonService.showMessage('error', 'Executives variable should not be empty!');
+      this._commonService.showMessage('error', 'Prior Relevant 5-10 should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overpriorrelevant510)) {
+      this._commonService.showMessage('error', 'Prior Relevant 5-10 should have only digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overpriorrelevant10)) {
-      this._commonService.showMessage('error', 'Executives bonus should not be empty!');
+      this._commonService.showMessage('error', 'Prior Relevant 10> should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.overpriorrelevant10)) {
+      this._commonService.showMessage('error', 'Prior Relevant 10> should have only digits!');
       return false;
     }
 

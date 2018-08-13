@@ -124,6 +124,11 @@ table.dataTable thead th{
         margin-top: 0px;
     }
 }
+thead {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+    padding: 44px;
+}
 table.dataTable[_ngcontent-c4] thead[_ngcontent-c4] th[_ngcontent-c4],
 table.dataTable tbody th, table.dataTable tbody td{
     border-right: 1px solid #f3eeee;    
