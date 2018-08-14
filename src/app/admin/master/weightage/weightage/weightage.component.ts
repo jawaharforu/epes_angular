@@ -3,8 +3,7 @@ import { CommonService } from '../../../../services/common.service';
 import { ValidationsService } from '../../../../services/validations.service';
 import { JdService } from '../../JD/services/jd.service';
 
-// import { WeightageService } from '../weightage.service';
-import { QuestionService } from '../../JD/question/services/question.service';
+import { WeightageService } from '../weightage.service';
 
 @Component({
   selector: 'app-weightage',
@@ -15,15 +14,12 @@ export class WeightageComponent implements OnInit {
 
   public jdList: any;
   public jdid: String = '';
-  public assessment: any[] = [];
-  public fullList: any;
 
   constructor(
     private _validationsService: ValidationsService,
     private _commonService: CommonService,
     private jdService: JdService,
-    // private weightageService: WeightageService,
-    private questionService: QuestionService
+    private weightageService: WeightageService
   ) { }
 
   ngOnInit() {
@@ -38,25 +34,22 @@ export class WeightageComponent implements OnInit {
   }
 
   getAssessAndHeadList() {
-    this.questionService.getQuestionToJDListWithQu(this.jdid)
+    this.weightageService.fetchassessandheadbyjd(this.jdid)
     .subscribe(res => {
-      this.fullList = res.data;
-      const assessment: any = new Array();
-      for (const prop of res.data) {
-        if (!assessment.includes(prop.questionid.assessmenttypeid._id)) {
-          assessment.push(prop.questionid.assessmenttypeid._id);
-          this.assessment.push(prop.questionid.assessmenttypeid);
-        }
-      }
+      console.log(res.data);
     });
   }
 
   getAssess() {
     if (this._validationsService.isEmpty(this.jdid)) {
-      this._commonService.showMessage('error', 'JD field should not be empty!');
+      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
       return false;
     }
     this.getAssessAndHeadList();
+  }
+
+  weightageForm() {
+
   }
 
 }
