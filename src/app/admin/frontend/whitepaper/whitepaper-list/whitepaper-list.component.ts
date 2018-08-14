@@ -9,7 +9,7 @@ import { CommonService } from '../../../../services/common.service';
 })
 export class WhitepaperListComponent implements OnInit {
 
-  public whitepaperList: any;
+  public whitepaperList: any = '';
 
   constructor(
     private _commonService: CommonService,

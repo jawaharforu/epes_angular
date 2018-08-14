@@ -1,5 +1,4 @@
-<table class="table">
-
+<table class="table" datatable>
     <!--Table head-->
     <thead class="mdb-color darken-3">
         <tr class="text-white">
@@ -10,48 +9,51 @@
         </tr>
     </thead>
     <!--Table head-->
-
     <!--Table body-->
     <tbody>
         <tr *ngFor="let j of jdList; let i = index">
             <th class="col-no" scope="row">{{ i + 1 }}</th>
             <td class="col-name">{{ j.name }}</td>
             <td class="col-action">
-              <span  mdbTooltip="Edit" placement="top" (click)="editJD(j)" class="btn-edit" mdbWavesEffect>
-                      Edit </span> /
-              <span  mdbTooltip="Delete" placement="top" (click)="deleteJD(j._id)" class="btn-delete" mdbWavesEffect>
-                   Delete </span> /
-              <span  mdbTooltip="Assign Question" placement="top" (click)="showModal('a',j._id)" class="btn-question" mdbWavesEffect>
-                      Assign Question
-              </span>
-              </td>
-              <td class="col-action"><span  mdbTooltip="Assign Question" placement="top" (click)="showModal('ad',j._id)" class="btn-question" mdbWavesEffect>
-                View Assigned Question
-        </span></td>
+                <span mdbTooltip="Edit" placement="top" (click)="editJD(j)" class="btn-edit" mdbWavesEffect>
+                    Edit </span> /
+                <span mdbTooltip="Delete" placement="top" (click)="deleteJD(j._id)" class="btn-delete" mdbWavesEffect>
+                    Delete </span> /
+                <span mdbTooltip="Assign Question" placement="top" (click)="showModal('a',j._id)" class="btn-question" mdbWavesEffect>
+                    Assign Question
+                </span>
+            </td>
+            <td class="col-action">
+                <span mdbTooltip="Assign Question" placement="top" (click)="showModal('ad',j._id)" class="btn-question" mdbWavesEffect>
+                    View Assigned Question
+                </span>
+            </td>
         </tr>
     </tbody>
     <!--Table body-->
-  </table>
-
-  <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal" class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-      <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
-          <div class="modal-content popup_modal_content">
-              <div class="modal-header popup_modal-header">
-                  <p class="heading lead admin-title_popup">Assign Questions</p>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
-                      <span aria-hidden="true" class="black-text">×</span>
-                  </button>
-              </div>
-              <div class="modal-body popup_modal_body">
-                  <div class="">
-                      <app-question-assign [getjdid]='passjdid'></app-question-assign>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <div *ngIf="isModalShownQuestion" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('ad')" mdbModal #autoShownModal="mdb-modal" class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
+</table>
+<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal"
+    class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    style="overflow: auto;">
+    <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
+        <div class="modal-content popup_modal_content">
+            <div class="modal-header popup_modal-header">
+                <p class="heading lead admin-title_popup">Assign Questions</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+                    <span aria-hidden="true" class="black-text">×</span>
+                </button>
+            </div>
+            <div class="modal-body popup_modal_body">
+                <div class="">
+                    <app-question-assign [getjdid]='passjdid'></app-question-assign>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="isModalShownQuestion" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('ad')" mdbModal
+    #autoShownModal="mdb-modal" class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="overflow: auto;">
     <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
         <div class="modal-content popup_modal_content">
             <div class="modal-header popup_modal-header">

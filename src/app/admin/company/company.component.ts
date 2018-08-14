@@ -9,7 +9,7 @@ import { CompanyService } from './company.service';
 })
 export class CompanyComponent implements OnInit {
 
-  public companyList: any;
+  public companyList: any = '';
 
   constructor(
     private _commonService: CommonService,

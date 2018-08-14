@@ -13,19 +13,19 @@ import { ContactusService } from '../../frontend/contactus/contactus.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  public organogramList: any;
+  public organogramList: any = '';
   public type: String = 'others';
   public organogramid: String = '';
-  public employeenum: String;
-  public employeename: String;
-  public designation: String;
-  public email: String;
+  public employeenum: String = '';
+  public employeename: String = '';
+  public designation: String = '';
+  public email: String = '';
   public countrycode: String = '+91';
-  public mobile: String;
-  public address: String;
+  public mobile: String = '';
+  public address: String = '';
   public employeetype: String = 'others';
-  public employeeid: String;
-  public countryList: any;
+  public employeeid: String = '';
+  public countryList: any = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -78,19 +78,19 @@ export class EmployeeComponent implements OnInit {
 
   employeeForm() {
     if (this._validationsService.isEmpty(this.employeenum)) {
-      this._commonService.showMessage('error', 'Employeenum field should not be empty!');
+      this._commonService.showMessage('error', 'Employee No. should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.employeename)) {
-      this._commonService.showMessage('error', 'Employeename field should not be empty!');
+      this._commonService.showMessage('error', 'Employeename should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.designation)) {
-      this._commonService.showMessage('error', 'Designation field should not be empty!');
+      this._commonService.showMessage('error', 'Designation should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.email)) {
-      this._commonService.showMessage('error', 'Email field should not be empty!');
+      this._commonService.showMessage('error', 'Email should not be empty!');
       return false;
     }
     if (!this._validationsService.isEmail(this.email)) {
@@ -98,15 +98,27 @@ export class EmployeeComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.countrycode)) {
-      this._commonService.showMessage('error', 'countrycode field should not be empty!');
+      this._commonService.showMessage('error', 'countrycode should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.mobile)) {
-      this._commonService.showMessage('error', 'mobile field should not be empty!');
+      this._commonService.showMessage('error', 'Phone number should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isDigit(this.mobile)) {
+      this._commonService.showMessage('error', 'Phone number should have only digits!');
+      return false;
+    }
+    if (this._validationsService.isMinimum(this.mobile)) {
+      this._commonService.showMessage('error', 'Phone number should have atleast 10 digits!');
+      return false;
+    }
+    if (this._validationsService.isMaximum(this.mobile)) {
+      this._commonService.showMessage('error', 'Phone number should not exceed 13 digits!');
       return false;
     }
     if (this._validationsService.isEmpty(this.address)) {
-      this._commonService.showMessage('error', 'address field should not be empty!');
+      this._commonService.showMessage('error', 'address should not be empty!');
       return false;
     }
     let fieldEmployee;

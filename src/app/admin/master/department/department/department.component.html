@@ -1,62 +1,54 @@
 <div class="row mb-3">
     <div class="col-md-12 ">
-      <!-- Card -->
-      <div class="card mb-1">
-
-          <!-- Card body -->
-          <div class="card-body ">
-
-              <!-- Default form subscription -->
-              <form (ngSubmit)="departmentForm()" class="add-Department">
-                  <p class="h4 text-center py-4 admin-title">Department</p>
-                  <input type="hidden" [(ngModel)]="departmentid" name="departmentid">
-                  <!-- Default input name -->
-                  <div class="form-group col-md-12 col-sm-12  ">
-                    <div class="row">
-                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3 label-Department">Name</label>
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
-                  </div></div>
-                  <div class="col-md-6 offset-md-2 feild-button ">
-                          <button class="btn btn-outline-purple px-3 btn-submit" type="submit">Submit</button>
-                  </div>
-              </form>
-              <!-- Default form subscription -->
-
-          </div>
-          <!-- Card body -->
-
-
+        <!-- Card -->
+        <div class="card mb-1">
+            <!-- Card body -->
+            <div class="card-body ">
+                <!-- Default form subscription -->
+                <form (ngSubmit)="departmentForm()" class="add-Department">
+                    <p class="h4 text-center py-4 admin-title">Department</p>
+                    <input type="hidden" [(ngModel)]="departmentid" name="departmentid">
+                    <!-- Default input name -->
+                    <div class="form-group col-md-12 col-sm-12  ">
+                        <div class="row">
+                            <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3 label-Department">Name</label>
+                            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-md-2 feild-button ">
+                        <button class="btn btn-outline-purple px-3 btn-submit" type="submit">Submit</button>
+                    </div>
+                </form>
+                <!-- Default form subscription -->
+            </div>
+            <!-- Card body -->
         </div>
-    </div></div>
-
-    <div class="col-md-12 col-sm-12 product-list scale-list">
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 product-list scale-list">
     <!--Table-->
-    <table class="table">
-
-      <!--Table head-->
-      <thead class="mdb-color darken-3">
-          <tr class="text-white">
-              <th class="label-no">#</th>
-              <th class="label-name">Name</th>
-              <th class="label-action">Action</th>
-          </tr>
-      </thead>
-      <!--Table head-->
-
-      <!--Table body-->
-      <tbody>
-          <tr *ngFor="let a of departmentList; let i = index">
-              <th class="col-no" scope="row">{{ i + 1 }}</th>
-              <td class="col-name">{{ a.name }}</td>
-              <td class="col-action">
-                <span (click)="editDepartment(a)" class=" btn-edit" >Edit </span>/
-                <span  (click)="deleteDepartment(a._id)" class=" btn-delete" >Delete </span>
+    <table class="table" datatable>
+        <!--Table head-->
+        <thead class="mdb-color darken-3">
+            <tr class="text-white">
+                <th class="label-no">#</th>
+                <th class="label-name">Name</th>
+                <th class="label-action">Action</th>
+            </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            <tr *ngFor="let a of departmentList; let i = index">
+                <th class="col-no" scope="row">{{ i + 1 }}</th>
+                <td class="col-name">{{ a.name }}</td>
+                <td class="col-action">
+                    <span (click)="editDepartment(a)" class=" btn-edit">Edit </span>/
+                    <span (click)="deleteDepartment(a._id)" class=" btn-delete">Delete </span>
                 </td>
-          </tr>
-      </tbody>
-      <!--Table body-->
+            </tr>
+        </tbody>
+        <!--Table body-->
     </table>
     <!--Table-->
-
 </div>
-

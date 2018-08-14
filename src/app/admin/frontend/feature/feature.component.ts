@@ -11,9 +11,9 @@ import { FeatureService } from './feature.service';
 })
 export class FeatureComponent implements OnInit {
 
-  public featureid: String;
-  public name: String;
-  public description: String;
+  public featureid: String = '';
+  public name: String = '';
+  public description: String = '';
   public status: Boolean;
 
   constructor(

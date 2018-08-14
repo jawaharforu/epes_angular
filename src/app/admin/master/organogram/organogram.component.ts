@@ -8,7 +8,7 @@ import { OrganogramService } from './organogram.service';
 })
 export class OrganogramComponent implements OnInit {
 
-  public organogramStructure: any;
+  public organogramStructure: any = '';
 
   constructor(
     private organogramService: OrganogramService

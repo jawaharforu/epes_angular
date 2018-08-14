@@ -10,7 +10,7 @@ import { CommonService } from '../../../../services/common.service';
 })
 export class BlogListComponent implements OnInit {
 
-  public blogList: any;
+  public blogList: any = '';
 
   constructor(
     private _commonService: CommonService,

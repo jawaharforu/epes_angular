@@ -43,9 +43,9 @@
 
  <div class="row">  
   <div class="form-group col-md-6 col-sm-12">
-      <label for="defaultFormCardNameExorg" class="grey-text font-weight-light control-label">Level</label>
+      <label for="defaultFormCardNameExorg" class="grey-text font-weight-light control-label">Head Name</label>
       <select class="browser-default form-control " id="defaultFormCardDesiEx" [(ngModel)]="organogramid" name="organogramid">
-        <option value="" disabled>--Select Level--</option>
+        <option value="" disabled>--Select Head Name--</option>
         <option *ngFor="let o of organogramList" [value]="o._id">{{ o.name }} - {{ o.departmentid.name }} - {{ o.subdepartmentid.name }}</option>
       </select>
     </div>
@@ -66,7 +66,7 @@
     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation">
   </div>
   <div class="form-group col-md-6 col-sm-12 ">
-      <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Email id</label>
+      <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label">Email</label>
       <input type="email" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="email" name="email">
   </div>
 

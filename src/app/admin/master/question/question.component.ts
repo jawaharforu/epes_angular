@@ -26,10 +26,10 @@ export class QuestionComponent implements OnInit {
   public scale: String = '';
   public assessmenttype: String = '';
   public header: String = '';
-  public questionList: any;
-  public scaleList: any;
-  public headerList: any;
-  public assessmentTypeList: any;
+  public questionList: any = '';
+  public scaleList: any = '';
+  public headerList: any = '';
+  public assessmentTypeList: any = '';
 
   constructor(
     private _validationsService: ValidationsService,

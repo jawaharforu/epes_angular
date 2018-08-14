@@ -33,7 +33,7 @@ export class DepartmentComponent implements OnInit {
 
   departmentForm() {
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Department Name should not be empty!');
       return false;
     }
     let newDepartment;

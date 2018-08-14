@@ -1,97 +1,99 @@
 <div class="row">
     <div class="col-md-12">
-      <!-- Card -->
-      <div class="card">
+        <!-- Card -->
+        <div class="card">
 
-          <!-- Card body -->
-          <div class="card-body">
-          <!--  <p class="h4 text-center py-4 btn-orange"> 
+            <!-- Card body -->
+            <div class="card-body">
+                <!--  <p class="h4 text-center py-4 btn-orange"> 
             </p>-->
-              <!-- Default form subscription -->
-              <form (ngSubmit)="organogramForm()">
-                        <p class="h4 text-center py-4 admin-title">Organogram</p>
-                        <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-green-new float-right">Organogram Structure</a>
-                        <div class="clear-fix"></div>
+                <!-- Default form subscription -->
+                <form (ngSubmit)="organogramForm()">
+                    <p class="h4 text-center py-4 admin-title">Organogram</p>
+                    <a [routerLink]="['/admin/organogram/structure/view']" class="btn btn-green-new float-right">Organogram Structure</a>
+                    <div class="clear-fix"></div>
 
-                 <!-- <p class="h4 text-center py-4">Organogram</p>-->
-                  <div *ngIf="parentName !== ''">
-                    <p class="text-center">{{parentName}}</p>
-                    <p class="text-center">{{parentDept}}</p>
-                  </div>
-                  <input type="hidden" [(ngModel)]="organogramid" name="organogramid">
-                  <input type="hidden" [(ngModel)]="parentid" name="parentid">
-                  <!-- Default input name -->
-                  <div class="form-row questionwrapper">
-                      <div class="col">
-                          <div class="form-group ">
-                              <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartment()">
-                                <option value="" disabled>--Select Category--</option>
-                                <option *ngFor="let d of departmentList" [value]="d._id">{{ d.name }}</option>
-                              </select>
-                          </div>
-                      </div>
-                      <div class="col">
-                          <div class="form-group ">
-                              <select class="browser-default form-control" id="defaultFormCardDesiExwe" [(ngModel)]="subdepartmentid" name="subdepartmentid">
-                                <option value="" disabled>--Select Sub Department--</option>
-                                <option *ngFor="let s of subDepartmentList" [value]="s._id">{{ s.name }}</option>
-                              </select>
-                          </div>
-                      </div>
-                      <div class="col">
-                          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Title">
-                      </div>
-                      <div class="col">
-                          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation" placeholder="Enter Designation">
-                      </div>
-                      <div class="">
-                          <button type="submit" class="btn btn-primary waves-light m-0 btn_additem" mdbWavesEffect>Submit</button>
-                      </div>
-                  </div>
-              </form>
-              <!-- Default form subscription -->
+                    <!-- <p class="h4 text-center py-4">Organogram</p>-->
+                    <div *ngIf="parentName !== ''">
+                        <p class="text-center">{{parentName}}</p>
+                        <p class="text-center">{{parentDept}}</p>
+                    </div>
+                    <input type="hidden" [(ngModel)]="organogramid" name="organogramid">
+                    <input type="hidden" [(ngModel)]="parentid" name="parentid">
+                    <!-- Default input name -->
+                    <div class="form-row questionwrapper">
+                        <div class="col">
+                            <div class="form-group ">
+                                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="departmentid" name="departmentid" (change)="getSubDepartment()">
+                                    <option value="" disabled>--Select Department--</option>
+                                    <option *ngFor="let d of departmentList" [value]="d._id">{{ d.name }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group ">
+                                <select class="browser-default form-control" id="defaultFormCardDesiExwe" [(ngModel)]="subdepartmentid" name="subdepartmentid">
+                                    <option value="" disabled>--Select Sub Department--</option>
+                                    <option *ngFor="let s of subDepartmentList" [value]="s._id">{{ s.name }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Head Name">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="designation" name="designation" placeholder="Designation">
+                        </div>
+                        <div class="">
+                            <button type="submit" class="btn btn-primary waves-light m-0 btn_additem" mdbWavesEffect>Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Default form subscription -->
 
-          </div>
-          <!-- Card body -->
+            </div>
+            <!-- Card body -->
 
-      </div>
-      <!-- Card -->
+        </div>
+        <!-- Card -->
     </div>
-  </div>
+</div>
 
-  <div class="justify-content-md-center mb-2">
+<div class="justify-content-md-center mb-2">
     <div class="col-md-12 mt-4 product-list scale-list">
-      <!--Table-->
-      <table *ngIf="organogramList" datatable class="table table-hover table-responsive-md table-fixed">
+        <!--Table-->
+        <table *ngIf="organogramList" datatable class="table table-hover table-responsive-md table-fixed">
 
-        <!--Table head-->
-        <thead class="mdb-color darken-3">
-          <tr class="text-white">
-              <th class="label-no">#</th>
-              <th class="label-org">Header</th>
-              <th class="label-org">Department</th>
-              <th class="label-org">Sub Level</th>
-              <th class="label-action">Action</th>
-          </tr>
-        </thead>
-        <!--Table head-->
+            <!--Table head-->
+            <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                    <th class="label-no">#</th>
+                    <th class="label-org">Head Name</th>
+                    <th class="label-org">Department - Subdepartment</th>
+                    <th class="label-org">Designation</th>
+                    <th class="label-org">Sub Level</th>
+                    <th class="label-action">Action</th>
+                </tr>
+            </thead>
+            <!--Table head-->
 
-        <!--Table body-->
-        <tbody>
-            <tr *ngFor="let o of organogramList; let i = index">
-                <th class="col-no" scope="row">{{ i + 1 }}</th>
-                <td class="col-org">{{ o.name }}</td>
-                <td class="col-org">{{ o.department }}</td>
-                <td class="col-org">{{ childCount[o.uniqueid] }}</td>
-                <td class="col-action">
-                  <span  (click)="editHeader(o)" class="btn-edit" >Edit </span> / 
-                  <span (click)="deleteHeader(o._id)" class="btn-delete" > Delete </span>/ 
-                  <span (click)="addSublevel(o._id)" class="btn-level" > Add Sub Level</span>
-                  </td>
-            </tr>
-        </tbody>
-        <!--Table body-->
-      </table>
-      <!--Table-->
+            <!--Table body-->
+            <tbody>
+                <tr *ngFor="let o of organogramList; let i = index">
+                    <th class="col-no" scope="row">{{ i + 1 }}</th>
+                    <td class="col-org">{{ o.name }}</td>
+                    <td class="col-org">{{ o.departmentid.name }} - {{o.subdepartmentid.name}}</td>
+                    <td class="col-org">{{ o.designation }}</td>
+                    <td class="col-org">{{ childCount[o.uniqueid] }}</td>
+                    <td class="col-action">
+                        <span (click)="editHeader(o)" class="btn-edit">Edit </span> /
+                        <span (click)="deleteHeader(o._id)" class="btn-delete"> Delete </span>/
+                        <span (click)="addSublevel(o._id)" class="btn-level"> Add Sub Level</span>
+                    </td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
     </div>
-  </div>
+</div>

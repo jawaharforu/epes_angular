@@ -1,0 +1,65 @@
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="h4 text-center py-4 admin-title">Email Template List</p>
+          <div class="panel-group notication-item" id="accordion" role="tablist" *ngIf="emailTemplateList" aria-multiselectable="true">
+            <mdb-squeezebox [multiple]="false" *ngFor="let d of emailTemplateList;let j = index" aria-multiselectable="true">
+              <mdb-item [collapsed]="true">
+                <mdb-item-head class="email-title">
+                  <div class="row">
+                    <div class="col-md-8">
+                      {{d.name}}
+                    </div>
+                    <div class="col-md-3 update-email-template">
+                      <span (click)="editEmailTemplate(d)" class="btn-edit" mdbRippleRadius>Edit</span>/
+                      <span (click)="deleteEmailTemplate(d._id)" class="btn-delete" mdbRippleRadius>Delete</span>
+                    </div>
+                  </div>
+                </mdb-item-head>
+                <mdb-item-body>
+                  <div [innerHtml]="d.description"></div>
+                </mdb-item-body>
+              </mdb-item>
+            </mdb-squeezebox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-12 msg-box">
+      <p class="h4 text-center py-4 admin-title">
+        <a [routerLink]="['/admin/settings/email-template']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">Add New</a>
+      </p>
+      <p class="h4 text-center py-4 admin-title">Email Template List</p>
+      <table *ngIf="emailTemplateList" class="table table-striped">
+        <thead>
+          <tr>
+            <th class="label-no" scope="col" width="10%">#</th>
+            <th class="label-name" scope="col" width="70%">Name</th>
+            <th class="label-action" scope="col" width="20%">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of emailTemplateList;let i = index">
+            <td class="col-no" scope="row">{{i+1}}</td>
+            <td class="col-name" scope="row">{{c.name}}</td>
+            <td class="col-action">
+              <span (click)="editEmailTemplate(c)" class="btn-edit" mdbRippleRadius>Edit </span>/
+              <span (click)="deleteEmailTemplate(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->

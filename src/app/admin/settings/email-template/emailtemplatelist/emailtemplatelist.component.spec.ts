@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParentComponent } from './parent.component';
+import { EmailtemplatelistComponent } from './emailtemplatelist.component';
 
-describe('ParentComponent', () => {
-  let component: ParentComponent;
-  let fixture: ComponentFixture<ParentComponent>;
+describe('EmailtemplatelistComponent', () => {
+  let component: EmailtemplatelistComponent;
+  let fixture: ComponentFixture<EmailtemplatelistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParentComponent ]
+      declarations: [ EmailtemplatelistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParentComponent);
+    fixture = TestBed.createComponent(EmailtemplatelistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

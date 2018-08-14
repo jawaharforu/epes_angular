@@ -24,11 +24,11 @@ export class QuestionAssignComponent implements OnInit {
   public scale: String = '';
   public assessmenttype: String = '';
   public header: String = '';
-  public questionList: any;
-  public scaleList: any;
-  public headerList: any;
-  public assessmentTypeList: any;
-  public type: any;
+  public questionList: any = '';
+  public scaleList: any = '';
+  public headerList: any = '';
+  public assessmentTypeList: any = '';
+  public type: any = '';
   @Input() getjdid: String;
   public jdquestionList: any[] = [];
 
@@ -80,7 +80,7 @@ export class QuestionAssignComponent implements OnInit {
 
   getHeader() {
     if (this._validationsService.isEmpty(this.assessmenttype)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
+      this._commonService.showMessage('error', 'Assessmenttype should not be empty!');
       return false;
     }
     this.getHeaderList();

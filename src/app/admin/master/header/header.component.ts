@@ -46,15 +46,15 @@ export class HeaderComponent implements OnInit {
 
   headerFormSubmit() {
     if (this._validationsService.isEmpty(this.assessmenttypeid)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should select!');
+      this._commonService.showMessage('error', 'Please select Assessment type!');
       return false;
     }
     if (this._validationsService.isEmpty(this.headername)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Header Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.description)) {
-      this._commonService.showMessage('error', 'Description field should not be empty!');
+      this._commonService.showMessage('error', 'Header Description should not be empty!');
       return false;
     }
     let field;

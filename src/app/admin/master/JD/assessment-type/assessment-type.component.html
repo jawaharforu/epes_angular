@@ -1,53 +1,50 @@
 <div class="row justify-content-md-center ">
-        <div class="col-md-10 ">
+    <div class="col-md-10 ">
+        <form (ngSubmit)="assessmentForm()">
+            <!-- Default input name -->
+            <input type="hidden" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="row">
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-12 feild-button">
 
-            <form (ngSubmit)="assessmentForm()">
-                <!-- Default input name -->
-                <input type="hidden" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
-                <div class="form-group col-md-12 col-sm-12">
-                    <div class="row">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
-                </div></div>
-                <div  class="col-md-12 feild-button">
-                  
                 <button type="submit" class="btn btn-primary btn-submit">Submit</button>
             </div>
-            </form>
+        </form>
     </div>
 </div>
-
 <div class="row justify-content-md-center mb-3">
-  <div class="col-md-10 mt-2">
-    <!--Table-->
-    <table class="table">
-
-      <!--Table head-->
-      <thead class="mdb-color darken-3">
-          <tr class="text-white">
-              <th  class="label-no">#</th>
-              <th  class="label-name">Name</th>
-              <th  class="label-action">Action</th>
-          </tr>
-      </thead>
-      <!--Table head-->
-
-      <!--Table body-->
-      <tbody>
-          <tr *ngFor="let a of assessmentTypeList; let i = index">
-              <th  class="col-no" scope="row">{{ i + 1 }}</th>
-              <td class="col-name" >{{ a.name }}</td>
-              <td class="col-action">
-              <!--  <button type="button"  class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
+    <div class="col-md-10 mt-2">
+        <!--Table-->
+        <table class="table">
+            <!--Table head-->
+            <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                    <th class="label-no">#</th>
+                    <th class="label-name">Name</th>
+                    <th class="label-action">Action</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+                <tr *ngFor="let a of assessmentTypeList; let i = index">
+                    <th class="col-no" scope="row">{{ i + 1 }}</th>
+                    <td class="col-name">{{ a.name }}</td>
+                    <td class="col-action">
+                        <!--  <button type="button"  class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
                 <button type="button" (click)="deleteAssessmentType(a._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
               -->
-                <span  (click)="editAssessmentType(a)" class="btn-edit" >Edit </span>/
-                <span  (click)="deleteAssessmentType(a._id)" class="btn-delete" >Delete</span>
-            
-            </td>
-          </tr>
-      </tbody>
-      <!--Table body-->
-    </table>
-    <!--Table-->
-  </div>
+                        <span (click)="editAssessmentType(a)" class="btn-edit">Edit </span>/
+                        <span (click)="deleteAssessmentType(a._id)" class="btn-delete">Delete</span>
+
+                    </td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+    </div>
 </div>

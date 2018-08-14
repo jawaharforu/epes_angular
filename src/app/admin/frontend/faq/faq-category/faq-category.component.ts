@@ -10,9 +10,9 @@ import { FaqCategoryService } from '../services/faq-category.service';
 })
 export class FaqCategoryComponent implements OnInit {
 
-  public faqcategoryid: String;
-  public name: String;
-  public faqCategoryList: any;
+  public faqcategoryid: String = '';
+  public name: String = '';
+  public faqCategoryList: any = '';
 
   constructor(
     private _commonService: CommonService,

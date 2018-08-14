@@ -9,10 +9,10 @@
             <!-- Default form subscription -->
             <form (ngSubmit)="headerFormSubmit()">
               <!-- Default input name -->
-              <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Header</p>
+              <p class="h4 text-center py-4 admin-title">Header</p>
               <input type="hidden" [(ngModel)]="headerid" name="headerid">
               <div class="row">
-                <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+                <select class="browser-default form-control col-md-4 mb-3"  id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
                     <option value="" disabled>--Select Assessment--</option>
                     <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
                 </select>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="row justify-content-md-center  ">
-  <div class="col-md-10 mt-5 product-list scale-list">
+  <div class="col-md-10 mt-5 mb-5 product-list scale-list">
     <!--Table-->
     <table *ngIf="headerList" datatable class="table table-hover table-responsive-md table-fixed">
 

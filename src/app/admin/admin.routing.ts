@@ -45,10 +45,6 @@ const routes: Routes = [
         loadChildren: './master/assign-jd/assign-jd.module#AssignJDModule',
       },
       {
-        path: 'weightage',
-        loadChildren: './master/weightage/weightage.module#WeightageModule',
-      },
-      {
         path: 'assessment',
         loadChildren: './assessment/assessment.module#AssessmentModule',
       },
@@ -68,6 +64,11 @@ const routes: Routes = [
         path: 'frontend',
         loadChildren: './frontend/front.module#FrontModule',
       },
+      {
+        path: 'assessmenttype',
+        loadChildren: './master/assessmenttype/assessmenttype.module#AssessmenttypeModule',
+      },
+      
     ]
    }
 ];

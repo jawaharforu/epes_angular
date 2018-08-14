@@ -11,9 +11,9 @@ import { ActivatedRoute } from '../../../../../../node_modules/@angular/router';
 })
 export class ProductroadmapComponent implements OnInit {
 
-  public productroadmapid: String;
-  public name: String;
-  public description: String;
+  public productroadmapid: String = '';
+  public name: String = '';
+  public description: String = '';
   public status: Boolean; 
 
   constructor(

@@ -11,8 +11,8 @@ import { PressreleaseService } from '../pressrelease.service';
 })
 export class PressreleaseComponent implements OnInit {
 
-  public pressreleaseid: String;
-  public name: String;
+  public pressreleaseid: String = '';
+  public name: String = '';
   public status: Boolean; 
 
   constructor(

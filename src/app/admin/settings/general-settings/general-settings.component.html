@@ -1,16 +1,17 @@
 <form (ngSubmit)="globalsettings()">
-<div class="form-group">
-  <div class="row">
-    <div class=" col-md-12 col-sm-12">
-      <div class="card">
-        <div class="card-body">
-          <p class="h4 text-center py-4 admin-title">Set Tolerance</p>
-          <div class="row">
-            <div class="form-group col-md-12 col-sm-12">
-              <label for="defaultFormCardNameEx" class=" control-label col-xl-2 col-lg-2 col-md-3">Tolerance</label>
-              <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="tolerance" name="tolerance">
-              <div class="input-group-append">
-                <span class="input-group-text">%</span>
+  <div class="form-group">
+    <div class="row">
+      <div class=" col-md-12 col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <p class="h4 text-center py-4 admin-title">Tolerance</p>
+            <div class="row">
+              <div class="form-group col-md-12 col-sm-12">
+                <label for="defaultFormCardNameEx" class=" control-label col-xl-2 col-lg-2 col-md-3">Tolerance</label>
+                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="tolerance" name="tolerance">
+                <div class="input-group-append">
+                  <span class="input-group-text">%</span>
+                </div>
               </div>
             </div>
           </div>
@@ -18,7 +19,6 @@
       </div>
     </div>
   </div>
-</div>
 
 
   <div class="row">
@@ -27,65 +27,66 @@
       <div class="card">
         <div class="card-body mb-4">
           <p class="h4 text-center py-4 admin-title">Mark Ups</p>
-		  
-          <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label  col-md-5">External Reference</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="externalreference" name="externalreference">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-       
-          <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label  col-md-5">Internal Employee Reference</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control form-control col-md-10" [(ngModel)]="internalemployeereference" name="internalemployeereference">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-			  
-          <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label  col-md-5">Managing Director/Boards Descretion</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="managingdirectorsdescretion" name="managingdirectorsdescretion">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
 
           <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label col-md-5">Special Allowance</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="specialallowance" name="specialallowance">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-
-			  
-
-          <div class="form-group col-md-12 col-sm-12">
-                <label  for="defaultFormCardNameEx" class=" control-label col-md-5">CIM</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="cim" name="cim">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-
-          <div class="form-group col-md-12 col-sm-12">
-
-                <label for="defaultFormCardNameEx" class=" control-label col-md-5">No-CIM</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="nocim" name="nocim">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-			  
+            <label for="defaultFormCardNameEx" class=" control-label  col-md-5">External Reference</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="externalreference" name="externalreference">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
             </div>
-			
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12">
+            <label for="defaultFormCardNameEx" class=" control-label  col-md-5">Internal Employee Reference</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control form-control col-md-10" [(ngModel)]="internalemployeereference"
+              name="internalemployeereference">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12">
+            <label for="defaultFormCardNameEx" class=" control-label  col-md-5">Managing Director/Boards Descretion</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="managingdirectorsdescretion" name="managingdirectorsdescretion">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12">
+            <label for="defaultFormCardNameEx" class=" control-label col-md-5">Special Allowance</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="specialallowance" name="specialallowance">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+
+
+
+          <div class="form-group col-md-12 col-sm-12">
+            <label for="defaultFormCardNameEx" class=" control-label col-md-5">CIM</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="cim" name="cim">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12">
+
+            <label for="defaultFormCardNameEx" class=" control-label col-md-5">No-CIM</label>
+            <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="nocim" name="nocim">
+            <div class="input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+
+        </div>
+
 
         <div class="card-body mb-4">
           <p class="h4 text-center py-4 admin-title">Controls</p>
           <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label col-md-5">Third Party Independent Evaluation</label>
+            <label for="defaultFormCardNameEx" class=" control-label col-md-5">Third Party Independent Evaluation</label>
             <div class="col-md-12 controls-settings">
               <div class="row">
                 <div class="col-md-4 col-sm-12 ">
@@ -109,45 +110,48 @@
               </div>
             </div>
           </div>
-		  
+
           <div class=" form-group col-md-12 col-sm-12">
-                <label class=" control-label col-md-5">Working aquantance of the evaluator</label>
-				
+            <label class=" control-label col-md-5">Working aquantance of the evaluator</label>
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label class="control-label">0-5</label>
                 </div>
                 <div class="col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance05" name="controlsworkingaquantance05">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance05"
+                    name="controlsworkingaquantance05">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
                 </div>
               </div>
             </div>
-			
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label class="control-label ">5-10</label>
                 </div>
                 <div class="col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance510" name="controlsworkingaquantance510">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance510"
+                    name="controlsworkingaquantance510">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
                 </div>
               </div>
             </div>
-			
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label>10></label>
                 </div>
                 <div class="col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance10" name="controlsworkingaquantance10">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="controlsworkingaquantance10"
+                    name="controlsworkingaquantance10">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
@@ -158,62 +162,65 @@
           </div>
 
         </div>
-		
+
         <div class="card-body mb-4">
           <p class="h4 text-center py-4 admin-title">Over-riders Optional</p>
-        
-            <div class="row">
-              <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class=" control-label  col-md-3">Chairmans Reference</label>
-                <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="chairmansreference" name="chairmansreference">
-                <div class="input-group-append">
-                  <span class="input-group-text">%</span>
-                </div>
+
+          <div class="row">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="defaultFormCardNameEx" class=" control-label  col-md-3">Chairmans Reference</label>
+              <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="chairmansreference" name="chairmansreference">
+              <div class="input-group-append">
+                <span class="input-group-text">%</span>
               </div>
             </div>
           </div>
-		  
-		   <div class="card-body  pt-4">
+        </div>
+
+        <div class="card-body  pt-4">
           <div class="form-group col-md-12 col-sm-12">
-            
-                <label class=" control-label col-md-5">Working quantitative of the evaluator</label>
-       
+
+            <label class=" control-label col-md-5">Working quantitative of the evaluator</label>
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label>0-5</label>
                 </div>
                 <div class="col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance05" name="overworkingaquantance05">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance05"
+                    name="overworkingaquantance05">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
                 </div>
               </div>
             </div>
-			
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label>5-10</label>
                 </div>
                 <div class="input-group col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance510" name="overworkingaquantance510">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance510"
+                    name="overworkingaquantance510">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
                 </div>
               </div>
             </div>
-			
-			
+
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
                   <label>10></label>
                 </div>
                 <div class="input-group col-md-6 col-sm-12 ">
-                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance10" name="overworkingaquantance10">
+                  <input type="text" id="defaultFormCardNameEx" class="form-control col-md-9 col-sm-9" [(ngModel)]="overworkingaquantance10"
+                    name="overworkingaquantance10">
                   <div class="input-group-append">
                     <span class="input-group-text">%</span>
                   </div>
@@ -222,12 +229,12 @@
             </div>
 
           </div>
-		  
-		  
+
+
           <div class="form-group col-md-12 col-sm-12">
-           
-                <label class=" control-label col-md-5">Prior Relevant Work Experience</label>
-        
+
+            <label class=" control-label col-md-5">Prior Relevant Work Experience</label>
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
@@ -241,8 +248,8 @@
                 </div>
               </div>
             </div>
-			
-			
+
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
@@ -256,7 +263,7 @@
                 </div>
               </div>
             </div>
-			
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-3 col-sm-12 text-right">
@@ -270,13 +277,13 @@
                 </div>
               </div>
             </div>
-			
-           
+
+
           </div>
         </div>
-		 <div class="field-button float-right">
-              <button type="submit" class="btn btn-submit float-right btn-save" >Save</button>
-            </div>
+        <div class="field-button float-right">
+          <button type="submit" class="btn btn-submit float-right btn-save">Submit</button>
+        </div>
       </div>
     </div>
   </div>

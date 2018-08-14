@@ -9,7 +9,7 @@ import { HrindexService } from './hrindex.service';
 })
 export class HrindexComponent implements OnInit {
 
-  public hrindexList: any;
+  public hrindexList: any = '';
 
 
   constructor(

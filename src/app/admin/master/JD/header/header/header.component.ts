@@ -11,12 +11,12 @@ import { AssessmentTypeService } from '../../assessment-type/assessment-type.ser
 })
 export class HeaderComponent implements OnInit {
 
-  public headername: String;
-  public description: String;
-  public headerid: String;
-  public headerList: any;
+  public headername: String = '';
+  public description: String = '';
+  public headerid: String = '';
+  public headerList: any = '';
   public assessmenttypeid: String = '';
-  public assessmentTypeList: any;
+  public assessmentTypeList: any = '';
   @Output() getHeader = new EventEmitter<any>();
 
   constructor(
@@ -48,15 +48,15 @@ export class HeaderComponent implements OnInit {
 
   headerFormSubmit() {
     if (this._validationsService.isEmpty(this.assessmenttypeid)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should select!');
+      this._commonService.showMessage('error', 'Assessmenttype should select!');
       return false;
     }
     if (this._validationsService.isEmpty(this.headername)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.description)) {
-      this._commonService.showMessage('error', 'Email field should not be empty!');
+      this._commonService.showMessage('error', 'Email should not be empty!');
       return false;
     }
     let field;

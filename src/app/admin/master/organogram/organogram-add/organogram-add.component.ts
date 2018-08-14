@@ -13,20 +13,20 @@ import { SubDepartmentService } from '../../department/sub-department.service';
 })
 export class OrganogramAddComponent implements OnInit {
 
-  public name: String;
-  public designation: String;
+  public name: String = '';
+  public designation: String = '';
   public parentid: Number = 0;
-  public organogramid: String;
-  public organogramList: any;
-  public parentName: String;
-  public parentDept: String;
+  public organogramid: String = '';
+  public organogramList: any = '';
+  public parentName: String = '';
+  public parentDept: String = '';
   public parent: Number = 0;
   public uniqueid: Number = 1;
   public childCount: any[] = [];
   public subdepartmentid: String = '';
-  public subDepartmentList: any;
+  public subDepartmentList: any = '';
   public departmentid: String = '';
-  public departmentList: any;
+  public departmentList: any = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -55,6 +55,7 @@ export class OrganogramAddComponent implements OnInit {
     this.departmentService.getDepartment()
     .subscribe(res => {
       this.departmentList = res.data;
+      
     });
   }
 
@@ -101,6 +102,7 @@ export class OrganogramAddComponent implements OnInit {
     this.organogramService.getOrganogram(parent)
     .subscribe(res => {
       this.organogramList = res.data;
+      // console.log(this.organogramList);
       for (const prop of res.data) {
         this.getOrganogramChild(prop.uniqueid);
       }

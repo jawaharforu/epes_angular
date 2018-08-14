@@ -11,9 +11,9 @@ import { ActivatedRoute } from '../../../../../../node_modules/@angular/router';
 })
 export class CareerComponent implements OnInit {
 
-  public careerid: String;
-  public name: String;
-  public description: String;
+  public careerid: String = '';
+  public name: String = '';
+  public description: String = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,

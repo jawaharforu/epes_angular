@@ -11,11 +11,11 @@ import { FaqCategoryService } from '../services/faq-category.service';
 })
 export class FaqSubCategoryComponent implements OnInit {
 
-  public faqsubcategoryid: String;
-  public name: String;
-  public faqSubCategoryList: any;
-  public faqcategoryid: String;
-  public faqCategoryList: any;
+  public faqsubcategoryid: String = '';
+  public name: String = '';
+  public faqSubCategoryList: any = '';
+  public faqcategoryid: String = '';
+  public faqCategoryList: any = '';
 
   constructor(
     private _commonService: CommonService,

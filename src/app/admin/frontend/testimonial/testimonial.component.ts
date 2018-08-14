@@ -11,9 +11,9 @@ import { TestimonialService } from './testimonial.service';
 })
 export class TestimonialComponent implements OnInit {
 
-  public testimonialid: String;
-  public name: String;
-  public description: String;
+  public testimonialid: String = '';
+  public name: String = '';
+  public description: String = '';
   public status: Boolean;
 
   constructor(

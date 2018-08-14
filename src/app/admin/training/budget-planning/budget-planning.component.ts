@@ -15,23 +15,23 @@ import { BudgetmasterService } from '../budgetmaster/budgetmaster.service';
 })
 export class BudgetPlanningComponent implements OnInit {
 
-    public budgetplanid: String;
+    public budgetplanid: String = '';
 
-    public assessmenttypeid: String;
-    public headerid: String;
-    public trainingheadid: String;
-    public trainingsubheadid: String;
-    public budgetid: String;
-    public percentage: String;
+    public assessmenttypeid: String = '';
+    public headerid: String = '';
+    public trainingheadid: String = '';
+    public trainingsubheadid: String = '';
+    public budgetid: String = '';
+    public percentage: String = '';
 
-    public budgetplanList: String;
-    public assessmenttypeList: String;
-    public headerList: String;
-    public trainingheadList: String;
-    public trainingsubheadList: String;
+    public budgetplanList: String = '';
+    public assessmenttypeList: String = '';
+    public headerList: String = '';
+    public trainingheadList: String = '';
+    public trainingsubheadList: String = '';
 
-    public year: String;
-    public amount: String;
+    public year: String = '';
+    public amount: String = '';
 
     @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
     public isModalShown: Boolean = false;

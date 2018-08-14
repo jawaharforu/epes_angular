@@ -14,7 +14,7 @@
 
                               <div class="modal-content">
                                     <div class="modal-header">
-                                          <p class="heading lead">Create Budget Planning</p>
+                                          <p class="heading lead">Budget Planning</p>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
                                                 <span aria-hidden="true" class="white-text">×</span>
                                           </button>
@@ -36,7 +36,7 @@
                                                             <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Assessment</label>
                                                             <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
                                                             <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
-                                                                  <!-- <option value="" disabled>--Select Assessment--</option> -->
+                                                                  <option value="" disabled>--Select Assessment--</option>
                                                                   <option *ngFor="let assessment of assessmenttypeList" value="{{assessment._id}}">{{assessment.name}}</option>
                                                             </select>
                                                       </div>
@@ -45,7 +45,7 @@
                                                             <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Headers</label>
                                                             <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
                                                             <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="headerid" name="headerid">
-                                                                  <!-- <option value="" disabled>--Select Headers--</option> -->
+                                                                  <option value="" disabled>--Select Header--</option>
                                                                   <option *ngFor="let header of headerList" value="{{header._id}}">{{header.headername}}</option>
                                                             </select>
                                                       </div>
@@ -103,7 +103,7 @@
                                                             </select>
                                                       </div>
                                                       <div class="col-sm-10 train-popup-btn text-right">
-                                                            <button class="btn save-btn">Save</button>
+                                                            <button class="btn save-btn">Submit</button>
                                                       </div>
                                                 </form>
                                           </div>
@@ -112,7 +112,7 @@
                         </div>
                   </div>
                   <div class="col-sm-12 msg-box ">
-                        <table class="table table-striped" *ngIf="budgetplanList">
+                        <table class="table table-striped" datatable *ngIf="budgetplanList">
                               <thead>
                                     <tr>
                                           <th class="label-no" scope="col" width="5%">#</th>
@@ -122,7 +122,7 @@
                                           <th class="label-no" scope="col" width="20%">Training Subhead</th>
                                           <th class="label-no" scope="col" width="5%">Year</th>
                                           <th class="label-no" scope="col" width="10%">Budget</th>
-                                          <th class="label-no" scope="col" width="5%">Percentage(%)</th>
+                                          <th class="label-no" scope="col" width="5%">Percentage</th>
                                           <th class="label-no" scope="col" width="10%">Action</th>
                                     </tr>
                               </thead>
@@ -135,7 +135,7 @@
                                           <td class="col-no">{{c.trainingsubheadid.name}}</td>
                                           <td class="col-no">{{c.budgetid.year}}</td>
                                           <td class="col-no">{{c.budgetid.amount}}</td>
-                                          <td class="col-no">{{c.percentage}}</td>
+                                          <td class="col-no">{{c.percentage}}%</td>
                                           <td class="col-action">
                                                 <span (click)="editBudgetPlan(c)" class="btn-edit" mdbRippleRadius>Edit</span>/
                                                 <span (click)="deleteBudgetPlan(c._id)" class="btn-delete" mdbRippleRadius>Delete</span>

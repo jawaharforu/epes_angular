@@ -11,9 +11,9 @@ import { BlogService } from '../services/blog.service';
 })
 export class BlogComponent implements OnInit {
 
-  public blogid: String;
-  public name: String;
-  public description: String;
+  public blogid: String = '';
+  public name: String = '';
+  public description: String = '';
  
   constructor(
     private activatedRoute: ActivatedRoute,

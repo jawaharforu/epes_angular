@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataTablesModule } from '../../../../node_modules/angular-datatables';
+import { DataTablesModule } from 'angular-datatables';
 import { CKEditorModule } from '../../../../node_modules/ng2-ckeditor';
 import { TrainingComponent } from './training.component';
 import { BudgetPlanningComponent } from './budget-planning/budget-planning.component';

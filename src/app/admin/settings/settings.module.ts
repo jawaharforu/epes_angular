@@ -5,6 +5,7 @@ import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { ParentComponent } from './parent/parent.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const router: Routes = [
   {
@@ -27,7 +28,7 @@ const router: Routes = [
       {
         path: 'email-template',
         loadChildren: './email-template/email-template.module#EmailTemplateModule',
-      },
+      },      
       {
         path: 'subscriptioninfo',
         loadChildren: './subscription-info/subscription-info.module#SubscriptionInfoModule',
@@ -50,7 +51,8 @@ const router: Routes = [
     MDBBootstrapModulesPro.forRoot(),
     RouterModule.forChild(router),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   declarations: [
     SubmenuComponent,

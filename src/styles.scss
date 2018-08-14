@@ -2613,6 +2613,22 @@ nav.admin-top-navbar {
 .hr-list thead {
     background-color: #f9f6f6 !important;
 }
+
+button.close {
+    background: #666;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    padding: 12px;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0px !important;
+}
+.black-text, .btn.btn-link, .toast-close-button:hover, .toast-close-button:focus {
+    color: #fff !important;
+    margin-left: -5px;
+}
   @media (min-width: 1200px){
     .fixed-sn main, .fixed-sn .page-footer .container-fluid {
         margin-left: 6%;

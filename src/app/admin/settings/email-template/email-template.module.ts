@@ -7,9 +7,12 @@ import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { EmailTemplateComponent } from './email-template.component';
+import { EmailtemplatelistComponent } from './emailtemplatelist/emailtemplatelist.component';
 
 const router: Routes = [
-  { path : '', component : EmailTemplateComponent  },
+  { path: '', component: EmailTemplateComponent },
+  { path: 'list', component: EmailtemplatelistComponent },
+  { path: 'edit/:emailtemplateid', component: EmailTemplateComponent }
 ];
 
 @NgModule({
@@ -23,7 +26,8 @@ const router: Routes = [
     CKEditorModule
   ],
   declarations: [
-    EmailTemplateComponent
+    EmailTemplateComponent,
+    EmailtemplatelistComponent,
   ]
 })
 export class EmailTemplateModule { }

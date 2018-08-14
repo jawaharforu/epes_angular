@@ -1,53 +1,58 @@
 <div class="row">
-    <div class="col-xl-9 col-lg-11 col-md-12 col-sm-12 product-list">
-<!--Table-->
-<table class="table">
-
-  <!--Table head-->
-  <thead class="mdb-color darken-3">
-      <tr class="text-white">
-          <th class="label-no">#</th>
-          <th class="label-name">Name</th>
-          <th class="label-name">No. of emp</th>
-          <th class="label-action">Action</th>
-      </tr>
-  </thead>
-  <!--Table head-->
-
-  <!--Table body-->
-  <tbody>
-      <tr *ngFor="let j of jdList; let i = index">
-          <th class="col-no" scope="row">{{ i + 1 }}</th>
-          <td class="col-name">{{ j.name }}</td>
-          <td class="col-name">{{ noofemp[i] }}</td>
-          <td class="col-action">
-            <span  mdbTooltip="Assign Employees" placement="top" (click)="showModal(j._id)" class="btn-question" mdbWavesEffect>
-                    Assign JD to Employees
-            </span>
-            </td>
-      </tr>
-  </tbody>
-  <!--Table body-->
-</table>
-<!--Table-->
-</div>
-</div>
-
-<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal" class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-    <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
-        <div class="modal-content popup_modal_content">
-            <div class="modal-header popup_modal-header">
-                <p class="heading lead admin-title_popup">Assign Questions</p>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
-                    <span aria-hidden="true" class="black-text">×</span>
-                </button>
+    <div class="col-xl-9 col-lg-9 col-md-10 col-sm-12 product-list">
+        <!-- Card -->
+        <div class="card">
+            <div class="card-body">
+                <!--Table-->
+                <table class="table" datatable>
+                    <!--Table head-->
+                    <thead class="mdb-color darken-3">
+                        <tr class="text-white">
+                            <th class="label-no">#</th>
+                            <th class="label-name">Name</th>
+                            <th class="label-name">No. of Employee</th>
+                            <th class="label-action">Action</th>
+                        </tr>
+                    </thead>
+                    <!--Table head-->
+                    <!--Table body-->
+                    <tbody>
+                        <tr *ngFor="let j of jdList; let i = index">
+                            <th class="col-no" scope="row">{{ i + 1 }}</th>
+                            <td class="col-name">{{ j.name }}</td>
+                            <td class="col-name">{{ noofemp[i] }}</td>
+                            <td class="col-action">
+                                <span mdbTooltip="Assign Employees" placement="top" (click)="showModal(j._id)" class="btn-question" mdbWavesEffect>
+                                    Assign JD to Employees
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <!--Table body-->
+                </table>
+                <!--Table-->
             </div>
-            <div class="modal-body popup_modal_body">
-                <div class="">
-                    <app-assign-jd [getjdid]='passjdid'></app-assign-jd>
+        </div>
+
+        <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal"
+            class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true" style="overflow: auto;">
+            <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
+                <div class="modal-content popup_modal_content">
+                    <div class="modal-header popup_modal-header">
+                        <p class="heading lead admin-title_popup">Assign JD</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+                            <span aria-hidden="true" class="black-text">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body popup_modal_body">
+                        <div class="">
+                            <app-assign-jd [getjdid]='passjdid'></app-assign-jd>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
-

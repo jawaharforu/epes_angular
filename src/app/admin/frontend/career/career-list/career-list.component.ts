@@ -9,7 +9,7 @@ import { CommonService } from '../../../../services/common.service';
 })
 export class CareerListComponent implements OnInit {
 
-  public careerList: any;
+  public careerList: any = '';
 
   constructor(
     private _commonService: CommonService,

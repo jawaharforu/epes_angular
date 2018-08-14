@@ -10,9 +10,9 @@ import { AssessmentTypeService } from './assessment-type.service';
 })
 export class AssessmentTypeComponent implements OnInit {
 
-  public name: String;
-  public assessmenttypeid: String;
-  public assessmentTypeList: any;
+  public name: String = '';
+  public assessmenttypeid: String = '';
+  public assessmentTypeList: any = '';
   @Output() getAssessmentType = new EventEmitter<any>();
 
   constructor(
@@ -35,7 +35,7 @@ export class AssessmentTypeComponent implements OnInit {
 
   assessmentForm() {
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Assessment type should not be empty!');
       return false;
     }
     let field;

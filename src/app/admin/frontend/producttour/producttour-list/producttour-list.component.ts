@@ -9,7 +9,7 @@ import { CommonService } from '../../../../services/common.service';
 })
 export class ProducttourListComponent implements OnInit {
 
-  public producttourList: any;
+  public producttourList: any = '';
 
   constructor(
     private _commonService: CommonService,

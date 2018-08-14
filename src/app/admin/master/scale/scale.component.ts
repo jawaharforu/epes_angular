@@ -13,8 +13,8 @@ import { ScaleService } from '../JD/scale/services/scale.service';
 export class ScaleComponent implements OnInit {
 
   scaleForm: FormGroup;
-  scaleid: String;
-  scaleList: any;
+  scaleid: String = '';
+  scaleList: any = '';
 
   constructor(
     private _fb: FormBuilder,

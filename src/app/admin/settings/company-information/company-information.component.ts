@@ -12,11 +12,20 @@ import { CompanyService} from '../../company/company.service';
   styleUrls: ['./company-information.component.scss']
 })
 export class CompanyInformationComponent implements OnInit {
-
-  public companyname: String;
-  public jobtitle: String;
+  public countrycode: String = '+91';
+  public companycontact: String = '';
+  public companyaddress: String = '';
+  public country: String = '';
+  public state: String = '';
+  public city: String = '';
+  public uploader: FileUploader;
+  public logo: String = '';
+  public countryList: any = '';
+  public companyid: String = '';
+  public companyname: String = '';
+  public jobtitle: String = '';
   // tslint:disable-next-line:member-ordering
-  public industry: String;
+  public industry: String = '';
   public industries: any[]= [
     {industryname: 'Agriculture & Forestry/Wildlife'},
     {industryname: 'Business & Information'},
@@ -45,16 +54,7 @@ export class CompanyInformationComponent implements OnInit {
     {employeesCount: '1000-5000'},
     {employeesCount: '5000 above'}
   ];
-  public countrycode: String;
-  public companycontact: String;
-  public companyaddress: String;
-  public country: String;
-  public state: String;
-  public city: String;
-  public uploader: FileUploader;
-  public logo: String = '';
-  public countryList: any;
-  public companyid: String;
+  
 
   constructor(
     private _commonService: CommonService,
@@ -140,7 +140,7 @@ export class CompanyInformationComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isDigit(this.companycontact)) {
-      this._commonService.showMessage('error', 'Phone Number should have only numbers!');
+      this._commonService.showMessage('error', 'Phone Number should have only digits!');
       return false;
     }
     if (this._validationsService.isMinimum(this.companycontact)) {

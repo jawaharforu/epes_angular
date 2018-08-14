@@ -13,10 +13,10 @@ import { ProductService } from '../product.service';
 export class ProductComponent implements OnInit {
 
   public productForm: FormGroup;
-  public productid: String;
+  public productid: String = '';
 
-  public type: String;
-  public featurenumber: String;
+  public type: String = '';
+  public featurenumber: String = '';
 
   constructor(
     private _fb: FormBuilder,

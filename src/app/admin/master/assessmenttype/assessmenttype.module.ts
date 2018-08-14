@@ -7,20 +7,11 @@ import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';
 import { CKEditorModule } from 'ng2-ckeditor';
 
-
-import { SubmenuComponent } from './submenu/submenu.component';
-import { ParentComponent } from './parent/parent.component';
 import { AssessmenttypeComponent } from './assessmenttype.component';
 
 const router: Routes = [
-  {
-    path : '',
-    component : ParentComponent,
-    children: [
-      { path: '', component: AssessmenttypeComponent },
-      { path : 'edit/:assessmenttypeid', component : AssessmenttypeComponent }
-    ]
-  }
+  { path: '', component: AssessmenttypeComponent },
+  { path : 'edit/:assessmenttypeid', component : AssessmenttypeComponent }
 ];
 
 @NgModule({
@@ -33,6 +24,6 @@ const router: Routes = [
     DataTablesModule,
     CKEditorModule
   ],
-  declarations: [AssessmenttypeComponent,SubmenuComponent, ParentComponent]
+  declarations: [AssessmenttypeComponent]
 })
 export class AssessmenttypeModule { }

@@ -9,7 +9,7 @@ import { FaqService } from '../services/faq.service';
 })
 export class FaqListComponent implements OnInit {
 
-  public faqList: any;
+  public faqList: any = '';
 
   constructor(
     private _commonService: CommonService,

@@ -12,8 +12,8 @@ import { JdService } from '../../JD/services/jd.service';
 })
 export class AddJdComponent implements OnInit {
 
-  public description: String;
-  public name: String;
+  public description: String = '';
+  public name: String = '';
   public filename: String = '';
   public jdid: String = '';
   public uploader: FileUploader;
@@ -59,7 +59,7 @@ export class AddJdComponent implements OnInit {
 
   jdForm() {
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'JD Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.description.replace(/<[^>]*>/g, ''))) {

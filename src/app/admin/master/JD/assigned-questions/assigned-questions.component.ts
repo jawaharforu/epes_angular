@@ -9,7 +9,7 @@ import { QuestionService } from '../question/services/question.service';
 export class AssignedQuestionsComponent implements OnInit {
 
   @Input() getjdid: String;
-  public jdquestionList: any;
+  public jdquestionList: any = '';
 
   constructor(
     private questionService: QuestionService,

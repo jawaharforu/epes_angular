@@ -12,8 +12,8 @@ import { TrainingService } from './training.service';
 })
 export class TrainingComponent implements OnInit {
 
-    private trainingheadid: String
-    private name: String
+    private trainingheadid: String = '';
+    private name: String = '';
     // private status: Boolean
 
     public trainingHeadList: String;

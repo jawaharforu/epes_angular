@@ -11,11 +11,11 @@ import { SubDepartmentService } from '../sub-department.service';
 })
 export class SubDepartmentComponent implements OnInit {
 
-  public subdepartmentid: String;
-  public name: String;
-  public subDepartmentList: any;
-  public departmentid: String;
-  public departmentList: any;
+  public subdepartmentid: String = '';
+  public name: String  = '';
+  public subDepartmentList: any = '';
+  public departmentid: String = '';
+  public departmentList: any = '';
 
   constructor(
     private _commonService: CommonService,
@@ -45,11 +45,11 @@ export class SubDepartmentComponent implements OnInit {
 
   subDepartmentForm() {
     if (this._validationsService.isEmpty(this.departmentid)) {
-      this._commonService.showMessage('error', 'Faq category field should not be empty!');
+      this._commonService.showMessage('error', 'Please select department!');
       return false;
     }
     if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+      this._commonService.showMessage('error', 'Sub-Department Name should not be empty!');
       return false;
     }
     let newSubDepartment;

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { IMyDate } from 'ng-uikit-pro-standard/public_api';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { ValidationsService } from '../../services/validations.service';
@@ -10,17 +9,15 @@ import { AssessmentService } from './assessment.service';
   templateUrl: './assessment.component.html',
   styleUrls: ['./assessment.component.scss']
 })
+
 export class AssessmentComponent implements OnInit {
 
-  // public duration: IMyDate;
-
-  public name: String;
-  public periodoftime: String;
-  public duration: String;
-  public duedate: String;
-  public description: String;
-
-  public assessmentid: String;
+  public name: String = '';
+  public periodoftime: String = '';
+  public duration: String = '';
+  public duedate: String = '';
+  public description: String = '';
+  public assessmentid: String = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -37,8 +34,6 @@ export class AssessmentComponent implements OnInit {
         this.getAssessmentById(this.assessmentid);
       }
     });
-
-
   }
 
   getAssessmentById(assessmentid: any) {

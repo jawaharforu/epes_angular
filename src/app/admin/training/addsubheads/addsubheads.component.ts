@@ -12,13 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddsubheadsComponent implements OnInit {
 
-    public trainingheadid: String;
-    public name: String;
-    public trainingsubheadid: String;
+    public trainingheadid: String = '';
+    public name: String = '';
+    public trainingsubheadid: String = '';
 
-    public trainingHeadList: String;
+    public trainingHeadList: String = '';
 
-    public trainingSubheadList: String;
+    public trainingSubheadList: String = '';
 
     @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
     public isModalShown: Boolean = false;

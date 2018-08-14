@@ -37,27 +37,27 @@
         <!-- Card body -->
     </div>
 
-            <div class="col-sm-12 msg-box product-list scale-list">
-                <table *ngIf="trainingSubheadList" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="label-no" scope="col" width="30%">Training Subhead</th>
-                            <th  class="label-name" scope="col" width="30%">Training Head</th>
-                            <th class="label-action" scope="col" width="40%">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let subhead of trainingSubheadList">
-                            <td class="col-no" scope="row">{{subhead.name}}</td>
-                            <td class="col-name" >{{subhead.trainingheadid.name}}</td>
-                            <td class="col-action">
-                                <span (click)="editTrainingsubhead(subhead)" class="btn-edit" mdbRippleRadius>Edit </span>/
-                                <span (click)="deleteTrainingsubhead(subhead._id)" class="btn-delete" mdbRippleRadius>Delete</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="col-sm-12 msg-box product-list scale-list">
+        <table *ngIf="trainingSubheadList" datatable class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="label-no" scope="col" width="30%">Training Subhead</th>
+                    <th class="label-name" scope="col" width="30%">Training Head</th>
+                    <th class="label-action" scope="col" width="40%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subhead of trainingSubheadList">
+                    <td class="col-no" scope="row">{{subhead.name}}</td>
+                    <td class="col-name">{{subhead.trainingheadid.name}}</td>
+                    <td class="col-action">
+                        <span (click)="editTrainingsubhead(subhead)" class="btn-edit" mdbRippleRadius>Edit </span>/
+                        <span (click)="deleteTrainingsubhead(subhead._id)" class="btn-delete" mdbRippleRadius>Delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
 <!-- Card -->

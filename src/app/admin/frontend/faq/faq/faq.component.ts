@@ -13,13 +13,13 @@ import { FaqSubCategoryService } from '../services/faq-sub-category.service';
 })
 export class FaqComponent implements OnInit {
 
-  public faqid: String;
+  public faqid: String = '';
   public faqcategoryid: String = '';
-  public question: String;
-  public answer: String;
-  public faqcategoryList: any;
+  public question: String = '';
+  public answer: String = '';
+  public faqcategoryList: any = '';
   public faqsubcategoryid: String = '';
-  public faqSubCategoryList: any;
+  public faqSubCategoryList: any = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,

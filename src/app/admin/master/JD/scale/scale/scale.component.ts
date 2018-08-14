@@ -13,8 +13,8 @@ import { ScaleService } from '../services/scale.service';
 export class ScaleComponent implements OnInit {
 
   scaleForm: FormGroup;
-  scaleid: String;
-  scaleList: any;
+  scaleid: String = '';
+  scaleList: any = '';
   @Output() getScale = new EventEmitter<any>();
 
   constructor(

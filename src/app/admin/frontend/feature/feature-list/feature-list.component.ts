@@ -9,7 +9,7 @@ import { FeatureService } from '../feature.service';
 })
 export class FeatureListComponent implements OnInit {
 
-  public featureList: any;
+  public featureList: any = '';
 
   constructor(
     private _commonService: CommonService,

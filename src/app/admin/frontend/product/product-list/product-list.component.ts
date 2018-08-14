@@ -9,7 +9,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  public productList: any;
+  public productList: any = '';
 
   constructor(
     private _commonService: CommonService,

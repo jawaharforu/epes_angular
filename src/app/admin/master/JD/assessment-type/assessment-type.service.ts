@@ -48,7 +48,6 @@ export class AssessmentTypeService {
     return this.http.get(`${this.link}/assessmenttypes/getlist`, {headers: headers})
     .pipe(map(res => res.json()));
   }
-
   getAssessmenttypeById(assessmenttypeid: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');

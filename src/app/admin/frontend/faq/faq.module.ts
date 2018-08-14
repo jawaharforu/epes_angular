@@ -10,6 +10,7 @@ import { FaqListComponent } from './faq-list/faq-list.component';
 import { FaqSubCategoryComponent } from './faq-sub-category/faq-sub-category.component';
 import { ParentComponent } from './parent/parent.component';
 import { SubmenuComponent } from './submenu/submenu.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const router: Routes = [
   {
@@ -31,7 +32,8 @@ const router: Routes = [
     MDBBootstrapModulesPro.forRoot(),
     RouterModule.forChild(router),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   declarations: [FaqCategoryComponent, FaqComponent, FaqListComponent, FaqSubCategoryComponent, ParentComponent, SubmenuComponent]
 })
