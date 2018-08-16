@@ -135,7 +135,13 @@ select.form-control:not([size]):not([multiple]) {
     margin-top: 7px;
     color: #fff;
 }
-.btn_additem{       
+.btn_additem,
+.btn-submit, .btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle,
+ .btn-primary:not([disabled]):not(.disabled):active, 
+ .btn-primary:not([disabled]):not(.disabled).active, 
+ .show > .btn-primary.dropdown-toggle{       
     padding: 9px 20px;
     background: #f38e00 !important;
     box-shadow: none;
