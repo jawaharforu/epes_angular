@@ -3,8 +3,9 @@
         <!-- Card -->
         <div class="card">
             <div class="card-body">
+                    <p class="h4 text-center py-4 admin-title">JD Assign to Employees</p>
                 <!--Table-->
-                <table class="table" datatable>
+                <table class="table" datatable *ngIf="jdList">
                     <!--Table head-->
                     <thead class="mdb-color darken-3">
                         <tr class="text-white">

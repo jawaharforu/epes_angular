@@ -69,7 +69,7 @@ export class OrganogramAddComponent implements OnInit {
 
   getSubDepartment() {
     if (this._validationsService.isEmpty(this.departmentid)) {
-      this._commonService.showMessage('error', 'Department field should not be empty!');
+      this._commonService.showMessage('error', 'Department should not be empty!');
       return false;
     }
     this.getSubDepartmentList(this.departmentid);
@@ -93,6 +93,7 @@ export class OrganogramAddComponent implements OnInit {
         this.parentid = res.data.uniqueid;
         this.uniqueid = res.data.uniqueid;
         this.organogramid = '';
+        // console.log(this.parentDept);
       }
       this.getOrganogramList(res.data.uniqueid);
     });
@@ -109,16 +110,21 @@ export class OrganogramAddComponent implements OnInit {
     });
   }
   organogramForm() {
-    if (this._validationsService.isEmpty(this.name)) {
-      this._commonService.showMessage('error', 'Name field should not be empty!');
+    
+    if (this._validationsService.isEmpty(this.departmentid)) {
+      this._commonService.showMessage('error', 'Please select Department!');
       return false;
     }
-    if (this._validationsService.isEmpty(this.departmentid)) {
-      this._commonService.showMessage('error', 'Department field should not be empty!');
+    if (this._validationsService.isEmpty(this.subdepartmentid)) {
+      this._commonService.showMessage('error', 'Please select Sub Department!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.name)) {
+      this._commonService.showMessage('error', 'Head Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.designation)) {
-      this._commonService.showMessage('error', 'Designation field should not be empty!');
+      this._commonService.showMessage('error', 'Designation should not be empty!');
       return false;
     }
     let field;

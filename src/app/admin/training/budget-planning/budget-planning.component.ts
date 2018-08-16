@@ -112,7 +112,7 @@ export class BudgetPlanningComponent implements OnInit {
                 this.year = res.data.year;
                 this.amount = res.data.amount;
                 this.budgetid = res.data._id;
-                console.log(this.year);
+                // console.log(this.year);
             });
     }
 

@@ -63,7 +63,7 @@ export class AddJdComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.description.replace(/<[^>]*>/g, ''))) {
-      this._commonService.showMessage('error', 'Description field should not be empty!');
+      this._commonService.showMessage('error', 'Description should not be empty!');
       return false;
     }
 

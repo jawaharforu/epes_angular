@@ -45,7 +45,7 @@ export class WeightageService {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/jdquestions/assessandhead/${jdid}`, {headers: headers})
+    return this.http.get(`${this.link}/jdquestions/fetchassessandheadbyjd/${jdid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

@@ -29,6 +29,11 @@ export class FeaturesComponent implements OnInit {
     this.getFeatureList();
   }
 
+  
+  activateClass(subModule:any){
+    subModule.active = !subModule.active;    
+  }
+
   getFeatureList() {
     this.featureService.getFeatureByStatus()
     .subscribe(res => {

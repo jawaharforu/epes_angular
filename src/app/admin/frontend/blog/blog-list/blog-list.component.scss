@@ -3,21 +3,22 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
     background: #ffffff;
     margin-left: -20px;
     border: none;
+    width: 30%;
 }
 .card .card-body{
-    background: #fff;
+    background: #f6f6f6;
     box-shadow: none;
 }
 .card {
     position: relative;
-    padding: 0px 30px 50px 30px;
+    padding: 25px 30px 50px 30px;
 }
 table.dataTable.no-footer {
     border: 1px solid #f3eeee;
@@ -96,7 +97,6 @@ span.btn-edit, span.btn-delete  {
     font-size: 13px;
     color: #54afc6;
     font-weight: 500;
-    cursor: pointer;
 }
 
 table.dataTable thead th{
@@ -124,11 +124,6 @@ table.dataTable thead th{
         margin-top: 0px;
     }
 }
-thead {
-    background-color: #f9f6f6 !important;
-    border: 1px solid #ccc;
-    padding: 44px;
-}
 table.dataTable[_ngcontent-c4] thead[_ngcontent-c4] th[_ngcontent-c4],
 table.dataTable tbody th, table.dataTable tbody td{
     border-right: 1px solid #f3eeee;    
@@ -144,4 +139,9 @@ table.dataTable[_ngcontent-c4][_ngcontent-c4] thead[_ngcontent-c4][_ngcontent-c4
     border-radius: 2px;
     height: 15px;
     width: 15px;
+}
+thead {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
+    padding: 44px;
 }

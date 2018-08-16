@@ -20,8 +20,6 @@ mdb-item-body{
     background: #ecf0f9;
 }
 
-
-
 p.h4.text-center.py-4.admin-title {
     color: #494949;
     font-weight: normal;
@@ -34,9 +32,19 @@ p.h4.text-center.py-4.admin-title {
     background: #ffffff;
     margin-left: -20px;
     border: none;
-    width: 40%;
+    width: 30%;
+    float: left;
 }
-
+a.btn.btn-add-new {
+    background: #43b64a;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+}
+.clearfix{
+    clear: both;
+}
 .card .card-body{
     background: #f6f6f6;
     box-shadow: none;
@@ -48,10 +56,6 @@ p.h4.text-center.py-4.admin-title {
 p.h4.text-center.py-4.admin-title a {
     font-size: 12px;
     color: #54afc6;
-}
-input#defaultFormCardNameEx {
-    padding: 0px;
-    border-radius: 0px;
 }
 .input-group .input-group-text {
     background-color: #e0e0e0;
@@ -68,12 +72,20 @@ label {
     font-size: 14px;
     text-align: left !important;
 }
-button.btn.btn-submit.btn-save {
-    background: #f38e00;
-    padding: 5px 25px;
-    font-size: 15px;
-    margin-top: 15px;
-    text-transform: capitalize;
+.form-control.col-md-10 {
+    max-width: 300px;
+}
+
+.btn-submit, 
+.btn-outline-purple:not([disabled]):not(.disabled):active,
+ .btn-outline-purple:not([disabled]):not(.disabled).active, 
+ .show > .btn-outline-purple.dropdown-toggle {
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    float: right;
+    border: none !important;
     box-shadow: none;
 }
 .form-control {

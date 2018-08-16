@@ -88,7 +88,7 @@ export class QuestionAssignComponent implements OnInit {
 
   getHeaderList() {
     if (this._validationsService.isEmpty(this.assessmenttype)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
+      this._commonService.showMessage('error', 'Assessmenttype should not be empty!');
       return false;
     }
     this.headerService.getHeaderByAssessmenttype(this.assessmenttype)
@@ -127,7 +127,7 @@ export class QuestionAssignComponent implements OnInit {
 
   questionForm() {
     if (this._validationsService.isEmpty(this.question)) {
-      this._commonService.showMessage('error', 'Question field should not be empty!');
+      this._commonService.showMessage('error', 'Question should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.scale)) {

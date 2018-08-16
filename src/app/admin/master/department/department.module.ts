@@ -8,6 +8,7 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentsComponent } from './departments.component';
 import { SubDepartmentComponent } from './sub-department/sub-department.component';
 import { SubmenuComponent } from './submenu/submenu.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const router: Routes = [
   {
@@ -26,7 +27,8 @@ const router: Routes = [
     MDBBootstrapModulesPro.forRoot(),
     RouterModule.forChild(router),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   declarations: [DepartmentComponent, SubDepartmentComponent, SubmenuComponent, DepartmentsComponent]
 })

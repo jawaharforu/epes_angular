@@ -1,6 +1,24 @@
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    margin-left: -20px;
+    border: none;
+    width: 35%;
+}
+.card .card-body{
+    background: #f6f6f6;
+    box-shadow: none;
+}
 .card {
     position: relative;
-    padding: 25px 30px 0px 30px;
+    padding: 25px 30px 25px 30px;
 }
 .form-control.col-md-10 {
     max-width: 300px;
@@ -39,7 +57,7 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 30px !important;
     border: 1px solid #ccc;
 
 }
@@ -47,7 +65,7 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 30px !important;
     border: 1px solid #ccc;
 
 }
@@ -106,7 +124,7 @@ div#centralModalSuccess {
     background: #f6f6f6;
 }
 .modal-dialog.modal-notify.modal-primary .modal-header.popup_modal-header{
-    padding-top: 15px !important;
+    padding: 5px 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;

@@ -9,14 +9,16 @@
           <!-- Default form subscription -->
           <form (ngSubmit)="weightageForm()">
             <!-- Default input name -->
-            <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Weightage</p>
+            <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Header</p>
+            <input type="hidden" [(ngModel)]="weightageid" name="weightageid">
             <div class="row">
-              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid" (change)="getAssess()">
+              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid">
                   <option value="" disabled>--Select JD--</option>
                   <option *ngFor="let j of jdList" [value]="j._id">{{ j.name }}</option>
               </select>
             </div>
             <div class="row">
+
 
             </div>
             <button type="submit" class="btn btn-primary btn-submit">Submit</button>

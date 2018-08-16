@@ -1,56 +1,53 @@
 <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <!-- Card -->
-          <div class="card">
-      
-              <!-- Card body -->
-              <div class="card-body">
-<form (ngSubmit)="assessmentForm()"  class="assessmentForm">
- <p class="h4 text-center py-4 admin-title"> Assessments</p>
+    <div class="col-md-12 col-sm-12">
+        <!-- Card -->
+        <div class="card">
 
-        <div class="row">
-                      <div class="form-group col-md-6 col-sm-12">
+            <!-- Card body -->
+            <div class="card-body">
+                <form (ngSubmit)="assessmentForm()" class="assessmentForm">
+                    <p class="h4 text-center py-4 admin-title"> Assessments</p>
+
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-12">
                             <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Title</label>
                             <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
                         </div>
-						
+
                         <div class="form-group col-md-6 col-sm-12 ">
                             <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Period of Time</label>
                             <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
                             <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="periodoftime" name="periodoftime">
                                 <option value="" disabled>--Select Period of Time--</option>
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                                <option value="30">30</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="halfyearly">half-yearly</option>
+                                <option value="yearly">yearly</option>
                                 <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
                             </select>
                         </div>
 
                         <div class="form-group col-md-6 col-sm-12 ">
-                          <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Duration</label>
-                           <mdb-date-picker name="duration" [options]="myDurationdatePickerOptions" [(ngModel)]="duration"></mdb-date-picker>
-                         </div>
-						
+                            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Duration</label>
+                            <mdb-date-picker name="duration" [options]="myDurationdatePickerOptions" [(ngModel)]="duration"></mdb-date-picker>
+                        </div>
+
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Due Date</label>
                             <mdb-date-picker name="duedate" [options]="myduedateDatePickerOptions" [(ngModel)]="duedate"></mdb-date-picker>
                         </div>
-						
-                            <div class="form-group col-md-12 col-sm-12">
-                                <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label ">Description</label>
-                                <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="description"
-                                    rows="5" name="description"></textarea>
-                            </div>
-						 </div>
-                        <div class="col-md-12 field-button">
-                            <button type="submit" class="btn btn-warning  btn-submit" >submit</button>
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <label for="defaultFormCarddescEx" class="grey-text font-weight-light control-label ">Description</label>
+                            <textarea type="text" id="defaultFormCarddescEx" class="md-textarea md-textarea-auto form-control" mdbInputDirective [(ngModel)]="description"
+                                rows="5" name="description"></textarea>
                         </div>
-                   
-        
-</form>
-        </div>
+                    </div>
+                    <div class="col-md-12 field-button">
+                        <button type="submit" class="btn btn-warning  btn-submit">submit</button>
+                    </div>
+
+
+                </form>
             </div>
         </div>
+    </div>

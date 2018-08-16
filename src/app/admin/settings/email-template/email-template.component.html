@@ -6,14 +6,16 @@
           <!-- Default form subscription -->
           <form (ngSubmit)="emailTemplateForm()" class="add-features">
             <p class="h4 text-center py-4 admin-title">Email Template</p>
-            <p class="h4 text-right goto-email-template-list">
-              <a [routerLink]="['/admin/settings/email-template/list']" class="btn btn-outline-secondary btn-rounded waves-effect btn-add-new">View Email Templates</a>
+            <p class="h4 text-right goto-email-template-list float-right">
+              <a [routerLink]="['/admin/settings/email-template/list']" class="btn btn-add-new">View Email Templates</a>
             </p>
             <input type="hidden" [(ngModel)]="emaitemplateIdid" name="emaitemplateIdid" />
-            <div class="row">
+            <div class="float-none clearfix">
               <div class="form-group col-md-12 col-sm-12">
-                <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Name</label>
+                  <div class="row">
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light control-label col-md-3">Name</label>
                 <input type="text" id="defaultFormCardNameEx" class="form-control col-md-10" [(ngModel)]="name" name="name">
+                    </div>
               </div>
             </div>
             <div class="form-group col-md-12 ">
@@ -21,8 +23,8 @@
               <ckeditor [(ngModel)]="description" name="description" id="defaultFormCarddesc"></ckeditor>
             </div>
             <div class="row">
-              <div class="col-md-6 ">
-                <button type="submit" class="btn btn-primary waves-light btn-submit" mdbWavesEffect>Submit</button>
+              <div class="col-md-12 ">
+                <button type="submit" class="btn btn-submit" mdbWavesEffect>Submit</button>
               </div>
             </div>
           </form>

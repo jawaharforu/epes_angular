@@ -1,115 +1,87 @@
 <div class="container asd">
-
       <div class="container">
             <div class="row">
-
-                  <div class="col-sm-12 add-btn">
-                        <button type="button" class="btn btn-warning add-btn relative waves-light" (click)="showModal()" mdbWavesEffect>Budget Planning</button>
-                  </div>
-
-                  <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal"
-                        class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                        aria-hidden="true" style="overflow: auto;">
-                        <div class="modal-dialog modal-notify modal-primary modal-lg" role="document">
-
-                              <div class="modal-content">
-                                    <div class="modal-header">
-                                          <p class="heading lead">Budget Planning</p>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
-                                                <span aria-hidden="true" class="white-text">×</span>
-                                          </button>
-                                    </div>
-                                    <div class="modal-body">
-                                          <div class="form-group col-md-12 col-sm-12 ">
-                                                <div class="row">
-                                                      <div class="col-md-12">
-                                                            For the year:{{year}} Total Budget: {{amount}} USD
-                                                      </div>
-                                                      <!-- <div class="col-md-4">
-                                                            <div class="col-sm-12 add-btn">
-                                                                  <button type="button" class="btn btn-warning add-btn relative waves-light" (click)="showModal()" mdbWavesEffect>Budget Planning</button>
-                                                            </div>
-                                                      </div> -->
-                                                </div>
-                                                <form (ngSubmit)="budgetplanningForm()">
-                                                      <div class="row" *ngIf="assessmenttypeList">
-                                                            <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Assessment</label>
-                                                            <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                                            <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
-                                                                  <option value="" disabled>--Select Assessment--</option>
-                                                                  <option *ngFor="let assessment of assessmenttypeList" value="{{assessment._id}}">{{assessment.name}}</option>
-                                                            </select>
-                                                      </div>
-                                                      <div class="form-group"></div>
-                                                      <div class="row" *ngIf="headerList">
-                                                            <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Headers</label>
-                                                            <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                                            <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="headerid" name="headerid">
-                                                                  <option value="" disabled>--Select Header--</option>
-                                                                  <option *ngFor="let header of headerList" value="{{header._id}}">{{header.headername}}</option>
-                                                            </select>
-                                                      </div>
-                                                      <div class="form-group">
-
-                                                      </div>
-                                                      <div class="row" *ngIf="trainingheadList">
-                                                            <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Training Head</label>
-                                                            <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                                            <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="trainingheadid" name="trainingheadid"
-                                                                  (change)="getTrainingsubhead()">
-                                                                  <option value="" disabled>--Select Training Head--</option>
-                                                                  <option *ngFor="let s of trainingheadList" [value]="s._id">{{s.name}}</option>
-                                                            </select>
-                                                      </div>
-                                                      <div class="form-group"></div>
-                                                      <div class="row">
-                                                            <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Training Subhead</label>
-                                                            <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                                            <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="trainingsubheadid" name="trainingsubheadid">
-                                                                  <option value="" disabled>--Select Training Subhead--</option>
-                                                                  <option *ngFor="let s of trainingsubheadList" [value]="s._id">{{s.name}}</option>
-                                                                  <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
-                                                            </select>
-                                                      </div>
-                                                      <div class="form-group">
-
-                                                      </div>
-                                                      <div class="row">
-                                                            <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Percentage</label>
-                                                            <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
-                                                            <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="percentage" name="percentage">
-                                                                  <option value="" disabled>--Select Percentage--</option>
-                                                                  <option value="5">5</option>
-                                                                  <option value="10">10</option>
-                                                                  <option value="15">15</option>
-                                                                  <option value="20">20</option>
-                                                                  <option value="25">25</option>
-                                                                  <option value="30">30</option>
-                                                                  <option value="35">35</option>
-                                                                  <option value="40">40</option>
-                                                                  <option value="45">45</option>
-                                                                  <option value="50">50</option>
-                                                                  <option value="55">55</option>
-                                                                  <option value="60">60</option>
-                                                                  <option value="65">65</option>
-                                                                  <option value="70">70</option>
-                                                                  <option value="75">75</option>
-                                                                  <option value="80">80</option>
-                                                                  <option value="85">85</option>
-                                                                  <option value="90">90</option>
-                                                                  <option value="95">95</option>
-                                                                  <option value="100">100</option>
-                                                                  <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
-                                                            </select>
-                                                      </div>
-                                                      <div class="col-sm-10 train-popup-btn text-right">
-                                                            <button class="btn save-btn">Submit</button>
-                                                      </div>
-                                                </form>
-                                          </div>
-                                    </div>
+                  <div class="form-group col-md-12 col-sm-12 ">
+                        <div class="row">
+                              <div class="col-md-12">
+                                    Budget Planning for the Year:{{year}} Total Budget: {{amount}} USD
                               </div>
                         </div>
+                        <form (ngSubmit)="budgetplanningForm()">
+                              <div class="row" *ngIf="assessmenttypeList">
+                                    <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Assessment</label>
+                                    <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                    <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+                                          <option value="" disabled>--Select Assessment--</option>
+                                          <option *ngFor="let assessment of assessmenttypeList" value="{{assessment._id}}">{{assessment.name}}</option>
+                                    </select>
+                              </div>
+                              <div class="form-group"></div>
+                              <div class="row" *ngIf="headerList">
+                                    <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Header</label>
+                                    <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                    <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="headerid" name="headerid">
+                                          <option value="" disabled>--Select Header--</option>
+                                          <option *ngFor="let header of headerList" value="{{header._id}}">{{header.headername}}</option>
+                                    </select>
+                              </div>
+                              <div class="form-group">
+
+                              </div>
+                              <div class="row" *ngIf="trainingheadList">
+                                    <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Training Head</label>
+                                    <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                    <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="trainingheadid" name="trainingheadid"
+                                          (change)="getTrainingsubhead()">
+                                          <option value="" disabled>--Select Training Head--</option>
+                                          <option *ngFor="let s of trainingheadList" [value]="s._id">{{s.name}}</option>
+                                    </select>
+                              </div>
+                              <div class="form-group"></div>
+                              <div class="row">
+                                    <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Training Subhead</label>
+                                    <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                    <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="trainingsubheadid" name="trainingsubheadid">
+                                          <option value="" disabled>--Select Training Subhead--</option>
+                                          <option *ngFor="let s of trainingsubheadList" [value]="s._id">{{s.name}}</option>
+                                          <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                    </select>
+                              </div>
+                              <div class="form-group">
+
+                              </div>
+                              <div class="row">
+                                    <label for="defaultFormCardNameEx" class="col-md-3 grey-text font-weight-light">Percentage</label>
+                                    <!-- <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="jobtitle" name="jobtitle"> -->
+                                    <select class="col-md-9 browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="percentage" name="percentage">
+                                          <option value="" disabled>--Select Percentage--</option>
+                                          <option value="5">5</option>
+                                          <option value="10">10</option>
+                                          <option value="15">15</option>
+                                          <option value="20">20</option>
+                                          <option value="25">25</option>
+                                          <option value="30">30</option>
+                                          <option value="35">35</option>
+                                          <option value="40">40</option>
+                                          <option value="45">45</option>
+                                          <option value="50">50</option>
+                                          <option value="55">55</option>
+                                          <option value="60">60</option>
+                                          <option value="65">65</option>
+                                          <option value="70">70</option>
+                                          <option value="75">75</option>
+                                          <option value="80">80</option>
+                                          <option value="85">85</option>
+                                          <option value="90">90</option>
+                                          <option value="95">95</option>
+                                          <option value="100">100</option>
+                                          <!-- <option *ngFor="let s of faqCategoryList" [value]="s._id">{{ s.name }}</option> -->
+                                    </select>
+                              </div>
+                              <div class="col-sm-10 train-popup-btn text-right">
+                                    <button class="btn save-btn">Submit</button>
+                              </div>
+                        </form>
                   </div>
                   <div class="col-sm-12 msg-box ">
                         <table class="table table-striped" datatable *ngIf="budgetplanList">

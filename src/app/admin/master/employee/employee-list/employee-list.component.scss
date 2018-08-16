@@ -10,17 +10,22 @@ p.h4.text-center.py-4.admin-title {
     background: #ffffff;
     margin-left: -20px;
     border: none;
+    width: 35%;
 }
 .card .card-body{
-    background: #fff;
+    background: #f6f6f6;
     box-shadow: none;
 }
 .card {
     position: relative;
-    padding: 0px 30px 50px 30px;
+    padding: 25px 30px 25px 30px;
 }
 table.dataTable.no-footer {
     border: 1px solid #f3eeee;
+}
+thead {
+    background-color: #f9f6f6 !important;
+    border: 1px solid #ccc;
 }
 .btn-add-new{
     float: right;

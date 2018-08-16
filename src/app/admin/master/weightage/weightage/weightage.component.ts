@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../../../../services/common.service';
-import { ValidationsService } from '../../../../services/validations.service';
 import { JdService } from '../../JD/services/jd.service';
-
 import { WeightageService } from '../weightage.service';
+// import { CommonService } from '../../../../services/common.service';
 
 @Component({
   selector: 'app-weightage',
@@ -13,11 +11,11 @@ import { WeightageService } from '../weightage.service';
 export class WeightageComponent implements OnInit {
 
   public jdList: any;
-  public jdid: String = '';
+  public jdid: String;
+  public assessment: any[] = [];
 
   constructor(
-    private _validationsService: ValidationsService,
-    private _commonService: CommonService,
+    // private _commonService: CommonService,
     private jdService: JdService,
     private weightageService: WeightageService
   ) { }
@@ -36,20 +34,11 @@ export class WeightageComponent implements OnInit {
   getAssessAndHeadList() {
     this.weightageService.fetchassessandheadbyjd(this.jdid)
     .subscribe(res => {
-      console.log(res.data);
+      for (const prop of res.data) {
+        this.assessment.push(prop.questionid);
+      }
+
     });
-  }
-
-  getAssess() {
-    if (this._validationsService.isEmpty(this.jdid)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
-      return false;
-    }
-    this.getAssessAndHeadList();
-  }
-
-  weightageForm() {
-
   }
 
 }

@@ -82,6 +82,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+  
   // tslint:disable-next-line:member-ordering
   public industries: any[]= [
     {industryname: 'Agriculture & Forestry/Wildlife'},

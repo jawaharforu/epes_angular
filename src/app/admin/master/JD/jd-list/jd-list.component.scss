@@ -18,7 +18,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px 25px 30px;
     margin-bottom: 55px;
 }
 .addproduct label{
@@ -176,7 +176,7 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 
 }
@@ -184,12 +184,14 @@ table.table th, table.table td {
     font-size: 13px;
     color: #000;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 30px;
     border: 1px solid #ccc;
 
 }
 .col-action {
     border: 1px solid #ccc;
+    min-width: 240px;
+    line-height: 30px;
 }
 .label-name, .label-no, .label-status, .label-action {
     font-size: 13px;
@@ -228,22 +230,23 @@ span.btn-edit, span.btn-delete, span.btn-question   {
     background: #f6f6f6;
 }
 .modal-dialog.modal-notify.modal-primary .modal-header.popup_modal-header{
-    padding-top: 15px !important;
+    padding: 5px 15px !important;
     text-align: left !important;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
-    background: #ffffff;
+    background: #666;
     width: 45%;
     box-shadow: none;
     border: none;
 }
+
 .popup_modal_content{
     background: #f6f6f6;
 }
 .modal-dialog.modal-notify.modal-primary .modal-header .admin-title_popup{
-    color: #494949;
+    color: #fff;
     font-weight: normal;
 }
 @media only screen and (max-width: 767px){

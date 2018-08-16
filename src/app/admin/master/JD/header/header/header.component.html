@@ -3,26 +3,24 @@
     <form (ngSubmit)="headerFormSubmit()">
       <!-- Default input name -->
       <input type="hidden" [(ngModel)]="headerid" name="headerid">
-      <div class="form-group col-md-12 col-sm-12">
         <div class="row">
-          <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
+            <div class="form-group col-md-6 col-sm-12">
+          <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
             <option value="" disabled>--Select Assessment--</option>
             <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
           </select>
         </div>
       </div>
-      <div class="form-group col-md-12 col-sm-12">
-        <div class="row">
-          <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="headername" name="headername" placeholder="Header Name">
-        </div>
+      <div class="row">
+      <div class="form-group col-md-6 col-sm-12">
+         <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="headername" name="headername" placeholder="Header Name">
       </div>
-      <div class="form-group col-md-12 col-sm-12">
-        <div class="row">
+      <div class="form-group col-md-6 col-sm-12">
           <input type="text" id="defaultFormCardDisEx" class="form-control" [(ngModel)]="description" name="description" placeholder="Header Description">
-        </div>
-      </div>
+     </div>
+    </div>
       <div class="col-md-12 feild-button">
-        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-submit">Add Item</button>
       </div>
     </form>
   </div>

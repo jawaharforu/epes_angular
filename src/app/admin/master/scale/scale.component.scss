@@ -14,11 +14,14 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 50px 30px;
+    padding: 25px 30px 25px 30px;
 }
 .card .card-body {
     background: #f6f6f6;
     box-shadow: none;
+}
+.feild-button{
+    padding: 0px;
 }
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 
@@ -30,10 +33,10 @@ p.h4.text-center.py-4.admin-title {
     background-color: #f38e00 !important;
     color: #fff !important;
     font-size: 14px;
-    padding: 5px 15px;
-    float: right;
+    padding: 7px 15px;
     border:none !important;
     box-shadow: none;
+    margin: 0px;
 }
 
 .scale-list{

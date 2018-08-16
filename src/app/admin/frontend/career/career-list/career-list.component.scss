@@ -3,7 +3,7 @@ p.h4.text-center.py-4.admin-title {
     font-weight: normal;
     padding-top: 15px !important;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 30px;
     padding-bottom: 10px !important;
@@ -13,6 +13,7 @@ p.h4.text-center.py-4.admin-title {
     width: 30%;
 }
 .card .card-body{
+    background: #f6f6f6;
     box-shadow: none;
 }
 .card {
@@ -29,20 +30,16 @@ table.dataTable.no-footer {
     color: #fff !important;
     background-color: #56ba65 !important;
     border: 1px solid #43b64a !important;
+    margin-top: -5px;
     margin-bottom: 15px;
     box-shadow: none;
 }
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled):active, 
 .btn-outline-secondary.btn-add-new:not([disabled]):not(.disabled).active, 
 .show > .btn-outline-secondary.btn-add-new.dropdown-toggle{
-    float: right;
-    padding: 5px 10px;
-    border-radius: 0px !important;
     color: #fff !important;
     background-color: #56ba65 !important;
     border: 1px solid #43b64a !important;
-    margin-bottom: 15px;
-    box-shadow: none;
 }
 label{
     font-size: 13px;

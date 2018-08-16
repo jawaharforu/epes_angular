@@ -16,7 +16,7 @@
                     <!-- <p class="h4 text-center py-4">Organogram</p>-->
                     <div *ngIf="parentName !== ''">
                         <p class="text-center">{{parentName}}</p>
-                        <p class="text-center">{{parentDept}}</p>
+                        <p class="text-center">{{parentDept.name}}</p>
                     </div>
                     <input type="hidden" [(ngModel)]="organogramid" name="organogramid">
                     <input type="hidden" [(ngModel)]="parentid" name="parentid">

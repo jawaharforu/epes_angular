@@ -70,7 +70,7 @@ export class QuestionComponent implements OnInit {
 
   getHeader() {
     if (this._validationsService.isEmpty(this.assessmenttype)) {
-      this._commonService.showMessage('error', 'Assessmenttype field should not be empty!');
+      this._commonService.showMessage('error', 'Assessmenttype should not be empty!');
       return false;
     }
     this.getHeaderList();
@@ -109,20 +109,24 @@ export class QuestionComponent implements OnInit {
   }
 
   questionForm() {
+    if (this._validationsService.isEmpty(this.type)) {
+      this._commonService.showMessage('error', 'Please select Assessment type!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.question)) {
-      this._commonService.showMessage('error', 'Question field should not be empty!');
+      this._commonService.showMessage('error', 'Question should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.scale)) {
-      this._commonService.showMessage('error', 'Pleasse select scale!');
+      this._commonService.showMessage('error', 'Please select scale!');
       return false;
     }
     if (this._validationsService.isEmpty(this.assessmenttype)) {
-      this._commonService.showMessage('error', 'Pleasse select assessment!');
+      this._commonService.showMessage('error', 'Please select assessment!');
       return false;
     }
     if (this._validationsService.isEmpty(this.header)) {
-      this._commonService.showMessage('error', 'Pleasse select header!');
+      this._commonService.showMessage('error', 'Please select header!');
       return false;
     }
 

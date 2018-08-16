@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { OrganogramService } from '../organogram/organogram.service';
 import { CommonService } from '../../../services/common.service';
 import { ValidationsService } from '../../../services/validations.service';
@@ -40,7 +40,7 @@ export class EmployeeComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.employeeid = params['employeeid'];
       if (!this._validationsService.isEmpty(this.employeeid)) {
-       this.getEmployeeById(this.employeeid);
+        this.getEmployeeById(this.employeeid);
       }
     });
     this.getOrganogramFullList();
@@ -49,14 +49,14 @@ export class EmployeeComponent implements OnInit {
 
   getCountryList() {
     this.contactusService.getCountryList()
-    .subscribe(res => {
-      this.countryList = res.data;
-    });
+      .subscribe(res => {
+        this.countryList = res.data;
+      });
   }
 
   getEmployeeById(employeeid: any) {
     this.employeeService.getEmployeeById(employeeid)
-    .subscribe(res => {
+      .subscribe(res => {
         this.employeenum = res.data.employeenum;
         this.employeename = res.data.employeename;
         this.employeetype = res.data.employeetype;
@@ -66,17 +66,21 @@ export class EmployeeComponent implements OnInit {
         this.mobile = res.data.mobile;
         this.address = res.data.address;
         this.organogramid = res.data.organogramid;
-    });
+      });
   }
 
   getOrganogramFullList() {
     this.organogramService.getOrganogramFullList()
-    .subscribe(res => {
-      this.organogramList = res.data;
-    });
+      .subscribe(res => {
+        this.organogramList = res.data;
+      });
   }
 
   employeeForm() {
+    if (this._validationsService.isEmpty(this.organogramid)) {
+      this._commonService.showMessage('error', 'Please select Head Name!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.employeenum)) {
       this._commonService.showMessage('error', 'Employee No. should not be empty!');
       return false;
@@ -152,14 +156,14 @@ export class EmployeeComponent implements OnInit {
     }
 
     this.employeeService.addEmployee(fieldEmployee)
-    .subscribe(res => {
-      if (res.success) {
-        this._commonService.showMessage('success', res.msg);
-        this._commonService.redirectTo('/admin/employee/list');
-      } else {
-        this._commonService.showMessage('error', res.msg);
-      }
-    });
+      .subscribe(res => {
+        if (res.success) {
+          this._commonService.showMessage('success', res.msg);
+          this._commonService.redirectTo('/admin/employee/list');
+        } else {
+          this._commonService.showMessage('error', res.msg);
+        }
+      });
 
   }
 

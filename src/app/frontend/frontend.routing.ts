@@ -12,7 +12,7 @@ const routes: Routes = [
       { path: 'faqs', loadChildren: './faqs/faqs.module#FaqsModule' },
       { path: 'product-tour', loadChildren: './product-tour/product-tour.module#ProductTourModule' },
       { path: 'features', loadChildren: './features/features.module#FeaturesModule' },
-      { path: 'blogs', loadChildren: './blogs/blogs.module#BlogsModule' },
+      { path: 'blog', loadChildren: './blogs/blogs.module#BlogsModule' },
       { path: 'resources', loadChildren: './resources/resources.module#ResourcesModule' },
       { path: 'registration/:productid', loadChildren: './registration/registration.module#RegistrationModule' },
       { path: 'customer-experience', loadChildren: './customer-experience/customer-experience.module#CustomerExperienceModule' },
@@ -20,7 +20,8 @@ const routes: Routes = [
       { path: 'support-services', loadChildren: './support/support.module#SupportModule' },
       { path: 'partner-with-us', loadChildren: './partner-with-us/partner-with-us.module#PartnerWithUsModule' },
       { path: 'about-us', loadChildren: './about-us/about-us.module#AboutUsModule' },
-      { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' }
+      { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' },
+      { path: 'payment', loadChildren: './payment/payment.module#PaymentModule' }
     ]
    }
 ];
