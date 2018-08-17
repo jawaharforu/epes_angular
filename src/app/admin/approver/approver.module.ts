@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MDBBootstrapModulesPro } from '../../../../../ng-uikit-pro-standard';
+import { MDBBootstrapModulesPro } from '../../../../ng-uikit-pro-standard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { RouterModule, Routes } from '@angular/router';

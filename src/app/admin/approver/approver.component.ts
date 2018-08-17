@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../../../services/common.service';
-import { ValidationsService } from '../../../services/validations.service';
+import { CommonService } from '../../services/common.service';
+import { ValidationsService } from '../../services/validations.service';
 import { ApproverService } from './approver.service';
 
 
