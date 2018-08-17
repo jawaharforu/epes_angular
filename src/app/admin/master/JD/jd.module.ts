@@ -23,7 +23,7 @@ const router: Routes = [
     children: [
       { path: '', component: AddJdComponent },
       { path : 'edit/:jdid', component : AddJdComponent },
-      { path : 'list', component : JdListComponent }
+      { path : 'list', component : JdListComponent },
       { path : 'assignquestion', component : QuestionAssignComponent }
     ]
   }

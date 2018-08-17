@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-5">
+      <!-- Card -->
+      <div class="card mx-xl-5">
+
+          <!-- Card body -->
+          <div class="card-body">
+
+              <!-- Default form subscription -->
+              <form (ngSubmit)="approverForm()">
+                  <p class="h4 text-center py-4">Enter appraisal approver detail</p>
+                  <input type="hidden" [(ngModel)]="approverid" name="approverid">
+                  <!-- Default input name -->
+                  <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Name</label>
+                  <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">
+
+                  <br>
+
+                  <!-- Default input email -->
+                  <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Email</label>
+                  <input type="email" id="defaultFormCardEmailEx" class="form-control" [(ngModel)]="email" name="email">
+
+                  <br>
+
+                  <label for="defaultFormCardDesiEx" class="grey-text font-weight-light">Designation</label>
+                  <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="designation" name="designation">
+                      <option value="MD">MD</option>
+                      <option value="Board">Board</option>
+                  </select>
+
+                  <br>
+
+                  <div class="row justify-content-center text-center">
+                          <button class="btn btn-outline-warning px-3" type="button">Skip <i class="fa fa-fast-forward"></i></button>
+                          <button class="btn btn-outline-purple px-3" type="submit">Continue <i class="fa fa-arrow-right"></i></button>
+                  </div>
+              </form>
+              <!-- Default form subscription -->
+
+          </div>
+          <!-- Card body -->
+
+      </div>
+      <!-- Card -->
+    </div>
+</div>
+<div class="row justify-content-md-center mb-5">
+  <div class="col-md-10 mt-5">
+    <!--Table-->
+    <table class="table">
+
+      <!--Table head-->
+      <thead class="mdb-color darken-3">
+          <tr class="text-white">
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Designation</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+          <tr *ngFor="let a of approverList; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ a.name }}</td>
+              <td>{{ a.email }}</td>
+              <td>{{ a.designation }}</td>
+              <td>
+                <button type="button" (click)="editApprover(a)" class="btn btn-primary waves-light" mdbWavesEffect><i class="fa fa-edit" aria-hidden="true"></i></button>
+                <button type="button" (click)="deleteApprover(a._id)" class="btn btn-danger waves-light" mdbWavesEffect><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </td>
+          </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>
