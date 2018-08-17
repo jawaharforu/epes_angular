@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from '../../../../../../../ng-uikit-pro-standard';
 
 import { CommonService } from '../../../../../services/common.service';
@@ -7,6 +7,7 @@ import { QuestionService } from '../services/question.service';
 import { HeaderService } from '../../header/services/header.service';
 import { ScaleService } from '../../scale/services/scale.service';
 import { AssessmentTypeService } from '../../assessment-type/assessment-type.service';
+import { JdService } from '../../services/jd.service';
 
 @Component({
   selector: 'app-question-assign',
@@ -29,7 +30,8 @@ export class QuestionAssignComponent implements OnInit {
   public headerList: any = '';
   public assessmentTypeList: any = '';
   public type: any = '';
-  @Input() getjdid: String;
+  public jdid: String = '';
+  public jdList: any;
   public jdquestionList: any[] = [];
 
   constructor(
@@ -39,22 +41,39 @@ export class QuestionAssignComponent implements OnInit {
     private scaleService: ScaleService,
     private headerService: HeaderService,
     private assessmentTypeService: AssessmentTypeService,
+    private jdService: JdService,
   ) { }
 
   ngOnInit() {
-    this.getQuestionToJDList();
+    this.getJDList();
     this.getScaleList();
     this.getAssessmenttypeList();
     this.getQuestionList();
   }
 
   getQuestionToJDList() {
-    this.questionService.getQuestionToJDList(this.getjdid)
+    this.questionService.getQuestionToJDList(this.jdid)
       .subscribe(res => {
+        this.jdquestionList = [];
         for (const prop of res.data) {
           this.jdquestionList.push(prop.questionid);
         }
       });
+  }
+
+  getJDList() {
+    this.jdService.getJD()
+    .subscribe(res => {
+      this.jdList = res.data;
+    });
+  }
+
+  getQuestions() {
+    if (this._validationsService.isEmpty(this.jdid)) {
+      this._commonService.showMessage('error', 'JD should select!');
+      return false;
+    }
+    this.getQuestionToJDList();
   }
 
   getQuestionList() {
@@ -209,9 +228,13 @@ export class QuestionAssignComponent implements OnInit {
   }
 
   updateStatus(event: boolean, q: any) {
+    if (this._validationsService.isEmpty(this.jdid)) {
+      this._commonService.showMessage('error', 'JD should select!');
+      return false;
+    }
     if (event === true) {
       const qjd = {
-        jdid: this.getjdid,
+        jdid: this.jdid,
         questionid: q._id
       };
       this.questionService.setQuestionsToJD(qjd)
@@ -224,7 +247,7 @@ export class QuestionAssignComponent implements OnInit {
           }
         });
     } else {
-      this.questionService.deleteQuestionsToJD(this.getjdid + '::' + q._id)
+      this.questionService.deleteQuestionsToJD(this.jdid + '::' + q._id)
         .subscribe(res => {
           if (res.success) {
             this._commonService.showMessage('success', res.msg);

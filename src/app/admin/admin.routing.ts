@@ -9,6 +9,10 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
+        path: 'approver',
+        loadChildren: './master/approver/approver.module#ApproverModule',
+      },
+      {
         path: 'jd',
         loadChildren: './master/JD/jd.module#JdModule',
       },
@@ -45,6 +49,10 @@ const routes: Routes = [
         loadChildren: './master/assign-jd/assign-jd.module#AssignJDModule',
       },
       {
+        path: 'weightage',
+        loadChildren: './master/weightage/weightage.module#WeightageModule',
+      },
+      {
         path: 'assessment',
         loadChildren: './assessment/assessment.module#AssessmentModule',
       },
@@ -68,7 +76,7 @@ const routes: Routes = [
         path: 'assessmenttype',
         loadChildren: './master/assessmenttype/assessmenttype.module#AssessmenttypeModule',
       },
-      
+
     ]
    }
 ];

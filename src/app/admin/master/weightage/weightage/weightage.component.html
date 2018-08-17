@@ -9,17 +9,26 @@
           <!-- Default form subscription -->
           <form (ngSubmit)="weightageForm()">
             <!-- Default input name -->
-            <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Header</p>
-            <input type="hidden" [(ngModel)]="weightageid" name="weightageid">
+            <p class="h4 admin-title-header "><i class="fa fa-home" aria-hidden="true"></i> - Weightage</p>
             <div class="row">
-              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid">
+              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid" (change)="getAssess()">
                   <option value="" disabled>--Select JD--</option>
                   <option *ngFor="let j of jdList" [value]="j._id">{{ j.name }}</option>
               </select>
             </div>
-            <div class="row">
-
-
+            <div class="row" *ngIf="this.assessmenttype">
+              <div *ngFor="let a of assessmenttype; let i = index;">
+                <div class="col-md-12">
+                    <p>{{a.assessmenttype[0].name}}</p>
+                    <ul>
+                      <li *ngFor="let h of a.header; let j = index;">
+                        <span>{{h.name}}</span>
+                        <span><input type="text" [(ngModel)]="assessmenttype[i].heads[j].value" name="name{{h.id}}" /></span>
+                        <span>{{assessmenttype[i].heads[j].value}}</span>
+                      </li>
+                    </ul>
+                </div>
+              </div>
             </div>
             <button type="submit" class="btn btn-primary btn-submit">Submit</button>
           </form>

@@ -21,10 +21,10 @@
                         <span mdbTooltip="Edit" placement="top" (click)="editJD(j)" class="btn-edit" mdbWavesEffect>
                             Edit </span> /
                         <span mdbTooltip="Delete" placement="top" (click)="deleteJD(j._id)" class="btn-delete" mdbWavesEffect>
-                            Delete </span> /
-                        <span mdbTooltip="Assign Question" placement="top" (click)="showModal('a',j._id)" class="btn-question" mdbWavesEffect>
+                            Delete </span>
+                        <!-- <span mdbTooltip="Assign Question" placement="top" (click)="showModal('a',j._id)" class="btn-question" mdbWavesEffect>
                             Assign Question
-                        </span>
+                        </span> -->
                     </td>
                     <td class="col-action">
                         <span mdbTooltip="Assign Question" placement="top" (click)="showModal('ad',j._id)" class="btn-question" mdbWavesEffect>
@@ -35,7 +35,8 @@
             </tbody>
             <!--Table body-->
         </table>
-        <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal"
+
+        <!-- <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('a')" mdbModal #autoShownModal="mdb-modal"
             class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true" style="overflow: auto;">
             <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
@@ -53,7 +54,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <div *ngIf="isModalShownQuestion" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden('ad')" mdbModal
             #autoShownModal="mdb-modal" class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog"
             aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">

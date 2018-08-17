@@ -25,11 +25,11 @@ export class WeightageService {
     .pipe(map(res => res.json()));
   }
 
-  getWeightage(jdid: any) {
+  getWeightage(weightageid: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/weightages/${jdid}`, {headers: headers})
+    return this.http.get(`${this.link}/weightages/${weightageid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
@@ -45,7 +45,15 @@ export class WeightageService {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/jdquestions/fetchassessandheadbyjd/${jdid}`, {headers: headers})
+    return this.http.get(`${this.link}/jdquestions/assessandhead/${jdid}`, {headers: headers})
+    .pipe(map(res => res.json()));
+  }
+
+  getWeightageByJD(jdid: any) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/weightages/getbyjd/${jdid}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

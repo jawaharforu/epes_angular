@@ -4,6 +4,12 @@
             <input type="hidden" [(ngModel)]="questionid" name="questionid">
             <!-- Default input name -->
             <div class="row">
+              <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid" (change)="getQuestions()">
+                <option value="" disabled>--Select JD--</option>
+                <option *ngFor="let j of jdList" [value]="j._id">{{ j.name }}</option>
+              </select>
+            </div>
+            <div class="row">
                 <select class="browser-default form-control col-md-3" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
                     <option value="" disabled>--Select Employee--</option>
                     <option value="md">MD</option>
