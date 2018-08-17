@@ -18,7 +18,7 @@ const router: Routes = [
     children: [
       { path: '', component: AssessmentComponent },
       { path : 'edit/:assessmentid', component : AssessmentComponent },
-      { path : 'list', component : AssessmentListComponent }
+      { path : 'list/:type', component : AssessmentListComponent }
     ]
   }
 ];

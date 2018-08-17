@@ -18,6 +18,7 @@ export class EmployeeComponent implements OnInit {
   public organogramid: String = '';
   public employeenum: String = '';
   public employeename: String = '';
+  public experience: String = '';
   public designation: String = '';
   public email: String = '';
   public countrycode: String = '+91';
@@ -60,6 +61,7 @@ export class EmployeeComponent implements OnInit {
         this.employeenum = res.data.employeenum;
         this.employeename = res.data.employeename;
         this.employeetype = res.data.employeetype;
+        this.experience = res.data.experience;
         this.designation = res.data.designation;
         this.email = res.data.email;
         this.countrycode = res.data.countrycode;
@@ -131,6 +133,7 @@ export class EmployeeComponent implements OnInit {
         employeenum: this.employeenum,
         employeename: this.employeename,
         employeetype: this.employeetype,
+        experience: this.experience,
         designation: this.designation,
         email: this.email,
         countrycode: this.countrycode,
@@ -145,6 +148,7 @@ export class EmployeeComponent implements OnInit {
         employeenum: this.employeenum,
         employeename: this.employeename,
         employeetype: this.employeetype,
+        experience: this.experience,
         designation: this.designation,
         email: this.email,
         countrycode: this.countrycode,

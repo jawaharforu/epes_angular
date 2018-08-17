@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import { AssessmentService } from '../assessment.service';
 import { CommonService } from '../../../services/common.service';
+import { ValidationsService } from '../../../services/validations.service';
 
 @Component({
   selector: 'app-assessment-list',
@@ -10,14 +12,24 @@ import { CommonService } from '../../../services/common.service';
 export class AssessmentListComponent implements OnInit {
 
   public assessmentList: String;
+  public type: String;
 
   constructor(
     private _commonService: CommonService,
-    private assessmentService: AssessmentService
+    private assessmentService: AssessmentService,
+    private activatedRoute: ActivatedRoute,
+    private _validationsService: ValidationsService,
   ) { }
 
   ngOnInit() {
-    this.getAssessmentList();
+    this.activatedRoute.params.subscribe((params) => {
+      this.type = params['type'];
+      if (!this._validationsService.isEmpty(this.type)) {
+        this.getAssessmentList(this.type);
+      } else {
+        this.getAssessmentList('others');
+      }
+    });
   }
 
   updateStatus(event: boolean, c: any) {
@@ -36,11 +48,10 @@ export class AssessmentListComponent implements OnInit {
       }
     });
   }
-  
-  getAssessmentList() {
-    this.assessmentService.getAssessment()
+
+  getAssessmentList(type: any) {
+    this.assessmentService.getAssessmentByType(type)
     .subscribe(res => {
-      console.log(res);
       this.assessmentList = res.data;
     });
   }
@@ -54,7 +65,7 @@ export class AssessmentListComponent implements OnInit {
     .subscribe(res => {
       if (res.success) {
         this._commonService.showMessage('success', res.msg);
-        this.getAssessmentList();
+        this.getAssessmentList(this.type);
       } else {
         this._commonService.showMessage('error', res.msg);
       }

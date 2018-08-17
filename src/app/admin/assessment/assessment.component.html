@@ -9,6 +9,12 @@
                     <p class="h4 text-center py-4 admin-title"> Assessments</p>
 
                     <div class="row">
+                        <div class="form-group col-md-12 col-sm-12">
+                            <input type="radio" class="form-check-input" id="materialGroupExample1" name="type" value="MD" [(ngModel)]="type">
+                            <label class="form-check-label" for="materialGroupExample1">MD</label>
+                            <input type="radio" class="form-check-input" id="materialGroupExample2" name="type" value="others" [(ngModel)]="type">
+                            <label class="form-check-label" for="materialGroupExample2">Others</label>
+                        </div>
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Title</label>
                             <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="name" name="name">

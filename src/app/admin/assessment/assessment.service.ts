@@ -13,7 +13,7 @@ export class AssessmentService {
   constructor(
     private _commonService: CommonService,
     private http: Http
-  ) { 
+  ) {
     this.link = this._commonService.link;
   }
 
@@ -50,10 +50,11 @@ export class AssessmentService {
     .pipe(map(res => res.json()));
   }
 
-  getAssessmentByStatus() {
+  getAssessmentByType(type: any) {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
-    return this.http.get(`${this.link}/assessments/get/list`, {headers: headers})
+    headers.append('Authorization', this._commonService.getUserToken());
+    return this.http.get(`${this.link}/assessments/type/${type}`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 }

@@ -18,6 +18,7 @@ export class AssessmentComponent implements OnInit {
   public duedate: String = '';
   public description: String = '';
   public assessmentid: String = '';
+  public type: String = 'others';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -40,15 +41,16 @@ export class AssessmentComponent implements OnInit {
     this.assessmentService.getAssessmentById(assessmentid)
     .subscribe(res => {
       this.name = res.data.title;
+      this.type = res.data.type;
       this.periodoftime = res.data.periodoftime;
       this.duration = res.data.duration;
       this.duedate = res.data.duedate;
       this.description = res.data.description;
       this.assessmentid = res.data._id;
     });
-  } 
+  }
 
-  assessmentForm(){
+  assessmentForm() {
     if (this._validationsService.isEmpty(this.name)) {
       this._commonService.showMessage('error', 'Assessment Title should not be empty!');
       return false;
@@ -76,6 +78,7 @@ export class AssessmentComponent implements OnInit {
         title: this.name,
         periodoftime: this.periodoftime,
         duration: this.duration,
+        type: this.type,
         duedate: this.duedate,
         description: this.description,
         assessmentid: this.assessmentid
@@ -85,6 +88,7 @@ export class AssessmentComponent implements OnInit {
         title: this.name,
         periodoftime: this.periodoftime,
         duration: this.duration,
+        type: this.type,
         duedate: this.duedate,
         description: this.description
       };
