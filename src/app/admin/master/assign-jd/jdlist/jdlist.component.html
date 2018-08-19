@@ -23,10 +23,9 @@
                             <td class="col-name">{{ j.name }}</td>
                             <td class="col-name">{{ noofemp[i] }}</td>
                             <td class="col-action">
-                                <!-- <span mdbTooltip="Assign Employees" placement="top" (click)="showModal(j._id)" class="btn-question" mdbWavesEffect>
+                                <span mdbTooltip="Assign Employees" placement="top" (click)="showModal(j._id)" class="btn-question" mdbWavesEffect>
                                     Assign JD to Employees
-                                </span> -->
-                                <a [routerLink]="['/admin/assignjd/employees/', j._id]" >Assign JD to Employees</a>
+                                </span>
                             </td>
                         </tr>
                     </tbody>
@@ -36,7 +35,7 @@
             </div>
         </div>
 
-        <!-- <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal"
+        <div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal"
             class="modal fade Question_model" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true" style="overflow: auto;">
             <div class="modal-dialog modal-notify modal-primary modal-fluid Question_model_container" role="document">
@@ -54,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
     </div>
 </div>

@@ -11,7 +11,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
 
 const router: Routes = [
   { path : '', component : JDListComponent  },
-  { path : 'employees/:jdid', component : AssignJDComponent  },
+  { path : 'assign/:jdid', component : AssignJDComponent  },
 ];
 
 @NgModule({

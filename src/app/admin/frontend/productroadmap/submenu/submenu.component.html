@@ -1,7 +1,7 @@
 <div class="card submenu-wrapper">
         <div class="menu-tile">Product Roadmap</div>
         <ul class="submenu-ul">
-        <li class="submenu-item"><a [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Create Product RoadMap</a></li>
-        <li class="submenu-item"><a [routerLink]="['/admin/frontend/roadmap/list']" class="waves-effect" >Product RoadMap List</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Create Product RoadMap</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/roadmap/list']" class="waves-effect" >Product RoadMap List</a></li>
     </ul>
   </div>

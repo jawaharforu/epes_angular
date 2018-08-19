@@ -14,7 +14,7 @@ p.h4.text-center.py-4.admin-title {
 }
 .card {
     position: relative;
-    padding: 25px 30px 0px 30px;
+    padding: 25px 30px 25px 30px;
 }
 .form-control.col-md-10 {
     max-width: 300px;
@@ -29,6 +29,10 @@ p.h4.text-center.py-4.admin-title {
     line-height: 28px;
     padding: 0px;
 }
+.no-padding{
+    margin: 0px !important;
+    margin-bottom: 15px !important;
+}
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active,
 .btn-outline-purple:not([disabled]):not(.disabled).active,
@@ -40,7 +44,6 @@ p.h4.text-center.py-4.admin-title {
     float: right;
     border:none !important;
     box-shadow: none;
-    margin-right: -15px;
 }
 label{
     font-size: 13px;
@@ -61,6 +64,11 @@ table.table th, table.table td {
     line-height: 30px;
     border: 1px solid #ccc;
 
+}
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
 }
 .col-name{
     font-size: 13px;
@@ -90,10 +98,6 @@ table.table th, table.table td {
 table.dataTable thead th{
     border-bottom: 1px solid #dbe2e4;
 }
-thead{
-    background-color: #f9f6f6 !important;
-    border: 1px solid #ccc;
-}
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
     color: #666;
     font-size: 13px !important;
@@ -109,7 +113,6 @@ span.btn-edit, span.btn-delete  {
     border: 1px solid #ccc;
     padding: 25px;
     background: #fff;
-    padding-bottom: 10px;
 }
 @media only screen and (max-width: 768px){
     button.btn.btn-danger.waves-light.btn-delete,

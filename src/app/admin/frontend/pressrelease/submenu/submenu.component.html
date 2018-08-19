@@ -1,7 +1,7 @@
 <div class="card submenu-wrapper">
         <div class="menu-tile">Press Release</div>
         <ul class="submenu-ul">
-        <li class="submenu-item"><a [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Create Press Release</a></li>
-        <li class="submenu-item"> <a [routerLink]="['/admin/frontend/press-release/list']" class="waves-effect" >Press Release List</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Create Press Release</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"> <a [routerLink]="['/admin/frontend/press-release/list']" class="waves-effect" >Press Release List</a></li>
     </ul>
   </div>

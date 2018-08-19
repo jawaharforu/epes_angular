@@ -17,18 +17,123 @@ export class HRIndexComponent implements OnInit {
   public designation: String = '';
   public companyname: String = '';
   public industry: String = '';
+  public hrindexid: String = '';
 
   public question: any[] = [];
+  public section: any[] = [];
   public staffing: any;
 
   public options: Object;
 
   public questions: any[] = [
-    'Cusanitium doloremque laudantium, totam rem aperiam',
-    'Cusanitium doloremque laudantium, totam rem aperiam',
-    'Cusanitium doloremque laudantium, totam rem aperiam',
-    'Cusanitium doloremque laudantium, totam rem aperiam',
-    'Cusanitium doloremque laudantium, totam rem aperiam'
+    {
+      'head': 'staffing',
+      'question': [
+        {
+          'q': 'Number of recruiting advertising programs',
+        },
+        {
+          'q': 'Number of applicants contacted compared with those reporting for job interviews',
+        },
+        {
+          'q': 'Time to fill a job',
+        },
+        {
+          'q': 'Cost of filling a job',
+        },
+        {
+          'q': 'Average tenure of employees',
+        },
+        {
+          'q': 'Percent of internally filled jobs',
+        },
+        {
+          'q': 'Performance of hired applicants (e.g., performance of candidates from different schools,types of experience, etc.)',
+        },
+        {
+          'q': 'Percent of multilingual employees',
+        },
+        {
+          'q': 'Ratio of backup talent (number of prepared backups in place for top “X” jobs)'
+        }
+      ]
+    },
+    {
+      'head': 'traininganddevelopments',
+      'question': [
+        { 'q': 'Number of training days and programs held per year', },
+        { 'q': 'Cost per trainee hour', },
+        { 'q': 'Percent of employees involved in training' },
+        { 'q': 'Number of courses taught by subject' },
+        { 'q': 'Percent of employees with development plans' },
+        { 'q': 'Percent of payroll spent on training' },
+        { 'q': 'Ratio of advanced to remedial education' },
+        { 'q': 'Time for new program design' },
+        { 'q': 'Percent of new material in programs each year' }
+      ]
+    },
+    {
+      'head': 'performancesystems',
+      'question': [
+        { 'q': 'Acceptance of appraisal processes by employees' },
+        { 'q': 'Effectiveness of appraisal process for dealing with poor performers' },
+        { 'q': 'Percent of employees receiving performance appraisal' },
+        { 'q': 'Percent of employees whose compensation is performance contingent' },
+        { 'q': 'Percent of total salary at risk' },
+        { 'q': 'Speed of salary action processing' },
+        { 'q': 'Average merit increase granted by classification' },
+        { 'q': 'Ratio of salary to competitor salary' },
+        { 'q': 'Trends in health care costs to national averages' },
+        { 'q': 'Extent to which measurement systems are seen as credible by the employees' },
+        { 'q': 'Labor costs per revenue rupee' }
+      ]
+    },
+    {
+      'head': 'safetyandhealth',
+      'question': [
+        { 'q': 'Lost work days' },
+        { 'q': 'Almost lost work days' },
+        { 'q': 'Cost of injuries' },
+        { 'q': 'Incidence of injuries' },
+        { 'q': 'Percent of employees who are involved in wellness programs' },
+        { 'q': 'Trends in workforce illness' }
+      ]
+    },
+    {
+      'head': 'labourrelations',
+      'question': [
+        { 'q': 'Percent of unionized employees on problem solving' },
+        { 'q': 'Number of joint labor management problem-solving teams' },
+        { 'q': 'Frequency of labor and management leadership interaction' },
+        { 'q': 'Diversity of agreements' },
+        { 'q': 'Number of nontraditional involvements of unionized workforce' },
+        { 'q': 'Differences between employee and management perceptions of throughput and output effectiveness' }
+      ]
+    },
+    {
+      'head': 'internalcommunication',
+      'question': [
+        { 'q': 'Consistency and clarity of messages from top management and from HR' },
+        { 'q': 'Understanding of messages from top management and from HR' },
+        { 'q': 'Acceptance of messages from management and HR' },
+        { 'q': 'Effectiveness of information sharing among departments' },
+        { 'q': 'Effectiveness of HR mediation between employees and management' },
+        { 'q': 'Speed and effectiveness of responses to employee complaints' },
+        { 'q': 'Average time for dispute resolution' },
+        { 'q': 'Percent employees making suggestions' },
+        { 'q': 'Percent of suggestions implemented' }
+      ]
+    },
+    {
+      'head': 'diversity',
+      'question': [
+        { 'q': 'Perception of consistent and equitable treatment of all employees' },
+        { 'q': 'Compliance with technical requirements of affirmative action' },
+        { 'q': 'Degree of objectivity and neutrality in rewards and promotions' },
+        { 'q': 'Percent of nontraditional workers in applicant pool' },
+        { 'q': 'Average age of workforce' }
+      ]
+    },
   ];
 
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
@@ -43,84 +148,82 @@ export class HRIndexComponent implements OnInit {
     private hrindexService: HrindexService,
 
   ) {
-
+    let j = 0;
+    for (const prop of this.questions) {
+      this.question[j] = [];
+      (j === 0) ? this.section[j] = true : this.section[j] = false;
+      let i = 0;
+      for (const props of prop.question) {
+        this.question[j][i] = '1';
+        i++;
+      }
+      j++;
+    }
   }
 
   getStaffing() {
     this.options = {
       chart: {
-        type: 'bar'
+        type: 'column'
       },
       title: {
-        text: '360 EPES HR INDEX'
+        text: 'HR Index Score'
       },
       subtitle: {
-        text: null
+        text: ''
       },
       xAxis: {
-        // tslint:disable-next-line:max-line-length
-        categories: ['Staffing', 'Training & Development', 'Performance Systems', 'Safety and Health', 'Labour Relations', 'Internal Communication', 'Diversity'],
-        title: {
-          text: null
-        }
+        categories: [
+          'Staffing',
+          'Training & Development',
+          'Performance Systems',
+          'Safety and Health',
+          'Labour Relations',
+          'Internal Communication',
+          'Diversity'],
+        crosshair: true
       },
       yAxis: {
         min: 0,
         title: {
-          text: 'Score (points)',
-          align: 'high'
-        },
-        labels: {
-          overflow: 'justify'
+          text: ''
         }
       },
       tooltip: {
-        valueSuffix: ' points'
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
       },
       plotOptions: {
-        bar: {
-          dataLabels: {
-            enabled: true
-          }
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0
         }
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: ('#FFFFFF'),
-        shadow: true
-      },
-      credits: {
-        enabled: false
       },
       series: [{
         name: 'Score',
-        data: [10, 12, 14, 16, 18, 20, 22]
-      }
-      ]
+        data: this.staffing
+
+      }]
     };
-
-
   }
 
   ngOnInit() {
-    for (let i = 0; i > this.questions.length; i++) {
-      this.question[i] = '';
-    }
 
   }
 
   staffingForm() {
-    let k = 0;
+    const k: any = [];
     for (let j = 0; j < this.question.length; j++) {
-      k = k + parseInt(this.question[j], 10);
+      let m = 0;
+      for (let i = 0; i < this.question[j].length; i++) {
+        m = m + parseInt(this.question[j][i], 10);
+      }
+      k.push(m);
     }
-    console.log(k);
     this.staffing = k;
     this.getStaffing();
     this.openFourth();
@@ -173,6 +276,7 @@ export class HRIndexComponent implements OnInit {
     this.onHidden('s');
     this.onHidden('t');
     this.showModal('fo');
+    this.updatehrIndex();
   }
 
   // closeThird() {
@@ -181,6 +285,48 @@ export class HRIndexComponent implements OnInit {
 
   closeFourth() {
     this.onHidden('fo');
+  }
+
+  updatehrIndex() {
+    const fieldhrindex = {
+      name: this.name,
+      email: this.email,
+      mobile: this.mobile,
+      designation: this.designation,
+      companyname: this.companyname,
+      industry: this.industry,
+      status: true,
+      staffing: this.staffing[0],
+      traininganddevelopment: this.staffing[1],
+      performancesystems: this.staffing[2],
+      safetyandhealth: this.staffing[3],
+      labourrelations: this.staffing[4],
+      internalcommunication: this.staffing[5],
+      diversity: this.staffing[6],
+      hrindexid: this.hrindexid
+    };
+    this.hrindexService.addHrIndex(fieldhrindex)
+      .subscribe(res => {
+        if (res.success) {
+          this._commonService.showMessage('success', res.msg);
+          console.log(res.data);
+        } else {
+          this._commonService.showMessage('error', res.msg);
+        }
+      });
+  }
+
+  showNext(i: number) {
+    let j = 0;
+    if (i === (this.questions.length - 1)) {
+      this.staffingForm();
+      return false;
+    }
+    for (const prop of this.questions) {
+      (j === i) ? this.section[j] = true : this.section[j] = false;
+      console.log(prop.head);
+      j++;
+    }
   }
 
   hrIndexForm() {
@@ -224,12 +370,7 @@ export class HRIndexComponent implements OnInit {
         // console.log(res);
         if (res.success) {
           this._commonService.showMessage('success', res.msg);
-          this.name = '';
-          this.email = '';
-          this.mobile = '';
-          this.designation = '';
-          this.industry = '';
-          //this.getTrainingSubheadList();
+          this.hrindexid = res.data._id;
           this.openThird();
         } else {
           this._commonService.showMessage('error', res.msg);

@@ -1,7 +1,7 @@
 <div class="card submenu-wrapper">
         <div class="menu-tile">Careers</div>
         <ul class="submenu-ul">
-        <li class="submenu-item waves-effect"><a [routerLink]="['/admin/frontend/career']"  >Create Career</a></li>
-        <li class="submenu-item waves-effect"><a [routerLink]="['/admin/frontend/career/list']"  >Career List</a></li>
+        <li class="submenu-item " [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/career']"  >Create Career</a></li>
+        <li class="submenu-item " [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/career/list']"  >Career List</a></li>
     </ul>
   </div>

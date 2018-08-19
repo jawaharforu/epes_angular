@@ -9,10 +9,6 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'approver',
-        loadChildren: './master/approver/approver.module#ApproverModule',
-      },
-      {
         path: 'jd',
         loadChildren: './master/JD/jd.module#JdModule',
       },

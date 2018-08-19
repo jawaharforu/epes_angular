@@ -15,7 +15,7 @@
                 <div class="col-sm-12 first">
                     <div class="row">
                         <div class="col-sm-7"></div>
-                        <div class="col-sm-5 model-detail">
+                        <div class="col-sm-5 model-detail hr-index-fr-st-screen">
                             <h2>360 EPES HR INDEX</h2>
                             <h4> Empowering people by enabling the mobility and productivity they need in a modern work environment.
                             </h4>
@@ -60,14 +60,14 @@
                             <h2 class="text-center">WELCOME TO 360 EPES HR INDEX</h2>
                         </div>
 
-                        <div class="col-sm-12 form-modle">
+                        <div class="col-md-6 offset-md-3 form-modle mt-5">
                             <!-- <form class="reg_form" (ngSubmit)="hrIndexForm()"> -->
-                            <input type="text" id="first_name" class="form-control" placeholder="*Name" [(ngModel)]="name" name="name">
-                            <input type="email" id="email" class="form-control" placeholder="*Email" [(ngModel)]="email" name="email">
-                            <input type="text" id="Phone" class="form-control" placeholder="*Phone" [(ngModel)]="mobile" name="mobile">
-                            <input type="text" id="designation" class="form-control" placeholder="Designation" [(ngModel)]="designation" name="designation">
-                            <input type="text" id="company_name" class="form-control" placeholder="Company Name" [(ngModel)]="companyname" name="companyname">
-                            <input type="text" id="industry" class="form-control" placeholder="Industry" [(ngModel)]="industry" name="industry">
+                            <input type="text" id="first_name" class="form-control mb-2" placeholder="*Name" [(ngModel)]="name" name="name">
+                            <input type="email" id="email" class="form-control mb-2" placeholder="*Email" [(ngModel)]="email" name="email">
+                            <input type="text" id="Phone" class="form-control mb-2" placeholder="*Phone" [(ngModel)]="mobile" name="mobile">
+                            <input type="text" id="designation" class="form-control mb-2" placeholder="Designation" [(ngModel)]="designation" name="designation">
+                            <input type="text" id="company_name" class="form-control mb-2" placeholder="Company Name" [(ngModel)]="companyname" name="companyname">
+                            <input type="text" id="industry" class="form-control mb-2" placeholder="Industry" [(ngModel)]="industry" name="industry">
 
                             <div class="text-center mt-4 sub_btn">
                                 <a class="btn btn-primary" type="submit" (click)="openThird()">Check Your HR Index</a>
@@ -131,169 +131,52 @@
                             </div>
                         </div>
                     </div>
-                    <h3>STAFFING</h3>
-                    <form (ngSubmit)="staffingForm()">
-                        <div class="row">
-                            <div class="col-sm-12 staffing-scrol">
-                                <div class="col-sm-12 question odd" *ngFor="let quest of questions; let i = index">
-                                    <p>
-                                        <span>{{i}}.</span>{{quest}}</p>
-                                    <ul>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="1" id="poor{{i}}" [(ngModel)]="question[i]" name="question{{i}}">
-                                                <label class="form-check-label" for="poor{{i}}">Poor</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="2" id="average{{i}}" [(ngModel)]="question[i]" name="question{{i}}">
-                                                <label class="form-check-label" for="average{{i}}">Average</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="3" id="good{{i}}" [(ngModel)]="question[i]" name="question{{i}}">
-                                                <label class="form-check-label" for="good{{i}}">Good</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="4" id="excelent{{i}}" [(ngModel)]="question[i]" name="question{{i}}">
-                                                <label class="form-check-label" for="excelent{{i}}">Excelent</label>
-                                            </div>
-                                        </li>
-                                    </ul>
+                    <div>
+
+                        <form>
+                            <div class="row" *ngFor="let questhead of questions; let j = index">
+                                <div class="col-sm-12" *ngIf="section[j]">
+                                    <h3>{{questhead.head}}</h3>
+                                    <div class="col-sm-12 staffing-scrol">
+                                        <div class="col-sm-12 question odd" *ngFor="let quest of questhead.question; let i = index">
+                                            <p>
+                                                <span>{{i+1}}.</span>{{quest.q}}</p>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" value="1" id="poor{{j}}{{i}}" [(ngModel)]="question[j][i]" name="question{{j}}{{i}}">
+                                                        <label class="form-check-label" for="poor{{j}}{{i}}">Poor</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" value="2" id="average{{j}}{{i}}" [(ngModel)]="question[j][i]" name="question{{j}}{{i}}">
+                                                        <label class="form-check-label" for="average{{j}}{{i}}">Average</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" value="3" id="good{{j}}{{i}}" [(ngModel)]="question[j][i]" name="question{{j}}{{i}}">
+                                                        <label class="form-check-label" for="good{{j}}{{i}}">Good</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" value="4" id="excelent{{j}}{{i}}" [(ngModel)]="question[j][i]" name="question{{j}}{{i}}">
+                                                        <label class="form-check-label" for="excelent{{j}}{{i}}">Excellent</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-right last-btn">
+                                        <button type="button" (click)="showNext(j+1)" class="btn btn-success">Next</button>
+                                    </div>
                                 </div>
-                                <!-- <div class="col-sm-12 question even">
-                                    <p>
-                                        <span>2.</span>Cusanitium doloremque laudantium, totam rem aperiam</p>
-                                    <ul>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="1" id="poor2" [(ngModel)]="question2" name="question2">
-                                                <label class="form-check-label" for="poor2">Poor</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="2" id="average2" [(ngModel)]="question2" name="question2">
-                                                <label class="form-check-label" for="average2">Average</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="3" id="good2" [(ngModel)]="question2" name="question2">
-                                                <label class="form-check-label" for="good2">Good</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="4" id="excelent2" [(ngModel)]="question2" name="question2">
-                                                <label class="form-check-label" for="excelent2">Excelent</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-12 question odd">
-                                    <p>
-                                        <span>3.</span>Cusanitium doloremque laudantium, totam rem aperiam</p>
-                                    <ul>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="1" id="poor3" [(ngModel)]="question3" name="question3">
-                                                <label class="form-check-label" for="poor3">Poor</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="2" id="average3" [(ngModel)]="question3" name="question3">
-                                                <label class="form-check-label" for="average3">Average</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="3" id="good3" [(ngModel)]="question3" name="question3">
-                                                <label class="form-check-label" for="good3">Good</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="4" id="excelent3" [(ngModel)]="question3" name="question3">
-                                                <label class="form-check-label" for="excelent3">Excelent</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-12 question even">
-                                    <p>
-                                        <span>4.</span>Cusanitium doloremque laudantium, totam rem aperiam</p>
-                                    <ul>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="1" id="poor4" [(ngModel)]="question4" name="question4">
-                                                <label class="form-check-label" for="poor4">Poor</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="2" id="average4" [(ngModel)]="question4" name="question4">
-                                                <label class="form-check-label" for="average4">Average</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="3" id="good4" [(ngModel)]="question4" name="question4">
-                                                <label class="form-check-label" for="good4">Good</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="4" id="excelent4" [(ngModel)]="question4" name="question4">
-                                                <label class="form-check-label" for="excelent4">Excelent</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-12 question odd">
-                                    <p>
-                                        <span>5.</span>Cusanitium doloremque laudantium, totam rem aperiam</p>
-                                    <ul>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="1" id="poor5" [(ngModel)]="question5" name="question5">
-                                                <label class="form-check-label" for="poor5">Poor</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="2" id="average5" [(ngModel)]="question5" name="question5">
-                                                <label class="form-check-label" for="average5">Average</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="3" id="good5" [(ngModel)]="question5" name="question5">
-                                                <label class="form-check-label" for="good5">Good</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input type="radio" class="form-check-input" value="4" id="excelent5" [(ngModel)]="question5" name="question5">
-                                                <label class="form-check-label" for="excelent5">Excelent</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div> -->
+
                             </div>
-                        </div>
-                        <div class="col-sm-12 text-right last-btn">
-                            <!-- <a class="btn btn-primary" id="btnback" (click)="openSecond()">Back</a> -->
-                            <!-- <a class="btn btn-primary" id="btnNext" (click)="closeThird()">Next</a> -->
-                            <button type="submit" class="btn btn-success">Save</button>
-                            <!-- <a class="btn btn-primary" type="submit" (click)="openFourth()">open 4</a> -->
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,52 +194,31 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="staffing col-sm-12">
+                    <h2 class="text-center hr-scrore-title">HR Index Score</h2>
+                <div class="staffing scrore-container col-sm-12">
+                    <div class="col-md-12">
                     <chart [options]="options">
-                        
+
                     </chart>
-                    <div class="">
+                </div>
+                    <div class="col-md-6">
                         <table class="table table-sm">
                             <thead>
-                            <h3>Score</h3>
+                                <h3>Score</h3>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>Staffing</td>
-                                <td>14</td>
-                              </tr>
-                              <tr>
-                                <td>Training & Development</td>
-                                <td>8</td>
-                              </tr>
-                              <tr>
-                                <td>Performance Systems</td>
-                                <td>10</td>
-                              </tr>
-                              <tr>
-                                <td>Safety and Health</td>
-                                <td>15</td>
-                              </tr>
-                              <tr>
-                                <td>Labour Relations</td>
-                                <td>16</td>
-                              </tr>
-                              <tr>
-                                <td>Internal Communication</td>
-                                <td>17</td>
-                              </tr>
-                              <tr>
-                                <td>Diversity</td>
-                                <td>18</td>
-                              </tr>
+                                <tr *ngFor="let questhead of questions; let j = index">
+                                    <td>{{questhead.head}}</td>
+                                    <td>{{staffing[j]}}</td>
+                                </tr>
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
                 <div class="col-sm-12 text-right last-btn">
                     <!-- <a class="btn btn-primary" id="btnback" (click)="openSecond()">Back</a> -->
                     <!-- <a class="btn btn-primary" id="btnNext" (click)="closeThird()">Next</a> -->
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <!-- <button type="submit" class="btn btn-success">Save</button> -->
                 </div>
             </div>
         </div>

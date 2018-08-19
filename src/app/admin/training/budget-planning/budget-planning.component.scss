@@ -1,6 +1,51 @@
+p.h4.text-center.py-4.admin-title {
+    color: #494949;
+    font-weight: normal;
+    padding-top: 15px !important;
+    text-align: left !important;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px !important;
+    background: #ffffff;
+    border: none;
+    margin-left: -20px;
+    width: 35%;
+}
+.card {
+    position: relative;
+    padding: 25px 30px 0px 30px;
+}
+.form-control.col-md-10 {
+    max-width: 300px;
+}
+.card .card-body {
+    background: #f6f6f6;
+    box-shadow: none;
+}
+.add-faqCategory label{
+    font-size: 13px;
+    color: #000 !important;
+    line-height: 28px;
+    padding: 0px;
+}
+.btn-submit,
+.btn-outline-purple:not([disabled]):not(.disabled):active,
+.btn-outline-purple:not([disabled]):not(.disabled).active,
+.show > .btn-outline-purple.dropdown-toggle{
+    background-color: #f38e00 !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 15px;
+    float: right;
+    border:none !important;
+    box-shadow: none;
+    margin-right: -15px;
+}
 label{
     font-size: 13px;
     color: #000 !important;
+    line-height: 30px;
 }
 .label-Department{
     padding: 0px;
@@ -248,7 +293,19 @@ span.btn-edit, span.btn-delete  {
     margin-top: 135px;
 }
 
-
+span.btn-edit, span.btn-delete  {
+    font-size: 13px;
+    color: #54afc6;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 30px;
+}
+.scale-list {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #fff;
+    padding-bottom: 10px;
+}
 
 @media only screen and (max-width:768px){
     .training-page{

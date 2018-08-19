@@ -41,6 +41,10 @@ const router: Routes = [
         path: 'general-settings',
         loadChildren: './general-settings/general-settings.module#GeneralSettingsModule',
       },
+      {
+        path: 'approver',
+        loadChildren: './approver/approver.module#ApproverModule',
+      },
     ]
   }
 ];

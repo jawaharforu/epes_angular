@@ -1,48 +1,55 @@
-<div class="row">
-    <div class="col-md-12">
+<div class="row mb-3">
+    <div class="col-md-12 ">
+        <!-- Card -->
+        <div class="card mb-1">
+            <!-- Card body -->
+            <div class="card-body ">
+
         <form (ngSubmit)="questionForm()">
             <input type="hidden" [(ngModel)]="questionid" name="questionid">
+            <p class="h4 text-center py-4 admin-title">Assign Question</p>
             <!-- Default input name -->
-            <div class="row">
+            <div class="row no-padding">
               <select class="browser-default form-control col-md-6" id="defaultFormCardDesiEx" [(ngModel)]="jdid" name="jdid" (change)="getQuestions()">
                 <option value="" disabled>--Select JD--</option>
                 <option *ngFor="let j of jdList" [value]="j._id">{{ j.name }}</option>
               </select>
             </div>
+         
+           
             <div class="row">
-                <select class="browser-default form-control col-md-3" id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
-                    <option value="" disabled>--Select Employee--</option>
-                    <option value="md">MD</option>
-                    <option value="admin">Admin</option>
-                    <option value="commonreception">Common Reception</option>
-                    <option value="secretary">Department/Secretary</option>
-                    <option value="hr">HR</option>
-                    <option value="others">Others</option>
-                    <!-- <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option> -->
-                </select>
-            </div>
-            <div class="form-group"></div>
-            <div class="row">
-                <div class="col-md-11 questionwrapper">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-8">
+                <div class="col-md-12 questionwrapper">
+                 
+                     
+                                <div class="col-md-9">
                                     <input type="text" id="defaultFormCardNameEx" class="form-control" [(ngModel)]="question" name="question" placeholder="Enter Question">
                                 </div>
-                                <div class="col-md-4">
-                                    <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
-                                        <option value="" disabled>--Select Scale--</option>
-                                        <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
-                                    </select>
-                                    <a (click)="showModal('s')" class="btn_add">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
+                                <div class="row no-padding">
+                                        <div class="col-md-6">
+                                        <select class="browser-default form-control " id="defaultFormCardDesiEx" [(ngModel)]="type" name="type">
+                                            <option value="" disabled>--Select Employee--</option>
+                                            <option value="md">MD</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="commonreception">Common Reception</option>
+                                            <option value="secretary">Department/Secretary</option>
+                                            <option value="hr">HR</option>
+                                            <option value="others">Others</option>
+                                            <!-- <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option> -->
+                                        </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <select class="browser-default form-control" id="defaultFormCardDesiEx" [(ngModel)]="scale" name="designation">
+                                                    <option value="" disabled>--Select Scale--</option>
+                                                    <option *ngFor="let s of scaleList" [value]="s._id">{{ s.options | arrayToString:',' }}</option>
+                                                </select>
+                                                <a (click)="showModal('s')" class="btn_add">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+                                            </div>
+                                    </div>
+
+                               <div class="row no-padding">
+                      
                                 <div class="col-md-6">
                                     <select class="browser-default form-control " id="defaultFormCardDesiEx" [(ngModel)]="assessmenttype" name="assessmenttype"
                                         (change)="getHeader()">
@@ -63,18 +70,19 @@
                                     </a>
                                 </div>
                             </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-1 no-padding">
+                 
+                <div class="float-right">
                     <button type="submit" class="btn btn-primary  btn_additem">
                         Submit</button>
                 </div>
-            </div>
+           
         </form>
     </div>
 </div>
-<div class="row justify-content-md-center mt-2 product-list list-jd-q">
+</div></div>
+<div class="justify-content-md-center mt-2 product-list list-jd-q">
     <div class="col-md-12 ">
         <!--Table-->
         <table *ngIf="questionList" class="table table-hover table-responsive-md table-fixed" datatable>

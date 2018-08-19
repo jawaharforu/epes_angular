@@ -1,7 +1,7 @@
 <div class="card submenu-wrapper">
         <div class="menu-tile">Product</div>
         <ul class="submenu-ul">
-        <li class="submenu-item"><a [routerLink]="['/admin/frontend/product']" class="waves-effect" >Create Product</a></li>
-        <li class="submenu-item"><a [routerLink]="['/admin/frontend/product/list']" class="waves-effect" >Product List</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/product']" class="waves-effect" >Create Product</a></li>
+        <li class="submenu-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/admin/frontend/product/list']" class="waves-effect" >Product List</a></li>
     </ul>
   </div>

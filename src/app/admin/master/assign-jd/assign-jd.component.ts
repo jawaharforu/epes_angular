@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from '../../../services/common.service';
 import { JdService } from '../../master/JD/services/jd.service';
 import { OrganogramService } from '../organogram/organogram.service';
 import { EmployeeService } from '../employee/employee.service';
 import { AssignJDService } from './assign-jd.service';
-import { ValidationsService } from '../../../services/validations.service';
 
 @Component({
   selector: 'app-assign-jd',
@@ -14,7 +12,7 @@ import { ValidationsService } from '../../../services/validations.service';
 })
 export class AssignJDComponent implements OnInit {
 
-  public getjdid: String;
+  @Input() getjdid: String;
   public jd: any;
   public organogramList: any;
   public organogramid: String = '';
@@ -25,34 +23,25 @@ export class AssignJDComponent implements OnInit {
 
   constructor(
     private jdService: JdService,
-    private activatedRoute: ActivatedRoute,
     private _commonService: CommonService,
     private organogramService: OrganogramService,
     private employeeService: EmployeeService,
     private assignJDService: AssignJDService,
-    private _validationsService: ValidationsService,
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
-      this.getjdid = params['jdid'];
-      if (!this._validationsService.isEmpty(this.getjdid)) {
-        this.getJDData();
-        this.getOrganogramFullList();
-        this.getEmployeeList();
-        this.getAssignJDByJDId();
-        this.dropdownSettings = {
-                  singleSelection: false,
-                  text: 'Select Employee',
-                  selectAllText: 'Select All',
-                  unSelectAllText: 'UnSelect All',
-                  enableSearchFilter: true,
-                  classes: 'myclass custom-class'
-                };
-      } else {
-        this._commonService.redirectTo('/admin/assignjd');
-      }
-    });
+    this.getJDData();
+    this.getOrganogramFullList();
+    this.getEmployeeList();
+    this.getAssignJDByJDId();
+    this.dropdownSettings = {
+              singleSelection: false,
+              text: 'Select Employee',
+              selectAllText: 'Select All',
+              unSelectAllText: 'UnSelect All',
+              enableSearchFilter: true,
+              classes: 'myclass custom-class'
+            };
   }
 
   getJDData() {
@@ -95,7 +84,7 @@ export class AssignJDComponent implements OnInit {
       this.selectedItems = [];
       for (const prop of res.data[0].employeeid) {
         this.selectedItems.push({'id': prop._id, 'itemName': prop.employeename + '-' + prop.employeenum});
-        this.organogramid = prop.organogramid;
+        this.organogramid = prop.employeename.organogramid;
       }
     });
   }
@@ -115,7 +104,7 @@ export class AssignJDComponent implements OnInit {
     .subscribe(res => {
       if (res.success) {
         this._commonService.showMessage('success', res.msg);
-        this._commonService.redirectTo('/admin/assignjd/');
+        this._commonService.redirectTo('/admin/assigntoJD/');
       } else {
         this._commonService.showMessage('error', res.msg);
       }

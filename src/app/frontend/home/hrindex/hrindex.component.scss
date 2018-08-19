@@ -45,6 +45,10 @@
   margin-top: 0px;
 
 }
+.btn-success{
+  padding:5px 20px;
+  box-shadow: none;
+}
 
 .modal-content .close {
   position: absolute;
@@ -53,10 +57,16 @@
   background-color: #555;
   padding: 1px 8px;
   border-radius: 50%;
-  font-size: 30px;
+  font-size: 20px;
   color: #fff;
 }
-
+span.white-text {
+  margin-left: -2px !important;
+}
+.hr-index-fr-st-screen{
+    margin-top: 50px;
+    margin-left: -20px;
+}
 .modal-content .close:focus {
   outline: none;
 }
@@ -148,7 +158,19 @@
   background-position: 0px 72px;
 
 }
+.staffing.scrore-container.col-sm-12 {
+  background: #fff !important;
+  overflow-y: scroll;
+  max-height: 400px;
+}
 
+.hr-scrore-title {
+  color: #2599b6;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 25px;;
+}
 .staffing-scrol {
   overflow-y: auto;
   height: 300px;
