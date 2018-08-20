@@ -155,6 +155,7 @@ export class HRIndexComponent implements OnInit {
       let i = 0;
       for (const props of prop.question) {
         this.question[j][i] = '1';
+        console.log(props);
         i++;
       }
       j++;
