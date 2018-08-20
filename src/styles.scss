@@ -1699,6 +1699,10 @@ i.fa {
     color: #fff;
     top:20em;
     z-index: 9999;
+    cursor: pointer;
+}
+.form_detail[_ngcontent-c20] form[_ngcontent-c20] select[_ngcontent-c20]{
+    font-weight: normal;
 }
 button.video-btn {
     background: #03c5ff;
@@ -1708,8 +1712,15 @@ button.video-btn {
     border-radius: 4px;
     cursor: pointer;
 }
+/*
 .accordion .card {
     background: #f6f6f6;
+}
+*/
+.carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    display: none;
 }
 ul.nav.classic-tabs.tabs-new {
     background: #0059c7;
@@ -2744,6 +2755,11 @@ button.close {
     font-weight: 400;
 }
 
+h5 .row{
+    width: 99%;
+    float: left;
+    margin-bottom: 15px;
+}
 /*---------Organogram-------------*/
 .form-control {
     font-size: 14px;
@@ -2757,4 +2773,81 @@ button.close {
 }
 li.submenu-item a{
     font-size: 12px !important;
+}
+
+.form_detail form select{
+    font-weight: normal !important;
+ }
+ .card-body .dataTables_wrapper{
+     background: #f6f6f6 !important;
+
+ }
+ .card-body  .dataTables_wrapper .dataTables_length, 
+ .card-body  .dataTables_wrapper .dataTables_filter, 
+ .card-body .dataTables_wrapper .dataTables_info, 
+ .card-body .dataTables_wrapper .dataTables_processing,
+ .card-body  .dataTables_wrapper .dataTables_paginate {
+    color: #333333;
+    font-size: 13px;
+}
+.card-body  .dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.card-body  .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    padding: 1px 7px;
+    background: #2599b7;
+    border: 1px solid #54afc6;
+    color: #fff !important;
+    border-radius: 0;
+}
+.budgetplan .dataTables_wrapper .dataTables_length, 
+.budgetplan .dataTables_wrapper .dataTables_filter, 
+.budgetplan .dataTables_wrapper .dataTables_info, 
+.budgetplan .dataTables_wrapper .dataTables_processing,
+.budgetplan .dataTables_wrapper .dataTables_paginate {
+   color: #333333;
+   font-size: 13px;
+}
+.budgetplan  .dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.budgetplan  .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    padding: 1px 7px;
+    background: #2599b7;
+    border: 1px solid #54afc6;
+    color: #fff !important;
+    border-radius: 0;
+}
+.card-body  table.dataTable.no-footer{
+    border: none;
+}
+.mg-0{
+    margin: 0px !important;
+}
+.scale-list table.dataTable thead th {
+    background-color: #f9f6f6 !important;
+}
+p.h4.text-center.py-4.admin-title{
+    font-size: 16px !important;
+}
+table.dataTable.no-footer{
+    border: 1px solid #ccc !important;
+}
+table.dataTable thead th{
+    border: 1px solid #dbe2e4 !important;
+    height: 30px !important;
+}
+.emailtemplates .card{
+    background: #f6f6f6;
+}
+.staffing.scrore-container::-webkit-scrollbar, 
+.staffing-scrol::-webkit-scrollbar {
+    width: .5em;
+}
+ 
+.staffing.scrore-container::-webkit-scrollbar-track,
+.staffing-scrol::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.staffing.scrore-container::-webkit-scrollbar-thumb,
+.staffing-scrol::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }

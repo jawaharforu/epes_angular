@@ -63,9 +63,9 @@ export class QuestionAssignComponent implements OnInit {
 
   getJDList() {
     this.jdService.getJD()
-    .subscribe(res => {
-      this.jdList = res.data;
-    });
+      .subscribe(res => {
+        this.jdList = res.data;
+      });
   }
 
   getQuestions() {
@@ -111,9 +111,9 @@ export class QuestionAssignComponent implements OnInit {
       return false;
     }
     this.headerService.getHeaderByAssessmenttype(this.assessmenttype)
-    .subscribe(res => {
-      this.headerList = res.data;
-    });
+      .subscribe(res => {
+        this.headerList = res.data;
+      });
   }
 
   checkQuestion(questionid: any) {
@@ -145,8 +145,13 @@ export class QuestionAssignComponent implements OnInit {
   }
 
   questionForm() {
+    
     if (this._validationsService.isEmpty(this.question)) {
       this._commonService.showMessage('error', 'Question should not be empty!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.type)) {
+      this._commonService.showMessage('error', 'Pleasse select Employee!');
       return false;
     }
     if (this._validationsService.isEmpty(this.scale)) {
