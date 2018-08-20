@@ -33,11 +33,16 @@
                         </div>
 
                         <div class="form-group col-md-6 col-sm-12 ">
-                            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Duration</label>
-                            <mdb-date-picker name="duration" [options]="myDurationdatePickerOptions" [(ngModel)]="duration"></mdb-date-picker>
+                            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Duration From</label>
+                            <mdb-date-picker name="durationfrom" [options]="myDurationdatePickerOptions" [(ngModel)]="durationfrom"></mdb-date-picker>
                         </div>
 
-                        <div class="form-group col-md-6 col-sm-12">
+                        <div class="form-group col-md-6 col-sm-12 ">
+                            <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Duration To</label>
+                            <mdb-date-picker name="durationto" [options]="myDurationdatePickerOptions" [(ngModel)]="durationto"></mdb-date-picker>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12">
                             <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Due Date</label>
                             <mdb-date-picker name="duedate" [options]="myduedateDatePickerOptions" [(ngModel)]="duedate"></mdb-date-picker>
                         </div>

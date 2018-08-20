@@ -90,7 +90,11 @@ p.h4.text-center.py-4.admin-title {
 .btn-submit,
 .btn-outline-purple:not([disabled]):not(.disabled):active, 
 .btn-outline-purple:not([disabled]):not(.disabled).active, 
-.show > .btn-outline-purple.dropdown-toggle{
+.show > .btn-outline-purple.dropdown-toggle,
+.btn-warning:not([disabled]):not(.disabled):active, 
+.btn-warning:not([disabled]):not(.disabled).active, 
+.show > .btn-warning.dropdown-toggle
+{
     background-color: #f38e00 !important;
     color: #fff !important;
     font-size: 14px;
@@ -101,6 +105,7 @@ p.h4.text-center.py-4.admin-title {
     margin: 0px auto;
     display: block;
     margin-top: 10px;
+    margin-right: -15px;
   
 }
 .btn-primary.btn-submit:not([disabled]):not(.disabled):active, 

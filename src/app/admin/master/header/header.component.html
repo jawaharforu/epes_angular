@@ -13,7 +13,7 @@
               <input type="hidden" [(ngModel)]="headerid" name="headerid">
               <div class="row">
                 <select class="browser-default form-control col-md-4 mb-3"  id="defaultFormCardDesiEx" [(ngModel)]="assessmenttypeid" name="assessmenttypeid">
-                    <option value="" disabled>--Select Assessment--</option>
+                    <option value="" disabled>--Select Assessment type--</option>
                     <option *ngFor="let a of assessmentTypeList" [value]="a._id">{{ a.name }}</option>
                 </select>
               </div>

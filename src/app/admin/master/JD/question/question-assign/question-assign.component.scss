@@ -38,13 +38,14 @@ p.h4.text-center.py-4.admin-title {
 }
 .btn_additem,
 .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
-    padding: 13px 15px;
+    padding: 8px 15px;
     background: #f38e00 !important;
     box-shadow: none;
     font-size: 13px;
     margin: 0px;
     float: right;
     margin-top: 15px;
+    margin-right: -15px;
 }
 .btn_additem  .fa {
     margin: 0px;

@@ -36,8 +36,8 @@ p.h4.text-center.py-4.admin-title {
 .btn-primary:not([disabled]):not(.disabled):active, 
 .btn-primary:not([disabled]):not(.disabled).active, 
 .show > .btn-primary.dropdown-toggle{
-    padding: 16px 10px;
-    background: #5ebd71 !important;
+    padding: 9px 10px;
+    background: #f38e00 !important;
     box-shadow: none;
     font-size: 10px;
     margin: 0px;
@@ -139,7 +139,7 @@ select.form-control:not([size]):not([multiple]) {
     margin-top: 7px;
     color: #fff;
 }
-.btn_additem, .btn-primary[_ngcontent-c4]:not([disabled]):not(.disabled):active{       
+.btn_additem, .btn-primary:not([disabled]):not(.disabled):active{       
     padding: 9px 10px;
     background: #f38e00 !important;
     box-shadow: none;

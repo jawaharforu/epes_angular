@@ -84,7 +84,7 @@ export class AssignJDComponent implements OnInit {
       this.selectedItems = [];
       for (const prop of res.data[0].employeeid) {
         this.selectedItems.push({'id': prop._id, 'itemName': prop.employeename + '-' + prop.employeenum});
-        this.organogramid = prop.employeename.organogramid;
+        this.organogramid = prop.organogramid;
       }
     });
   }

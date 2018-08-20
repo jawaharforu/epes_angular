@@ -1852,14 +1852,15 @@ a.nav-link.waves-light.active:after {
 }
 .single-job .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before,
 .support-links .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before,
-.tab-content.card .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before
+.tab-content.card .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before,
+.sub_acc .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before
 { content: "\f068";
 
   }
   .single-job .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before,
   .support-links .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before,
-  .tab-content.card .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
-   
+  .tab-content.card .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before,
+  .sub_acc .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
     content: "\f067";
   }
  .support-links .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before,
@@ -2850,4 +2851,55 @@ table.dataTable thead th{
 .staffing-scrol::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+.modal-login {
+    width: fit-content;
+}
+.modal-login .close {
+    margin-top: 10px !important;
+}
+ul.caterory_sub .accordion .card .card-header, ul.caterory_sub .card{
+    background: #ddd;
+    padding: 5px 10px;
+}
+ul.caterory_sub .accordion .card .card-header h5.mb-0 {
+    font-size: 17px;
+    color: #555;
+}
+ul.faqsub-cat {
+    padding: 0px;
+    list-style: none;
+}
+ul.faqsub-cat i.fa {
+    margin-left: 0px;
+    margin-right: 15px;
+}
+.side_bar_faq  .fa-angle-down:before {
+    content: "\f067";
+    font-size: 10px;
+}
+.sub_acc .accordion .card .card-header a:not(.collapsed) .rotate-icon.fa-angle-down:before,
+.sub_acc .accordion .card.is-collapsed .card-header a .rotate-icon.fa-angle-down:before{
+    font-size: 12px;
+}
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    border: 1px solid #ccc;
+}
+.btn-submit, .btn-outline-purple:not([disabled]):not(.disabled):active, 
+.btn-outline-purple:not([disabled]):not(.disabled).active, 
+.show > .btn-outline-purple.dropdown-toggle{
+    padding: 8px 15px !important;
+}
+.card-body .card.active, .card-body .card.is-collapsed{
+    background: transparent;
+}
+ng-org-chart {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
 }

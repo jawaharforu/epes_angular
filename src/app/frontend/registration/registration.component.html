@@ -1,106 +1,52 @@
 <div class="container-fluid signupbg">
   <div class="container ">
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 signupcontainer">
-            <h4>Product Detail</h4>
-            <div class="col-sm-12 head">
-                <table *ngIf="productList" datatable class="table table-hover table-responsive-md table-fixed">
-                     <!--Table head-->
-                     <thead>
-                        <tr>
-                            <th class="label-no">#</th>
-                            <th class="label-name">Name</th>
-                            <th class="label-status">Status</th>
-                            <th class="label-action">Action</th>
-                        </tr>
-                    </thead>
-                    <!--Table head-->
+      <div class="col-lg-6 col-md-12 col-sm-12 signupcontainer">
+        <div class="reg-tom-title">Create an Account</div>
 
-                    <!--Table body-->
-                    <tbody>
-                        <tr>
-                            <th class="col-no" scope="row">1</th>
-                            <td class="col-name">{{productList.name}}</td>
-                            <td class="col-name">{{productList.amount}}</td>
-                            <td class="col-name">upto {{productList.numberofemployee}} Employee</td>
-                        </tr>
-                    </tbody>
-                    <!--Table body-->
-
-                  </table>
-             </div>
-        </div>
-    </div>
-    <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12 signupcontainer">
-  <div class="reg-tom-title">Create an Account</div>
-
-  <!-- Register form -->
-  <form action="" id="reg_form" autocomplete="on" (ngSubmit)="getOTP()">
-    <div class="row">
-      <h5 class="section_title">Login Information</h5>
-
-      <div class="form-group col-md-6 col-sm-12">
-        <input
-          type="text"
-          class="form-control browser-default {{field_first_name.length > 0  ? 'input-clicked' : ''}}"
-          id="fname" [(ngModel)]="field_first_name"
-          name="field_first_name"
-        >
-        <label class="reg-tom-label browser-default" for="fnane">First Name:</label>
-      </div>
-      <div class="form-group col-md-6 col-sm-12">
-        <input
-          type="text"
-          class="form-control browser-default {{field_middle_name.length > 0  ? 'input-clicked' : ''}}"
-          [(ngModel)]="field_middle_name"
-          name="field_middle_name"
-          id="mname"
-        >
-        <label class="reg-tom-label browser-default" for="ln">Middle Name:</label>
-      </div>
-      <div class="form-group col-md-6 col-sm-12">
-        <input
-          type="text"
-          class="form-control browser-default {{field_last_name.length > 0  ? 'input-clicked' : ''}}"
-          [(ngModel)]="field_last_name"
-          name="field_last_name"
-          id="lname"
-        >
-        <label class="reg-tom-label browser-default" for="ln">Last Name:</label>
-      </div>
-      <div class="form-group col-md-6 col-sm-12">
+        <!-- Register form -->
+        <form action="" id="reg_form" autocomplete="on" (ngSubmit)="getOTP()">
           <div class="row">
-              <div class="col-md-4 col-country-code">
-          <select class=" selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="countrycode" name="countrycode">
-              <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option>
-          </select>
-          </div>
-          <div class="col-md-8">
-        <input
-          type="text"
-          class="waves-light form-control browser-default {{field_phone_number.length > 0  ? 'input-clicked' : ''}}"
-          [(ngModel)]="field_phone_number"
-          name="field_phone_number"
-          id="phonenumber"
-          maxlength="13"
-        >
+            <h5 class="section_title">Login Information</h5>
 
-        <label class="reg-tom-label browser-default" for="ln">Official Phone Number:</label>
-		</div></div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_first_name.length > 0  ? 'input-clicked' : ''}}" id="fname"
+                [(ngModel)]="field_first_name" name="field_first_name">
+              <label class="reg-tom-label browser-default" for="fnane">First Name:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_middle_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_middle_name"
+                name="field_middle_name" id="mname">
+              <label class="reg-tom-label browser-default" for="ln">Middle Name:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_last_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_last_name"
+                name="field_last_name" id="lname">
+              <label class="reg-tom-label browser-default" for="ln">Last Name:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-md-4 col-country-code">
+                  <select class=" selectpicker form-control browser-default mdb-select browser-default country-code" [(ngModel)]="countrycode"
+                    name="countrycode">
+                    <option *ngFor="let job of countryList" value="{{job.dial_code}}">{{job.dial_code}}</option>
+                  </select>
+                </div>
+                <div class="col-md-8">
+                  <input type="text" class="waves-light form-control browser-default {{field_phone_number.length > 0  ? 'input-clicked' : ''}}"
+                    [(ngModel)]="field_phone_number" name="field_phone_number" id="phonenumber" maxlength="13">
 
-      </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input
-        type="email"
-        class="waves-light form-control browser-default {{field_email_id.length > 0  ? 'input-clicked' : ''}}"
-        id="email"
-        [(ngModel)]="field_email_id"
-        name="field_email_id"
-      >
-      <label class="reg-tom-label" for="email">Official email address:</label>
-    </div>
-    <!-- <div class="form-group col-md-6 col-sm-12">
+                  <label class="reg-tom-label browser-default" for="ln">Official Phone Number:</label>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="email" class="waves-light form-control browser-default {{field_email_id.length > 0  ? 'input-clicked' : ''}}"
+                id="email" [(ngModel)]="field_email_id" name="field_email_id">
+              <label class="reg-tom-label" for="email">Official email address:</label>
+            </div>
+            <!-- <div class="form-group col-md-6 col-sm-12">
       <input type="password" class="form-control browser-default {{field_password.length > 0  ? 'input-clicked' : ''}}" id="pwd" [(ngModel)]="field_password" name="field_password">
       <label class="reg-tom-label" for="pwd">Password:</label>
     </div>
@@ -108,88 +54,113 @@
       <input type="password" class="form-control browser-default {{field_confirm_password.length > 0  ? 'input-clicked' : ''}}" id="cpwd" [(ngModel)]="field_confirm_password" name="field_confirm_password">
       <label class="reg-tom-label" for="cpwd">Confirm Password:</label>
     </div>     -->
-  </div>
-  <div class="row">
-      <h5 class="section_title">Company Information</h5>
-      <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control browser-default {{field_job_title.length > 0  ? 'input-clicked' : ''}}" id="jtitle" [(ngModel)]="field_job_title" name="field_job_title">
-      <label class="reg-tom-label" for="jt">Job Title:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control browser-default {{field_company_name.length > 0  ? 'input-clicked' : ''}}" id="cname" [(ngModel)]="field_company_name" name="field_company_name">
-      <label class="reg-tom-label" for="cn">Company Name:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control browser-default {{field_industry_name === ''  ? '' : 'input-clicked'}}" data-live-search="true" name="field_industry_name" [(ngModel)]="field_industry_name">
-        <option *ngFor="let industry of industries" value="{{industry.industryname}}">{{industry.industryname}}</option>
-      </select>
-      <label class="reg-tom-label" for="pwd">Industry:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control browser-default {{field_no_of_employee === '' ? '' : 'input-clicked'}}" data-live-search="true" name="field_no_of_employee" [(ngModel)]="field_no_of_employee">
-        <option *ngFor="let employee of no_of_employees" value="{{employee.employeesCount}}">{{employee.employeesCount}}</option>
-      </select>
-      <label class="reg-tom-label" for="pwd">No of Employees:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control browser-default {{field_contact_number.length > 0  ? 'input-clicked' : ''}}" id="ccnumber" [(ngModel)]="field_contact_number" name="field_contact_number">
-      <label class="reg-tom-label" for="ccn">Contact Number:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <input type="text" class="form-control browser-default {{field_company_address.length > 0  ? 'input-clicked' : ''}}" id="ccaddress" [(ngModel)]="field_company_address" name="field_company_address">
-      <label class="reg-tom-label" for="caddress">Company Address:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-      <select class="selectpicker form-control browser-default {{field_country_name === '' ? '' : 'input-clicked'}}" data-live-search="true" [(ngModel)]="field_country_name" name="field_country_name">
-          <option *ngFor="let job of countryList" [value]="job.name">{{job.name}}</option>
-      </select>
-      <label class="reg-tom-label" for="country">Country:</label>
-    </div>
-    <div class="form-group col-md-6 col-sm-12">
-        <input type="text" class="form-control browser-default {{field_state_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_state_name" name="field_state_name">
-      <label class="reg-tom-label" for="state">State: </label>
-    </div>
-
-    <div class="form-group col-md-6 col-sm-12">
-        <input type="text" class="form-control browser-default {{field_city_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_city_name" name="field_city_name">
-      <label class="reg-tom-label" for="city">City:</label>
-    </div>
-  </div>
-
-    <!-- <button type="submit" class="btn btn-default btn-pay">Get OTP </button> -->
-    <a [routerLink]="['/payment']">Pay Now</a>
-  </form>
-<!-- Register form -->
-
-</div>
-<div class="col-lg-6 col-md-12 col-sm-12  hidden-sm-down">
-  <img src="../../assets/img/gir-360.png" />
-</div>
-</div>
-</div>
-</div>
-
-<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: auto;">
-    <div class="modal-dialog modal-notify modal-sm" role="document">
-        <div class="modal-content">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden()">
-                    <span aria-hidden="true" class="black-text close-btn">×</span>
-                </button>
-
-            <div class="modal-body">
-              <form (ngSubmit)="registrationForm()">
-                <div class="">
-                <label class="label-otp">Enter OTP</label>
-                <input type="hidden" name="otpid" [(ngModel)]="otpid" />
-                <input class="input-otp" type="text" name="otp" [(ngModel)]="otp" />
-                </div>
-                <a (click)="getOTP()" class="rotp">Resend OTP</a>
-
-                <input type="submit" class="btn btn-default btn-otp-submit" value="Login">
-
-              </form>
+          </div>
+          <div class="row">
+            <h5 class="section_title">Company Information</h5>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_job_title.length > 0  ? 'input-clicked' : ''}}" id="jtitle"
+                [(ngModel)]="field_job_title" name="field_job_title">
+              <label class="reg-tom-label" for="jt">Job Title:</label>
             </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_company_name.length > 0  ? 'input-clicked' : ''}}" id="cname"
+                [(ngModel)]="field_company_name" name="field_company_name">
+              <label class="reg-tom-label" for="cn">Company Name:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <select class="selectpicker form-control browser-default {{field_industry_name === ''  ? '' : 'input-clicked'}}" data-live-search="true"
+                name="field_industry_name" [(ngModel)]="field_industry_name">
+                <option *ngFor="let industry of industries" value="{{industry.industryname}}">{{industry.industryname}}</option>
+              </select>
+              <label class="reg-tom-label" for="pwd">Industry:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <select class="selectpicker form-control browser-default {{field_no_of_employee === '' ? '' : 'input-clicked'}}" data-live-search="true"
+                name="field_no_of_employee" [(ngModel)]="field_no_of_employee">
+                <option *ngFor="let employee of no_of_employees" value="{{employee.employeesCount}}">{{employee.employeesCount}}</option>
+              </select>
+              <label class="reg-tom-label" for="pwd">No of Employees:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_contact_number.length > 0  ? 'input-clicked' : ''}}" id="ccnumber"
+                [(ngModel)]="field_contact_number" name="field_contact_number">
+              <label class="reg-tom-label" for="ccn">Contact Number:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_company_address.length > 0  ? 'input-clicked' : ''}}" id="ccaddress"
+                [(ngModel)]="field_company_address" name="field_company_address">
+              <label class="reg-tom-label" for="caddress">Company Address:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <select class="selectpicker form-control browser-default {{field_country_name === '' ? '' : 'input-clicked'}}" data-live-search="true"
+                [(ngModel)]="field_country_name" name="field_country_name">
+                <option *ngFor="let job of countryList" [value]="job.name">{{job.name}}</option>
+              </select>
+              <label class="reg-tom-label" for="country">Country:</label>
+            </div>
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_state_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_state_name"
+                name="field_state_name">
+              <label class="reg-tom-label" for="state">State: </label>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+              <input type="text" class="form-control browser-default {{field_city_name.length > 0  ? 'input-clicked' : ''}}" [(ngModel)]="field_city_name"
+                name="field_city_name">
+              <label class="reg-tom-label" for="city">City:</label>
+            </div>
+          </div>
+
+          <!-- <button type="submit" class="btn btn-default btn-pay">Get OTP </button> -->
+          <a [routerLink]="['/payment']">Pay Now</a>
+        </form>
+        <!-- Register form -->
+
+      </div>
+      <div class="col-sm-4 our_prd_fet product_fet product_feature hover1" *ngIf="productList">
+        <div class="col-sm-12 page2 head">
+          <h5>{{productList.name}}</h5>
         </div>
+        <div class="col-sm-12 rates">
+          <p>₹
+            <span>{{productList.amount}}/</span>{{productList.type}}</p>
+          <p>(up to {{productList.numberofemployee}} EMPOLYEE)</p>
+          <span> + </span>
+          <p>₹
+            <span>{{productList.amountperemployee}}/</span>{{productList.type}}</p>
+          <p class="per_ad">PER ADDITIONAL EMPLOYEE</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-12 col-sm-12  hidden-sm-down">
+        <img src="../../assets/img/gir-360.png" />
+      </div>
     </div>
   </div>
+</div>
+
+<div *ngIf="isModalShown" [config]="{ show: true, ignoreBackdropClick: true }" (onHidden)="onHidden()" mdbModal #autoShownModal="mdb-modal"
+  class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  style="overflow: auto;">
+  <div class="modal-dialog modal-notify modal-sm" role="document">
+    <div class="modal-content">
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onHidden()">
+        <span aria-hidden="true" class="black-text close-btn">×</span>
+      </button>
+
+      <div class="modal-body">
+        <form (ngSubmit)="registrationForm()">
+          <div class="">
+            <label class="label-otp">Enter OTP</label>
+            <input type="hidden" name="otpid" [(ngModel)]="otpid" />
+            <input class="input-otp" type="text" name="otp" [(ngModel)]="otp" />
+          </div>
+          <a (click)="getOTP()" class="rotp">Resend OTP</a>
+
+          <input type="submit" class="btn btn-default btn-otp-submit" value="Login">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

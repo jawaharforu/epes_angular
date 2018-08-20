@@ -110,6 +110,10 @@ export class QuestionComponent implements OnInit {
 
   questionForm() {
     if (this._validationsService.isEmpty(this.type)) {
+      this._commonService.showMessage('error', 'Please select Employee!');
+      return false;
+    }
+    if (this._validationsService.isEmpty(this.type)) {
       this._commonService.showMessage('error', 'Please select Assessment type!');
       return false;
     }

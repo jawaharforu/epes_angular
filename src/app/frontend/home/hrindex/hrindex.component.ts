@@ -27,7 +27,7 @@ export class HRIndexComponent implements OnInit {
 
   public questions: any[] = [
     {
-      'head': 'staffing',
+      'head': 'Staffing',
       'question': [
         {
           'q': 'Number of recruiting advertising programs',
@@ -59,7 +59,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'traininganddevelopments',
+      'head': 'Training and Developments',
       'question': [
         { 'q': 'Number of training days and programs held per year', },
         { 'q': 'Cost per trainee hour', },
@@ -73,7 +73,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'performancesystems',
+      'head': 'Performance Systems',
       'question': [
         { 'q': 'Acceptance of appraisal processes by employees' },
         { 'q': 'Effectiveness of appraisal process for dealing with poor performers' },
@@ -89,7 +89,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'safetyandhealth',
+      'head': 'Safety and Health',
       'question': [
         { 'q': 'Lost work days' },
         { 'q': 'Almost lost work days' },
@@ -100,7 +100,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'labourrelations',
+      'head': 'Labour Relations',
       'question': [
         { 'q': 'Percent of unionized employees on problem solving' },
         { 'q': 'Number of joint labor management problem-solving teams' },
@@ -111,7 +111,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'internalcommunication',
+      'head': 'Internal Communication',
       'question': [
         { 'q': 'Consistency and clarity of messages from top management and from HR' },
         { 'q': 'Understanding of messages from top management and from HR' },
@@ -125,7 +125,7 @@ export class HRIndexComponent implements OnInit {
       ]
     },
     {
-      'head': 'diversity',
+      'head': 'Diversity',
       'question': [
         { 'q': 'Perception of consistent and equitable treatment of all employees' },
         { 'q': 'Compliance with technical requirements of affirmative action' },
@@ -213,7 +213,6 @@ export class HRIndexComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   staffingForm() {

@@ -86,7 +86,7 @@ export class EmployeeComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.employeename)) {
-      this._commonService.showMessage('error', 'Employeename should not be empty!');
+      this._commonService.showMessage('error', 'Employee Name should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.designation)) {
@@ -122,7 +122,7 @@ export class EmployeeComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.address)) {
-      this._commonService.showMessage('error', 'address should not be empty!');
+      this._commonService.showMessage('error', 'Address should not be empty!');
       return false;
     }
     let fieldEmployee;

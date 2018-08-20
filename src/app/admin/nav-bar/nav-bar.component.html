@@ -23,16 +23,16 @@
                       <mdb-item-head > Master</mdb-item-head>
                       <mdb-item-body>
                           <ul>
-                              <li><a [routerLink]="['/admin/jd']" class="waves-effect" >JD</a></li>
-                              <li><a [routerLink]="['/admin/assessmenttype']" class="waves-effect">Assessment Type</a></li>
-                              <li><a [routerLink]="['/admin/header']" class="waves-effect" >Header</a></li>
-                              <li><a [routerLink]="['/admin/scale']" class="waves-effect" >Scale</a></li>
-                              <li><a [routerLink]="['/admin/question']" class="waves-effect" >Question</a></li>
-                              <li><a [routerLink]="['/admin/department']" class="waves-effect" >Department</a></li>
-                              <li><a [routerLink]="['/admin/organogram']" class="waves-effect" >Organogram</a></li>
-                              <li><a [routerLink]="['/admin/employee']" class="waves-effect" >Employee</a></li>
-                              <li><a [routerLink]="['/admin/assignjd']" class="waves-effect" >Assign JD to Employee</a></li>
-                              <li><a [routerLink]="['/admin/weightage']" class="waves-effect" >Weightage</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/jd']" class="waves-effect" >JD</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/assessmenttype']" class="waves-effect">Assessment Type</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/header']" class="waves-effect" >Header</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/scale']" class="waves-effect" >Scale</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/question']" class="waves-effect" >Question</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/department']" class="waves-effect" >Department</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/organogram']" class="waves-effect" >Organogram</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/employee']" class="waves-effect" >Employee</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/assignjd']" class="waves-effect" >Assign JD to Employee</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/weightage']" class="waves-effect" >Weightage</a></li>
                           </ul>
                       </mdb-item-body>
                   </mdb-item>
@@ -40,16 +40,16 @@
           </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/assessment']" mdbWavesEffect>Assessment</a>
+        <a class="nav-link waves-light" (click)="sidenav.toggle()" [routerLink]="['/admin/assessment']" mdbWavesEffect>Assessment</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/training']" mdbWavesEffect>Training</a>
+        <a class="nav-link waves-light" (click)="sidenav.toggle()" [routerLink]="['/admin/training']" mdbWavesEffect>Training</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/settings']" mdbWavesEffect>Settings</a>
+        <a class="nav-link waves-light" (click)="sidenav.toggle()" [routerLink]="['/admin/settings']" mdbWavesEffect>Settings</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="['/admin/hrindex']" mdbWavesEffect>HR Index</a>
+          <a class="nav-link waves-light" (click)="sidenav.toggle()" [routerLink]="['/admin/hrindex']" mdbWavesEffect>HR Index</a>
       </li>
       <li>
           <ul class="collapsible collapsible-accordion ">
@@ -58,16 +58,16 @@
                       <mdb-item-head > CMS</mdb-item-head>
                       <mdb-item-body>
                           <ul>
-                              <li><a [routerLink]="['/admin/frontend/testimonial']" class="waves-effect" >Testimonial</a></li>
-                              <li><a [routerLink]="['/admin/frontend/feature']" class="waves-effect" >Features</a></li>
-                              <li><a [routerLink]="['/admin/frontend/faq']" class="waves-effect" >FAQ</a></li>
-                              <li><a [routerLink]="['/admin/frontend/blog']" class="waves-effect" >Blog</a></li>
-                              <li><a [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Product Roadmap</a></li>
-                              <li><a [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Press Release</a></li>
-                              <li><a [routerLink]="['/admin/frontend/whitepaper']" class="waves-effect" >White Paper</a></li>
-                              <li><a [routerLink]="['/admin/frontend/career']" class="waves-effect" >Careers</a></li>
-                              <li><a [routerLink]="['/admin/frontend/contactus']" class="waves-effect" >Contact Us</a></li>
-                              <li><a [routerLink]="['/admin/frontend/product']" class="waves-effect" >Product</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/testimonial']" class="waves-effect" >Testimonial</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/feature']" class="waves-effect" >Features</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/faq']" class="waves-effect" >FAQ</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/blog']" class="waves-effect" >Blog</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Product Roadmap</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Press Release</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/whitepaper']" class="waves-effect" >White Paper</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/career']" class="waves-effect" >Careers</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/contactus']" class="waves-effect" >Contact Us</a></li>
+                              <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/product']" class="waves-effect" >Product</a></li>
                           </ul>
                       </mdb-item-body>
                   </mdb-item>

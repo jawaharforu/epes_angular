@@ -12,7 +12,8 @@
             <tr>
                 <th class="label-no">Title</th>
                 <th class="label-name">Period of time</th>
-                <th class="label-name">Duration</th>
+                <th class="label-name">Duration From</th>
+                <th class="label-name">Duration To</th>
                 <th class="label-name">Due Date</th>
                 <th class="label-name">Description</th>
                 <th class="label-action">Action</th>
@@ -24,7 +25,8 @@
           <tr *ngFor="let c of assessmentList;let i = index">
               <th class="col-no" scope="row">{{c.title}}</th>
               <td class="col-name">{{c.periodoftime}}</td>
-              <td class="col-name">{{c.duration}}</td>
+              <td class="col-name">{{c.durationfrom}}</td>
+              <td class="col-name">{{c.durationto}}</td>
               <td class="col-name">{{c.duedate}}</td>
               <td class="col-name">{{c.description}}</td>
               <td class="col-action">
