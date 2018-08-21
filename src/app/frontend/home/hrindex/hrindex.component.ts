@@ -141,7 +141,15 @@ export class HRIndexComponent implements OnInit {
   public isModalShownSecont: Boolean = false;
   public isModalShownThired: Boolean = false;
   public isModalShownFourth: Boolean = false;
-
+ public activeclass: any[] = [
+   'active',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+ ];
   constructor(
     public _validationsService: ValidationsService,
     public _commonService: CommonService,
@@ -154,7 +162,7 @@ export class HRIndexComponent implements OnInit {
       (j === 0) ? this.section[j] = true : this.section[j] = false;
       let i = 0;
       for (const props of prop.question) {
-        this.question[j][i] = '1';
+        this.question[j][i] = '';
         console.log(props);
         i++;
       }
@@ -193,7 +201,7 @@ export class HRIndexComponent implements OnInit {
       tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+          '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -324,6 +332,7 @@ export class HRIndexComponent implements OnInit {
     }
     for (const prop of this.questions) {
       (j === i) ? this.section[j] = true : this.section[j] = false;
+      (j <= i) ? this.activeclass[j] = 'active' : this.activeclass[j] = '';
       console.log(prop.head);
       j++;
     }

@@ -14,8 +14,7 @@ export class AssessmentComponent implements OnInit {
 
   public name: String = '';
   public periodoftime: String = '';
-  public durationfrom: String = '';
-  public durationto: String = '';
+  public duration: String = '';
   public duedate: String = '';
   public description: String = '';
   public assessmentid: String = '';
@@ -44,8 +43,7 @@ export class AssessmentComponent implements OnInit {
       this.name = res.data.title;
       this.type = res.data.type;
       this.periodoftime = res.data.periodoftime;
-      this.durationfrom = res.data.durationfrom;
-      this.durationto = res.data.durationto;
+      this.duration = res.data.duration;
       this.duedate = res.data.duedate;
       this.description = res.data.description;
       this.assessmentid = res.data._id;
@@ -61,12 +59,8 @@ export class AssessmentComponent implements OnInit {
       this._commonService.showMessage('error', 'Please select Period of time!');
       return false;
     }
-    if (this._validationsService.isEmpty(this.durationfrom)) {
-      this._commonService.showMessage('error', 'Duration From should not be empty!');
-      return false;
-    }
-    if (this._validationsService.isEmpty(this.durationto)) {
-      this._commonService.showMessage('error', 'Duration To should not be empty!');
+    if (this._validationsService.isEmpty(this.duration)) {
+      this._commonService.showMessage('error', 'Duration should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.duedate)) {
@@ -83,8 +77,7 @@ export class AssessmentComponent implements OnInit {
       fieldassessmentid = {
         title: this.name,
         periodoftime: this.periodoftime,
-        durationfrom: this.durationfrom,
-        durationto: this.durationto,
+        duration: this.duration,
         type: this.type,
         duedate: this.duedate,
         description: this.description,
@@ -94,8 +87,7 @@ export class AssessmentComponent implements OnInit {
       fieldassessmentid = {
         title: this.name,
         periodoftime: this.periodoftime,
-        durationfrom: this.durationfrom,
-        durationto: this.durationto,
+        duration: this.duration,
         type: this.type,
         duedate: this.duedate,
         description: this.description
@@ -109,8 +101,7 @@ export class AssessmentComponent implements OnInit {
         this._commonService.showMessage('success', res.msg);
         this.name = '';
         this.periodoftime = '';
-        this.durationfrom = '';
-        this.durationto = '';
+        this.duration = '';
         this.duedate = '';
         this.description = '';
         this._commonService.redirectTo('/admin/assessment/list');

@@ -96,37 +96,37 @@
                 <div class="staffing col-sm-12">
                     <div class="col-sm-12 pro" id="slide3">
                         <div class="progress progress-bar-striped">
-                            <div class="progress-bar progress-bar1  progress-bar-striped" role="progressbar" style="width: 30%" aria-valuenow="15" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar progress-bar1  progress-bar-striped {{activeclass[0]}}" role="progressbar" style="width: 20%" aria-valuenow="15"
+                                aria-valuemin="0" aria-valuemax="100">
+                                    <p>Staffing</p>
+                            </div>
+                            <div class="progress-bar  progress-bar2  progress-bar-striped {{activeclass[1]}}" role="progressbar" style="width: 25%" aria-valuenow="30"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Training &
-                                    <br> Development</p>
+                                        <br> Development</p>
                             </div>
-                            <div class="progress-bar  progress-bar2  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="30" aria-valuemin="0"
-                                aria-valuemax="100">
-                                <p>Staffing</p>
-                            </div>
-                            <div class="progress-bar  progress-bar3  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar  progress-bar3  progress-bar-striped {{activeclass[2]}}" role="progressbar" style="width: 20%" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Performance &
                                     <br> System</p>
                             </div>
-                            <div class="progress-bar  progress-bar4  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar  progress-bar4  progress-bar-striped {{activeclass[3]}}" role="progressbar" style="width: 20%" aria-valuenow="15"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Safty &
                                     <br>Health</p>
                             </div>
-                            <div class="progress-bar  progress-bar5  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="30" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar  progress-bar5  progress-bar-striped {{activeclass[4]}}" role="progressbar" style="width: 20%" aria-valuenow="30"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Labour &
                                     <br>Relations</p>
                             </div>
-                            <div class="progress-bar progress-bar6  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar progress-bar6  progress-bar-striped {{activeclass[5]}}" role="progressbar" style="width: 20%" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Internal &
                                     <br>Communication</p>
                             </div>
-                            <div class="progress-bar  progress-bar7  progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar  progress-bar7  progress-bar-striped {{activeclass[6]}}" role="progressbar" style="width: 0%" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100">
                                 <p>Diversity</p>
                             </div>
                         </div>
@@ -170,6 +170,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 text-right last-btn">
+                                        <button *ngIf="j != 0" type="button" (click)="showNext(j-1)" class="btn btn-success">Prev</button>
                                         <button type="button" (click)="showNext(j+1)" class="btn btn-success">Next</button>
                                     </div>
                                 </div>
@@ -194,14 +195,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                    <h2 class="text-center hr-scrore-title">HR Index Score</h2>
+                <h2 class="text-center hr-scrore-title">HR Index Score</h2>
                 <div class="staffing scrore-container col-sm-12">
                     <div class="col-md-12">
-                    <chart [options]="options">
+                        <chart [options]="options">
 
-                    </chart>
-                </div>
-                    <div class="col-md-6">
+                        </chart>
+                    </div>
+                  <!--  <div class="col-md-6">
                         <table class="table table-sm">
                             <thead>
                                 <h3>Score</h3>
@@ -213,7 +214,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-sm-12 text-right last-btn">
                     <!-- <a class="btn btn-primary" id="btnback" (click)="openSecond()">Back</a> -->

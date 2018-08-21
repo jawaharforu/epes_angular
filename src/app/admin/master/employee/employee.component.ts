@@ -22,7 +22,7 @@ export class EmployeeComponent implements OnInit {
   public email: String = '';
   public countrycode: String = '+91';
   public mobile: String = '';
-  public address: String = '';
+ // public address: String = '';
   public employeetype: String = 'others';
   public employeeid: String = '';
   public countryList: any = '';
@@ -64,7 +64,7 @@ export class EmployeeComponent implements OnInit {
         this.email = res.data.email;
         this.countrycode = res.data.countrycode;
         this.mobile = res.data.mobile;
-        this.address = res.data.address;
+        //this.address = res.data.address;
         this.organogramid = res.data.organogramid;
       });
   }
@@ -86,7 +86,7 @@ export class EmployeeComponent implements OnInit {
       return false;
     }
     if (this._validationsService.isEmpty(this.employeename)) {
-      this._commonService.showMessage('error', 'Employee Name should not be empty!');
+      this._commonService.showMessage('error', 'Employeename should not be empty!');
       return false;
     }
     if (this._validationsService.isEmpty(this.designation)) {
@@ -121,10 +121,10 @@ export class EmployeeComponent implements OnInit {
       this._commonService.showMessage('error', 'Phone number should not exceed 13 digits!');
       return false;
     }
-    if (this._validationsService.isEmpty(this.address)) {
-      this._commonService.showMessage('error', 'Address should not be empty!');
+  /*  if (this._validationsService.isEmpty(this.address)) {
+      this._commonService.showMessage('error', 'address should not be empty!');
       return false;
-    }
+    }*/
     let fieldEmployee;
     if (!this._validationsService.isEmpty(this.employeeid)) {
       fieldEmployee = {
@@ -135,7 +135,7 @@ export class EmployeeComponent implements OnInit {
         email: this.email,
         countrycode: this.countrycode,
         mobile: this.mobile,
-        address: this.address,
+      //  address: this.address,
         status: true,
         organogramid: this.organogramid,
         employeeid: this.employeeid
@@ -149,7 +149,7 @@ export class EmployeeComponent implements OnInit {
         email: this.email,
         countrycode: this.countrycode,
         mobile: this.mobile,
-        address: this.address,
+     //   address: this.address,
         status: true,
         organogramid: this.organogramid
       };

@@ -42,6 +42,7 @@ export class WeightageComponent implements OnInit {
     this.weightageService.fetchassessandheadbyjd(this.jdid)
     .subscribe(res => {
       this.assessmenttype = res.data;
+      console.log(this.assessmenttype);
       this.getWeightageByJD();
     });
   }
@@ -49,8 +50,10 @@ export class WeightageComponent implements OnInit {
   getWeightageByJD() {
     this.weightageService.getWeightageByJD(this.jdid)
     .subscribe(res => {
-      this.weightagesList = res.data;
-      this.getvalue();
+      if (res.success) {
+        this.weightagesList = res.data;
+        this.getvalue();
+      }
     });
   }
 
@@ -71,6 +74,7 @@ export class WeightageComponent implements OnInit {
         for (const head of prop.heads) {
           _.filter(aitem.header, { headerid: head.item[0] })
           .map((hitem: any) => {
+            console.log(hitem.weightagerate);
             this.assessmenttype[i].heads[j].value = hitem.weightagerate;
           });
           j++;
@@ -103,8 +107,6 @@ export class WeightageComponent implements OnInit {
       jdid: this.jdid,
       weightage: this.weightages
     };
-    console.log(field);
-    /*
     this.weightageService.addWeightage(field)
     .subscribe(res => {
       if (res.success) {
@@ -114,7 +116,6 @@ export class WeightageComponent implements OnInit {
         this._commonService.showMessage('error', res.msg);
       }
     });
-    */
   }
 
 }

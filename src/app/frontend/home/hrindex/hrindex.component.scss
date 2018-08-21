@@ -290,7 +290,7 @@ span.white-text {
   border-radius: 50%;
   position: absolute;
   border: 1px solid #fff;
-  left: 50px;
+  left: 0px;
 }
 
 .progress-bar[_ngcontent-c1] p[_ngcontent-c1] {
@@ -302,14 +302,14 @@ span.white-text {
 }
 
 .progress-bar1 p {
-  left: 24px;
+  left: 0px;
   color: #000 !important;
   font-weight: 400;
-  bottom: -26px;
+  bottom: -10px;
 }
 
 .progress-bar2 p {
-  bottom: -13px !important;
+  bottom: -26px !important;
   margin-left: -10px;
   color: #000 !important;
   font-weight: 400;
@@ -328,12 +328,16 @@ span.white-text {
 .progress-bar5 p {
   margin-left: -8px;
 }
-
+/*
 .progress-bar1, .progress-bar1:after {
   background-color: #249ab8 !important;
 }
 
+
 .progress-bar2, .progress-bar2:after {
   background-color: #8BC43F !important;
 }
-
+*/
+.progress .progress-bar-striped.active, .progress .progress-bar-striped.active::after{
+  background-color: #8BC43F !important;
+} 

@@ -27,6 +27,7 @@ export class BudgetPlanningComponent implements OnInit {
     public budgetplanList: String = '';
     public assessmenttypeList: String = '';
     public headerList: String = '';
+    public assessheaderList: String = '';
     public trainingheadList: String = '';
     public trainingsubheadList: String = '';
 
@@ -55,8 +56,8 @@ export class BudgetPlanningComponent implements OnInit {
             if (!this._validationsService.isEmpty(this.budgetid)) {
                 this.getBudgetplanByBudgetId(this.budgetid);
             } else {
-              this._commonService.showMessage('error', 'Add budget plan from budget master!!!');
-              this._commonService.redirectTo('/admin/training/budgetmaster');
+                this._commonService.showMessage('error', 'Add budget plan from budget master!!!');
+                this._commonService.redirectTo('/admin/training/budgetmaster');
             }
         });
 
@@ -74,12 +75,7 @@ export class BudgetPlanningComponent implements OnInit {
     }
 
 
-    getHeaderList() {
-        this.headerService.getHeader().subscribe(res => {
-            this.headerList = res.data;
-            // console.log(this.headerList);
-        });
-    }
+    
 
     getTrainingheadList() {
         this.trainingheadService.getTrainingHead().subscribe(res => {
@@ -126,6 +122,28 @@ export class BudgetPlanningComponent implements OnInit {
 
     public onHidden(): void {
         this.isModalShown = false;
+    }
+
+    getHeader() {
+        if (this._validationsService.isEmpty(this.assessmenttypeid)) {
+            this._commonService.showMessage('error', 'Assessmenttype should not be empty!');
+            return false;
+        }
+        this.getHeaderLists();
+    }
+
+    getHeaderList() {
+        this.headerService.getHeader().subscribe(res => {
+            this.headerList = res.data;
+            // console.log(this.headerList);
+        });
+    }
+
+    getHeaderLists() {
+        this.headerService.getHeaderByAssessmenttype(this.assessmenttypeid)
+            .subscribe(res => {
+                this.assessheaderList = res.data;
+            });
     }
 
     budgetplanningForm() {
@@ -215,7 +233,7 @@ export class BudgetPlanningComponent implements OnInit {
     }
 
     getBudgetPlanList() {
-        this.budgetplanService.getBudgetPlanning()
+        this.budgetplanService.getBudgetPlanningByBudgetid(this.budgetid)
             .subscribe(res => {
                 this.budgetplanList = res.data;
                 // console.log(this.budgetplanList);
