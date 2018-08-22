@@ -23,14 +23,14 @@
                     <ul>
                       <li *ngFor="let h of a.header; let j = index;">
                         <span>{{h.headername}}</span>
-                        <span><input type="text" name="name{{h.id}}" [ngModel]="assessmenttype[i].heads[j].value" (ngModelChange)="assessmenttype[i].heads[j].value = $event" /></span>
-                        <span>{{assessmenttype[i].heads[j].value}}</span>
+                        <span><input type="text" name="name{{i}}{{j}}"  [(ngModel)]="assessmenttype[i].heads[j].value" /></span>
                       </li>
                     </ul>
                 </div>
               </div>
+              <button type="submit" class="btn btn-primary btn-submit">Submit</button>
             </div>
-            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+
           </form>
           <!-- Default form subscription -->
 
