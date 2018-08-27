@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public field_password: String = '';
   public otpid: String = '';
   public otp: String = '';
+  public loginType: String = '';
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   public isModalShown: Boolean = false;
 

@@ -11,6 +11,16 @@
   <form class="login-form" id="login-form" (ngSubmit)="getOTP()">
       <h3 class="login-heading">Login</h3>
       <div class="form-group">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
+          <label class="form-check-label" [(ngModel)]="loginType" for="materialGroupExample1" value="admin">Admin</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios" [(ngModel)]="loginType" value="employee">
+          <label class="form-check-label" for="materialGroupExample2">Employee</label>
+        </div>
+      </div>
+      <div class="form-group">
         <!-- <label class="login-label">Enter your email address</label> -->
         <input
           placeholder="Email Address"
