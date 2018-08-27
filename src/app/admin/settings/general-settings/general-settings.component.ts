@@ -44,32 +44,32 @@ export class GeneralSettingsComponent implements OnInit {
 
   getGlobalSettingsList() {
     this.globalsettingsService.getGlobalsettings()
-    .subscribe(res => {
-      if (res.data.length > 0) {
-        this.globalsettingsid = res.data[0]._id;
-        this.tolerance = res.data[0].tolerance;
-        this.externalreference = res.data[0].externalreference;
-        this.internalemployeereference = res.data[0].internalemployeereference;
-        this.managingdirectorsdescretion = res.data[0].managingdirectorsdescretion;
-        this.specialallowance = res.data[0].specialallowance;
-        this.cim = res.data[0].cim;
-        this.nocim = res.data[0].nocim;
-        this.thirdpartyevaluation1 = res.data[0].thirdpartyevaluation1;
-        this.thirdpartyevaluation2 = res.data[0].thirdpartyevaluation2;
+      .subscribe(res => {
+        if (res.data.length > 0) {
+          this.globalsettingsid = res.data[0]._id;
+          this.tolerance = res.data[0].tolerance;
+          this.externalreference = res.data[0].externalreference;
+          this.internalemployeereference = res.data[0].internalemployeereference;
+          this.managingdirectorsdescretion = res.data[0].managingdirectorsdescretion;
+          this.specialallowance = res.data[0].specialallowance;
+          this.cim = res.data[0].cim;
+          this.nocim = res.data[0].nocim;
+          this.thirdpartyevaluation1 = res.data[0].thirdpartyevaluation1;
+          this.thirdpartyevaluation2 = res.data[0].thirdpartyevaluation2;
 
-        this.thirdpartyevaluation3 = res.data[0].thirdpartyevaluation3;
-        this.controlsworkingaquantance05 = res.data[0].controlsworkingaquantance05;
-        this.controlsworkingaquantance510 = res.data[0].controlsworkingaquantance510;
-        this.controlsworkingaquantance10 = res.data[0].controlsworkingaquantance10;
-        this.chairmansreference = res.data[0].chairmansreference;
-        this.overworkingaquantance05 = res.data[0].overworkingaquantance05;
-        this.overworkingaquantance510 = res.data[0].overworkingaquantance510;
-        this.overworkingaquantance10 = res.data[0].overworkingaquantance10;
-        this.overpriorrelevant05 = res.data[0].overpriorrelevant05;
-        this.overpriorrelevant510 = res.data[0].overpriorrelevant510;
-        this.overpriorrelevant10 = res.data[0].overpriorrelevant10;
-      }
-    });
+          this.thirdpartyevaluation3 = res.data[0].thirdpartyevaluation3;
+          this.controlsworkingaquantance05 = res.data[0].controlsworkingaquantance05;
+          this.controlsworkingaquantance510 = res.data[0].controlsworkingaquantance510;
+          this.controlsworkingaquantance10 = res.data[0].controlsworkingaquantance10;
+          this.chairmansreference = res.data[0].chairmansreference;
+          this.overworkingaquantance05 = res.data[0].overworkingaquantance05;
+          this.overworkingaquantance510 = res.data[0].overworkingaquantance510;
+          this.overworkingaquantance10 = res.data[0].overworkingaquantance10;
+          this.overpriorrelevant05 = res.data[0].overpriorrelevant05;
+          this.overpriorrelevant510 = res.data[0].overpriorrelevant510;
+          this.overpriorrelevant10 = res.data[0].overpriorrelevant10;
+        }
+      });
   }
 
   globalsettings() {
@@ -82,12 +82,20 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Tolerance should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.tolerance)) {
+      this._commonService.showMessage('error', 'Tolerance should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.externalreference)) {
       this._commonService.showMessage('error', 'External Reference should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.externalreference)) {
       this._commonService.showMessage('error', 'External Reference should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.externalreference)) {
+      this._commonService.showMessage('error', 'External Reference should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.internalemployeereference)) {
@@ -98,12 +106,20 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Internal Employee Reference should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.internalemployeereference)) {
+      this._commonService.showMessage('error', 'Internal Reference should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.managingdirectorsdescretion)) {
       this._commonService.showMessage('error', 'Managing Directors Descretion not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.managingdirectorsdescretion)) {
       this._commonService.showMessage('error', 'Managing Directors Descretion should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.managingdirectorsdescretion)) {
+      this._commonService.showMessage('error', 'Managing Directors Descretion should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.specialallowance)) {
@@ -114,12 +130,20 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Special Allowance should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.specialallowance)) {
+      this._commonService.showMessage('error', 'Special Allowance should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.cim)) {
       this._commonService.showMessage('error', 'CIM should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.cim)) {
       this._commonService.showMessage('error', 'CIM should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.cim)) {
+      this._commonService.showMessage('error', 'CIM should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.nocim)) {
@@ -130,12 +154,20 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'NO-CIM should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.nocim)) {
+      this._commonService.showMessage('error', 'NO-CIM should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation1)) {
       this._commonService.showMessage('error', 'Third Party Evaluation 1 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.thirdpartyevaluation1)) {
       this._commonService.showMessage('error', 'Third Party Evaluation 1 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.thirdpartyevaluation1)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 1 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation2)) {
@@ -146,6 +178,10 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Third Party Evaluation 2 should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.thirdpartyevaluation2)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 2 should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.thirdpartyevaluation3)) {
       this._commonService.showMessage('error', 'Third Party Evaluation 3 should not be empty!');
       return false;
@@ -154,28 +190,44 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Third Party Evaluation 3 should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.thirdpartyevaluation3)) {
+      this._commonService.showMessage('error', 'Third Party Evaluation 3 should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 0-5 should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 0-5 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.controlsworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 0-5 should have only digits!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 0-5 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.controlsworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Controls Working acquaintance 0-5 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 5-10 should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 5-10 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.controlsworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 5-10 should have only digits!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 5-10 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.controlsworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Controls Working acquaintance 5-10 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.controlsworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 10> should not be empty!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 10> should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.controlsworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Controls Working aquantance 10> should have only digits!');
+      this._commonService.showMessage('error', 'Controls Working acquaintance 10> should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.controlsworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Controls Working acquaintance 10 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.chairmansreference)) {
@@ -186,28 +238,44 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Chairmans Reference should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.chairmansreference)) {
+      this._commonService.showMessage('error', 'Chairmans Reference should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.overworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 0-5 should not be empty!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 0-5 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.overworkingaquantance05)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 0-5 should have only digits!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 0-5 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.overworkingaquantance05)) {
+      this._commonService.showMessage('error', 'Over Working acquaintance 0-5 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 5-10 should not be empty!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 5-10 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.overworkingaquantance510)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 5-10 should have only digits!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 5-10 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.overworkingaquantance510)) {
+      this._commonService.showMessage('error', 'Over Working acquaintance 5-10 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 10> should not be empty!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 10> should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.overworkingaquantance10)) {
-      this._commonService.showMessage('error', 'Over Working aquantance 10> should have only digits!');
+      this._commonService.showMessage('error', 'Over Working acquaintance 10> should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.overworkingaquantance10)) {
+      this._commonService.showMessage('error', 'Over Working acquaintance 10 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overpriorrelevant05)) {
@@ -218,12 +286,20 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Prior Relevant 0-5 should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.overpriorrelevant05)) {
+      this._commonService.showMessage('error', 'Prior Relevant 0-5 should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.overpriorrelevant510)) {
       this._commonService.showMessage('error', 'Prior Relevant 5-10 should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.overpriorrelevant510)) {
       this._commonService.showMessage('error', 'Prior Relevant 5-10 should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.overpriorrelevant510)) {
+      this._commonService.showMessage('error', 'Prior Relevant 5-10 should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.overpriorrelevant10)) {
@@ -234,28 +310,32 @@ export class GeneralSettingsComponent implements OnInit {
       this._commonService.showMessage('error', 'Prior Relevant 10> should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.overpriorrelevant10)) {
+      this._commonService.showMessage('error', 'Prior Relevant 10 should not Exceed 100%!');
+      return false;
+    }
 
     const fieldGlobalsettingsid = {
       tolerance: this.tolerance,
       externalreference: this.externalreference,
-      internalemployeereference :this.internalemployeereference,
-      managingdirectorsdescretion :this.managingdirectorsdescretion,
-      specialallowance:this.specialallowance,
-      cim:this.cim,
-      nocim:this.nocim,
-      thirdpartyevaluation1:this.thirdpartyevaluation1,
-      thirdpartyevaluation2:this.thirdpartyevaluation2,
-      thirdpartyevaluation3:this.thirdpartyevaluation3,
-      controlsworkingaquantance05:this.controlsworkingaquantance05,
-      controlsworkingaquantance510:this.controlsworkingaquantance510,
-      controlsworkingaquantance10:this.controlsworkingaquantance10,
-      chairmansreference:this.chairmansreference,
-      overworkingaquantance05:this.overworkingaquantance05,
-      overworkingaquantance510:this.overworkingaquantance510,
-      overworkingaquantance10:this.overworkingaquantance10,
-      overpriorrelevant05 :this.overpriorrelevant05,
-      overpriorrelevant510 :this.overpriorrelevant510,
-      overpriorrelevant10 :this.overpriorrelevant10,
+      internalemployeereference: this.internalemployeereference,
+      managingdirectorsdescretion: this.managingdirectorsdescretion,
+      specialallowance: this.specialallowance,
+      cim: this.cim,
+      nocim: this.nocim,
+      thirdpartyevaluation1: this.thirdpartyevaluation1,
+      thirdpartyevaluation2: this.thirdpartyevaluation2,
+      thirdpartyevaluation3: this.thirdpartyevaluation3,
+      controlsworkingaquantance05: this.controlsworkingaquantance05,
+      controlsworkingaquantance510: this.controlsworkingaquantance510,
+      controlsworkingaquantance10: this.controlsworkingaquantance10,
+      chairmansreference: this.chairmansreference,
+      overworkingaquantance05: this.overworkingaquantance05,
+      overworkingaquantance510: this.overworkingaquantance510,
+      overworkingaquantance10: this.overworkingaquantance10,
+      overpriorrelevant05: this.overpriorrelevant05,
+      overpriorrelevant510: this.overpriorrelevant510,
+      overpriorrelevant10: this.overpriorrelevant10,
     };
 
     this.globalsettingsService.addGlobalsettings(fieldGlobalsettingsid)

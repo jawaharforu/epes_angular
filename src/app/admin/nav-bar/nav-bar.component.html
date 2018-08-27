@@ -1,150 +1,191 @@
 <!--Double navigation-->
 <header class="admin_gray_header ">
 
-  <!-- Sidebar navigation -->
-  <mdb-sidenav #sidenav class=" fixed admin-sidebar-nav admin-leftnav" [fixed]="true">
+    <!-- Sidebar navigation -->
+    <mdb-sidenav #sidenav class=" fixed admin-sidebar-nav admin-leftnav" [fixed]="true">
 
-  <logo>
-      <!-- Logo -->
-      <li>
-          <div class="logo-wrapper waves-light">
-              <a href="#"><img src="../../../assets/img/epes-logo-admin.png" class="img-fluid flex-center"></a>
-          </div>
-      </li>
-      <!--/. Logo -->
-  </logo>
-
-  <links>
-      <!-- Side navigation links -->
-      <li>
-          <ul class="collapsible collapsible-accordion ">
-              <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-                  <mdb-item>
-                      <mdb-item-head > Master</mdb-item-head>
-                      <mdb-item-body>
-                          <ul>
-                              <li><a [routerLink]="['/admin/jd']" class="waves-effect" >JD</a></li>
-                              <li><a [routerLink]="['/admin/assessmenttype']" class="waves-effect">Assessment Type</a></li>
-                              <li><a [routerLink]="['/admin/header']" class="waves-effect" >Header</a></li>
-                              <li><a [routerLink]="['/admin/scale']" class="waves-effect" >Scale</a></li>
-                              <li><a [routerLink]="['/admin/question']" class="waves-effect" >Question</a></li>
-                              <li><a [routerLink]="['/admin/department']" class="waves-effect" >Department</a></li>
-                              <li><a [routerLink]="['/admin/organogram']" class="waves-effect" >Organogram</a></li>
-                              <li><a [routerLink]="['/admin/employee']" class="waves-effect" >Employee</a></li>
-                              <li><a [routerLink]="['/admin/assignjd']" class="waves-effect" >Assign JD to Employee</a></li>
-                              <li><a [routerLink]="['/admin/weightage']" class="waves-effect" >Weightage</a></li>
-                          </ul>
-                      </mdb-item-body>
-                  </mdb-item>
-              </mdb-squeezebox>
-          </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/assessment']" mdbWavesEffect>Assessment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/training']" mdbWavesEffect>Training</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" [routerLink]="['/admin/settings']" mdbWavesEffect>Settings</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="['/admin/hrindex']" mdbWavesEffect>HR Index</a>
-      </li>
-      <li>
-          <ul class="collapsible collapsible-accordion ">
-              <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-                  <mdb-item>
-                      <mdb-item-head > CMS</mdb-item-head>
-                      <mdb-item-body>
-                          <ul>
-                              <li><a [routerLink]="['/admin/frontend/testimonial']" class="waves-effect" >Testimonial</a></li>
-                              <li><a [routerLink]="['/admin/frontend/feature']" class="waves-effect" >Features</a></li>
-                              <li><a [routerLink]="['/admin/frontend/faq']" class="waves-effect" >FAQ</a></li>
-                              <li><a [routerLink]="['/admin/frontend/blog']" class="waves-effect" >Blog</a></li>
-                              <li><a [routerLink]="['/admin/frontend/roadmap']" class="waves-effect" >Product Roadmap</a></li>
-                              <li><a [routerLink]="['/admin/frontend/press-release']" class="waves-effect" >Press Release</a></li>
-                              <li><a [routerLink]="['/admin/frontend/whitepaper']" class="waves-effect" >White Paper</a></li>
-                              <li><a [routerLink]="['/admin/frontend/career']" class="waves-effect" >Careers</a></li>
-                              <li><a [routerLink]="['/admin/frontend/contactus']" class="waves-effect" >Contact Us</a></li>
-                              <li><a [routerLink]="['/admin/frontend/product']" class="waves-effect" >Product</a></li>
-                          </ul>
-                      </mdb-item-body>
-                  </mdb-item>
-              </mdb-squeezebox>
-          </ul>
-      </li>
-      <!--/. Side navigation links -->
-      </links>
-      <div class="sidenav-bg mask-strong"></div>
-  </mdb-sidenav>
-  <!--/. Sidebar navigation -->
-<div class="container">
-      <!-- Navbar -->
-  <mdb-navbar SideClass=" navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav admin-top-navbar" [containerInside]="false">
-
-
-
-<navlinks>
         <logo>
-                <!-- Breadcrumb-->
-                <div class="logo-wrapper waves-light admin-header-img">
-                  <a href="#"><img src="../../../assets/img/epes-logo-admin.png" ></a>
-              </div>
-                <!--<div class="breadcrumbs breadcrumb-dn mr-auto">
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper waves-light">
+                    <a href="#"><img src="../../../assets/img/epes-logo-admin.png" class="img-fluid flex-center"></a>
+                </div>
+            </li>
+            <!--/. Logo -->
+        </logo>
+
+        <links>
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion ">
+                    <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+                        <mdb-item>
+                            <mdb-item-head> Master</mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/jd']" class="waves-effect">JD</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/header']" class="waves-effect">Header</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/scale']" class="waves-effect">Scale</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/question']" class="waves-effect">Question</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/department']" class="waves-effect">Department</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/organogram']" class="waves-effect">Organogram</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/employee']" class="waves-effect">Employee</a>
+                                    </li>
+                                    <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/assignjd']" class="waves-effect" >Assign JD to Employee</a></li>
+                                    <li><a (click)="sidenav.toggle()" [routerLink]="['/admin/weightage']" class="waves-effect" >Weightage</a></li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+                    </mdb-squeezebox>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a (click)="sidenav.toggle()" class="nav-link waves-light" [routerLink]="['/admin/assessment']" mdbWavesEffect>Assessment</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="sidenav.toggle()" class="nav-link waves-light" [routerLink]="['/admin/training']" mdbWavesEffect>Training</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="sidenav.toggle()" class="nav-link waves-light" [routerLink]="['/admin/settings']" mdbWavesEffect>Settings</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="sidenav.toggle()" class="nav-link waves-light" [routerLink]="['/admin/hrindex']" mdbWavesEffect>HR
+                    Index</a>
+            </li>
+            <li>
+                <ul class="collapsible collapsible-accordion ">
+                    <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+                        <mdb-item>
+                            <mdb-item-head> CMS</mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/testimonial']" class="waves-effect">Testimonial</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/feature']" class="waves-effect">Features</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/faq']" class="waves-effect">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/blog']" class="waves-effect">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/roadmap']" class="waves-effect">Product
+                                            Roadmap</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/press-release']" class="waves-effect">Press
+                                            Release</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/whitepaper']" class="waves-effect">White
+                                            Paper</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/career']" class="waves-effect">Careers</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/contactus']" class="waves-effect">Contact
+                                            Us</a>
+                                    </li>
+                                    <li>
+                                        <a (click)="sidenav.toggle()" [routerLink]="['/admin/frontend/product']" class="waves-effect">Product</a>
+                                    </li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+                    </mdb-squeezebox>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </links>
+        <div class="sidenav-bg mask-strong"></div>
+    </mdb-sidenav>
+    <!--/. Sidebar navigation -->
+    <div class="container">
+        <!-- Navbar -->
+        <mdb-navbar SideClass=" navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav admin-top-navbar"
+            [containerInside]="false">
+
+
+
+            <navlinks>
+                <logo>
+                    <!-- Breadcrumb-->
+                    <div class="logo-wrapper waves-light admin-header-img">
+                        <a href="#"><img src="../../../assets/img/epes-logo-admin.png"></a>
+                    </div>
+                    <!--<div class="breadcrumbs breadcrumb-dn mr-auto">
                     <p>Material Design for Bootstrap</p>
                 </div>-->
-                <!--/. Breadcrumb-->
-            </logo>
+                    <!--/. Breadcrumb-->
+                </logo>
 
 
 
-    <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav admin-leftnav">
-        <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect> Dashboard</a>
-        <!-- SideNav slide-out button -->
-    <div class="float-right">
-            <a (click)="sidenav.show()" class="button-collapse epes-admin-collapse"><i class="fa fa-bars"></i></a>
-        </div>
-        <!--/. SideNav slide-out button -->
-    </li>
-    <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Reports</a>
-    </li>
-    <li class="nav-item dropdown btn-group" dropdown>
-      <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Quick Links</a>
-      <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-          <a class="dropdown-item" >Quick Links1</a>
-      </div>
-    </li>
-    </ul>
-</navlinks>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav admin-leftnav">
+                    <li class="nav-item">
+                        <a class="nav-link waves-light" mdbWavesEffect> Dashboard</a>
+                        <!-- SideNav slide-out button -->
+                        <div class="float-right">
+                            <a (click)="sidenav.show()" class="button-collapse epes-admin-collapse"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <!--/. SideNav slide-out button -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-light" mdbWavesEffect>Reports</a>
+                    </li>
+                    <li class="nav-item dropdown btn-group" dropdown>
+                        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Quick
+                            Links</a>
+                        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                            <a class="dropdown-item">Quick Links1</a>
+                        </div>
+                    </li>
+                </ul>
+            </navlinks>
 
-  <navlinks>
-      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ">
-            <li class="nav-item">
-                    <a class="nav-link waves-light btn-wizard" mdbWavesEffect>Configuration Wizard </a>
-                </li>
+            <navlinks>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link waves-light btn-wizard" mdbWavesEffect>Configuration Wizard </a>
+                    </li>
 
-            <li class="nav-item cercle-icon">
-                    <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-bell" aria-hidden="true"></i> </a>
-                </li>
+                    <li class="nav-item cercle-icon">
+                        <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-bell" aria-hidden="true"></i> </a>
+                    </li>
 
-          <li class="nav-item cercle-icon">
-          <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-envelope"></i> </a>
-      </li>
+                    <li class="nav-item cercle-icon">
+                        <a class="nav-link waves-light" mdbWavesEffect><i class="fa fa-envelope"></i> </a>
+                    </li>
 
-      <li class="nav-item dropdown btn-group" dropdown>
-        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><div class="user-icon"><img src="../../../assets/img/user-icon.jpg"></div>
-           <!-- <i class="fa fa-user" aria-hidden="true"></i>--><span class="clearfix d-none d-sm-inline-block">Company</span></a>
-        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-            <a class="dropdown-item" >Sign Out</a>
-        </div>
-      </li>
-      </ul>
-  </navlinks>
-  </mdb-navbar>
-      <!--/. Navbar -->
+                    <li class="nav-item dropdown btn-group" dropdown>
+                        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><div
+                                class="user-icon"><img src="../../../assets/img/user-icon.jpg"></div>
+                            <!-- <i class="fa fa-user" aria-hidden="true"></i>--><span class="clearfix d-none d-sm-inline-block">Company</span></a>
+                        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                            <a class="dropdown-item">Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </navlinks>
+        </mdb-navbar>
+        <!--/. Navbar -->
     </div>
 </header>
 <!--/.Double navigation-->

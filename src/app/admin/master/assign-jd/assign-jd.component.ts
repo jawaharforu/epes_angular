@@ -104,7 +104,7 @@ export class AssignJDComponent implements OnInit {
     .subscribe(res => {
       if (res.success) {
         this._commonService.showMessage('success', res.msg);
-        this._commonService.redirectTo('/admin/assigntoJD/');
+        location.reload();
       } else {
         this._commonService.showMessage('error', res.msg);
       }

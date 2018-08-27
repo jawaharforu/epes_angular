@@ -5,7 +5,7 @@
 
             <!-- Card body -->
             <div class="card-body">
-                <!--  <p class="h4 text-center py-4 btn-orange"> 
+                <!--  <p class="h4 text-center py-4 btn-orange">
             </p>-->
                 <!-- Default form subscription -->
                 <form (ngSubmit)="organogramForm()">
@@ -82,7 +82,9 @@
                 <tr *ngFor="let o of organogramList; let i = index">
                     <th class="col-no" scope="row">{{ i + 1 }}</th>
                     <td class="col-org">{{ o.name }}</td>
-                    <td class="col-org">{{ o.departmentid.name }} - {{o.subdepartmentid.name}}</td>
+                    <td class="col-org">{{ o.departmentid.name }}
+                      <span *ngIf="o.subdepartmentid"> - {{o.subdepartmentid.name}}</span>
+                    </td>
                     <td class="col-org">{{ o.designation }}</td>
                     <td class="col-org">{{ childCount[o.uniqueid] }}</td>
                     <td class="col-action">

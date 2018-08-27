@@ -326,7 +326,7 @@ export class HRIndexComponent implements OnInit {
 
   showNext(i: number) {
     let j = 0;
-    if (i === (this.questions.length - 1)) {
+    if (i === (this.questions.length)) {
       this.staffingForm();
       return false;
     }

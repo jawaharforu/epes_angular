@@ -116,10 +116,10 @@ export class OrganogramAddComponent implements OnInit {
       this._commonService.showMessage('error', 'Please select Department!');
       return false;
     }
-    if (this._validationsService.isEmpty(this.subdepartmentid)) {
-      this._commonService.showMessage('error', 'Please select Sub Department!');
-      return false;
-    }
+    // if (this._validationsService.isEmpty(this.subdepartmentid)) {
+    //   this._commonService.showMessage('error', 'Please select Sub Department!');
+    //   return false;
+    // }
     if (this._validationsService.isEmpty(this.name)) {
       this._commonService.showMessage('error', 'Head Name should not be empty!');
       return false;
@@ -148,6 +148,9 @@ export class OrganogramAddComponent implements OnInit {
         parentid: this.parentid,
         uniqueid: this.uniqueid,
       };
+    }
+    if (field.subdepartmentid === '') {
+      delete field.subdepartmentid;
     }
     this.organogramService.addOrganogram(field)
     .subscribe(res => {

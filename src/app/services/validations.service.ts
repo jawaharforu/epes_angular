@@ -45,7 +45,7 @@ export class ValidationsService {
   }
 
   isPassword(digit: any) {
-    //const dig = /[^0-9]/g;
+    // const dig = /[^0-9]/g;
     const regpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/g;
     if (!regpassword.test(digit)) {
       return true;
@@ -73,6 +73,18 @@ export class ValidationsService {
   isNumber(input: any) {
     if (typeof Number(input) === 'number') {
       return true;
+    } else {
+      return false;
+    }
+  }
+
+  isPercentage(input: any) {
+    if (typeof Number(input) === 'number') {
+      if (input <= 100) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }

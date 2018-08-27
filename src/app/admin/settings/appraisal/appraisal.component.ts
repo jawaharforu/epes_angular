@@ -59,12 +59,20 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'SeniorManager Fixed should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.seniormanagerfixed)) {
+      this._commonService.showMessage('error', 'SeniorManager Fixed should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.seniormanagervariable)) {
       this._commonService.showMessage('error', 'Senior Manager Variable should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.seniormanagervariable)) {
       this._commonService.showMessage('error', 'Senior Manager variable should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.seniormanagervariable)) {
+      this._commonService.showMessage('error', 'Senior Manager variable should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.seniormanagerbonus)) {
@@ -75,12 +83,20 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'Senior Manager Bonus should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.seniormanagerbonus)) {
+      this._commonService.showMessage('error', 'Senior Manager Bonus should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.managerfixed)) {
       this._commonService.showMessage('error', 'Manager Fixed should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.managerfixed)) {
       this._commonService.showMessage('error', 'Manager Fixed should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.seniormanagerbonus)) {
+      this._commonService.showMessage('error', 'Manager Fixed should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.managervariable)) {
@@ -91,12 +107,20 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'Manager variable should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.managervariable)) {
+      this._commonService.showMessage('error', 'Senior variable should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.managerbonus)) {
       this._commonService.showMessage('error', 'Manager bonus should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.managerbonus)) {
       this._commonService.showMessage('error', 'Manager bonus should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.managerbonus)) {
+      this._commonService.showMessage('error', 'Manager bonus should not Exceed 100%!');
       return false;
     }
     if (this._validationsService.isEmpty(this.executivesfixed)) {
@@ -107,6 +131,10 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'Executives fixed should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.executivesfixed)) {
+      this._commonService.showMessage('error', 'Executives fixed should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.executivesvariable)) {
       this._commonService.showMessage('error', 'Executives variable should not be empty!');
       return false;
@@ -115,12 +143,20 @@ export class AppraisalComponent implements OnInit {
       this._commonService.showMessage('error', 'Executives variable should have only digits!');
       return false;
     }
+    if (!this._validationsService.isPercentage(this.executivesvariable)) {
+      this._commonService.showMessage('error', 'Executives variable should not Exceed 100%!');
+      return false;
+    }
     if (this._validationsService.isEmpty(this.executivesbonus)) {
       this._commonService.showMessage('error', 'Executives bonus should not be empty!');
       return false;
     }
     if (this._validationsService.isDigit(this.executivesbonus)) {
       this._commonService.showMessage('error', 'Executives bonus should have only digits!');
+      return false;
+    }
+    if (!this._validationsService.isPercentage(this.executivesbonus)) {
+      this._commonService.showMessage('error', 'Executives bonus should not Exceed 100%!');
       return false;
     }
 
