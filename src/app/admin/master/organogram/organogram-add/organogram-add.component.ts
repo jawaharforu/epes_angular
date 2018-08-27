@@ -55,7 +55,7 @@ export class OrganogramAddComponent implements OnInit {
     this.departmentService.getDepartment()
     .subscribe(res => {
       this.departmentList = res.data;
-      
+
     });
   }
 
@@ -63,7 +63,6 @@ export class OrganogramAddComponent implements OnInit {
     this.subDepartmentService.getSubDepartmentByCategory(departmentid)
     .subscribe(res => {
       this.subDepartmentList = res.data;
-      this.subdepartmentid = '';
     });
   }
 
@@ -79,9 +78,11 @@ export class OrganogramAddComponent implements OnInit {
     this.organogramService.getOrganogramById(organogramid)
     .subscribe(res => {
       if (which === 'edit') {
+        console.log(res.data);
         this.name = res.data.name;
-        this.departmentid = res.data.departmentid;
-        this.subdepartmentid = res.data.subdepartmentid;
+        this.departmentid = res.data.departmentid._id;
+        this.getSubDepartment();
+        this.subdepartmentid = res.data.subdepartmentid._id;
         this.designation = res.data.designation;
         this.parentid = res.data.parentid;
         this.organogramid = res.data._id;
@@ -110,7 +111,7 @@ export class OrganogramAddComponent implements OnInit {
     });
   }
   organogramForm() {
-    
+
     if (this._validationsService.isEmpty(this.departmentid)) {
       this._commonService.showMessage('error', 'Please select Department!');
       return false;
@@ -170,14 +171,14 @@ export class OrganogramAddComponent implements OnInit {
     this._commonService.redirectTo(`/admin/organogram/${id}`);
   }
 
-  editHeader(h: any) {
-    this.name = h.name;
-    this.departmentid = h.departmentid;
-    this.subdepartmentid = h.subdepartmentid;
-    this.designation = h.designation;
-    this.parentid = h.parentid;
-    this.organogramid = h._id;
-    window.scrollTo(0, 0);
+  editHeader(o: any) {
+    // this.name = h.name;
+    // this.departmentid = h.departmentid;
+    // this.subdepartmentid = h.subdepartmentid;
+    // this.designation = h.designation;
+    // this.parentid = h.parentid;
+    // this.organogramid = h._id;
+    this._commonService.redirectTo(`/admin/organogram/edit/${o._id}/edit`);
   }
 
   deleteHeader(headerid: any) {
