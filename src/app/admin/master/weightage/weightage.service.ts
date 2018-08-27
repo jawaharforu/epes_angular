@@ -25,11 +25,11 @@ export class WeightageService {
     .pipe(map(res => res.json()));
   }
 
-  getWeightage(weightageid: any) {
+  getWeightage() {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
     headers.append('Authorization', this._commonService.getUserToken());
-    return this.http.get(`${this.link}/weightages/${weightageid}`, {headers: headers})
+    return this.http.get(`${this.link}/weightages`, {headers: headers})
     .pipe(map(res => res.json()));
   }
 
